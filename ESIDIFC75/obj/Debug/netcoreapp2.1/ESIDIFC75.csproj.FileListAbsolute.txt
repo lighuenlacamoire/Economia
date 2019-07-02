@@ -1,0 +1,14 @@
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\bin\Debug\netcoreapp2.1\ESIDIFC75.deps.json
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\bin\Debug\netcoreapp2.1\ESIDIFC75.runtimeconfig.json
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\bin\Debug\netcoreapp2.1\ESIDIFC75.runtimeconfig.dev.json
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\bin\Debug\netcoreapp2.1\ESIDIFC75.dll
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.csproj.CoreCompileInputs.cache
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.RazorAssemblyInfo.cache
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.RazorAssemblyInfo.cs
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.AssemblyInfoInputs.cache
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.AssemblyInfo.cs
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.RazorTargetAssemblyInfo.cache
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.csprojAssemblyReference.cache
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\bin\Debug\netcoreapp2.1\ESIDIFC75.pdb
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.dll
+D:\LIGHUEN\GIT\ESIDIF\ESIDIFC75\obj\Debug\netcoreapp2.1\ESIDIFC75.pdb
