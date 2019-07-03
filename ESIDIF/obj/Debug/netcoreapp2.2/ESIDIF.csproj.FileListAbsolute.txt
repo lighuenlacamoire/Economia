@@ -1,0 +1,14 @@
+D:\LIGHUEN\GIT\Economia\ESIDIF\bin\Debug\netcoreapp2.2\ESIDIF.deps.json
+D:\LIGHUEN\GIT\Economia\ESIDIF\bin\Debug\netcoreapp2.2\ESIDIF.runtimeconfig.json
+D:\LIGHUEN\GIT\Economia\ESIDIF\bin\Debug\netcoreapp2.2\ESIDIF.runtimeconfig.dev.json
+D:\LIGHUEN\GIT\Economia\ESIDIF\bin\Debug\netcoreapp2.2\ESIDIF.dll
+D:\LIGHUEN\GIT\Economia\ESIDIF\bin\Debug\netcoreapp2.2\ESIDIF.pdb
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.csproj.CoreCompileInputs.cache
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.RazorAssemblyInfo.cache
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.RazorAssemblyInfo.cs
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.AssemblyInfoInputs.cache
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.AssemblyInfo.cs
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.RazorTargetAssemblyInfo.cache
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.dll
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.pdb
+D:\LIGHUEN\GIT\Economia\ESIDIF\obj\Debug\netcoreapp2.2\ESIDIF.csprojAssemblyReference.cache

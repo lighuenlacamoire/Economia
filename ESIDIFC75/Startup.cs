@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
-using ESIDIFC75.Models;
+using ESIDIFC75.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SoapCore;
+using static ESIDIFC75.Configuration.RequestResponseLoggingMiddleware;
 
 namespace ESIDIFC75
 {
@@ -30,11 +33,15 @@ namespace ESIDIFC75
         {
             //services.TryAddSingleton<Service.TramitesFacade, Service.TramitesFacadeClient>();
             //services.AddSingleton(new Service.TramitesFacadeClient());
-            services.TryAddSingleton<ISampleService, SampleService>();
             services.AddSingleton(new C75Service());
-
             services.AddSoapExceptionTransformer((ex) => ex.Message);
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+            {
+                options.ReturnHttpNotAcceptable = false;
+                // If you need to add support for XML
+                options.OutputFormatters.Add(new StringOutputFormatter());
+
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +65,7 @@ namespace ESIDIFC75
                     MaxBytesPerRead = 2147483647,
                     MaxNameTableCharCount = 2147483647
                 },
-                Security =  
+                Security =
                 {
                     Mode = BasicHttpSecurityMode.Transport,
                     Transport = new HttpTransportSecurity
@@ -67,9 +74,17 @@ namespace ESIDIFC75
                     }
                 }
             };
+            
+            Action<RequestProfilerModel> requestResponseHandler = requestProfilerModel =>
+            {
+                //Debug.Print(requestProfilerModel.Request);
+                //Debug.Print(Environment.NewLine);
+                //Debug.Print(requestProfilerModel.Response);
+            };
+            app.UseMiddleware<RequestResponseLoggingMiddleware>(requestResponseHandler);
 
+            //Add our new middleware to the pipeline
             //app.UseSoapEndpoint<Service.TramitesFacade>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);
-            app.UseSoapEndpoint<ISampleService>("/generarInformeDeGastosC75_2.asmx", httpBinding, SoapSerializer.XmlSerializer);
             app.UseSoapEndpoint<C75Service>("/generarInformeDeGastosC75.asmx", httpBinding, SoapSerializer.XmlSerializer);
             app.UseMvc();
         }

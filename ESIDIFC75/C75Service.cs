@@ -1,30 +1,28 @@
-﻿using ESIDIFC75.Models;
+﻿using ESIDIF.Tools;
 using log4net;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace ESIDIFC75
 {
-    [ServiceContract(Namespace ="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg", Name ="C75Service")]
+    [ServiceContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg", Name = "C75Service")]
     public class C75Service
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C75Service));
-        private Service.TramitesFacadeClient svc = new Service.TramitesFacadeClient();
+
 
         [OperationContract(Action = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType")]
-        [System.w]
-        public string generarInformeDeGastosPortType([System.Xml.Serialization.XmlElement("generarInformeDeGastos")]MyCustomModel customModel)
+        public string generarInformeDeGastosPortType([System.Xml.Serialization.XmlElement("generarInformeDeGastos")]string nose)
         {
             try
             {
-                var nose = svc.obtenerTramitesNivel5Async().Result;
-
-                if(nose != null)
+                if (nose != null)
                 {
-                    return "Ok";
+                    return Functions.AregarAlgo(nose);
                 }
                 else
                 {

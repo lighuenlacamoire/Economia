@@ -1,3 +1,0 @@
-D:\LIGHUEN\GIT\ESIDIF\ESIDIF\obj\Debug\netcoreapp2.1\ESIDIF.csproj.CoreCompileInputs.cache
-D:\LIGHUEN\GIT\ESIDIF\ESIDIF\obj\Debug\netcoreapp2.1\ESIDIF.AssemblyInfoInputs.cache
-D:\LIGHUEN\GIT\ESIDIF\ESIDIF\obj\Debug\netcoreapp2.1\ESIDIF.AssemblyInfo.cs
