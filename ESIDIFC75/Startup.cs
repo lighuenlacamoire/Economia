@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Threading.Tasks;
-using ESIDIFC75.Configuration;
+﻿using System.ServiceModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using log4net;
 using SoapCore;
-using static ESIDIFC75.Configuration.RequestResponseLoggingMiddleware;
+using ESIDIF.Configuration;
 
 namespace ESIDIFC75
 {
@@ -74,14 +66,26 @@ namespace ESIDIFC75
                     }
                 }
             };
-            
-            Action<RequestProfilerModel> requestResponseHandler = requestProfilerModel =>
-            {
-                //Debug.Print(requestProfilerModel.Request);
-                //Debug.Print(Environment.NewLine);
-                //Debug.Print(requestProfilerModel.Response);
-            };
-            app.UseMiddleware<RequestResponseLoggingMiddleware>(requestResponseHandler);
+
+            //Action<RequestProfilerModel> requestResponseHandler = requestProfilerModel =>
+            //{
+            //    //Debug.Print(requestProfilerModel.Request);
+            //    //Debug.Print(Environment.NewLine);
+            //    //Debug.Print(requestProfilerModel.Response);
+            //};
+            //app.UseMiddleware<RequestResponseLoggingMiddleware>(requestResponseHandler);
+
+            // Enable CORS 
+            app.UseCors(builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            ILog logger = LogManager.GetLogger(typeof(C75Service));
+
+            // add logging middleware
+            app.UseMiddleware<LogResponseMiddleware>(logger);
+            app.UseMiddleware<LogRequestMiddleware>(logger);
 
             //Add our new middleware to the pipeline
             //app.UseSoapEndpoint<Service.TramitesFacade>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);

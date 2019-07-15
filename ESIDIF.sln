@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIDIF", "ESIDIF\ESIDIF.csproj", "{6254F5CD-5086-44C1-A145-937C4AA6622A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIF", "ESIDIF\ESIDIF.csproj", "{6254F5CD-5086-44C1-A145-937C4AA6622A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIDIFC75", "ESIDIFC75\ESIDIFC75.csproj", "{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIFC75", "ESIDIFC75\ESIDIFC75.csproj", "{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIDIFCuota", "ESIDIFCuota\ESIDIFCuota.csproj", "{00648FFD-ED4F-401E-BD20-E7DAD4308A51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00648FFD-ED4F-401E-BD20-E7DAD4308A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00648FFD-ED4F-401E-BD20-E7DAD4308A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00648FFD-ED4F-401E-BD20-E7DAD4308A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00648FFD-ED4F-401E-BD20-E7DAD4308A51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

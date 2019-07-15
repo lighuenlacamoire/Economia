@@ -15,7 +15,6 @@ namespace ESIDIFC75.Configuration
     {
         private readonly RequestDelegate _next;
         private readonly ILog _log;
-        private readonly Extensions _extensions = new Extensions();
 
         public SoapMiddleware(RequestDelegate next, Type type)
         {

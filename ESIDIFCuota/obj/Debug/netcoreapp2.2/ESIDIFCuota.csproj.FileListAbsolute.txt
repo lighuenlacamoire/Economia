@@ -1,0 +1,17 @@
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIFCuota.deps.json
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIFCuota.runtimeconfig.json
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIFCuota.runtimeconfig.dev.json
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIFCuota.dll
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.csprojAssemblyReference.cache
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.csproj.CoreCompileInputs.cache
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.RazorAssemblyInfo.cache
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.RazorAssemblyInfo.cs
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.AssemblyInfoInputs.cache
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.AssemblyInfo.cs
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.RazorTargetAssemblyInfo.cache
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIFCuota.pdb
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIF.dll
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\bin\Debug\netcoreapp2.2\ESIDIF.pdb
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.csproj.CopyComplete
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.dll
+D:\LIGHUEN\GIT\Economia\ESIDIFCuota\obj\Debug\netcoreapp2.2\ESIDIFCuota.pdb
