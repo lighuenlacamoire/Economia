@@ -1,0 +1,454 @@
+2019-07-17 13:37:51,596 [4] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 13:37:52,337 [4] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 13:37:53,178 [4] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 13:37:53,229 [4] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 13:37:54,381 [4] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/favicon.ico
+2019-07-17 13:37:54,436 [4] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 13:37:57,712 [4] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: 
+2019-07-17 13:37:57,783 [4] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+
+2019-07-17 15:22:21,124 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:22:21,368 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:22:21,891 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:22:21,896 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:24:30,100 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:24:30,252 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:24:30,844 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:24:30,847 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:27:17,979 [4] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:27:18,215 [4] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:27:18,764 [4] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:27:18,768 [4] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:30:48,545 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:30:49,032 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:30:49,692 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:30:49,699 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:36:22,746 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:36:23,063 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:36:23,991 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:36:23,994 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:39:07,651 [10] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:39:08,848 [10] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:39:09,352 [10] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:39:09,355 [10] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-07-17 15:40:56,175 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: https://localhost:44392/generarInformeDeGastosC75.asmx
+2019-07-17 15:40:56,378 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-07-17 15:40:57,522 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-07-17 15:40:57,524 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastos" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generarInformeDeGastosPortTypeResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="https://localhost:44392/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

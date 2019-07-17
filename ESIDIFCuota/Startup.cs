@@ -35,8 +35,16 @@ namespace ESIDIFCuota
             });
             //services.TryAddSingleton<Service.TramitesFacade, Service.TramitesFacadeClient>();
             //services.AddSingleton(new Service.TramitesFacadeClient());
-            services.AddSingleton(new CuotaService());
             services.AddSoapExceptionTransformer((ex) => ex.Message);
+
+            services.AddHttpContextAccessor();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<CuotaService>();
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
             services.AddMvc(options =>
             {
                 options.ReturnHttpNotAcceptable = false;
@@ -45,14 +53,6 @@ namespace ESIDIFCuota
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
-            services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromMinutes(15);
-            });
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -102,6 +102,25 @@ namespace ESIDIFCuota
 
             ILog logger = LogManager.GetLogger(typeof(CuotaService));
 
+            // IMPORTANT: This session call MUST go before UseMvc()
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Session.SetObject("UserSession",
+            //        new User {  });
+            //    await next();
+            //});
+
+            //app.Run(async (context) =>
+            //{
+            //    var user = context.Session.GetObject<User>("UserSession");
+            //    await context.Response.WriteAsync($"{user.Username}, {user.Email}");
+            //});
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseSession();
+
             // add logging middleware
             app.UseMiddleware<LogResponseMiddleware>(logger);
             app.UseMiddleware<LogRequestMiddleware>(logger);
@@ -110,25 +129,6 @@ namespace ESIDIFCuota
             //app.UseSoapEndpoint<Service.TramitesFacade>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);
             app.UseSoapEndpoint<CuotaService>("/CuotaService.asmx", httpBinding, SoapSerializer.XmlSerializer);
 
-            app.UseStaticFiles();
-            app.UseCookiePolicy();
-
-            // IMPORTANT: This session call MUST go before UseMvc()
-            app.UseSession();
-
-            app.Use(async (context, next) =>
-            {
-                context.Session.SetObject("UserSession",
-                    new User {  });
-                await next();
-            });
-
-            //app.Run(async (context) =>
-            //{
-            //    var user = context.Session.GetObject<User>("UserSession");
-            //    await context.Response.WriteAsync($"{user.Username}, {user.Email}");
-            //});
-            
             app.UseMvc();
         }
     }
