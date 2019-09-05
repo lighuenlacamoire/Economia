@@ -18,182 +18,182 @@ namespace ESIDIFCuota.Models.Session
 
         }
 
-        //public User ObtenerDatosToken(SoapUnknownHeader[] unknownHeaders, string tag)
-        //{
-        //    try
-        //    {
+        public User ObtenerDatosToken(SoapUnknownHeader[] unknownHeaders, string tag)
+        {
+            try
+            {
 
-        //        var user = new User();
+                var user = new User();
 
-        //        var tokenEnviado = new SSOEncodedToken();
+                var tokenEnviado = new SSOEncodedToken();
 
-        //        foreach (SoapUnknownHeader header in unknownHeaders)
+                foreach (SoapUnknownHeader header in unknownHeaders)
 
-        //        {
+                {
 
-        //            if (header.Element.Name == tag)
+                    if (header.Element.Name == tag)
 
-        //            {
+                    {
 
-        //                tokenEnviado.Token = header.Element.InnerText;
+                        tokenEnviado.Token = header.Element.InnerText;
 
-        //                break;
+                        break;
 
-        //            }
+                    }
 
-        //        }
+                }
 
 
 
-        //        if (!string.IsNullOrEmpty(tokenEnviado.Token) && tokenEnviado.Token.Length > 0)
+                if (!string.IsNullOrEmpty(tokenEnviado.Token) && tokenEnviado.Token.Length > 0)
 
-        //        {
+                {
 
-        //            credenciales = Credencial.ObtenerCredencialEnWs(tokenEnviado);
+                    credenciales = Credencial.ObtenerCredencialEnWs(tokenEnviado);
 
 
 
-        //            if (credenciales != null)
+                    if (credenciales != null)
 
-        //            {
+                    {
 
-        //                //Entity - CUIT
+                        //Entity - CUIT
 
-        //                user.Entity = credenciales.Operation.Login.Entity;
+                        user.Entity = credenciales.Operation.Login.Entity;
 
 
 
-        //                //
+                        //
 
-        //                user.HasToken = true;
+                        user.HasToken = true;
 
-        //                user.Sistema = credenciales.Operation.Login.System;
+                        user.Sistema = credenciales.Operation.Login.System;
 
 
 
-        //                //Perfil
+                        //Perfil
 
-        //                user.Perfil = credenciales.Operation.Login.Groups[0].Name;
+                        user.Perfil = credenciales.Operation.Login.Groups[0].Name;
 
 
 
-        //                //Cuil
+                        //Cuil
 
-        //                user.CUIL = credenciales.Operation.Login.CUIL;
+                        user.CUIL = credenciales.Operation.Login.CUIL;
 
 
 
-        //                //Legajo - Uid
+                        //Legajo - Uid
 
-        //                user.UserId = credenciales.Operation.Login.UId;
+                        user.UserId = credenciales.Operation.Login.UId;
 
 
 
-        //                //verificamos el grupo y la info
+                        //verificamos el grupo y la info
 
-        //                //******************************
+                        //******************************
 
-        //                user.UserName = credenciales.Operation.Login.UserName;
+                        user.UserName = credenciales.Operation.Login.UserName;
 
 
 
-        //                //deteccion del cuil - para CVSS en el campo UId estara el CUIL de la persona.
+                        //deteccion del cuil - para CVSS en el campo UId estara el CUIL de la persona.
 
-        //                //Para aplicaciones internas el UId tendra el Usuario del operador
+                        //Para aplicaciones internas el UId tendra el Usuario del operador
 
-        //                try
+                        try
 
-        //                {
+                        {
 
-        //                    user.Cuip = string.IsNullOrEmpty(credenciales.Operation.Login.UId) ? 0 : long.Parse(credenciales.Operation.Login.UId);
+                            user.Cuip = string.IsNullOrEmpty(credenciales.Operation.Login.UId) ? 0 : long.Parse(credenciales.Operation.Login.UId);
 
-        //                }
+                        }
 
-        //                catch
+                        catch
 
-        //                {
+                        {
 
-        //                    user.Cuip = 0;
+                            user.Cuip = 0;
 
-        //                    user.UserName = credenciales.Operation.Login.UId;
+                            user.UserName = credenciales.Operation.Login.UId;
 
-        //                }
+                        }
 
 
 
-        //                //Nombre
+                        //Nombre
 
-        //                user.Nombre = credenciales.Operation.Login.UserName;
+                        user.Nombre = credenciales.Operation.Login.UserName;
 
 
 
-        //                for (int i = 0; i < credenciales.Operation.Login.Info.Length; i++)
+                        for (int i = 0; i < credenciales.Operation.Login.Info.Length; i++)
 
-        //                {
+                        {
 
-        //                    switch (credenciales.Operation.Login.Info[i].Name)
+                            switch (credenciales.Operation.Login.Info[i].Name)
 
-        //                    {
+                            {
 
-        //                        case "nombre":
+                                case "nombre":
 
-        //                            user.Nombre = credenciales.Operation.Login.Info[i].Value;
+                                    user.Nombre = credenciales.Operation.Login.Info[i].Value;
 
-        //                            break;
+                                    break;
 
-        //                        case "ip":
+                                case "ip":
 
-        //                            user.IP = credenciales.Operation.Login.Info[i].Value;
+                                    user.IP = credenciales.Operation.Login.Info[i].Value;
 
-        //                            break;
+                                    break;
 
-        //                        case "oficina":
+                                case "oficina":
 
-        //                            user.Oficina = credenciales.Operation.Login.Info[i].Value;
+                                    user.Oficina = credenciales.Operation.Login.Info[i].Value;
 
-        //                            break;
+                                    break;
 
-        //                        case "oficinadesc":
+                                case "oficinadesc":
 
-        //                            user.OficinaDetalle = credenciales.Operation.Login.Info[i].Value;
+                                    user.OficinaDetalle = credenciales.Operation.Login.Info[i].Value;
 
-        //                            break;
+                                    break;
 
-        //                        default:
+                                default:
 
-        //                            break;
+                                    break;
 
-        //                    }
+                            }
 
-        //                }
+                        }
 
-        //                return user;
+                        return user;
 
-        //            }
+                    }
 
-        //            throw new Exception("Ha ocurrido un error al obtener las credenciales del usuario, por favor verifique que ha enviado el token con sus credenciales");
+                    throw new Exception("Ha ocurrido un error al obtener las credenciales del usuario, por favor verifique que ha enviado el token con sus credenciales");
 
-        //        }
+                }
 
-        //        throw new Exception("Ha ocurrido un error al obtener el token, por favor verifique que el mismo fue enviado");
+                throw new Exception("Ha ocurrido un error al obtener el token, por favor verifique que el mismo fue enviado");
 
 
 
-        //    }
+            }
 
-        //    catch (Exception ex)
+            catch (Exception ex)
 
-        //    {
+            {
 
-        //        log.Error("Credenciales - " + ex.Message);
+                log.Error("Credenciales - " + ex.Message);
 
-        //        throw ex;
+                throw ex;
 
-        //    }
+            }
 
-        //    return null;
+            return null;
 
-        //}
+        }
 
         public User ObtenerDatosCredencial()
         {

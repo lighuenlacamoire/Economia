@@ -1,11 +1,8 @@
 ﻿using ESIDIF.Tools;
-using ESIDIFCuota.Models.Session;
 using log4net;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using ESIDIF.Models.Session;
 using System.ServiceModel;
 
 namespace ESIDIFCuota
@@ -14,11 +11,11 @@ namespace ESIDIFCuota
     [ServiceContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg", Name = "CuotaService")]
     public class CuotaService
     {
-        private readonly IHttpContextAccessor _httpContext;
+        private readonly HttpContext _httpContext;
 
-        public CuotaService(IHttpContextAccessor httpContext)
+        public CuotaService(IHttpContextAccessor contextAccessor )
         {
-            _httpContext = httpContext;
+            _httpContext = contextAccessor.HttpContext;
         }
 
         private static readonly ILog _logger = LogManager.GetLogger(typeof(CuotaService));
@@ -27,17 +24,17 @@ namespace ESIDIFCuota
         {
             get
             {
-                var user = _httpContext.HttpContext.Session.GetObject<User>("UserSession");
+                var user = _httpContext.Session.GetObject<User>("UserSession");
 
                 if(user == null)
                 {
-                    _httpContext.HttpContext.Session.SetObject("UserSession", new User());
+                    _httpContext.Session.SetObject("UserSession", new User());
                 }
-                return _httpContext.HttpContext.Session.GetObject<User>("UserSession");
+                return _httpContext.Session.GetObject<User>("UserSession");
             }
             set
             {
-                _httpContext.HttpContext.Session.SetObject("UserSession", value);
+                _httpContext.Session.SetObject("UserSession", value);
             }
         }
 
@@ -47,16 +44,15 @@ namespace ESIDIFCuota
         {
             try
             {
-                if(!UserSession.HasToken)
+                if (!UserSession.HasToken)
                 {
-                    UserSession = new UserLogged().ObtenerDatosCredencial();
+                    UserSession = new UserLogged().ObtenerDatosToken(_httpContext.Request.Headers, "token");
                 }
 
 
 
                 if (nose != null)
                 {
-                    return Functions.AregarAlgo(nose);
                 }
                 else
                 {

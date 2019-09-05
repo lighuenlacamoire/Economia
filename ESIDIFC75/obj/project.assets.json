@@ -4472,6 +4472,19 @@
           }
         }
       },
+      "System.ServiceModel.Duplex/4.5.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Private.ServiceModel": "4.5.3",
+          "System.ServiceModel.Primitives": "4.5.3"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.ServiceModel.Duplex.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Duplex.dll": {}
+        }
+      },
       "System.ServiceModel.Http/4.5.3": {
         "type": "package",
         "dependencies": {
@@ -4483,6 +4496,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.ServiceModel.Http.dll": {}
+        }
+      },
+      "System.ServiceModel.NetTcp/4.5.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Private.ServiceModel": "4.5.3",
+          "System.ServiceModel.Primitives": "4.5.3"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.ServiceModel.NetTcp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.NetTcp.dll": {}
         }
       },
       "System.ServiceModel.Primitives/4.5.3": {
@@ -4497,6 +4523,19 @@
         "runtime": {
           "lib/netstandard2.0/System.ServiceModel.Primitives.dll": {},
           "lib/netstandard2.0/System.ServiceModel.dll": {}
+        }
+      },
+      "System.ServiceModel.Security/4.5.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Private.ServiceModel": "4.5.3",
+          "System.ServiceModel.Primitives": "4.5.3"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.ServiceModel.Security.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Security.dll": {}
         }
       },
       "System.Text.Encoding/4.3.0": {
@@ -4837,6 +4876,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
+          "System.ServiceModel.Primitives": "4.5.3",
           "log4net": "2.0.8"
         },
         "compile": {
@@ -8030,7 +8070,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "X7IdhILzr4ROXd8mI1BUCQMSHSQwelUlBjF1JyTKCjXaOGn2fB4EKBxQbCK2VjO3WaWIdlXZL3W6TiIVnrhX4g==",
+      "sha512": "/p8IQT2brFMDa7BHMH71LV+w5Tb3OxoLHxhn6+MGqN5xeqhM2HRHmj+7xQGJnaRn73d7ZTvp6yRCFMvolws4wA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -8056,7 +8096,7 @@
       ]
     },
     "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "ytoewC6wGorL7KoCAvRfsgoJPJbNq+64k2SqW6JcOAebWsFUvCCYgfzQMrnpvPiEl4OrblUlhF2ji+Q1+SVLrQ==",
+      "sha512": "JGc0pAWRE8lB4Ucygk2pYSKbUPLlAIq6Bczf5/WF2D/VKJEPtYlVUMxk8fbl1zRfTWzSHi+VcFZlaPlWiNxeKg==",
       "type": "package",
       "path": "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -8454,7 +8494,7 @@
       ]
     },
     "System.Collections.Specialized/4.3.0": {
-      "sha512": "Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
+      "sha512": "NoPBj0ykejqAWW4p4gGtrrL+3c84ZLSvGnHgq422ew1Rj4WKj1FA8/BCybqC111EtgcqUl6ZJNFYYS22HLgbjA==",
       "type": "package",
       "path": "system.collections.specialized/4.3.0",
       "files": [
@@ -12094,6 +12134,48 @@
         "version.txt"
       ]
     },
+    "System.ServiceModel.Duplex/4.5.3": {
+      "sha512": "cXn6zfl2od9Au3sDpArjUXo7zmNPLw77sjOrAUqjrh3TsImy8SPMSC4/F58jJGJrxUiyPo0DDwalRaF5JXZqsQ==",
+      "type": "package",
+      "path": "system.servicemodel.duplex/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ServiceModel.Duplex.dll",
+        "lib/netcore50/System.ServiceModel.Duplex.dll",
+        "lib/netstandard1.3/System.ServiceModel.Duplex.dll",
+        "lib/netstandard2.0/System.ServiceModel.Duplex.dll",
+        "lib/portable-net45+win8/_._",
+        "lib/uap10.0.16300/System.ServiceModel.Duplex.dll",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ServiceModel.Duplex.dll",
+        "ref/netcore50/System.ServiceModel.Duplex.dll",
+        "ref/netstandard1.1/System.ServiceModel.Duplex.dll",
+        "ref/netstandard2.0/System.ServiceModel.Duplex.dll",
+        "ref/portable-net45+win8/_._",
+        "ref/uap10.0.16300/System.ServiceModel.Duplex.dll",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.servicemodel.duplex.4.5.3.nupkg.sha512",
+        "system.servicemodel.duplex.nuspec",
+        "version.txt"
+      ]
+    },
     "System.ServiceModel.Http/4.5.3": {
       "sha512": "zxR4z6G/FFK/uAUbo7+3IJOqm0w4/lyfHSQDf+hhUHRTc7XSeReGS5iKQq95gyl1ighHEuayqOiB7iacrB6ZUg==",
       "type": "package",
@@ -12139,6 +12221,51 @@
         "ref/xamarinwatchos10/_._",
         "system.servicemodel.http.4.5.3.nupkg.sha512",
         "system.servicemodel.http.nuspec",
+        "version.txt"
+      ]
+    },
+    "System.ServiceModel.NetTcp/4.5.3": {
+      "sha512": "Bx4oVK4ApBvZ0C3J62A8p3j6U0XK54JjN0byK52Qw4EgK89Uc48XzbF+0m1Oysc2bnnbrur+SwFWw7J8co3jTQ==",
+      "type": "package",
+      "path": "system.servicemodel.nettcp/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.ServiceModel.NetTcp.dll",
+        "lib/net461/System.ServiceModel.NetTcp.dll",
+        "lib/netcore50/System.ServiceModel.NetTcp.dll",
+        "lib/netstandard1.3/System.ServiceModel.NetTcp.dll",
+        "lib/netstandard2.0/System.ServiceModel.NetTcp.dll",
+        "lib/portable-net45+win8/_._",
+        "lib/uap10.0.16300/System.ServiceModel.NetTcp.dll",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.ServiceModel.NetTcp.dll",
+        "ref/net461/System.ServiceModel.NetTcp.dll",
+        "ref/netcore50/System.ServiceModel.NetTcp.dll",
+        "ref/netstandard1.1/System.ServiceModel.NetTcp.dll",
+        "ref/netstandard1.3/System.ServiceModel.NetTcp.dll",
+        "ref/netstandard2.0/System.ServiceModel.NetTcp.dll",
+        "ref/portable-net45+win8/_._",
+        "ref/uap10.0.16300/System.ServiceModel.NetTcp.dll",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.servicemodel.nettcp.4.5.3.nupkg.sha512",
+        "system.servicemodel.nettcp.nuspec",
         "version.txt"
       ]
     },
@@ -12191,6 +12318,51 @@
         "ref/xamarinwatchos10/_._",
         "system.servicemodel.primitives.4.5.3.nupkg.sha512",
         "system.servicemodel.primitives.nuspec",
+        "version.txt"
+      ]
+    },
+    "System.ServiceModel.Security/4.5.3": {
+      "sha512": "e0c5f536zJ2qEp8sDbI88Tm+NLkx9eqGiXQbQx5fQEtCfQ/dqPOwluu/3aAj/9Bc5XdBAaQcElmr1kyjr2j3EA==",
+      "type": "package",
+      "path": "system.servicemodel.security/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ServiceModel.Security.dll",
+        "lib/netcore50/System.ServiceModel.Security.dll",
+        "lib/netstandard1.3/System.ServiceModel.Security.dll",
+        "lib/netstandard2.0/System.ServiceModel.Security.dll",
+        "lib/portable-net45+win8+wp8/_._",
+        "lib/uap10.0.16300/System.ServiceModel.Security.dll",
+        "lib/win8/_._",
+        "lib/wp8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ServiceModel.Security.dll",
+        "ref/netcore50/System.ServiceModel.Security.dll",
+        "ref/netstandard1.0/System.ServiceModel.Security.dll",
+        "ref/netstandard1.1/System.ServiceModel.Security.dll",
+        "ref/netstandard2.0/System.ServiceModel.Security.dll",
+        "ref/portable-net45+win8+wp8/_._",
+        "ref/uap10.0.16300/System.ServiceModel.Security.dll",
+        "ref/win8/_._",
+        "ref/wp8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.servicemodel.security.4.5.3.nupkg.sha512",
+        "system.servicemodel.security.nuspec",
         "version.txt"
       ]
     },
@@ -13247,27 +13419,31 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "SoapCore >= 0.9.9.6",
+      "System.ServiceModel.Duplex >= 4.5.3",
+      "System.ServiceModel.Http >= 4.5.3",
+      "System.ServiceModel.NetTcp >= 4.5.3",
+      "System.ServiceModel.Security >= 4.5.3",
       "log4net >= 2.0.8"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USUARIO\\.nuget\\packages\\": {},
+    "C:\\Users\\E266864\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LIGHUEN\\GIT\\Economia\\ESIDIFC75\\ESIDIFC75.csproj",
+      "projectUniqueName": "C:\\LIGHUEN\\ECONOMIA\\ESIDIF\\ESIDIFC75\\ESIDIFC75.csproj",
       "projectName": "ESIDIFC75",
-      "projectPath": "D:\\LIGHUEN\\GIT\\Economia\\ESIDIFC75\\ESIDIFC75.csproj",
-      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "D:\\LIGHUEN\\GIT\\Economia\\ESIDIFC75\\obj\\",
+      "projectPath": "C:\\LIGHUEN\\ECONOMIA\\ESIDIF\\ESIDIFC75\\ESIDIFC75.csproj",
+      "packagesPath": "C:\\Users\\E266864\\.nuget\\packages\\",
+      "outputPath": "C:\\LIGHUEN\\ECONOMIA\\ESIDIF\\ESIDIFC75\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\E266864\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13280,8 +13456,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\LIGHUEN\\GIT\\Economia\\ESIDIF\\ESIDIF.csproj": {
-              "projectPath": "D:\\LIGHUEN\\GIT\\Economia\\ESIDIF\\ESIDIF.csproj"
+            "C:\\LIGHUEN\\ECONOMIA\\ESIDIF\\ESIDIF\\ESIDIF.csproj": {
+              "projectPath": "C:\\LIGHUEN\\ECONOMIA\\ESIDIF\\ESIDIF\\ESIDIF.csproj"
             }
           }
         }
@@ -13315,6 +13491,22 @@
           "SoapCore": {
             "target": "Package",
             "version": "[0.9.9.6, )"
+          },
+          "System.ServiceModel.Duplex": {
+            "target": "Package",
+            "version": "[4.5.3, )"
+          },
+          "System.ServiceModel.Http": {
+            "target": "Package",
+            "version": "[4.5.3, )"
+          },
+          "System.ServiceModel.NetTcp": {
+            "target": "Package",
+            "version": "[4.5.3, )"
+          },
+          "System.ServiceModel.Security": {
+            "target": "Package",
+            "version": "[4.5.3, )"
           },
           "log4net": {
             "target": "Package",

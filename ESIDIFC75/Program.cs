@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace ESIDIFC75
 {
@@ -28,15 +28,24 @@ namespace ESIDIFC75
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: "+ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
 
             }
 
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        public static IWebHost CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureAppConfiguration(ConfigConfiguration)
+                .UseStartup<Startup>()
+            .Build();
+
+        static void ConfigConfiguration(WebHostBuilderContext webHostBuilderContext, IConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables();
+        }
     }
 }

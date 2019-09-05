@@ -1,33 +1,26 @@
-﻿using ESIDIF.Tools;
-using log4net;
+﻿using log4net;
+using ESIDIFC75.Business;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.ServiceModel;
-using System.Threading.Tasks;
+using ESIDIF.Models;
+using Microsoft.Extensions.Options;
 
 namespace ESIDIFC75
 {
-    [ServiceContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg", Name = "C75Service")]
+    [System.ServiceModel.ServiceContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg", Name = "C75Service")]
     public class C75Service
     {
+        private Sources _sources = new Sources();
+                
         private static readonly ILog _logger = LogManager.GetLogger(typeof(C75Service));
 
-        [OperationContract(Action = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType")]
-        public string generarInformeDeGastosPortType([System.Xml.Serialization.XmlElement("generarInformeDeGastos")]string nose)
+        [System.ServiceModel.OperationContract(Action = "/generarInformeDeGastosPortType")]
+        public Models.generarInformeDeGastosResponse generarInformeDeGastosPortType([System.Xml.Serialization.XmlElement("generarInformeDeGastos")]Models.generarInformeDeGastos data)
         {
             try
             {
-                _logger.Info("Envio: "+nose);
-                if (nose != null)
-                {
-                    return Functions.AregarAlgo(nose);
-                }
-                else
-                {
-                    return "Error";
-                }
+                var request = _sources.generarInformeDeGastosPortTypeWeb(data);
+
+                return request;
             }
             catch (Exception ex)
             {
@@ -37,5 +30,6 @@ namespace ESIDIFC75
 
             return null;
         }
+        
     }
 }

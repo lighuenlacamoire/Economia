@@ -7,33 +7,48 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using log4net;
 using SoapCore;
-using ESIDIF.Configuration;
+using ESIDIF.Extensions;
+using ESIDIF.Models;
+using ESIDIFC75.Extensions;
+using Microsoft.Extensions.Options;
 
 namespace ESIDIFC75
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
+            this.HostingEnvironment = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment HostingEnvironment { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.TryAddSingleton<Service.TramitesFacade, Service.TramitesFacadeClient>();
-            //services.AddSingleton(new Service.TramitesFacadeClient());
+
+            services.AddSingleton(Configuration.GetSection(typeof(Settings).Name).Get<Settings>());
+
+            services.AddSoapCore();
+            services.AddSoapServiceOperationTuner(new C75ServiceOperationTuner());
             services.AddSingleton(new C75Service());
             services.AddSoapExceptionTransformer((ex) => ex.Message);
+                        
             services.AddMvc(options =>
             {
                 options.ReturnHttpNotAcceptable = false;
+                options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                 // If you need to add support for XML
-                options.OutputFormatters.Add(new StringOutputFormatter());
+                //options.OutputFormatters.Add(new StringOutputFormatter());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", "text/xml");
 
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddXmlSerializerFormatters()
+            .AddXmlDataContractSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,7 +104,7 @@ namespace ESIDIFC75
 
             //Add our new middleware to the pipeline
             //app.UseSoapEndpoint<Service.TramitesFacade>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);
-            app.UseSoapEndpoint<C75Service>("/generarInformeDeGastosC75.asmx", httpBinding, SoapSerializer.XmlSerializer);
+            app.UseSoapEndpoint<C75Service>("/generarInformeDeGastosC75.asmx", httpBinding, SoapSerializer.DataContractSerializer);
             app.UseMvc();
         }
     }

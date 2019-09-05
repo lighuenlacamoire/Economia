@@ -7,22 +7,25 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using log4net;
 using SoapCore;
-using ESIDIF.Configuration;
+using ESIDIF.Extensions;
 using System;
 using Microsoft.AspNetCore.Http;
 using ESIDIF.Tools;
-using ESIDIFCuota.Models.Session;
+using ESIDIFCuota.Extensions;
+using ESIDIF.Models;
 
 namespace ESIDIFCuota
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
+            HostingEnvironment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment HostingEnvironment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,6 +39,8 @@ namespace ESIDIFCuota
             //services.TryAddSingleton<Service.TramitesFacade, Service.TramitesFacadeClient>();
             //services.AddSingleton(new Service.TramitesFacadeClient());
             services.AddSoapExceptionTransformer((ex) => ex.Message);
+            services.AddSoapCore();
+            services.AddSoapServiceOperationTuner(new CuotaServiceOperationTuner());
 
             services.AddHttpContextAccessor();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -48,16 +53,24 @@ namespace ESIDIFCuota
             services.AddMvc(options =>
             {
                 options.ReturnHttpNotAcceptable = false;
+                options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                 // If you need to add support for XML
-                options.OutputFormatters.Add(new StringOutputFormatter());
+                //options.OutputFormatters.Add(new StringOutputFormatter());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", "text/xml");
 
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddXmlSerializerFormatters()
+            .AddXmlDataContractSerializerFormatters();
+            
 
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -102,34 +115,18 @@ namespace ESIDIFCuota
 
             ILog logger = LogManager.GetLogger(typeof(CuotaService));
 
-            // IMPORTANT: This session call MUST go before UseMvc()
-
-            //app.Use(async (context, next) =>
-            //{
-            //    context.Session.SetObject("UserSession",
-            //        new User {  });
-            //    await next();
-            //});
-
-            //app.Run(async (context) =>
-            //{
-            //    var user = context.Session.GetObject<User>("UserSession");
-            //    await context.Response.WriteAsync($"{user.Username}, {user.Email}");
-            //});
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
 
-            // add logging middleware
             app.UseMiddleware<LogResponseMiddleware>(logger);
             app.UseMiddleware<LogRequestMiddleware>(logger);
+            app.UseMiddleware<DirectorMiddleware>(logger);
 
-            //Add our new middleware to the pipeline
-            //app.UseSoapEndpoint<Service.TramitesFacade>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);
             app.UseSoapEndpoint<CuotaService>("/CuotaService.asmx", httpBinding, SoapSerializer.XmlSerializer);
-
             app.UseMvc();
         }
     }
+
 }
