@@ -10182,3 +10182,723 @@
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
+2019-09-12 17:21:48,295 [6] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFC75/generarInformeDeGastosC75.asmx
+2019-09-12 17:21:48,739 [6] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+
+2019-09-12 17:21:49,331 [6] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/informeDeGastos"/><xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models"/><xs:element name="generarInformeDeGastosPortType"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="generarInformeDeGastos" nillable="true" type="tns:generarInformeDeGastos"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarInformeDeGastosPortTypeResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="generarInformeDeGastosPortTypeResult" nillable="true" type="q1:generarInformeDeGastosResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="generarInformeDeGastos" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="datosInicialesInformeDeGastos" nillable="true" type="q1:DatosInicialesInformeDeGastosType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/informeDeGastos"/><xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="generarInformeDeGastos" nillable="true" type="tns:generarInformeDeGastos"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="IdentificacionComprobanteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificacionComprobanteType" nillable="true" type="tns:IdentificacionComprobanteType"/><xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="anio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType"/><xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType"/><xs:complexType name="CuentaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="banco" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cuenta" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="sucursal" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CuentaType" nillable="true" type="tns:CuentaType"/><xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ug" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType"/><xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="saf" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType"/><xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="partida" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="ArrayOfItemPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemPresupuestarioInformeDeGastosType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ArrayOfItemPresupuestarioInformeDeGastosType"/><xs:complexType name="ItemPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="importeCompromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="imputacion" nillable="true" type="q1:ImputacionPresupuestariaCreditoType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="recac" nillable="true" type="q2:CodigoTramoPartidaType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q3:CodigoTramoPartidaType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="ud" nillable="true" type="q4:UnidadDescentralizadaType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemPresupuestarioInformeDeGastosType"/><xs:complexType name="ArrayOfItemNoPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemNoPresupuestarioInformeDeGastosType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioInformeDeGastosType"/><xs:complexType name="ItemNoPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="axt" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemNoPresupuestarioInformeDeGastosType"/><xs:complexType name="DatosInicialesInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="q5:IdentificacionComprobanteType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q6:IdentificadorDeTramiteType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q7:DocumentoRespaldatorioType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="comprobanteOrigen" nillable="true" type="q8:IdentificacionComprobanteType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="fechaAutorizacion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cuentaFinanciadora" nillable="true" type="q9:CuentaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="pagoDirecto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeCompromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeDeducciones" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeDeduccionesPagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeNetoPagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="uepex" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="tns:ArrayOfItemPresupuestarioInformeDeGastosType"/><xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="tns:ArrayOfItemNoPresupuestarioInformeDeGastosType"/></xs:sequence></xs:complexType><xs:element name="DatosInicialesInformeDeGastosType" nillable="true" type="tns:DatosInicialesInformeDeGastosType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="generarInformeDeGastosResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="generarInformeDeGastosResponse" nillable="true" type="tns:generarInformeDeGastosResponse"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType"/></wsdl:message><wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage"><wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse"/></wsdl:message><wsdl:portType name="C75Service"><wsdl:operation name="generarInformeDeGastosPortType"><wsdl:input wsam:Action="/generarInformeDeGastosPortType" message="tns:C75Service_generarInformeDeGastosPortType_InputMessage"/><wsdl:output wsam:Action="/generarInformeDeGastosPortTypeResponse" message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarInformeDeGastosPortType"><soap:operation soapAction="/generarInformeDeGastosPortType" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="C75Service"><wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service"><soap:address location="http://localhost/ESIDIFC75/generarInformeDeGastosC75.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-09-12 17:21:49,339 [6] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" name="C75Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/informeDeGastos" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" />
+      <xs:element name="generarInformeDeGastosPortType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="generarInformeDeGastos" nillable="true" type="tns:generarInformeDeGastos" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarInformeDeGastosPortTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="generarInformeDeGastosPortTypeResult" nillable="true" type="q1:generarInformeDeGastosResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="generarInformeDeGastos" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="datosInicialesInformeDeGastos" nillable="true" type="q1:DatosInicialesInformeDeGastosType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" />
+          <xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="generarInformeDeGastos" nillable="true" type="tns:generarInformeDeGastos" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="IdentificacionComprobanteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificacionComprobanteType" nillable="true" type="tns:IdentificacionComprobanteType" />
+      <xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="anio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType" />
+      <xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType" />
+      <xs:complexType name="CuentaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="banco" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cuenta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sucursal" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CuentaType" nillable="true" type="tns:CuentaType" />
+      <xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ug" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType" />
+      <xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType" />
+      <xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="ArrayOfItemPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemPresupuestarioInformeDeGastosType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ArrayOfItemPresupuestarioInformeDeGastosType" />
+      <xs:complexType name="ItemPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="importeCompromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="imputacion" nillable="true" type="q1:ImputacionPresupuestariaCreditoType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q2:CodigoTramoPartidaType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q3:CodigoTramoPartidaType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="ud" nillable="true" type="q4:UnidadDescentralizadaType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemPresupuestarioInformeDeGastosType" />
+      <xs:complexType name="ArrayOfItemNoPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemNoPresupuestarioInformeDeGastosType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioInformeDeGastosType" />
+      <xs:complexType name="ItemNoPresupuestarioInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="axt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemNoPresupuestarioInformeDeGastosType" nillable="true" type="tns:ItemNoPresupuestarioInformeDeGastosType" />
+      <xs:complexType name="DatosInicialesInformeDeGastosType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="q5:IdentificacionComprobanteType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q6:IdentificadorDeTramiteType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q7:DocumentoRespaldatorioType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="comprobanteOrigen" nillable="true" type="q8:IdentificacionComprobanteType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="fechaAutorizacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cuentaFinanciadora" nillable="true" type="q9:CuentaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="pagoDirecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeCompromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeDevengado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importePagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeDeducciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeDeduccionesPagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeNetoPagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="uepex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="tns:ArrayOfItemPresupuestarioInformeDeGastosType" />
+          <xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="tns:ArrayOfItemNoPresupuestarioInformeDeGastosType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DatosInicialesInformeDeGastosType" nillable="true" type="tns:DatosInicialesInformeDeGastosType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFC75.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="generarInformeDeGastosResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="generarInformeDeGastosResponse" nillable="true" type="tns:generarInformeDeGastosResponse" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortType" />
+  </wsdl:message>
+  <wsdl:message name="C75Service_generarInformeDeGastosPortType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarInformeDeGastosPortTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="C75Service">
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <wsdl:input wsam:Action="/generarInformeDeGastosPortType" message="tns:C75Service_generarInformeDeGastosPortType_InputMessage" />
+      <wsdl:output wsam:Action="/generarInformeDeGastosPortTypeResponse" message="tns:C75Service_generarInformeDeGastosPortType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_C75Service" type="tns:C75Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarInformeDeGastosPortType">
+      <soap:operation soapAction="/generarInformeDeGastosPortType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="C75Service">
+    <wsdl:port name="BasicHttpBinding_C75Service" binding="tns:BasicHttpBinding_C75Service">
+      <soap:address location="http://localhost/ESIDIFC75/generarInformeDeGastosC75.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-09-12 17:22:16,139 [13] INFO  ESIDIFC75.C75Service [(null)] - REQUEST METHOD: POST, REQUEST BODY: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inf:generarInformeDeGastosPortType>
+         <!--Optional:-->
+         <inf:generarInformeDeGastos>
+            <!--Optional:-->
+            <inf:datosInicialesInformeDeGastos>
+               <!--Optional:-->
+               <inf1:identificacionComprobante>
+                  <!--Optional:-->
+                  <com:subTipoRegistro>?</com:subTipoRegistro>
+                  <!--Optional:-->
+                  <com:tipoComprobante>?</com:tipoComprobante>
+                  <!--Optional:-->
+                  <com:tipoRegistro>?</com:tipoRegistro>
+                  <!--Optional:-->
+                  <com:numero>?</com:numero>
+                  <!--Optional:-->
+                  <com:ejercicio>?</com:ejercicio>
+                  <!--Optional:-->
+                  <com:entidadEmisora>?</com:entidadEmisora>
+               </inf1:identificacionComprobante>
+               <!--Optional:-->
+               <inf1:entidadProceso>?</inf1:entidadProceso>
+               <!--Optional:-->
+               <inf1:identificadorTramite>
+                  <!--Optional:-->
+                  <com:anio>?</com:anio>
+                  <!--Optional:-->
+                  <com:identificador>?</com:identificador>
+                  <!--Optional:-->
+                  <com:tipo>?</com:tipo>
+               </inf1:identificadorTramite>
+               <!--Optional:-->
+               <inf1:documentoRespaldatorio>
+                  <!--Optional:-->
+                  <com:ejercicio>?</com:ejercicio>
+                  <!--Optional:-->
+                  <com:numero>?</com:numero>
+                  <!--Optional:-->
+                  <com:tipo>?</com:tipo>
+               </inf1:documentoRespaldatorio>
+               <!--Optional:-->
+               <inf1:comprobanteOrigen>
+                  <!--Optional:-->
+                  <com:subTipoRegistro>?</com:subTipoRegistro>
+                  <!--Optional:-->
+                  <com:tipoComprobante>?</com:tipoComprobante>
+                  <!--Optional:-->
+                  <com:tipoRegistro>?</com:tipoRegistro>
+                  <!--Optional:-->
+                  <com:numero>?</com:numero>
+                  <!--Optional:-->
+                  <com:ejercicio>?</com:ejercicio>
+                  <!--Optional:-->
+                  <com:entidadEmisora>?</com:entidadEmisora>
+               </inf1:comprobanteOrigen>
+               <!--Optional:-->
+               <inf1:fechaAutorizacion>?</inf1:fechaAutorizacion>
+               <!--Optional:-->
+               <inf1:fechaComprobante>?</inf1:fechaComprobante>
+               <!--Optional:-->
+               <inf1:fechaRegistro>?</inf1:fechaRegistro>
+               <!--Optional:-->
+               <inf1:periodoImpacto>?</inf1:periodoImpacto>
+               <!--Optional:-->
+               <inf1:cuentaFinanciadora>
+                  <!--Optional:-->
+                  <com:banco>?</com:banco>
+                  <!--Optional:-->
+                  <com:cuenta>?</com:cuenta>
+                  <!--Optional:-->
+                  <com:sucursal>?</com:sucursal>
+               </inf1:cuentaFinanciadora>
+               <!--Optional:-->
+               <inf1:pagoDirecto>?</inf1:pagoDirecto>
+               <!--Optional:-->
+               <inf1:medioDePago>?</inf1:medioDePago>
+               <!--Optional:-->
+               <inf1:importeCompromiso>?</inf1:importeCompromiso>
+               <!--Optional:-->
+               <inf1:importeDevengado>?</inf1:importeDevengado>
+               <!--Optional:-->
+               <inf1:importePagado>?</inf1:importePagado>
+               <!--Optional:-->
+               <inf1:importeDeducciones>?</inf1:importeDeducciones>
+               <!--Optional:-->
+               <inf1:importeDeduccionesPagado>?</inf1:importeDeduccionesPagado>
+               <!--Optional:-->
+               <inf1:importeNetoPagado>?</inf1:importeNetoPagado>
+               <!--Optional:-->
+               <inf1:uepex>?</inf1:uepex>
+               <!--Optional:-->
+               <inf1:observaciones>?</inf1:observaciones>
+               <!--Optional:-->
+               <inf1:itemsPresupuestarios>
+                  <!--Zero or more repetitions:-->
+                  <inf1:ItemPresupuestarioInformeDeGastosType>
+                     <!--Optional:-->
+                     <inf1:importeCompromiso>?</inf1:importeCompromiso>
+                     <!--Optional:-->
+                     <inf1:importeDevengado>?</inf1:importeDevengado>
+                     <!--Optional:-->
+                     <inf1:importePagado>?</inf1:importePagado>
+                     <!--Optional:-->
+                     <inf1:imputacion>
+                        <!--Optional:-->
+                        <com:aperturaProg>?</com:aperturaProg>
+                        <!--Optional:-->
+                        <com:bapin>?</com:bapin>
+                        <!--Optional:-->
+                        <com:ejercicio>?</com:ejercicio>
+                        <!--Optional:-->
+                        <com:entidadDestino>?</com:entidadDestino>
+                        <!--Optional:-->
+                        <com:fuente>?</com:fuente>
+                        <!--Optional:-->
+                        <com:institucion>?</com:institucion>
+                        <!--Optional:-->
+                        <com:moneda>?</com:moneda>
+                        <!--Optional:-->
+                        <com:objetoGasto>?</com:objetoGasto>
+                        <!--Optional:-->
+                        <com:pex>?</com:pex>
+                        <!--Optional:-->
+                        <com:servicio>?</com:servicio>
+                        <!--Optional:-->
+                        <com:ug>?</com:ug>
+                     </inf1:imputacion>
+                     <!--Optional:-->
+                     <inf1:recac>
+                        <!--Optional:-->
+                        <com:codigo>?</com:codigo>
+                        <!--Optional:-->
+                        <com:id>?</com:id>
+                        <!--Optional:-->
+                        <com:partida>?</com:partida>
+                        <!--Optional:-->
+                        <com:tramo>?</com:tramo>
+                     </inf1:recac>
+                     <!--Optional:-->
+                     <inf1:sigade>
+                        <!--Optional:-->
+                        <com:codigo>?</com:codigo>
+                        <!--Optional:-->
+                        <com:id>?</com:id>
+                        <!--Optional:-->
+                        <com:partida>?</com:partida>
+                        <!--Optional:-->
+                        <com:tramo>?</com:tramo>
+                     </inf1:sigade>
+                     <!--Optional:-->
+                     <inf1:ud>
+                        <!--Optional:-->
+                        <com:codigo>?</com:codigo>
+                        <!--Optional:-->
+                        <com:descripcion>?</com:descripcion>
+                        <!--Optional:-->
+                        <com:ejercicio>?</com:ejercicio>
+                        <!--Optional:-->
+                        <com:saf>?</com:saf>
+                     </inf1:ud>
+                  </inf1:ItemPresupuestarioInformeDeGastosType>
+               </inf1:itemsPresupuestarios>
+               <!--Optional:-->
+               <inf1:itemsNoPresupuestarios>
+                  <!--Zero or more repetitions:-->
+                  <inf1:ItemNoPresupuestarioInformeDeGastosType>
+                     <!--Optional:-->
+                     <inf1:axt>?</inf1:axt>
+                     <!--Optional:-->
+                     <inf1:ejercicio>?</inf1:ejercicio>
+                     <!--Optional:-->
+                     <inf1:importeDevengado>?</inf1:importeDevengado>
+                     <!--Optional:-->
+                     <inf1:importePagado>?</inf1:importePagado>
+                  </inf1:ItemNoPresupuestarioInformeDeGastosType>
+               </inf1:itemsNoPresupuestarios>
+            </inf:datosInicialesInformeDeGastos>
+            <!--Optional:-->
+            <inf:gestionExterna>?</inf:gestionExterna>
+         </inf:generarInformeDeGastos>
+      </inf:generarInformeDeGastosPortType>
+   </soapenv:Body>
+</soapenv:Envelope>, REQUEST URL: http://localhost/ESIDIFC75/generarInformeDeGastosC75.asmx
+2019-09-12 17:22:16,140 [13] INFO  ESIDIFC75.C75Service [(null)] - Consulta SAP - Servicio: 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <!--Optional:-->
+      <inf:generarInformeDeGastos>
+        <!--Optional:-->
+        <inf:datosInicialesInformeDeGastos>
+          <!--Optional:-->
+          <inf1:identificacionComprobante>
+            <!--Optional:-->
+            <com:subTipoRegistro>?</com:subTipoRegistro>
+            <!--Optional:-->
+            <com:tipoComprobante>?</com:tipoComprobante>
+            <!--Optional:-->
+            <com:tipoRegistro>?</com:tipoRegistro>
+            <!--Optional:-->
+            <com:numero>?</com:numero>
+            <!--Optional:-->
+            <com:ejercicio>?</com:ejercicio>
+            <!--Optional:-->
+            <com:entidadEmisora>?</com:entidadEmisora>
+          </inf1:identificacionComprobante>
+          <!--Optional:-->
+          <inf1:entidadProceso>?</inf1:entidadProceso>
+          <!--Optional:-->
+          <inf1:identificadorTramite>
+            <!--Optional:-->
+            <com:anio>?</com:anio>
+            <!--Optional:-->
+            <com:identificador>?</com:identificador>
+            <!--Optional:-->
+            <com:tipo>?</com:tipo>
+          </inf1:identificadorTramite>
+          <!--Optional:-->
+          <inf1:documentoRespaldatorio>
+            <!--Optional:-->
+            <com:ejercicio>?</com:ejercicio>
+            <!--Optional:-->
+            <com:numero>?</com:numero>
+            <!--Optional:-->
+            <com:tipo>?</com:tipo>
+          </inf1:documentoRespaldatorio>
+          <!--Optional:-->
+          <inf1:comprobanteOrigen>
+            <!--Optional:-->
+            <com:subTipoRegistro>?</com:subTipoRegistro>
+            <!--Optional:-->
+            <com:tipoComprobante>?</com:tipoComprobante>
+            <!--Optional:-->
+            <com:tipoRegistro>?</com:tipoRegistro>
+            <!--Optional:-->
+            <com:numero>?</com:numero>
+            <!--Optional:-->
+            <com:ejercicio>?</com:ejercicio>
+            <!--Optional:-->
+            <com:entidadEmisora>?</com:entidadEmisora>
+          </inf1:comprobanteOrigen>
+          <!--Optional:-->
+          <inf1:fechaAutorizacion>?</inf1:fechaAutorizacion>
+          <!--Optional:-->
+          <inf1:fechaComprobante>?</inf1:fechaComprobante>
+          <!--Optional:-->
+          <inf1:fechaRegistro>?</inf1:fechaRegistro>
+          <!--Optional:-->
+          <inf1:periodoImpacto>?</inf1:periodoImpacto>
+          <!--Optional:-->
+          <inf1:cuentaFinanciadora>
+            <!--Optional:-->
+            <com:banco>?</com:banco>
+            <!--Optional:-->
+            <com:cuenta>?</com:cuenta>
+            <!--Optional:-->
+            <com:sucursal>?</com:sucursal>
+          </inf1:cuentaFinanciadora>
+          <!--Optional:-->
+          <inf1:pagoDirecto>?</inf1:pagoDirecto>
+          <!--Optional:-->
+          <inf1:medioDePago>?</inf1:medioDePago>
+          <!--Optional:-->
+          <inf1:importeCompromiso>?</inf1:importeCompromiso>
+          <!--Optional:-->
+          <inf1:importeDevengado>?</inf1:importeDevengado>
+          <!--Optional:-->
+          <inf1:importePagado>?</inf1:importePagado>
+          <!--Optional:-->
+          <inf1:importeDeducciones>?</inf1:importeDeducciones>
+          <!--Optional:-->
+          <inf1:importeDeduccionesPagado>?</inf1:importeDeduccionesPagado>
+          <!--Optional:-->
+          <inf1:importeNetoPagado>?</inf1:importeNetoPagado>
+          <!--Optional:-->
+          <inf1:uepex>?</inf1:uepex>
+          <!--Optional:-->
+          <inf1:observaciones>?</inf1:observaciones>
+          <!--Optional:-->
+          <inf1:itemsPresupuestarios>
+            <!--Zero or more repetitions:-->
+            <inf1:ItemPresupuestarioInformeDeGastosType>
+              <!--Optional:-->
+              <inf1:importeCompromiso>?</inf1:importeCompromiso>
+              <!--Optional:-->
+              <inf1:importeDevengado>?</inf1:importeDevengado>
+              <!--Optional:-->
+              <inf1:importePagado>?</inf1:importePagado>
+              <!--Optional:-->
+              <inf1:imputacion>
+                <!--Optional:-->
+                <com:aperturaProg>?</com:aperturaProg>
+                <!--Optional:-->
+                <com:bapin>?</com:bapin>
+                <!--Optional:-->
+                <com:ejercicio>?</com:ejercicio>
+                <!--Optional:-->
+                <com:entidadDestino>?</com:entidadDestino>
+                <!--Optional:-->
+                <com:fuente>?</com:fuente>
+                <!--Optional:-->
+                <com:institucion>?</com:institucion>
+                <!--Optional:-->
+                <com:moneda>?</com:moneda>
+                <!--Optional:-->
+                <com:objetoGasto>?</com:objetoGasto>
+                <!--Optional:-->
+                <com:pex>?</com:pex>
+                <!--Optional:-->
+                <com:servicio>?</com:servicio>
+                <!--Optional:-->
+                <com:ug>?</com:ug>
+              </inf1:imputacion>
+              <!--Optional:-->
+              <inf1:recac>
+                <!--Optional:-->
+                <com:codigo>?</com:codigo>
+                <!--Optional:-->
+                <com:id>?</com:id>
+                <!--Optional:-->
+                <com:partida>?</com:partida>
+                <!--Optional:-->
+                <com:tramo>?</com:tramo>
+              </inf1:recac>
+              <!--Optional:-->
+              <inf1:sigade>
+                <!--Optional:-->
+                <com:codigo>?</com:codigo>
+                <!--Optional:-->
+                <com:id>?</com:id>
+                <!--Optional:-->
+                <com:partida>?</com:partida>
+                <!--Optional:-->
+                <com:tramo>?</com:tramo>
+              </inf1:sigade>
+              <!--Optional:-->
+              <inf1:ud>
+                <!--Optional:-->
+                <com:codigo>?</com:codigo>
+                <!--Optional:-->
+                <com:descripcion>?</com:descripcion>
+                <!--Optional:-->
+                <com:ejercicio>?</com:ejercicio>
+                <!--Optional:-->
+                <com:saf>?</com:saf>
+              </inf1:ud>
+            </inf1:ItemPresupuestarioInformeDeGastosType>
+          </inf1:itemsPresupuestarios>
+          <!--Optional:-->
+          <inf1:itemsNoPresupuestarios>
+            <!--Zero or more repetitions:-->
+            <inf1:ItemNoPresupuestarioInformeDeGastosType>
+              <!--Optional:-->
+              <inf1:axt>?</inf1:axt>
+              <!--Optional:-->
+              <inf1:ejercicio>?</inf1:ejercicio>
+              <!--Optional:-->
+              <inf1:importeDevengado>?</inf1:importeDevengado>
+              <!--Optional:-->
+              <inf1:importePagado>?</inf1:importePagado>
+            </inf1:ItemNoPresupuestarioInformeDeGastosType>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <!--Optional:-->
+        <inf:gestionExterna>?</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-12 17:23:04,787 [13] INFO  ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Ingreso
+2019-09-12 17:23:04,787 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Seteando variables de contexto.
+2019-09-12 17:23:05,863 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Seteando PROXY.
+2019-09-12 17:23:06,733 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Cargando certificado X509.
+2019-09-12 17:23:09,028 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - IGNORA_ERROR_CERTI = true.
+2019-09-12 17:23:10,199 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Certificado X509 cargado exitosamente.
+2019-09-12 17:23:10,392 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Creando Bean
+2019-09-12 17:23:13,542 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Mapeando a objeto XML.
+2019-09-12 17:23:23,268 [13] DEBUG ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Armando header de autenticacion
+2019-09-12 17:23:30,565 [13] INFO  ESIDIFC75.C75Service [(null)] - Consulta Servicio - ESIDIF : 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <wsse:Security soapenv:mustUnderstand="1">
+      <wsse:UsernameToken wsu:Id="UsernameToken-1">
+        <wsse:Username>SAP-850</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">AnsesEsidif2019</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <wsa:To soapenv:mustUnderstand="1">https://tws4-si.mecon.gov.ar/SD_Core/ws</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosService</wsa:Action>
+    <wsa:MessageID>urn:uuid:77608c08-2b45-4df0-9042-e06f43e399c6</wsa:MessageID>
+  </soapenv:Header>
+  <soapenv:Body>
+    <inf:generarInformeDeGastos>
+      <inf:datosInicialesInformeDeGastos>
+        <inf1:identificacionComprobante>
+          <com:tipoComprobante>?</com:tipoComprobante>
+          <com:numero>0</com:numero>
+          <com:ejercicio>0</com:ejercicio>
+          <com:entidadEmisora>?</com:entidadEmisora>
+        </inf1:identificacionComprobante>
+        <inf1:entidadProceso>?</inf1:entidadProceso>
+        <inf1:identificadorTramite>
+          <com:anio>0</com:anio>
+        </inf1:identificadorTramite>
+        <inf1:documentoRespaldatorio>
+          <com:numero>0</com:numero>
+          <com:ejercicio>0</com:ejercicio>
+        </inf1:documentoRespaldatorio>
+        <inf1:comprobanteOrigen>
+          <com:tipoComprobante>?</com:tipoComprobante>
+          <com:numero>0</com:numero>
+          <com:ejercicio>0</com:ejercicio>
+          <com:entidadEmisora>?</com:entidadEmisora>
+        </inf1:comprobanteOrigen>
+        <inf1:fechaAutorizacion>0001-01-01T00:00:00</inf1:fechaAutorizacion>
+        <inf1:fechaComprobante>0001-01-01T00:00:00</inf1:fechaComprobante>
+        <inf1:cuentaFinanciadora>
+          <com:banco>0</com:banco>
+        </inf1:cuentaFinanciadora>
+        <inf1:pagoDirecto>false</inf1:pagoDirecto>
+        <inf1:medioDePago>CHE</inf1:medioDePago>
+        <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+        <inf1:importeDevengado>0.00</inf1:importeDevengado>
+        <inf1:importePagado>0.00</inf1:importePagado>
+        <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+        <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+        <inf1:importeNetoPagado>0.00</inf1:importeNetoPagado>
+        <inf1:uepex>?</inf1:uepex>
+        <inf1:observaciones>?</inf1:observaciones>
+        <inf1:itemsNoPresupuestarios>
+          <inf1:axt>0</inf1:axt>
+          <inf1:importeDevengado>0</inf1:importeDevengado>
+          <inf1:importePagado>0</inf1:importePagado>
+          <inf1:ejercicio>0</inf1:ejercicio>
+        </inf1:itemsNoPresupuestarios>
+      </inf:datosInicialesInformeDeGastos>
+      <inf:gestionExterna>LOYS_2345</inf:gestionExterna>
+    </inf:generarInformeDeGastos>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-12 17:23:35,048 [13] ERROR ESIDIFC75.C75Service [(null)] - GenerarInformeDeGastos - Error en la ejecucion : The remote server returned an error: (500) Internal Server Error.
+2019-09-12 17:23:46,690 [13] INFO  ESIDIFC75.C75Service [(null)] - RESPONSE LOG: <?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><s:Fault><faultcode>s:Client</faultcode><faultstring>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;SOAP-ENV:Header xmlns:wsa="http://www.w3.org/2005/08/addressing"&gt;&lt;wsa:To SOAP-ENV:mustUnderstand="1"&gt;http://www.w3.org/2005/08/addressing/anonymous&lt;/wsa:To&gt;&lt;wsa:Action&gt;https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosServiceResponse&lt;/wsa:Action&gt;&lt;wsa:MessageID&gt;urn:uuid:5c6fe9d0-6759-467d-8553-d6c78af77368&lt;/wsa:MessageID&gt;&lt;wsa:RelatesTo&gt;urn:uuid:77608c08-2b45-4df0-9042-e06f43e399c6&lt;/wsa:RelatesTo&gt;&lt;/SOAP-ENV:Header&gt;&lt;SOAP-ENV:Body&gt;&lt;SOAP-ENV:Fault&gt;&lt;faultcode&gt;SOAP-ENV:Server&lt;/faultcode&gt;&lt;faultstring xml:lang="en-US"&gt;Ha ocurrido un error inesperado en el servidor, por favor póngase en contacto con un administrador.&lt;/faultstring&gt;&lt;detail&gt;&lt;9999 xmlns="https://ws-si.mecon.gov.ar/ws/"&gt;JAXB unmarshalling exception; nested exception is javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; cvc-length-valid: Value '?' with length = '1' is not facet-valid with respect to length '3' for type 'EmisorType'.]&lt;/9999&gt;&lt;/detail&gt;&lt;/SOAP-ENV:Fault&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</faultstring></s:Fault></s:Body></s:Envelope>
+2019-09-12 17:23:46,691 [13] INFO  ESIDIFC75.C75Service [(null)] - Respuesta Servicio - SAP: 
+<s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <s:Fault>
+      <faultcode>s:Client</faultcode>
+      <faultstring>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;SOAP-ENV:Header xmlns:wsa="http://www.w3.org/2005/08/addressing"&gt;&lt;wsa:To SOAP-ENV:mustUnderstand="1"&gt;http://www.w3.org/2005/08/addressing/anonymous&lt;/wsa:To&gt;&lt;wsa:Action&gt;https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosServiceResponse&lt;/wsa:Action&gt;&lt;wsa:MessageID&gt;urn:uuid:5c6fe9d0-6759-467d-8553-d6c78af77368&lt;/wsa:MessageID&gt;&lt;wsa:RelatesTo&gt;urn:uuid:77608c08-2b45-4df0-9042-e06f43e399c6&lt;/wsa:RelatesTo&gt;&lt;/SOAP-ENV:Header&gt;&lt;SOAP-ENV:Body&gt;&lt;SOAP-ENV:Fault&gt;&lt;faultcode&gt;SOAP-ENV:Server&lt;/faultcode&gt;&lt;faultstring xml:lang="en-US"&gt;Ha ocurrido un error inesperado en el servidor, por favor póngase en contacto con un administrador.&lt;/faultstring&gt;&lt;detail&gt;&lt;9999 xmlns="https://ws-si.mecon.gov.ar/ws/"&gt;JAXB unmarshalling exception; nested exception is javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; cvc-length-valid: Value '?' with length = '1' is not facet-valid with respect to length '3' for type 'EmisorType'.]&lt;/9999&gt;&lt;/detail&gt;&lt;/SOAP-ENV:Fault&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</faultstring>
+    </s:Fault>
+  </s:Body>
+</s:Envelope>
