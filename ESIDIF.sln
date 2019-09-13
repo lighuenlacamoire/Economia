@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIF", "ESIDIF\ESIDIF.csproj", "{6254F5CD-5086-44C1-A145-937C4AA6622A}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIFC75", "ESIDIFC75\ESIDIFC75.csproj", "{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIFCuota", "ESIDIFCuota\ESIDIFCuota.csproj", "{00648FFD-ED4F-401E-BD20-E7DAD4308A51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESIDIFAcumuladores", "ESIDIFAcumuladores\ESIDIFAcumuladores.csproj", "{41844944-73AA-48A0-8189-E9715BB25D25}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIDIF", "ESIDIF\ESIDIF.csproj", "{DCF3F131-1102-411B-A601-BD5C45E4F9A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIDIFAcumuladores", "ESIDIFAcumuladores\ESIDIFAcumuladores.csproj", "{41844944-73AA-48A0-8189-E9715BB25D25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6254F5CD-5086-44C1-A145-937C4AA6622A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6254F5CD-5086-44C1-A145-937C4AA6622A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6254F5CD-5086-44C1-A145-937C4AA6622A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6254F5CD-5086-44C1-A145-937C4AA6622A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06AAF19C-8DC7-4BCE-B71F-8EAD817F943D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +33,6 @@ Global
 		{41844944-73AA-48A0-8189-E9715BB25D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41844944-73AA-48A0-8189-E9715BB25D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41844944-73AA-48A0-8189-E9715BB25D25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCF3F131-1102-411B-A601-BD5C45E4F9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCF3F131-1102-411B-A601-BD5C45E4F9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCF3F131-1102-411B-A601-BD5C45E4F9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCF3F131-1102-411B-A601-BD5C45E4F9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

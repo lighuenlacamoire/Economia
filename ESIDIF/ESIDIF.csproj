@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,22 +13,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Libs\" />
-    <Folder Include="Configuration\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Models\Session\" />
-    <Folder Include="Tools\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Anses.Director.Session.lib">
-      <HintPath>Libs\anses.director.session.lib.dll</HintPath>
+    <Reference Include="Anses.Director.Session.lib, Version=3.0.0.2, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\ESIDIFCredRecurso_1.00.10\bin\anses.director.session.lib.dll</HintPath>
+      <Private>true</Private>
+      <SpecificVersion></SpecificVersion>
     </Reference>
     <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>Libs\System.Web.Services.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client\System.Web.Services.dll</HintPath>
       <Private>true</Private>
       <SpecificVersion>true</SpecificVersion>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Session\" />
   </ItemGroup>
 
 </Project>

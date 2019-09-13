@@ -1,6 +1,5 @@
 ﻿using ESIDIF.Tools;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,29 +7,6 @@ using System.Xml.Serialization;
 
 namespace ESIDIFC75.Models
 {
-    [System.Runtime.Serialization.CollectionDataContract(ItemName ="item2", Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    public class itemsPresupuestariosDetail : List<ItemPresupuestarioInformeDeGastosType>
-    {
-        //[System.Runtime.Serialization.DataMember(Name ="eeee", Order =0)]
-        //public List<ItemPresupuestarioInformeDeGastosType> _list = new List<ItemPresupuestarioInformeDeGastosType>();
-
-        public itemsPresupuestariosDetail() : base() { }
-
-        public itemsPresupuestariosDetail(List<ItemPresupuestarioInformeDeGastosType> items) : base()
-        {
-            foreach (var item in items)
-            {
-                Add(item);
-            }
-        }
-
-
-        //    public itemsPresupuestariosDetail(IEnumerable<ItemPresupuestarioInformeDeGastosType> list) : base(list)
-        //    {
-
-        //    }
-    }
-
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
     public class generarInformeDeGastosResponse : object, System.ComponentModel.INotifyPropertyChanged
     {
@@ -148,7 +124,7 @@ namespace ESIDIFC75.Models
         private string uepexField;
 
         private string observacionesField;
-                
+
         private ItemPresupuestarioInformeDeGastosType[] itemsPresupuestariosField;
 
         private ItemNoPresupuestarioInformeDeGastosType[] itemsNoPresupuestariosField;
@@ -508,10 +484,6 @@ namespace ESIDIFC75.Models
                 this.RaisePropertyChanged("itemsPresupuestarios");
             }
         }
-        //[System.Runtime.Serialization.DataMember(Order = 20)]
-        //[XmlArray(ElementName ="nose")]
-        //[XmlArrayItem(ElementName ="talvez")]
-        //public itemsPresupuestariosDetail itemsPresupuestarios { get; set; }
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 21)]
@@ -1291,10 +1263,10 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Name ="Item",Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
+    [System.Runtime.Serialization.DataContract(IsReference = true)]
     public class ItemPresupuestarioInformeDeGastosType : object, System.ComponentModel.INotifyPropertyChanged
     {
+
         private ImputacionPresupuestariaCreditoType imputacionField;
 
         private UnidadDescentralizadaType udField;
@@ -1426,8 +1398,7 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
+    [System.Runtime.Serialization.DataContract(IsReference = true)]
     public class ItemNoPresupuestarioInformeDeGastosType : object, System.ComponentModel.INotifyPropertyChanged
     {
         private long axtField;
