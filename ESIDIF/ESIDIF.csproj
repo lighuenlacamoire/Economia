@@ -4,6 +4,11 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -20,14 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Anses.Director.Session.lib">
+    <Reference Include="Anses.Director.Session.lib, Version=3.0.0.2, Culture=neutral, PublicKeyToken=null">
       <HintPath>Libs\anses.director.session.lib.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>Libs\System.Web.Services.dll</HintPath>
       <Private>true</Private>
       <SpecificVersion>true</SpecificVersion>
     </Reference>
+    <!--<Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>Libs\System.Web.Services.dll</HintPath>
+      <Private>true</Private>
+      <SpecificVersion>true</SpecificVersion>
+    </Reference>-->
   </ItemGroup>
 
 </Project>

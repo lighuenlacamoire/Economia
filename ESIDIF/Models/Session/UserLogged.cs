@@ -1,10 +1,9 @@
-﻿using Anses.Director.Session;
-using log4net;
-using Microsoft.AspNetCore.Http;
+﻿using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Anses.Director.Session;
 
 namespace ESIDIF.Models.Session
 {
@@ -12,14 +11,14 @@ namespace ESIDIF.Models.Session
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(User));
 
-        public SSOToken credenciales { get; set; }
+        public Anses.Director.Session.SSOToken credenciales { get; set; }
 
         public UserLogged()
         {
 
         }
 
-        public User ObtenerDatosToken(IHeaderDictionary header, string tag)
+        public User ObtenerDatosToken(Microsoft.AspNetCore.Http.IHeaderDictionary header, string tag)
         {
             try
             {
@@ -352,7 +351,7 @@ namespace ESIDIF.Models.Session
             {
                 string nose = "aaa";
 
-                var nos2e = Credencial.ObtenerCredencial();
+                var nos2e = Anses.Director.Session.Credencial.ObtenerCredencial();
 
                 if(!string.IsNullOrEmpty(nose) && nos2e != null)
                 {

@@ -20,6 +20,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Delevopment"
       }
+    },
+    "IISExpress": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "CuotaService.asmx"
     }
   }
 }
