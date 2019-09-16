@@ -52,21 +52,6 @@ namespace ESIDIF.Extensions
             //verificar del token
             try
             {
-                XmlDocument xd = new XmlDocument();
-                xd.LoadXml(request);
-                XmlElement root = xd.DocumentElement;
-                var nose = root.GetElementsByTagName("token");
-
-                string valor = nose[0].InnerText;
-
-                if(!string.IsNullOrEmpty(valor) && valor.Length > 20)
-                {
-                    //wii
-                }
-                else
-                {
-                    throw new Exception("ahsjkhsjkfsf");
-                }
 
             }
             catch (Exception ex)

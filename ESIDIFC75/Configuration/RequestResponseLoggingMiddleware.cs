@@ -8,7 +8,7 @@ using ESIDIF.Tools;
 
 namespace ESIDIFC75.Configuration
 {
-    public class RequestResponseLoggingMiddleware
+    public class RequestResponseLoggingMiddleware2
     {
         private readonly RequestDelegate _next;
         //private readonly RecyclableMemoryStreamManager _recyclableMemoryStreamManager;

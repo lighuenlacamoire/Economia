@@ -65,7 +65,7 @@ namespace ESIDIF.Extensions
                 }
                 else
                 {
-                    throw new Exception("ahsjkhsjkfsf");
+                    throw new Exception("No se ha enviado el token");
                 }
 
             }

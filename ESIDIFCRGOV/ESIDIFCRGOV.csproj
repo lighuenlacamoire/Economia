@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Configuration\RequestResponseLoggingMiddleware.cs" />
-    <Compile Remove="Configuration\SoapMiddleware.cs" />
-    <Compile Remove="Extensions\RequestResponseLoggingMiddleware.cs" />
-    <Compile Remove="Extensions\SoapMiddleware.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -29,10 +22,6 @@
 
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Configuration\" />
   </ItemGroup>
 
 </Project>

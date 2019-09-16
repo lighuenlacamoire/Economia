@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http.Internal;
 
 namespace ESIDIFC75.Extensions
 {
-    public class SoapMiddleware
+    public class SoapMiddleware2
     {
         private readonly RequestDelegate _next;
         private readonly ILog _log;
