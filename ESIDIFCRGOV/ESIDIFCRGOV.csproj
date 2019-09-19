@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ESIDIFCommon\ESIDIFCommon.csproj" />
     <ProjectReference Include="..\ESIDIF\ESIDIF.csproj" />
   </ItemGroup>
 
