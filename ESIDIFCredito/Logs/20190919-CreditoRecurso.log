@@ -1,0 +1,24 @@
+2019-09-19 08:23:00,641 [25] DEBUG ESIDIFCreditorecurso [(null)] - Entra ESIDIFCreditorecurso
+2019-09-19 08:23:01,441 [25] ERROR ESIDIFCreditorecurso [(null)] - Error Director: Referencia a objeto no establecida como instancia de un objeto.
+2019-09-19 08:23:01,611 [25] ERROR ESIDIFCreditorecurso [(null)] - Error al invocar el servicio SAP: Presupuesto Credito 
+Referencia a objeto no establecida como instancia de un objeto.
+   en ESIDIFCredito.CreditoService.get_UsuarioSession() en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\CreditoService.asmx.cs:línea 40
+   en ESIDIFCredito.CreditoService.PresupuestoCredito(ZfmWsCredito consulta) en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\CreditoService.asmx.cs:línea 123
+2019-09-19 08:26:23,167 [36] DEBUG ESIDIFCreditorecurso [(null)] - Entra ESIDIFCreditorecurso
+2019-09-19 08:26:23,168 [36] ERROR ESIDIFCreditorecurso [(null)] - Error Director: Referencia a objeto no establecida como instancia de un objeto.
+2019-09-19 08:26:23,168 [36] ERROR ESIDIFCreditorecurso [(null)] - Error al invocar el servicio SAP: Presupuesto Credito 
+Referencia a objeto no establecida como instancia de un objeto.
+   en ESIDIFCredito.CreditoService.get_UsuarioSession() en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\CreditoService.asmx.cs:línea 40
+   en ESIDIFCredito.CreditoService.PresupuestoCredito(ZfmWsCredito consulta) en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\CreditoService.asmx.cs:línea 123
+2019-09-19 08:26:52,697 [35] DEBUG ESIDIFCreditorecurso [(null)] - Entra ESIDIFCreditorecurso
+2019-09-19 08:31:14,852 [35] INFO  ESIDIFCreditorecurso [(null)] - ESIDIFCreditorecurso - Usuario CUIT: 30546676117 IP: 168.101.48.55
+2019-09-19 08:31:14,856 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-09-19 08:31:14,862 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-09-19 08:31:14,868 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-09-19 08:31:26,041 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-09-19 08:31:26,042 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsEntradasCredito[]
+2019-09-19 08:31:26,042 [35] DEBUG ESIDIFCreditorecurso [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsEntradasRecurso[]
+2019-09-19 08:31:26,042 [35] DEBUG ESIDIFCreditorecurso [(null)] - PresupuestoCredito ok
+2019-09-19 08:31:26,053 [35] ERROR ESIDIFCreditorecurso [(null)] - Error al invocar el servicio SAP: Presupuesto Credito 
+Error en el tratamiento de servicio web; Más detalles en log de error de servicio web en la página de proveedor (Cronomarcador UTC 20190919113125; ID de transacción AC26DD138A710060E005CE834B52FFC9)
+   en ESIDIFCredito.CreditoService.PresupuestoCredito(ZfmWsCredito consulta) en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\CreditoService.asmx.cs:línea 441

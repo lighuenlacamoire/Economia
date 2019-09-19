@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.CustomBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;zws_credito&quot;&gt;&lt;httpTransport /&gt;&lt;mtomMessageEncoding messageVersion=&quot;Soap11WSAddressing10&quot; /&gt;&lt;/Data&gt;" bindingType="customBinding" name="zws_credito" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito&quot; binding=&quot;customBinding&quot; bindingConfiguration=&quot;zws_credito&quot; contract=&quot;service.ZWS_CREDITO&quot; name=&quot;zws_credito&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito&quot; binding=&quot;customBinding&quot; bindingConfiguration=&quot;zws_credito&quot; contract=&quot;service.ZWS_CREDITO&quot; name=&quot;zws_credito&quot; /&gt;" contractName="service.ZWS_CREDITO" name="zws_credito" />
+  </endpoints>
+</configurationSnapshot>
