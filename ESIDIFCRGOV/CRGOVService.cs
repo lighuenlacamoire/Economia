@@ -12,8 +12,6 @@ namespace ESIDIFCRGOV
     {
         private Sources _sources = new Sources();
 
-        private static readonly ILog _logger = LogManager.GetLogger(typeof(CRGOVService));
-
         [System.ServiceModel.OperationContract(Action = "/generarCrgOv")]
         public Models.crgOvResponse generarCrgOv([System.Xml.Serialization.XmlElement("crgOvRequest")]Models.crgOvRequest data)
         {

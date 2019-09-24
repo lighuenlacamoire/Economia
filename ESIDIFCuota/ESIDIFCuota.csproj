@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ESIDIF\ESIDIF.csproj" />
+    <ProjectReference Include="..\ESIDIFLegacy\ESIDIFLegacy.csproj" />
   </ItemGroup>
 
   <!--<ItemGroup>

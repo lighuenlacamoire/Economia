@@ -13,18 +13,73 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using System.Xml.Xsl;
 
 namespace ESIDIFCommon.Tools
 {
     public static class Functions
     {
-        public static string PrefijoValorDecimal = "ValorDecimal";
+        public static string CheckStringFromEnum<TEnum>(string origen) where TEnum : struct
+        {
+            TEnum resultInputType = default(TEnum);
 
-        private const string SPECIFIED_SUFFIX = "Specified";
+            bool itsPossible = Enum.TryParse(origen, true, out resultInputType);
 
-        public static CultureInfo culture = CultureInfo.InvariantCulture;
+            if (itsPossible)
+            {
+                return Convert.ToString(resultInputType);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
-        public static NumberFormatInfo numberFormat = new NumberFormatInfo { NumberGroupSeparator = "", NumberDecimalSeparator = ".", NumberDecimalDigits = 2 };
+        public static string CheckStringFromDecimal(decimal? origen)
+        {
+            if (origen != null && origen.HasValue)
+            {
+                return origen.Value.ToString("N2", Constancts.numberFormat);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static string CheckStringFromBool(bool? origen)
+        {
+            if (origen.HasValue && origen != null)
+            {
+                return origen.Value.ToString().ToLowerInvariant();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static string CheckStringFromLong(long? origen)
+        {
+            if (origen.HasValue && origen != null)
+            {
+                return Convert.ToString(origen.Value);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static string CheckStringFromDateTime(DateTime? origen, string formato)
+        {
+            if (origen.HasValue && !string.IsNullOrEmpty(formato))
+            {
+                return origen != null && origen != DateTime.MinValue ? origen.Value.ToString(formato) : null;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static string ParseXml(string xml)
         {
@@ -39,10 +94,7 @@ namespace ESIDIFCommon.Tools
             }
         }
 
-        public enum FechaTipo
-        {
-            SIMPLE, MEDIA, COMPUESTA
-        }
+        
         public static string ValidateDecimalFromString(string value)
         {
             decimal result = 0;
@@ -83,7 +135,7 @@ namespace ESIDIFCommon.Tools
                     }
                 }
 
-                value = result.ToString("N2", numberFormat);
+                value = result.ToString("N2", Constancts.numberFormat);
 
             }
             catch (Exception ex)
@@ -158,7 +210,7 @@ namespace ESIDIFCommon.Tools
 
             try
             {
-                valor = decimal.Parse(origen, numberFormat);
+                valor = decimal.Parse(origen, Constancts.numberFormat);
             }
             catch (Exception ex)
             {
@@ -208,7 +260,7 @@ namespace ESIDIFCommon.Tools
                 }
 
 
-                value = result.ToString("N2", numberFormat);
+                value = result.ToString("N2", Constancts.numberFormat);
 
             }
             catch (Exception ex)
@@ -218,7 +270,7 @@ namespace ESIDIFCommon.Tools
             return result;
         }
 
-        public static DateTime CopyStringToFecha(string origen, FechaTipo tipo, string formato)
+        public static DateTime CopyStringToFecha(string origen, Constancts.FechaTipo tipo, string formato)
         {
             DateTime valor = DateTime.MinValue;
 
@@ -233,17 +285,17 @@ namespace ESIDIFCommon.Tools
 
                 switch (tipo)
                 {
-                    case FechaTipo.SIMPLE:
+                    case Constancts.FechaTipo.SIMPLE:
                         {
-                            valor = DateTime.ParseExact(origen, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            valor = DateTime.ParseExact(origen, Constancts.DateShortFormat, CultureInfo.InvariantCulture);
                             break;
                         }
-                    case FechaTipo.MEDIA:
+                    case Constancts.FechaTipo.MEDIA:
                         {
                             valor = DateTime.ParseExact(origen, "yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture);
                             break;
                         }
-                    case FechaTipo.COMPUESTA:
+                    case Constancts.FechaTipo.COMPUESTA:
                         {
                             DateTime.TryParseExact(origen, "yyyy-MM-ddTHH:mm:ffff", CultureInfo.InvariantCulture, DateTimeStyles.None, out valor);
 
@@ -292,7 +344,7 @@ namespace ESIDIFCommon.Tools
                         //Cuando recibimos un formato especifico de decimal de SAP y debemos enviarlo a Economia ejemplo: SAP 2343.98-(string) Economia -2343.98
                         if (p.PropertyType == typeof(decimal) && sourceProp.PropertyType == typeof(string))
                         {
-                            var valorReal = sourceProps.FirstOrDefault(x => x.Name == sourceProp.Name + PrefijoValorDecimal);
+                            var valorReal = sourceProps.FirstOrDefault(x => x.Name == sourceProp.Name + Constancts.PrefijoValorDecimal);
 
                             if (valorReal != null && valorReal.PropertyType == p.PropertyType)
                             {
@@ -312,7 +364,7 @@ namespace ESIDIFCommon.Tools
                         else if (p.PropertyType == typeof(DateTime) && sourceProp.PropertyType == typeof(string))
                         {
                             string valor = Convert.ToString(sourceProp.GetValue(source, null));
-                            var valorFecha = CopyStringToFecha(valor, FechaTipo.MEDIA, "yyyy-MM-ddTHH:mm:ss");
+                            var valorFecha = CopyStringToFecha(valor, Constancts.FechaTipo.MEDIA, "yyyy-MM-ddTHH:mm:ss");
 
                             p.SetValue(dest, valorFecha, null);
                             continue;
@@ -417,7 +469,7 @@ namespace ESIDIFCommon.Tools
                     //Si la variable destino es string y la variable origen es un long consultamos para ver si debemos enviar null
                     if (p.PropertyType == typeof(string) && (sourceProp.PropertyType == typeof(decimal) || sourceProp.PropertyType == typeof(int) || sourceProp.PropertyType == typeof(long) || sourceProp.PropertyType == typeof(Int64)))
                     {
-                        var esNulo = sourceProps.FirstOrDefault(x => x.Name == sourceProp.Name + SPECIFIED_SUFFIX);
+                        var esNulo = sourceProps.FirstOrDefault(x => x.Name == sourceProp.Name + Constancts.SPECIFIED_SUFFIX);
 
                         if (esNulo != null && esNulo.PropertyType == typeof(bool))
                         {
@@ -518,15 +570,14 @@ namespace ESIDIFCommon.Tools
             return ex;
         }
 
-        public static X509Certificate2 GetClientCertificate()
+        public static X509Certificate2 GetClientCertificate(string certificateDigitalMark)
         {
-            string huellaDigital = "c2810107087b25676fbc7885bbeeb63e0fae9085";
             X509Store userCaStore = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
             try
             {
                 userCaStore.Open(OpenFlags.ReadOnly);
                 X509Certificate2Collection certificatesInStore = userCaStore.Certificates;
-                X509Certificate2Collection findResult = certificatesInStore.Find(X509FindType.FindByThumbprint, huellaDigital, true);
+                X509Certificate2Collection findResult = certificatesInStore.Find(X509FindType.FindByThumbprint, certificateDigitalMark, true);
                 X509Certificate2 clientCertificate = null;
                 if (findResult.Count == 1)
                 {
@@ -698,137 +749,66 @@ namespace ESIDIFCommon.Tools
             }
             return returnObject;
         }
-
-    }
-
-    public static class PropertySpecifiedExtensions
-    {
-        private const string SPECIFIED_SUFFIX = "Specified";
-
-        /// <summary>
-        /// Bind the <see cref="INotifyPropertyChanged.PropertyChanged"/> handler to automatically set any xxxSpecified fields when a property is changed.  "Lazy" via reflection.
-        /// </summary>
-        /// <param name="entity">the entity to bind the autospecify event to</param>
-        /// <param name="specifiedSuffix">optionally specify a suffix for the Specified property to set as true on changes</param>
-        /// <param name="specifiedPrefix">optionally specify a prefix for the Specified property to set as true on changes</param>
-        public static void Autospecify(this INotifyPropertyChanged entity, string specifiedSuffix = SPECIFIED_SUFFIX, string specifiedPrefix = null)
+        
+        public static XmlDocument GenericToXmlDocument(object o)
         {
-            entity.PropertyChanged += (me, e) =>
+
+            XmlSerializer s = new XmlSerializer(o.GetType());
+            XmlDocument xml = null;
+            MemoryStream ms = new MemoryStream();
+            XmlTextWriter writer = new XmlTextWriter(ms, new UTF8Encoding());
+            writer.Formatting = Formatting.Indented;
+            writer.IndentChar = ' ';
+            writer.Indentation = 5;
+
+
+            try
             {
-                foreach (var pi in me.GetType().GetProperties().Where(o => o.Name == specifiedPrefix + e.PropertyName + specifiedSuffix))
-                {
-                    pi.SetValue(me, true, BindingFlags.SetField | BindingFlags.SetProperty, null, null, null);
-                }
-            };
+                s.Serialize(writer, o);
+                xml = new XmlDocument();
+                string xmlString = ASCIIEncoding.UTF8.GetString(ms.ToArray());
+                xml.LoadXml(xmlString);
+            }
+            finally
+            {
+                writer.Close();
+                ms.Close();
+            }
+            return xml;
         }
 
-        /// <summary>
-        /// Create a new entity and <see cref="Autospecify"/> its properties when changed
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="specifiedSuffix"></param>
-        /// <param name="specifiedPrefix"></param>
-        /// <returns></returns>
-        public static T Create<T>(string specifiedSuffix = SPECIFIED_SUFFIX, string specifiedPrefix = null) where T : INotifyPropertyChanged, new()
+        public static string TransformarXml(string request)
         {
-            var ret = new T();
-            ret.Autospecify(specifiedSuffix, specifiedPrefix);
-            return ret;
-        }
-    }
+            var xslInput = "<xsl:stylesheet version=\"1.0\"" +
+                             " xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">" +
+                             "<xsl:output omit-xml-declaration=\"yes\" indent=\"yes\"/>" +
+                                "<xsl:template match=\"node()|@*\">" +
+                                  "<xsl:copy>" +
+                                    "<xsl:apply-templates select=\"node()|@*\"/>" +
+                                  "</xsl:copy>" +
+                                "</xsl:template>" +
+                            "</xsl:stylesheet>";
 
-    public static class GenericObject<T> where T : new()
-    {
-        public static T GenericMethod(bool inicio = false)
-        {
-            var source = new T();
-            var sourceProps = source.GetType().GetProperties().ToList();
-            Type t = typeof(GenericObject<>);
-
-            foreach (var sourceProp in sourceProps)
+            string output = String.Empty;
+            using (StringReader srt = new StringReader(xslInput)) // xslInput is a string that contains xsl
+            using (StringReader sri = new StringReader(request)) // xmlInput is a string that contains xml
             {
-                if (sourceProp.PropertyType.IsClass && !sourceProp.PropertyType.IsArray && sourceProp.PropertyType.Namespace != "System")
+                using (XmlReader xrt = XmlReader.Create(srt))
+                using (XmlReader xri = XmlReader.Create(sri))
                 {
-                    var c = Activator.CreateInstance(sourceProp.PropertyType);
-                    Type genericType = t.MakeGenericType(new System.Type[] { sourceProp.PropertyType });
-                    MethodInfo m = genericType.GetMethod(MethodInfo.GetCurrentMethod().Name);
-                    //MethodInfo crear = genericType.GetMethod("Create");
-
-                    //creo asigno e invoko
-                    //c = crear.Invoke(null, new object[] { SPECIFIED_SUFFIX, null });
-                    c = m.Invoke(null, new object[] { true });
-                    sourceProp.SetValue(source, c, null);
-                }
-                else if (sourceProp.PropertyType.IsArray && sourceProp.PropertyType.Namespace != "System")
-                {
-                    IList souObj = sourceProp.GetValue(source, null) as IList;
-                    string desName = sourceProp.PropertyType.FullName;
-                    desName = desName.Replace("[]", "");
-                    Type type = Type.GetType(desName);
-
-                    if (type != null)
+                    XslCompiledTransform xslt = new XslCompiledTransform();
+                    xslt.Load(xrt);
+                    using (StringWriter sw = new StringWriter())
+                    using (XmlWriter xwo = XmlWriter.Create(sw, xslt.OutputSettings)) // use OutputSettings of xsl, so it can be output as HTML
                     {
-                        var cArray = Array.CreateInstance(type, new int[] { 0 });
-                        var c = Activator.CreateInstance(Type.GetType(desName));
-                        Type genericType = t.MakeGenericType(new System.Type[] { Type.GetType(desName) });
-                        MethodInfo m = genericType.GetMethod(MethodInfo.GetCurrentMethod().Name);
-                        //MethodInfo crear = genericType.GetMethod("Create");
-
-                        //creo asigno e invoko
-                        c = m.Invoke(null, new object[] { true });
-                        cArray.SetValue(c, 0);
-                        sourceProp.SetValue(source, cArray, null);
+                        xslt.Transform(xri, xwo);
+                        output = sw.ToString();
                     }
-
                 }
             }
-            return source;
+
+            return output;
         }
     }
 
-    public static class GenericClass<T> where T : INotifyPropertyChanged, new()
-    {
-        private const string SPECIFIED_SUFFIX = "Specified";
-
-        public static T GenericMethod(bool inicio = false)
-        {
-            var source = PropertySpecifiedExtensions.Create<T>();
-            var sourceProps = source.GetType().GetProperties().ToList();
-            Type t = typeof(GenericClass<>);
-
-            foreach (var sourceProp in sourceProps)
-            {
-                if (sourceProp.PropertyType.IsClass && !sourceProp.PropertyType.IsArray && sourceProp.PropertyType.Namespace != "System")
-                {
-                    var c = Activator.CreateInstance(sourceProp.PropertyType);
-                    Type genericType = t.MakeGenericType(new System.Type[] { sourceProp.PropertyType });
-                    MethodInfo m = genericType.GetMethod(MethodInfo.GetCurrentMethod().Name);
-                    //MethodInfo crear = genericType.GetMethod("Create");
-
-                    //creo asigno e invoko
-                    //c = crear.Invoke(null, new object[] { SPECIFIED_SUFFIX, null });
-                    c = m.Invoke(null, new object[] { true });
-                    sourceProp.SetValue(source, c, null);
-                }
-                else if (sourceProp.PropertyType.IsArray && sourceProp.PropertyType.Namespace != "System")
-                {
-                    IList souObj = sourceProp.GetValue(source, null) as IList;
-                    string desName = sourceProp.PropertyType.FullName;
-                    desName = desName.Replace("[]", "");
-                    var cArray = Array.CreateInstance(Type.GetType(desName), new int[] { 0 });
-                    var c = Activator.CreateInstance(Type.GetType(desName));
-                    Type genericType = t.MakeGenericType(new System.Type[] { Type.GetType(desName) });
-                    MethodInfo m = genericType.GetMethod(MethodInfo.GetCurrentMethod().Name);
-                    //MethodInfo crear = genericType.GetMethod("Create");
-
-                    //creo asigno e invoko
-                    c = m.Invoke(null, new object[] { true });
-                    cArray.SetValue(c, 0);
-                    sourceProp.SetValue(source, cArray, null);
-
-                }
-            }
-            return source;
-        }
-    }
 }

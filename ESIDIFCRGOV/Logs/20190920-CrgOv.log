@@ -1,0 +1,1063 @@
+2019-09-20 15:54:13,503 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx
+2019-09-20 15:54:14,448 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Consulta SAP - Servicio: 
+
+2019-09-20 15:54:15,507 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/><xs:element name="generarCrgOv"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarCrgOvResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/></xs:sequence></xs:complexType><xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType"/><xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType"/><xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType"/><xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType"/><xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType"/><xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/><xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType"/><xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="axt" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="valor" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType"/><xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="anio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType"/><xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType"/><xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ug" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType"/><xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="saf" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType"/><xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="partida" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="CRGOVService_generarCrgOv_InputMessage"><wsdl:part name="parameters" element="tns:generarCrgOv"/></wsdl:message><wsdl:message name="CRGOVService_generarCrgOv_OutputMessage"><wsdl:part name="parameters" element="tns:generarCrgOvResponse"/></wsdl:message><wsdl:portType name="CRGOVService"><wsdl:operation name="generarCrgOv"><wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage"/><wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarCrgOv"><soap:operation soapAction="/generarCrgOv" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="CRGOVService"><wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService"><soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-09-20 15:54:15,527 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+      <xs:element name="generarCrgOv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarCrgOvResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType" />
+      <xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType" />
+          <xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType" />
+      <xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType" />
+      <xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType" />
+      <xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+      <xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType" />
+      <xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="axt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType" />
+      <xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="anio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType" />
+      <xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType" />
+      <xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ug" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType" />
+      <xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType" />
+      <xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CRGOVService_generarCrgOv_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOv" />
+  </wsdl:message>
+  <wsdl:message name="CRGOVService_generarCrgOv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOvResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CRGOVService">
+    <wsdl:operation name="generarCrgOv">
+      <wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage" />
+      <wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarCrgOv">
+      <soap:operation soapAction="/generarCrgOv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRGOVService">
+    <wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService">
+      <soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-09-20 16:06:36,059 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx
+2019-09-20 16:06:36,153 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Consulta SAP - Servicio: 
+
+2019-09-20 16:06:36,165 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/><xs:element name="generarCrgOv"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarCrgOvResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/></xs:sequence></xs:complexType><xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType"/><xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType"/><xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType"/><xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType"/><xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType"/><xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/><xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType"/><xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="axt" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="valor" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType"/><xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="anio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType"/><xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType"/><xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ug" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType"/><xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="saf" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType"/><xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="partida" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="CRGOVService_generarCrgOv_InputMessage"><wsdl:part name="parameters" element="tns:generarCrgOv"/></wsdl:message><wsdl:message name="CRGOVService_generarCrgOv_OutputMessage"><wsdl:part name="parameters" element="tns:generarCrgOvResponse"/></wsdl:message><wsdl:portType name="CRGOVService"><wsdl:operation name="generarCrgOv"><wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage"/><wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarCrgOv"><soap:operation soapAction="/generarCrgOv" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="CRGOVService"><wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService"><soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-09-20 16:06:36,166 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+      <xs:element name="generarCrgOv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarCrgOvResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType" />
+      <xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType" />
+          <xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType" />
+      <xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType" />
+      <xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType" />
+      <xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+      <xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType" />
+      <xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="axt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType" />
+      <xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="anio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType" />
+      <xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType" />
+      <xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ug" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType" />
+      <xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType" />
+      <xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CRGOVService_generarCrgOv_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOv" />
+  </wsdl:message>
+  <wsdl:message name="CRGOVService_generarCrgOv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOvResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CRGOVService">
+    <wsdl:operation name="generarCrgOv">
+      <wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage" />
+      <wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarCrgOv">
+      <soap:operation soapAction="/generarCrgOv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRGOVService">
+    <wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService">
+      <soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-09-20 16:08:27,283 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - REQUEST METHOD: POST, REQUEST BODY: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:com1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:com2="https://ws-si.mecon.gov.ar/ws/comprobantes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:generarCrgOv>
+         <!--Optional:-->
+       <com:crgOvRequest>
+			<com:cabeceraCrg>
+				<com1:gestionExterna>ANSES</com1:gestionExterna>
+				<com1:identificacionComprobante>
+					<com1:entidadEmisora>850</com1:entidadEmisora>
+					<com1:entidadProceso>850</com1:entidadProceso>
+					<com1:numero>800600</com1:numero>
+					<com1:ejercicio>2019</com1:ejercicio>
+					<com1:tipoComprobante>CRG</com1:tipoComprobante>
+				</com1:identificacionComprobante>
+				<com1:fechaRegistro>2019-07-04</com1:fechaRegistro>
+				<com1:fechaComprobante>2019-07-04</com1:fechaComprobante>
+				<com1:fechaAutorizacion>2019-07-04</com1:fechaAutorizacion>
+				<com1:importeMO>100</com1:importeMO>
+				<com1:importeMCL>100</com1:importeMCL>
+				<com1:cotizacion>
+					<com2:tipoMoneda>ARP</com2:tipoMoneda>
+					<com2:valor>1</com2:valor>
+				</com1:cotizacion>
+				<com1:beneficiario>1036</com1:beneficiario>
+				<com1:medioDePago>OV</com1:medioDePago>
+			</com:cabeceraCrg>
+			<com:comprobanteVinculo>
+				<com1:marcaInicioVinculo>0</com1:marcaInicioVinculo>
+				<com1:tipoOperacionVinculada>OV</com1:tipoOperacionVinculada>
+				<com1:ejercicioOperacionVinculada>2019
+				</com1:ejercicioOperacionVinculada>
+				<com1:numeroOperacionVinculada>19</com1:numeroOperacionVinculada>
+			</com:comprobanteVinculo>
+			<com:observaciones>Test</com:observaciones>
+			<com:itemsPresupuestarios>
+				<com1:imputacion>
+					<com2:ejercicio>2019</com2:ejercicio>
+					<com2:servicio>850</com2:servicio>
+					<com2:aperturaProg>1.0.0.1.0</com2:aperturaProg>
+					<com2:objetoGasto>2.1.1.0</com2:objetoGasto>
+					<com2:fuente>1.2</com2:fuente>
+					<com2:moneda>1</com2:moneda>
+					<com2:ug>2</com2:ug>
+				</com1:imputacion>
+				<com1:ejercicio>2019</com1:ejercicio>
+				<com1:ud>
+					<com2:codigo>850</com2:codigo>
+				</com1:ud>
+				<com1:importeMO>100</com1:importeMO>
+				<com1:importeMCL>100</com1:importeMCL>
+			</com:itemsPresupuestarios>
+		</com:crgOvRequest>
+      </com:generarCrgOv>
+   </soapenv:Body>
+</soapenv:Envelope>, REQUEST URL: http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx
+2019-09-20 16:08:27,284 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Consulta SAP - Servicio: 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:com1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:com2="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <com:generarCrgOv>
+      <!--Optional:-->
+      <com:crgOvRequest>
+        <com:cabeceraCrg>
+          <com1:gestionExterna>ANSES</com1:gestionExterna>
+          <com1:identificacionComprobante>
+            <com1:entidadEmisora>850</com1:entidadEmisora>
+            <com1:entidadProceso>850</com1:entidadProceso>
+            <com1:numero>800600</com1:numero>
+            <com1:ejercicio>2019</com1:ejercicio>
+            <com1:tipoComprobante>CRG</com1:tipoComprobante>
+          </com1:identificacionComprobante>
+          <com1:fechaRegistro>2019-07-04</com1:fechaRegistro>
+          <com1:fechaComprobante>2019-07-04</com1:fechaComprobante>
+          <com1:fechaAutorizacion>2019-07-04</com1:fechaAutorizacion>
+          <com1:importeMO>100</com1:importeMO>
+          <com1:importeMCL>100</com1:importeMCL>
+          <com1:cotizacion>
+            <com2:tipoMoneda>ARP</com2:tipoMoneda>
+            <com2:valor>1</com2:valor>
+          </com1:cotizacion>
+          <com1:beneficiario>1036</com1:beneficiario>
+          <com1:medioDePago>OV</com1:medioDePago>
+        </com:cabeceraCrg>
+        <com:comprobanteVinculo>
+          <com1:marcaInicioVinculo>0</com1:marcaInicioVinculo>
+          <com1:tipoOperacionVinculada>OV</com1:tipoOperacionVinculada>
+          <com1:ejercicioOperacionVinculada>2019
+				</com1:ejercicioOperacionVinculada>
+          <com1:numeroOperacionVinculada>19</com1:numeroOperacionVinculada>
+        </com:comprobanteVinculo>
+        <com:observaciones>Test</com:observaciones>
+        <com:itemsPresupuestarios>
+          <com1:imputacion>
+            <com2:ejercicio>2019</com2:ejercicio>
+            <com2:servicio>850</com2:servicio>
+            <com2:aperturaProg>1.0.0.1.0</com2:aperturaProg>
+            <com2:objetoGasto>2.1.1.0</com2:objetoGasto>
+            <com2:fuente>1.2</com2:fuente>
+            <com2:moneda>1</com2:moneda>
+            <com2:ug>2</com2:ug>
+          </com1:imputacion>
+          <com1:ejercicio>2019</com1:ejercicio>
+          <com1:ud>
+            <com2:codigo>850</com2:codigo>
+          </com1:ud>
+          <com1:importeMO>100</com1:importeMO>
+          <com1:importeMCL>100</com1:importeMCL>
+        </com:itemsPresupuestarios>
+      </com:crgOvRequest>
+    </com:generarCrgOv>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-20 16:09:49,104 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Ingreso
+2019-09-20 16:09:49,105 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Seteando variables de contexto.
+2019-09-20 16:09:49,186 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Seteando PROXY.
+2019-09-20 16:09:49,189 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Cargando certificado X509.
+2019-09-20 16:09:49,190 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - IGNORA_ERROR_CERTI = true.
+2019-09-20 16:09:49,190 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Certificado X509 cargado exitosamente.
+2019-09-20 16:09:49,190 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Creando Bean
+2019-09-20 16:10:00,005 [4] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Mapeando a objeto XML.
+2019-09-20 16:11:02,162 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - RESPONSE LOG: <?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><s:Fault><faultcode>s:Client</faultcode><faultstring>There was an error reflecting type 'ESIDIF.Models.Xml.Envelope'.</faultstring></s:Fault></s:Body></s:Envelope>
+2019-09-20 16:11:02,170 [4] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Respuesta Servicio - SAP: 
+<s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <s:Fault>
+      <faultcode>s:Client</faultcode>
+      <faultstring>There was an error reflecting type 'ESIDIF.Models.Xml.Envelope'.</faultstring>
+    </s:Fault>
+  </s:Body>
+</s:Envelope>
+2019-09-20 16:14:43,357 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx
+2019-09-20 16:14:44,112 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Consulta SAP - Servicio: 
+
+2019-09-20 16:14:45,012 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/><xs:element name="generarCrgOv"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:sequence></xs:complexType></xs:element><xs:element name="generarCrgOvResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/><xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg"/></xs:sequence></xs:complexType><xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType"/><xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType"/><xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType"/><xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType"/><xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType"/><xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType"/><xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:sequence></xs:complexType><xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType"/><xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="axt" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes"/><xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes"/></xs:sequence></xs:complexType><xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="valor" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType"/><xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="anio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType"/><xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="numero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType"/><xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ug" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pex" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType"/><xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="saf" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType"/><xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="partida" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="CRGOVService_generarCrgOv_InputMessage"><wsdl:part name="parameters" element="tns:generarCrgOv"/></wsdl:message><wsdl:message name="CRGOVService_generarCrgOv_OutputMessage"><wsdl:part name="parameters" element="tns:generarCrgOvResponse"/></wsdl:message><wsdl:portType name="CRGOVService"><wsdl:operation name="generarCrgOv"><wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage"/><wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="generarCrgOv"><soap:operation soapAction="/generarCrgOv" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="CRGOVService"><wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService"><soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-09-20 16:14:45,014 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" name="CRGOVService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+      <xs:import namespace="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+      <xs:element name="generarCrgOv">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generarCrgOvResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="generarCrgOvResult" nillable="true" type="q1:crgOvResponse" xmlns:q1="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvRequest" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cabeceraCrg" nillable="true" type="q1:CabeceraCRGType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="comprobanteVinculo" nillable="true" type="q2:ComprobanteVinculoType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="observaciones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemsPresupuestarios" nillable="true" type="q3:ArrayOfItemPresupuestarioCRGType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+          <xs:element minOccurs="0" name="itemsNoPresupuestarios" nillable="true" type="q4:ArrayOfItemNoPresupuestarioCRGType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvRequest" nillable="true" type="tns:crgOvRequest" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="IdentificacionCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadProceso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subTipoRegistro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificacionCRGType" nillable="true" type="tns:IdentificacionCRGType" />
+      <xs:complexType name="CabeceraCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gestionExterna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificacionComprobante" nillable="true" type="tns:IdentificacionCRGType" />
+          <xs:element minOccurs="0" name="fechaComprobante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="periodoImpacto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotizacion" nillable="true" type="q1:CotizacionType" xmlns:q1="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="beneficiario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="medioDePago" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificadorTramite" nillable="true" type="q2:IdentificadorDeTramiteType" xmlns:q2="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="documentoRespaldatorio" nillable="true" type="q3:DocumentoRespaldatorioType" xmlns:q3="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CabeceraCRGType" nillable="true" type="tns:CabeceraCRGType" />
+      <xs:complexType name="ComprobanteVinculoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marcaInicioVinculo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicioOperacionVinculada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numeroOperacionVinculada" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ComprobanteVinculoType" nillable="true" type="tns:ComprobanteVinculoType" />
+      <xs:complexType name="ArrayOfItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemPresupuestarioCRGType" />
+      <xs:complexType name="ItemPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imputacion" nillable="true" type="q4:ImputacionPresupuestariaCreditoType" xmlns:q4="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ud" nillable="true" type="q5:UnidadDescentralizadaType" xmlns:q5="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cotena" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q6:CodigoTramoPartidaType" xmlns:q6="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q7:CodigoTramoPartidaType" xmlns:q7="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemPresupuestarioCRGType" nillable="true" type="tns:ItemPresupuestarioCRGType" />
+      <xs:complexType name="ArrayOfItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemNoPresupuestarioCRGType" nillable="true" type="tns:ArrayOfItemNoPresupuestarioCRGType" />
+      <xs:complexType name="ItemNoPresupuestarioCRGType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="axt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="importeMCL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recac" nillable="true" type="q8:CodigoTramoPartidaType" xmlns:q8="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+          <xs:element minOccurs="0" name="sigade" nillable="true" type="q9:CodigoTramoPartidaType" xmlns:q9="https://ws-si.mecon.gov.ar/ws/comprobantes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemNoPresupuestarioCRGType" nillable="true" type="tns:ItemNoPresupuestarioCRGType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="CotizacionType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipoCotizacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CotizacionType" nillable="true" type="tns:CotizacionType" />
+      <xs:complexType name="IdentificadorDeTramiteType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="identificador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="anio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IdentificadorDeTramiteType" nillable="true" type="tns:IdentificadorDeTramiteType" />
+      <xs:complexType name="DocumentoRespaldatorioType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocumentoRespaldatorioType" nillable="true" type="tns:DocumentoRespaldatorioType" />
+      <xs:complexType name="ImputacionPresupuestariaCreditoType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="institucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="aperturaProg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objetoGasto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ug" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pex" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ImputacionPresupuestariaCreditoType" nillable="true" type="tns:ImputacionPresupuestariaCreditoType" />
+      <xs:complexType name="UnidadDescentralizadaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UnidadDescentralizadaType" nillable="true" type="tns:UnidadDescentralizadaType" />
+      <xs:complexType name="CodigoTramoPartidaType" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tramo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="partida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CodigoTramoPartidaType" nillable="true" type="tns:CodigoTramoPartidaType" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/ESIDIFCRGOV.Models" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="crgOvResponse" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroSidif" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="crgOvResponse" nillable="true" type="tns:crgOvResponse" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CRGOVService_generarCrgOv_InputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOv" />
+  </wsdl:message>
+  <wsdl:message name="CRGOVService_generarCrgOv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generarCrgOvResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CRGOVService">
+    <wsdl:operation name="generarCrgOv">
+      <wsdl:input wsam:Action="/generarCrgOv" message="tns:CRGOVService_generarCrgOv_InputMessage" />
+      <wsdl:output wsam:Action="/generarCrgOvResponse" message="tns:CRGOVService_generarCrgOv_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_CRGOVService" type="tns:CRGOVService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generarCrgOv">
+      <soap:operation soapAction="/generarCrgOv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRGOVService">
+    <wsdl:port name="BasicHttpBinding_CRGOVService" binding="tns:BasicHttpBinding_CRGOVService">
+      <soap:address location="http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-09-20 16:14:53,724 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - REQUEST METHOD: POST, REQUEST BODY: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:com1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:com2="https://ws-si.mecon.gov.ar/ws/comprobantes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:generarCrgOv>
+         <!--Optional:-->
+       <com:crgOvRequest>
+			<com:cabeceraCrg>
+				<com1:gestionExterna>ANSES</com1:gestionExterna>
+				<com1:identificacionComprobante>
+					<com1:entidadEmisora>850</com1:entidadEmisora>
+					<com1:entidadProceso>850</com1:entidadProceso>
+					<com1:numero>800600</com1:numero>
+					<com1:ejercicio>2019</com1:ejercicio>
+					<com1:tipoComprobante>CRG</com1:tipoComprobante>
+				</com1:identificacionComprobante>
+				<com1:fechaRegistro>2019-07-04</com1:fechaRegistro>
+				<com1:fechaComprobante>2019-07-04</com1:fechaComprobante>
+				<com1:fechaAutorizacion>2019-07-04</com1:fechaAutorizacion>
+				<com1:importeMO>100</com1:importeMO>
+				<com1:importeMCL>100</com1:importeMCL>
+				<com1:cotizacion>
+					<com2:tipoMoneda>ARP</com2:tipoMoneda>
+					<com2:valor>1</com2:valor>
+				</com1:cotizacion>
+				<com1:beneficiario>1036</com1:beneficiario>
+				<com1:medioDePago>OV</com1:medioDePago>
+			</com:cabeceraCrg>
+			<com:comprobanteVinculo>
+				<com1:marcaInicioVinculo>0</com1:marcaInicioVinculo>
+				<com1:tipoOperacionVinculada>OV</com1:tipoOperacionVinculada>
+				<com1:ejercicioOperacionVinculada>2019
+				</com1:ejercicioOperacionVinculada>
+				<com1:numeroOperacionVinculada>19</com1:numeroOperacionVinculada>
+			</com:comprobanteVinculo>
+			<com:observaciones>Test</com:observaciones>
+			<com:itemsPresupuestarios>
+				<com1:imputacion>
+					<com2:ejercicio>2019</com2:ejercicio>
+					<com2:servicio>850</com2:servicio>
+					<com2:aperturaProg>1.0.0.1.0</com2:aperturaProg>
+					<com2:objetoGasto>2.1.1.0</com2:objetoGasto>
+					<com2:fuente>1.2</com2:fuente>
+					<com2:moneda>1</com2:moneda>
+					<com2:ug>2</com2:ug>
+				</com1:imputacion>
+				<com1:ejercicio>2019</com1:ejercicio>
+				<com1:ud>
+					<com2:codigo>850</com2:codigo>
+				</com1:ud>
+				<com1:importeMO>100</com1:importeMO>
+				<com1:importeMCL>100</com1:importeMCL>
+			</com:itemsPresupuestarios>
+		</com:crgOvRequest>
+      </com:generarCrgOv>
+   </soapenv:Body>
+</soapenv:Envelope>, REQUEST URL: http://localhost/ESIDIFCRGOV/generarCrgOvService.asmx
+2019-09-20 16:14:53,724 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Consulta SAP - Servicio: 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg" xmlns:com1="https://ws-si.mecon.gov.ar/ws/comprobantesCrg" xmlns:com2="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <com:generarCrgOv>
+      <!--Optional:-->
+      <com:crgOvRequest>
+        <com:cabeceraCrg>
+          <com1:gestionExterna>ANSES</com1:gestionExterna>
+          <com1:identificacionComprobante>
+            <com1:entidadEmisora>850</com1:entidadEmisora>
+            <com1:entidadProceso>850</com1:entidadProceso>
+            <com1:numero>800600</com1:numero>
+            <com1:ejercicio>2019</com1:ejercicio>
+            <com1:tipoComprobante>CRG</com1:tipoComprobante>
+          </com1:identificacionComprobante>
+          <com1:fechaRegistro>2019-07-04</com1:fechaRegistro>
+          <com1:fechaComprobante>2019-07-04</com1:fechaComprobante>
+          <com1:fechaAutorizacion>2019-07-04</com1:fechaAutorizacion>
+          <com1:importeMO>100</com1:importeMO>
+          <com1:importeMCL>100</com1:importeMCL>
+          <com1:cotizacion>
+            <com2:tipoMoneda>ARP</com2:tipoMoneda>
+            <com2:valor>1</com2:valor>
+          </com1:cotizacion>
+          <com1:beneficiario>1036</com1:beneficiario>
+          <com1:medioDePago>OV</com1:medioDePago>
+        </com:cabeceraCrg>
+        <com:comprobanteVinculo>
+          <com1:marcaInicioVinculo>0</com1:marcaInicioVinculo>
+          <com1:tipoOperacionVinculada>OV</com1:tipoOperacionVinculada>
+          <com1:ejercicioOperacionVinculada>2019
+				</com1:ejercicioOperacionVinculada>
+          <com1:numeroOperacionVinculada>19</com1:numeroOperacionVinculada>
+        </com:comprobanteVinculo>
+        <com:observaciones>Test</com:observaciones>
+        <com:itemsPresupuestarios>
+          <com1:imputacion>
+            <com2:ejercicio>2019</com2:ejercicio>
+            <com2:servicio>850</com2:servicio>
+            <com2:aperturaProg>1.0.0.1.0</com2:aperturaProg>
+            <com2:objetoGasto>2.1.1.0</com2:objetoGasto>
+            <com2:fuente>1.2</com2:fuente>
+            <com2:moneda>1</com2:moneda>
+            <com2:ug>2</com2:ug>
+          </com1:imputacion>
+          <com1:ejercicio>2019</com1:ejercicio>
+          <com1:ud>
+            <com2:codigo>850</com2:codigo>
+          </com1:ud>
+          <com1:importeMO>100</com1:importeMO>
+          <com1:importeMCL>100</com1:importeMCL>
+        </com:itemsPresupuestarios>
+      </com:crgOvRequest>
+    </com:generarCrgOv>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-20 16:15:07,872 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Ingreso
+2019-09-20 16:15:07,873 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Seteando variables de contexto.
+2019-09-20 16:15:08,018 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Seteando PROXY.
+2019-09-20 16:15:08,019 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Cargando certificado X509.
+2019-09-20 16:15:08,019 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - IGNORA_ERROR_CERTI = true.
+2019-09-20 16:15:08,020 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Certificado X509 cargado exitosamente.
+2019-09-20 16:15:08,020 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Creando Bean
+2019-09-20 16:15:20,761 [9] DEBUG ESIDIFCRGOV.CRGOVService [(null)] - GenerarCrgOv - Mapeando a objeto XML.
+2019-09-20 16:16:31,900 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - RESPONSE LOG: <?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><s:Fault><faultcode>s:Client</faultcode><faultstring>There was an error generating the XML document.</faultstring></s:Fault></s:Body></s:Envelope>
+2019-09-20 16:16:31,913 [9] INFO  ESIDIFCRGOV.CRGOVService [(null)] - Respuesta Servicio - SAP: 
+<s:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <s:Fault>
+      <faultcode>s:Client</faultcode>
+      <faultstring>There was an error generating the XML document.</faultstring>
+    </s:Fault>
+  </s:Body>
+</s:Envelope>

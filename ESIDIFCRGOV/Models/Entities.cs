@@ -1,9 +1,5 @@
-﻿using ESIDIF.Tools;
+﻿using ESIDIFCommon.Tools;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace ESIDIFCRGOV.Models
 {
@@ -41,8 +37,11 @@ namespace ESIDIFCRGOV.Models
 
     [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public class crgOvRequest : object, System.ComponentModel.INotifyPropertyChanged
+    /*Se agrega herencia a IBody para llenar el Body con un generic*/
+    [System.Xml.Serialization.XmlRoot(ElementName = "crgOvRequest", Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
+    public class crgOvRequest : ESIDIF.Models.Xml.IBody, System.ComponentModel.INotifyPropertyChanged
     {
+
         private CabeceraCRGType cabeceraCrgField;
 
         private ComprobanteVinculoType comprobanteVinculoField;
@@ -104,7 +103,7 @@ namespace ESIDIFCRGOV.Models
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 3)]
         [System.ComponentModel.DataAnnotations.Display(Name = "itemsPresupuestarios")]
-        [XmlElement("itemsPresupuestarios", ElementName = "itemsPresupuestarios", Order = 3)]
+        [System.Xml.Serialization.XmlElement("itemsPresupuestarios", ElementName = "itemsPresupuestarios", Order = 3)]
         public ItemPresupuestarioCRGType[] itemsPresupuestarios
         {
             get
@@ -120,7 +119,7 @@ namespace ESIDIFCRGOV.Models
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 4)]
         [System.ComponentModel.DataAnnotations.Display(Name = "itemsNoPresupuestarios")]
-        [XmlElement("itemsNoPresupuestarios", ElementName = "itemsNoPresupuestarios", Order = 4)]
+        [System.Xml.Serialization.XmlElement("itemsNoPresupuestarios", ElementName = "itemsNoPresupuestarios", Order = 4)]
         public ItemNoPresupuestarioCRGType[] itemsNoPresupuestarios
         {
             get
@@ -218,11 +217,11 @@ namespace ESIDIFCRGOV.Models
         {
             get
             {
-                return this.fechaComprobanteField != null && this.fechaComprobanteField != DateTime.MinValue ? this.fechaComprobanteField.ToString("yyyy-MM-dd") : null;
+                return this.fechaComprobanteField != null && this.fechaComprobanteField != DateTime.MinValue ? this.fechaComprobanteField.ToString(Constancts.DateShortFormat) : null;
             }
             set
             {
-                this.fechaComprobanteField = Functions.CopyStringToFecha(value, Functions.FechaTipo.SIMPLE, "yyyy-MM-dd");
+                this.fechaComprobanteField = Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat);
                 this.RaisePropertyChanged("fechaComprobante");
             }
         }
@@ -234,11 +233,11 @@ namespace ESIDIFCRGOV.Models
         {
             get
             {
-                return this.fechaRegistroField.HasValue ? (this.fechaRegistroField.Value.ToString("yyyy-MM-dd")) : null;
+                return this.fechaRegistroField.HasValue ? (this.fechaRegistroField.Value.ToString(Constancts.DateShortFormat)) : null;
             }
             set
             {
-                this.fechaRegistroField = !string.IsNullOrEmpty(value) ? Functions.CopyStringToFecha(value, Functions.FechaTipo.SIMPLE, "yyyy-MM-dd") : (DateTime?)null;
+                this.fechaRegistroField = !string.IsNullOrEmpty(value) ? Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat) : (DateTime?)null;
                 this.RaisePropertyChanged("fechaRegistro");
             }
         }
@@ -718,13 +717,13 @@ namespace ESIDIFCRGOV.Models
         {
             get
             {
-                return this.fechaField.ToString("yyyy-MM-dd");
+                return this.fechaField.ToString(Constancts.DateShortFormat);
                 //return string.Format("{0:s}", this.fechaField);
                 //return Convert.ToString(this.fechaAutorizacionField);
             }
             set
             {
-                this.fechaField = Functions.CopyStringToFecha(value, Functions.FechaTipo.SIMPLE, "yyyy-MM-dd");
+                this.fechaField = Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat);
                 this.RaisePropertyChanged("fecha");
             }
         }
@@ -1645,95 +1644,5 @@ namespace ESIDIFCRGOV.Models
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-
-}
-
-
-namespace ESIDIFCRGOV.Soap
-{
-    [XmlRoot(ElementName = "Envelope", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Envelope
-    {
-        [XmlElement(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public Header Header { get; set; }
-
-        [XmlElement(ElementName = "Body", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public Body Body { get; set; }
-
-        [XmlAttribute(AttributeName = "soapenv", Namespace = "http://www.w3.org/2000/xmlns/")]
-        public string Soapenv { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Body", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Body
-    {
-        public Body()
-        {
-
-        }
-        public Body(Models.crgOvRequest request)
-        {
-            crgDbRequest = request;
-        }
-
-        [XmlElement(ElementName = "crgOvRequest", Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-        public Models.crgOvRequest crgDbRequest { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Header
-    {
-        public Header()
-        {
-
-        }
-        public Header(string id, string username, string password, string endpoint, string action)
-        {
-            Security = new Security
-            {
-                MustUnderstand = 1,
-                UsernameToken = new UsernameToken(id, username, password)
-            };
-            To = new To
-            {
-                MustUnderstand = 1,
-                Value = endpoint
-            };
-            Action = action;
-            MessageID = "urn:uuid:" + Guid.NewGuid();
-        }
-
-        [XmlElement(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-        public Security Security { get; set; }
-
-        [XmlElement(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public To To { get; set; }
-
-        [XmlElement(ElementName = "Action", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public string Action { get; set; }
-
-        [XmlElement(ElementName = "MessageID", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public string MessageID { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-    public class Security
-    {
-        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public int MustUnderstand { get; set; }
-
-        [XmlElement(ElementName = "UsernameToken", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-        public UsernameToken UsernameToken { get; set; }
-    }
-
-    [XmlRoot(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
-    public class To
-    {
-        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public int MustUnderstand { get; set; }
-
-        [XmlText]//endpoint
-        public string Value { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using ESIDIF.Models;
-using ESIDIF.Tools;
+using ESIDIFCommon.Tools;
 using ESIDIFC75.Extensions;
 using log4net;
 using System;
@@ -13,6 +13,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
+using ESIDIF.Models.Xml;
 
 namespace ESIDIFC75.Business
 {

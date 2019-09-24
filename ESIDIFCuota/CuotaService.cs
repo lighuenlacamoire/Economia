@@ -1,8 +1,7 @@
-﻿using ESIDIF.Tools;
+﻿
 using log4net;
 using Microsoft.AspNetCore.Http;
 using System;
-using ESIDIF.Models.Session;
 using System.ServiceModel;
 
 namespace ESIDIFCuota
@@ -20,23 +19,23 @@ namespace ESIDIFCuota
 
         private static readonly ILog _logger = LogManager.GetLogger(typeof(CuotaService));
 
-        public User UserSession
-        {
-            get
-            {
-                var user = _httpContext.Session.GetObject<User>("UserSession");
+        //public User UserSession
+        //{
+        //    get
+        //    {
+        //        var user = _httpContext.Session.GetObject<User>("UserSession");
 
-                if(user == null)
-                {
-                    _httpContext.Session.SetObject("UserSession", new User());
-                }
-                return _httpContext.Session.GetObject<User>("UserSession");
-            }
-            set
-            {
-                _httpContext.Session.SetObject("UserSession", value);
-            }
-        }
+        //        if(user == null)
+        //        {
+        //            _httpContext.Session.SetObject("UserSession", new User());
+        //        }
+        //        return _httpContext.Session.GetObject<User>("UserSession");
+        //    }
+        //    set
+        //    {
+        //        _httpContext.Session.SetObject("UserSession", value);
+        //    }
+        //}
 
 
         [OperationContract(Action = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg/generarInformeDeGastosPortType")]
@@ -44,10 +43,10 @@ namespace ESIDIFCuota
         {
             try
             {
-                if (!UserSession.HasToken)
-                {
-                    UserSession = new UserLogged().ObtenerDatosToken(_httpContext.Request.Headers, "token");
-                }
+                //if (!UserSession.HasToken)
+                //{
+                //    UserSession = new UserLogged().ObtenerDatosToken(_httpContext.Request.Headers, "token");
+                //}
 
 
 

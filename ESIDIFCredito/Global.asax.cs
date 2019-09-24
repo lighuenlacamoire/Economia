@@ -24,7 +24,6 @@ namespace ESIDIFCredito
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
             string ruta = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["Config.log4Net"]);
             System.IO.FileInfo arch = new System.IO.FileInfo(ruta);
             log4net.Config.XmlConfigurator.ConfigureAndWatch(arch);

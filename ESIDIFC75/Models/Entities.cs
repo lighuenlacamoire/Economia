@@ -1,4 +1,4 @@
-﻿using ESIDIF.Tools;
+﻿using ESIDIFCommon.Tools;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -1714,7 +1714,7 @@ namespace ESIDIFC75.Soap
             Security = new Security
             {
                 MustUnderstand = 1,
-                UsernameToken = new UsernameToken(id, username, password)
+                UsernameToken = new ESIDIF.Models.Xml.UsernameToken(id, username, password)
             };
             To = new To
             {
@@ -1745,7 +1745,7 @@ namespace ESIDIFC75.Soap
         public int MustUnderstand { get; set; }
 
         [XmlElement(ElementName = "UsernameToken", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-        public UsernameToken UsernameToken { get; set; }
+        public ESIDIF.Models.Xml.UsernameToken UsernameToken { get; set; }
     }
 
     [XmlRoot(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]

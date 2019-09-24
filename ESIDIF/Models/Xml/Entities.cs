@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESIDIFCommon.Tools;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
@@ -6,30 +7,76 @@ using System.Xml.Serialization;
 
 namespace ESIDIF.Models.Xml
 {
-    public class SecurityHeader : System.ServiceModel.Channels.MessageHeader
+    [XmlRoot(ElementName = "Envelope", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+    public class Envelope
     {
-        private readonly UsernameToken _usernameToken;
+        [XmlElement(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+        public Header Header { get; set; }
 
-        public SecurityHeader(string id, string username, string password)
+        [XmlElement(ElementName = "Body", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+        public XmlAnything<IBody> Body { get; set; }
+
+        [XmlAttribute(AttributeName = "soapenv", Namespace = "http://www.w3.org/2000/xmlns/")]
+        public string Soapenv { get; set; }
+    }
+    
+    /*Usada para crear un body generic en cada consulta*/
+    public interface IBody { }
+
+    [XmlRoot(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+    public class Header
+    {
+        public Header()
         {
-            _usernameToken = new UsernameToken(id, username, password);
+
+        }
+        public Header(string id, string username, string password, string endpoint, string action)
+        {
+            Security = new Security
+            {
+                MustUnderstand = 1,
+                UsernameToken = new UsernameToken(id, username, password)
+            };
+            To = new To
+            {
+                MustUnderstand = 1,
+                Value = endpoint
+            };
+            Action = action;
+            MessageID = "urn:uuid:" + Guid.NewGuid();
         }
 
-        public override string Name
-        {
-            get { return "Security"; }
-        }
+        [XmlElement(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
+        public Security Security { get; set; }
 
-        public override string Namespace
-        {
-            get { return "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"; }
-        }
+        [XmlElement(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
+        public To To { get; set; }
 
-        protected override void OnWriteHeaderContents(XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(UsernameToken));
-            serializer.Serialize(writer, _usernameToken);
-        }
+        [XmlElement(ElementName = "Action", Namespace = "http://www.w3.org/2005/08/addressing")]
+        public string Action { get; set; }
+
+        [XmlElement(ElementName = "MessageID", Namespace = "http://www.w3.org/2005/08/addressing")]
+        public string MessageID { get; set; }
+    }
+
+    [XmlRoot(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
+    public class Security
+    {
+        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+        public int MustUnderstand { get; set; }
+
+        [XmlElement(ElementName = "UsernameToken", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
+        public UsernameToken UsernameToken { get; set; }
+    }
+
+    [XmlRoot(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
+    public class To
+    {
+        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+        public int MustUnderstand { get; set; }
+
+        [XmlText]//endpoint
+        public string Value { get; set; }
     }
 
     [XmlRoot(Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
@@ -69,5 +116,4 @@ namespace ESIDIF.Models.Xml
         [XmlText]
         public string Value { get; set; }
     }
-
 }

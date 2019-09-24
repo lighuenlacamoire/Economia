@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ESIDIFCommon\ESIDIFCommon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Anses.Director.Session.lib, Version=3.0.0.2, Culture=neutral, PublicKeyToken=null">
       <HintPath>Libs\anses.director.session.lib.dll</HintPath>
       <Private>true</Private>

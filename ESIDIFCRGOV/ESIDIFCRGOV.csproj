@@ -21,6 +21,7 @@
     <ProjectReference Include="..\ESIDIF\ESIDIF.csproj" />
   </ItemGroup>
 
+
   <ItemGroup>
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>

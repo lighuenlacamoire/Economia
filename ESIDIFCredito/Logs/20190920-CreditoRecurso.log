@@ -1,0 +1,745 @@
+2019-09-20 12:12:20,876 [6] INFO  ESIDIFCredito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1QzVDMTlGRDYwRThGMzc4IiBnZW5fdGltZT0iMTU0OTUzOTgzNyIgZXhwX3RpbWU9IjE1NDk1Mzk4MzciIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41NSIgLz4NCiAgICAgIDxpbmZvIG5hbWU9InNuIiB2YWx1ZT0iMDQ0MCIgLz4NCiAgICAgIDxpbmZvIG5hbWU9ImVtYWlsIiB2YWx1ZT0iIiAvPg0KICAgICAgPGdyb3Vwcz4NCiAgICAgICAgPGdyb3VwIG5hbWU9Ik1pbmlzdGVyaW9kZUVjb25vbWlhIiAvPg0KICAgICAgPC9ncm91cHM+DQogICAgPC9sb2dpbj4NCiAgPC9vcGVyYXRpb24+DQo8L3Nzbz4=
+        </token>
+    <sign xmlns="http://director.anses.gov.ar">XeuRpKBqqoT7YMg3D5eQjBYmr8cKOkwLKQ153O9NJePHwC5CYwoAVG3qSL4qi4ia2XSyCE0lWItgJISpTUrRhhddgdOLBAfrslSr1LdyfCI6h/R7BrTv4Xq0AFcYKNnjicWa9fG10emtVyEbbWE3iFkKN1TQDDXaMDoNHyhV7bU=
+        </sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <!--Optional:-->
+        <ICabecera>
+          <!--Optional:-->
+          <Fechaenvio>?</Fechaenvio>
+          <!--Optional:-->
+          <Tipocomprobante>?</Tipocomprobante>
+          <!--Optional:-->
+          <Ejercicio>?</Ejercicio>
+          <!--Optional:-->
+          <Numerocomprobante>?</Numerocomprobante>
+          <!--Optional:-->
+          <Entidademisora>?</Entidademisora>
+          <!--Optional:-->
+          <Entidadproceso>?</Entidadproceso>
+          <!--Optional:-->
+          <Estado>?</Estado>
+          <!--Optional:-->
+          <Fechaaplicacion>?</Fechaaplicacion>
+          <!--Optional:-->
+          <Ejercicioactoadm>?</Ejercicioactoadm>
+          <!--Optional:-->
+          <Numeroactoadm>?</Numeroactoadm>
+          <!--Optional:-->
+          <Tipoactoadm>?</Tipoactoadm>
+          <!--Optional:-->
+          <Fechaactoadm>?</Fechaactoadm>
+          <!--Optional:-->
+          <Codigoconcepto>?</Codigoconcepto>
+          <!--Optional:-->
+          <Descripcionconcepto>?</Descripcionconcepto>
+          <!--Optional:-->
+          <Identificaciontramite>?</Identificaciontramite>
+        </ICabecera>
+        <!--Optional:-->
+        <ItEntradaCredito>
+          <!--Zero or more repetitions:-->
+          <item>
+            <!--Optional:-->
+            <Sector>?</Sector>
+            <!--Optional:-->
+            <Subsector>?</Subsector>
+            <!--Optional:-->
+            <Caracter>?</Caracter>
+            <!--Optional:-->
+            <Jurisdiccion>?</Jurisdiccion>
+            <!--Optional:-->
+            <Subjurisdiccion>?</Subjurisdiccion>
+            <!--Optional:-->
+            <Entidad>?</Entidad>
+            <!--Optional:-->
+            <Saf>?</Saf>
+            <!--Optional:-->
+            <Programa>?</Programa>
+            <!--Optional:-->
+            <Subprograma>?</Subprograma>
+            <!--Optional:-->
+            <Proyecto>?</Proyecto>
+            <!--Optional:-->
+            <Actividad>?</Actividad>
+            <!--Optional:-->
+            <Obra>?</Obra>
+            <!--Optional:-->
+            <Ubicaciongeografica>?</Ubicaciongeografica>
+            <!--Optional:-->
+            <Inciso>?</Inciso>
+            <!--Optional:-->
+            <Principal>?</Principal>
+            <!--Optional:-->
+            <Parcial>?</Parcial>
+            <!--Optional:-->
+            <Subparcial>?</Subparcial>
+            <!--Optional:-->
+            <Procedencia>?</Procedencia>
+            <!--Optional:-->
+            <Fuente>?</Fuente>
+            <!--Optional:-->
+            <Moneda>?</Moneda>
+            <!--Optional:-->
+            <Entidadorigendestino>?</Entidadorigendestino>
+            <!--Optional:-->
+            <Prestamoexterno>?</Prestamoexterno>
+            <!--Optional:-->
+            <Clasificadoreconomicocredito>?</Clasificadoreconomicocredito>
+            <!--Optional:-->
+            <Finalidad>?</Finalidad>
+            <!--Optional:-->
+            <Funcion>?</Funcion>
+            <!--Optional:-->
+            <Bapin>?</Bapin>
+            <!--Optional:-->
+            <Creditoinicial>?</Creditoinicial>
+            <!--Optional:-->
+            <Creditovigente>?</Creditovigente>
+            <!--Optional:-->
+            <Creditorestringido>?</Creditorestringido>
+            <!--Optional:-->
+            <Importecomprobantecredito>?</Importecomprobantecredito>
+          </item>
+        </ItEntradaCredito>
+        <!--Optional:-->
+        <ItEntradaRecurso>
+          <!--Zero or more repetitions:-->
+          <item>
+            <!--Optional:-->
+            <Sector>?</Sector>
+            <!--Optional:-->
+            <Subsector>?</Subsector>
+            <!--Optional:-->
+            <Caracter>?</Caracter>
+            <!--Optional:-->
+            <Jurisdiccion>?</Jurisdiccion>
+            <!--Optional:-->
+            <Subjurisdiccion>?</Subjurisdiccion>
+            <!--Optional:-->
+            <Entidad>?</Entidad>
+            <!--Optional:-->
+            <Saf>?</Saf>
+            <!--Optional:-->
+            <Tipo>?</Tipo>
+            <!--Optional:-->
+            <Clase>?</Clase>
+            <!--Optional:-->
+            <Concepto>?</Concepto>
+            <!--Optional:-->
+            <Subconcepto>?</Subconcepto>
+            <!--Optional:-->
+            <Procedencia>?</Procedencia>
+            <!--Optional:-->
+            <Fuente>?</Fuente>
+            <!--Optional:-->
+            <Moneda>?</Moneda>
+            <!--Optional:-->
+            <Entidadorigendestino>?</Entidadorigendestino>
+            <!--Optional:-->
+            <Prestamoexterno>?</Prestamoexterno>
+            <!--Optional:-->
+            <Clasificadoreconomicorecurso>?</Clasificadoreconomicorecurso>
+            <!--Optional:-->
+            <Recursoinicial>?</Recursoinicial>
+            <!--Optional:-->
+            <Recursovigente>?</Recursovigente>
+            <!--Optional:-->
+            <Recursorestringido>?</Recursorestringido>
+            <!--Optional:-->
+            <Importecomprobanterecurso>?</Importecomprobanterecurso>
+          </item>
+        </ItEntradaRecurso>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-20 12:14:20,997 [6] DEBUG ESIDIFCredito [(null)] - Entra ESIDIFCredito
+2019-09-20 12:15:08,298 [6] INFO  ESIDIFCredito [(null)] - ESIDIFCredito - Usuario CUIT: 30546676117 IP: 168.101.48.55
+2019-09-20 12:15:08,302 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-09-20 12:15:08,305 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-09-20 12:15:08,402 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-09-20 12:15:10,041 [6] INFO  ESIDIFCredito [(null)] - Consulta Servicio - SAP : 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CREDITO:ZfmWsCreditoRequest</a:Action>
+    <a:MessageID>urn:uuid:11d2bf4d-6919-4dbf-850b-eed50411bc01</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo3+JyioGQitIlGzWc1XbWCwAAAAA0Lk4sZNuh0mleQPXeDkGan3bSwrAqeBKq1Mt7GcwAfEACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ZfmWsCredito xmlns="urn:sap-com:document:sap:soap:functions:mc-style">
+      <ICabecera xmlns="">
+        <Fechaenvio>?</Fechaenvio>
+        <Tipocomprobante>?</Tipocomprobante>
+        <Ejercicio>?</Ejercicio>
+        <Numerocomprobante>?</Numerocomprobante>
+        <Entidademisora>?</Entidademisora>
+        <Entidadproceso>?</Entidadproceso>
+        <Estado>?</Estado>
+        <Fechaaplicacion>?</Fechaaplicacion>
+        <Ejercicioactoadm>?</Ejercicioactoadm>
+        <Numeroactoadm>?</Numeroactoadm>
+        <Tipoactoadm>?</Tipoactoadm>
+        <Fechaactoadm>?</Fechaactoadm>
+        <Codigoconcepto>?</Codigoconcepto>
+        <Descripcionconcepto>?</Descripcionconcepto>
+        <Identificaciontramite>?</Identificaciontramite>
+      </ICabecera>
+      <ICuilUser xmlns="">30546676117</ICuilUser>
+      <IIpUser xmlns="">168.101.48.55</IIpUser>
+      <ItEntradaCredito xmlns="">
+        <item>
+          <Sector>?</Sector>
+          <Subsector>?</Subsector>
+          <Caracter>?</Caracter>
+          <Jurisdiccion>?</Jurisdiccion>
+          <Subjurisdiccion>?</Subjurisdiccion>
+          <Entidad>?</Entidad>
+          <Saf>?</Saf>
+          <Programa>?</Programa>
+          <Subprograma>?</Subprograma>
+          <Proyecto>?</Proyecto>
+          <Actividad>?</Actividad>
+          <Obra>?</Obra>
+          <Ubicaciongeografica>?</Ubicaciongeografica>
+          <Inciso>?</Inciso>
+          <Principal>?</Principal>
+          <Parcial>?</Parcial>
+          <Subparcial>?</Subparcial>
+          <Procedencia>?</Procedencia>
+          <Fuente>?</Fuente>
+          <Moneda>?</Moneda>
+          <Entidadorigendestino>?</Entidadorigendestino>
+          <Prestamoexterno>?</Prestamoexterno>
+          <Clasificadoreconomicocredito>?</Clasificadoreconomicocredito>
+          <Finalidad>?</Finalidad>
+          <Funcion>?</Funcion>
+          <Bapin>?</Bapin>
+          <Creditoinicial>?</Creditoinicial>
+          <Creditovigente>?</Creditovigente>
+          <Creditorestringido>?</Creditorestringido>
+          <Importecomprobantecredito>?</Importecomprobantecredito>
+        </item>
+      </ItEntradaCredito>
+      <ItEntradaRecurso xmlns="">
+        <item>
+          <Sector>?</Sector>
+          <Subsector>?</Subsector>
+          <Caracter>?</Caracter>
+          <Jurisdiccion>?</Jurisdiccion>
+          <Subjurisdiccion>?</Subjurisdiccion>
+          <Entidad>?</Entidad>
+          <Saf>?</Saf>
+          <Tipo>?</Tipo>
+          <Clase>?</Clase>
+          <Concepto>?</Concepto>
+          <Subconcepto>?</Subconcepto>
+          <Procedencia>?</Procedencia>
+          <Fuente>?</Fuente>
+          <Moneda>?</Moneda>
+          <Entidadorigendestino>?</Entidadorigendestino>
+          <Prestamoexterno>?</Prestamoexterno>
+          <Clasificadoreconomicorecurso>?</Clasificadoreconomicorecurso>
+          <Recursoinicial>?</Recursoinicial>
+          <Recursovigente>?</Recursovigente>
+          <Recursorestringido>?</Recursorestringido>
+          <Importecomprobanterecurso>?</Importecomprobanterecurso>
+        </item>
+      </ItEntradaRecurso>
+    </ZfmWsCredito>
+  </s:Body>
+</s:Envelope>
+2019-09-20 12:15:11,635 [6] INFO  ESIDIFCredito [(null)] - Respuesta SAP - Servicio : 
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap-env:Header>
+    <wsa:To soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:From xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:Address>http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito</wsa:Address>
+    </wsa:From>
+    <wsa:Action soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:sap-com:document:sap:soap:functions:mc-style/ZWS_CREDITO/ZfmWsCreditoResponse</wsa:Action>
+    <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:005056b8-a331-1ed9-b6f7-2de6cee1e0bf</wsa:MessageID>
+    <wsa:RelatesTo xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:11d2bf4d-6919-4dbf-850b-eed50411bc01</wsa:RelatesTo>
+  </soap-env:Header>
+  <soap-env:Body>
+    <n0:ZfmWsCreditoResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+      <EOutput>
+        <Type>S</Type>
+        <Message>OK</Message>
+      </EOutput>
+      <ItEntradaCredito>
+        <item>
+          <Sector>?</Sector>
+          <Subsector>?</Subsector>
+          <Caracter>?</Caracter>
+          <Jurisdiccion>?</Jurisdiccion>
+          <Subjurisdiccion>?</Subjurisdiccion>
+          <Entidad>?</Entidad>
+          <Saf>?</Saf>
+          <Programa>?</Programa>
+          <Subprograma>?</Subprograma>
+          <Proyecto>?</Proyecto>
+          <Actividad>?</Actividad>
+          <Obra>?</Obra>
+          <Ubicaciongeografica>?</Ubicaciongeografica>
+          <Inciso>?</Inciso>
+          <Principal>?</Principal>
+          <Parcial>?</Parcial>
+          <Subparcial>?</Subparcial>
+          <Procedencia>?</Procedencia>
+          <Fuente>?</Fuente>
+          <Moneda>?</Moneda>
+          <Entidadorigendestino>?</Entidadorigendestino>
+          <Prestamoexterno>?</Prestamoexterno>
+          <Clasificadoreconomicocredito>?</Clasificadoreconomicocredito>
+          <Finalidad>?</Finalidad>
+          <Funcion>?</Funcion>
+          <Bapin>?</Bapin>
+          <Creditoinicial>?</Creditoinicial>
+          <Creditovigente>?</Creditovigente>
+          <Creditorestringido>?</Creditorestringido>
+          <Importecomprobantecredito>?</Importecomprobantecredito>
+        </item>
+      </ItEntradaCredito>
+      <ItEntradaRecurso>
+        <item>
+          <Sector>?</Sector>
+          <Subsector>?</Subsector>
+          <Caracter>?</Caracter>
+          <Jurisdiccion>?</Jurisdiccion>
+          <Subjurisdiccion>?</Subjurisdiccion>
+          <Entidad>?</Entidad>
+          <Saf>?</Saf>
+          <Tipo>?</Tipo>
+          <Clase>?</Clase>
+          <Concepto>?</Concepto>
+          <Subconcepto>?</Subconcepto>
+          <Procedencia>?</Procedencia>
+          <Fuente>?</Fuente>
+          <Moneda>?</Moneda>
+          <Entidadorigendestino>?</Entidadorigendestino>
+          <Prestamoexterno>?</Prestamoexterno>
+          <Clasificadoreconomicorecurso>?</Clasificadoreconomicorecurso>
+          <Recursoinicial>?</Recursoinicial>
+          <Recursovigente>?</Recursovigente>
+          <Recursorestringido>?</Recursorestringido>
+          <Importecomprobanterecurso>?</Importecomprobanterecurso>
+        </item>
+      </ItEntradaRecurso>
+    </n0:ZfmWsCreditoResponse>
+  </soap-env:Body>
+</soap-env:Envelope>
+2019-09-20 12:15:11,655 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-09-20 12:15:11,656 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsEntradasCredito[]
+2019-09-20 12:15:11,656 [6] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsEntradasRecurso[]
+2019-09-20 12:15:11,688 [6] DEBUG ESIDIFCredito [(null)] - Request  :<?xml version="1.0" encoding="utf-8"?><ZfmWsCredito xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ICabecera><Fechaenvio>?</Fechaenvio><Tipocomprobante>?</Tipocomprobante><Ejercicio>?</Ejercicio><Numerocomprobante>?</Numerocomprobante><Entidademisora>?</Entidademisora><Entidadproceso>?</Entidadproceso><Estado>?</Estado><Fechaaplicacion>?</Fechaaplicacion><Ejercicioactoadm>?</Ejercicioactoadm><Numeroactoadm>?</Numeroactoadm><Tipoactoadm>?</Tipoactoadm><Fechaactoadm>?</Fechaactoadm><Codigoconcepto>?</Codigoconcepto><Descripcionconcepto>?</Descripcionconcepto><Identificaciontramite>?</Identificaciontramite></ICabecera><ICuilUser>30546676117</ICuilUser><IIpUser>168.101.48.55</IIpUser><ItEntradaCredito><item><Sector>?</Sector><Subsector>?</Subsector><Caracter>?</Caracter><Jurisdiccion>?</Jurisdiccion><Subjurisdiccion>?</Subjurisdiccion><Entidad>?</Entidad><Saf>?</Saf><Programa>?</Programa><Subprograma>?</Subprograma><Proyecto>?</Proyecto><Actividad>?</Actividad><Obra>?</Obra><Ubicaciongeografica>?</Ubicaciongeografica><Inciso>?</Inciso><Principal>?</Principal><Parcial>?</Parcial><Subparcial>?</Subparcial><Procedencia>?</Procedencia><Fuente>?</Fuente><Moneda>?</Moneda><Entidadorigendestino>?</Entidadorigendestino><Prestamoexterno>?</Prestamoexterno><Clasificadoreconomicocredito>?</Clasificadoreconomicocredito><Finalidad>?</Finalidad><Funcion>?</Funcion><Bapin>?</Bapin><Creditoinicial>?</Creditoinicial><Creditovigente>?</Creditovigente><Creditorestringido>?</Creditorestringido><Importecomprobantecredito>?</Importecomprobantecredito></item></ItEntradaCredito><ItEntradaRecurso><item><Sector>?</Sector><Subsector>?</Subsector><Caracter>?</Caracter><Jurisdiccion>?</Jurisdiccion><Subjurisdiccion>?</Subjurisdiccion><Entidad>?</Entidad><Saf>?</Saf><Tipo>?</Tipo><Clase>?</Clase><Concepto>?</Concepto><Subconcepto>?</Subconcepto><Procedencia>?</Procedencia><Fuente>?</Fuente><Moneda>?</Moneda><Entidadorigendestino>?</Entidadorigendestino><Prestamoexterno>?</Prestamoexterno><Clasificadoreconomicorecurso>?</Clasificadoreconomicorecurso><Recursoinicial>?</Recursoinicial><Recursovigente>?</Recursovigente><Recursorestringido>?</Recursorestringido><Importecomprobanterecurso>?</Importecomprobanterecurso></item></ItEntradaRecurso></ZfmWsCredito>
+2019-09-20 12:15:11,717 [6] DEBUG ESIDIFCredito [(null)] - Response :<?xml version="1.0" encoding="utf-8"?><ZfmWsCreditoResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><EOutput><Type>S</Type><Message>OK</Message></EOutput><ItEntradaCredito><item><Sector>?</Sector><Subsector>?</Subsector><Caracter>?</Caracter><Jurisdiccion>?</Jurisdiccion><Subjurisdiccion>?</Subjurisdiccion><Entidad>?</Entidad><Saf>?</Saf><Programa>?</Programa><Subprograma>?</Subprograma><Proyecto>?</Proyecto><Actividad>?</Actividad><Obra>?</Obra><Ubicaciongeografica>?</Ubicaciongeografica><Inciso>?</Inciso><Principal>?</Principal><Parcial>?</Parcial><Subparcial>?</Subparcial><Procedencia>?</Procedencia><Fuente>?</Fuente><Moneda>?</Moneda><Entidadorigendestino>?</Entidadorigendestino><Prestamoexterno>?</Prestamoexterno><Clasificadoreconomicocredito>?</Clasificadoreconomicocredito><Finalidad>?</Finalidad><Funcion>?</Funcion><Bapin>?</Bapin><Creditoinicial>?</Creditoinicial><Creditovigente>?</Creditovigente><Creditorestringido>?</Creditorestringido><Importecomprobantecredito>?</Importecomprobantecredito></item></ItEntradaCredito><ItEntradaRecurso><item><Sector>?</Sector><Subsector>?</Subsector><Caracter>?</Caracter><Jurisdiccion>?</Jurisdiccion><Subjurisdiccion>?</Subjurisdiccion><Entidad>?</Entidad><Saf>?</Saf><Tipo>?</Tipo><Clase>?</Clase><Concepto>?</Concepto><Subconcepto>?</Subconcepto><Procedencia>?</Procedencia><Fuente>?</Fuente><Moneda>?</Moneda><Entidadorigendestino>?</Entidadorigendestino><Prestamoexterno>?</Prestamoexterno><Clasificadoreconomicorecurso>?</Clasificadoreconomicorecurso><Recursoinicial>?</Recursoinicial><Recursovigente>?</Recursovigente><Recursorestringido>?</Recursorestringido><Importecomprobanterecurso>?</Importecomprobanterecurso></item></ItEntradaRecurso></ZfmWsCreditoResponse>
+2019-09-20 12:15:11,717 [6] DEBUG ESIDIFCredito [(null)] - PresupuestoCredito ok
+2019-09-20 12:15:11,726 [6] INFO  ESIDIFCredito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-09-20 12:17:34,140 [11] INFO  ESIDIFCredito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1QzVDMTlGRDYwRThGMzc4IiBnZW5fdGltZT0iMTU0OTUzOTgzNyIgZXhwX3RpbWU9IjE1NDk1Mzk4MzciIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41NSIgLz4NCiAgICAgIDxpbmZvIG5hbWU9InNuIiB2YWx1ZT0iMDQ0MCIgLz4NCiAgICAgIDxpbmZvIG5hbWU9ImVtYWlsIiB2YWx1ZT0iIiAvPg0KICAgICAgPGdyb3Vwcz4NCiAgICAgICAgPGdyb3VwIG5hbWU9Ik1pbmlzdGVyaW9kZUVjb25vbWlhIiAvPg0KICAgICAgPC9ncm91cHM+DQogICAgPC9sb2dpbj4NCiAgPC9vcGVyYXRpb24+DQo8L3Nzbz4=
+        </token>
+    <sign xmlns="http://director.anses.gov.ar">XeuRpKBqqoT7YMg3D5eQjBYmr8cKOkwLKQ153O9NJePHwC5CYwoAVG3qSL4qi4ia2XSyCE0lWItgJISpTUrRhhddgdOLBAfrslSr1LdyfCI6h/R7BrTv4Xq0AFcYKNnjicWa9fG10emtVyEbbWE3iFkKN1TQDDXaMDoNHyhV7bU=
+        </sign>
+  </soapenv:Header>
+  <soapenv:Body>
+      <urn:PresupuestoCredito>
+         <urn:ZfmWsCredito>
+            <ICabecera><Fechaenvio>2019-07-12T01:06:06</Fechaenvio><Tipocomprobante>PMP</Tipocomprobante><Ejercicio>2018</Ejercicio><Numerocomprobante>8888</Numerocomprobante><Entidademisora>850</Entidademisora><Entidadproceso>850</Entidadproceso><Estado>APLICADO</Estado><Fechaaplicacion>2019-07-11T01:01:01</Fechaaplicacion><Ejercicioactoadm>2018</Ejercicioactoadm><Numeroactoadm>90111</Numeroactoadm><Tipoactoadm>DIS</Tipoactoadm><Fechaactoadm>2019-07-11T01:01:01</Fechaactoadm><Codigoconcepto>3</Codigoconcepto><Descripcionconcepto>3</Descripcionconcepto><Identificaciontramite>TST DA</Identificaciontramite></ICabecera><ICuilUser>111</ICuilUser><IIpUser>222</IIpUser>
+            <ItEntradaCredito>
+               <item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>5</Inciso><Principal>1</Principal><Parcial>7</Parcial><Subparcial>2033</Subparcial><Procedencia>1</Procedencia><Fuente>2</Fuente><Moneda>1</Moneda><Entidadorigendestino></Entidadorigendestino><Prestamoexterno></Prestamoexterno><Clasificadoreconomicocredito>21712000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Bapin></Bapin><Creditoinicial>1000.00</Creditoinicial><Creditovigente>1000.00</Creditovigente><Creditorestringido>1.00</Creditorestringido><Importecomprobantecredito>1000.00</Importecomprobantecredito>
+               </item>
+               <item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>5</Inciso><Principal>1</Principal><Parcial>7</Parcial><Subparcial>2033</Subparcial><Procedencia>1</Procedencia><Fuente>1</Fuente><Moneda>1</Moneda><Entidadorigendestino></Entidadorigendestino><Prestamoexterno></Prestamoexterno><Clasificadoreconomicocredito>21712000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Bapin></Bapin><Creditoinicial>1000.00</Creditoinicial><Creditovigente>1000.00</Creditovigente><Creditorestringido>0.00</Creditorestringido><Importecomprobantecredito>1000.00</Importecomprobantecredito>
+               </item>
+            </ItEntradaCredito>
+            <ItEntradaRecurso>
+               <item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Tipo>16</Tipo><Clase>1</Clase><Concepto>1</Concepto><Subconcepto>7</Subconcepto><Procedencia>1</Procedencia><Fuente>2</Fuente><Moneda>1</Moneda><Entidadorigendestino></Entidadorigendestino><Prestamoexterno></Prestamoexterno><Clasificadoreconomicorecurso></Clasificadoreconomicorecurso><Recursoinicial>100.00</Recursoinicial><Recursovigente>100.00</Recursovigente><Recursorestringido>0.00</Recursorestringido><Importecomprobanterecurso>1.00</Importecomprobanterecurso>
+               </item>
+            </ItEntradaRecurso>
+         </urn:ZfmWsCredito>
+      </urn:PresupuestoCredito></soapenv:Body>
+</soapenv:Envelope>
+2019-09-20 12:20:04,163 [11] DEBUG ESIDIFCredito [(null)] - Entra ESIDIFCredito
+2019-09-20 12:20:05,307 [11] INFO  ESIDIFCredito [(null)] - ESIDIFCredito - Usuario CUIT: 30546676117 IP: 168.101.48.55
+2019-09-20 12:20:05,307 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-09-20 12:20:05,309 [11] INFO  ESIDIFCredito [(null)] - Consulta Servicio - SAP : 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CREDITO:ZfmWsCreditoRequest</a:Action>
+    <a:MessageID>urn:uuid:1909e3d9-a2dc-431a-b8ee-ad6fb3234f91</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo4CJyioGQitIlGzWc1XbWCwAAAAA0Lk4sZNuh0mleQPXeDkGan3bSwrAqeBKq1Mt7GcwAfEACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ZfmWsCredito xmlns="urn:sap-com:document:sap:soap:functions:mc-style">
+      <ICabecera xmlns="">
+        <Fechaenvio>2019-07-12T01:06:06</Fechaenvio>
+        <Tipocomprobante>PMP</Tipocomprobante>
+        <Ejercicio>2018</Ejercicio>
+        <Numerocomprobante>8888</Numerocomprobante>
+        <Entidademisora>850</Entidademisora>
+        <Entidadproceso>850</Entidadproceso>
+        <Estado>APLICADO</Estado>
+        <Fechaaplicacion>2019-07-11T01:01:01</Fechaaplicacion>
+        <Ejercicioactoadm>2018</Ejercicioactoadm>
+        <Numeroactoadm>90111</Numeroactoadm>
+        <Tipoactoadm>DIS</Tipoactoadm>
+        <Fechaactoadm>2019-07-11T01:01:01</Fechaactoadm>
+        <Codigoconcepto>3</Codigoconcepto>
+        <Descripcionconcepto>3</Descripcionconcepto>
+        <Identificaciontramite>TST DA</Identificaciontramite>
+      </ICabecera>
+      <ICuilUser xmlns="">30546676117</ICuilUser>
+      <IIpUser xmlns="">168.101.48.55</IIpUser>
+    </ZfmWsCredito>
+  </s:Body>
+</s:Envelope>
+2019-09-20 12:20:05,773 [11] INFO  ESIDIFCredito [(null)] - Respuesta SAP - Servicio : 
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap-env:Header>
+    <wsa:To soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:From xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:Address>http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito</wsa:Address>
+    </wsa:From>
+    <wsa:Action soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:sap-com:document:sap:soap:functions:mc-style/ZWS_CREDITO/ZfmWsCreditoResponse</wsa:Action>
+    <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:005056b8-a331-1ed9-b6f7-43d6a58060d2</wsa:MessageID>
+    <wsa:RelatesTo xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:1909e3d9-a2dc-431a-b8ee-ad6fb3234f91</wsa:RelatesTo>
+  </soap-env:Header>
+  <soap-env:Body>
+    <n0:ZfmWsCreditoResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+      <EOutput>
+        <Type>S</Type>
+        <Message>OK</Message>
+      </EOutput>
+      <ItEntradaCredito />
+      <ItEntradaRecurso />
+    </n0:ZfmWsCreditoResponse>
+  </soap-env:Body>
+</soap-env:Envelope>
+2019-09-20 12:20:05,774 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-09-20 12:20:05,774 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: No enviado
+2019-09-20 12:20:05,774 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: No enviado
+2019-09-20 12:20:05,775 [11] DEBUG ESIDIFCredito [(null)] - Request  :<?xml version="1.0" encoding="utf-8"?><ZfmWsCredito xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ICabecera><Fechaenvio>2019-07-12T01:06:06</Fechaenvio><Tipocomprobante>PMP</Tipocomprobante><Ejercicio>2018</Ejercicio><Numerocomprobante>8888</Numerocomprobante><Entidademisora>850</Entidademisora><Entidadproceso>850</Entidadproceso><Estado>APLICADO</Estado><Fechaaplicacion>2019-07-11T01:01:01</Fechaaplicacion><Ejercicioactoadm>2018</Ejercicioactoadm><Numeroactoadm>90111</Numeroactoadm><Tipoactoadm>DIS</Tipoactoadm><Fechaactoadm>2019-07-11T01:01:01</Fechaactoadm><Codigoconcepto>3</Codigoconcepto><Descripcionconcepto>3</Descripcionconcepto><Identificaciontramite>TST DA</Identificaciontramite></ICabecera><ICuilUser>30546676117</ICuilUser><IIpUser>168.101.48.55</IIpUser></ZfmWsCredito>
+2019-09-20 12:20:05,775 [11] DEBUG ESIDIFCredito [(null)] - Response :<?xml version="1.0" encoding="utf-8"?><ZfmWsCreditoResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><EOutput><Type>S</Type><Message>OK</Message></EOutput><ItEntradaCredito /><ItEntradaRecurso /></ZfmWsCreditoResponse>
+2019-09-20 12:20:05,775 [11] DEBUG ESIDIFCredito [(null)] - PresupuestoCredito ok
+2019-09-20 12:20:05,784 [11] INFO  ESIDIFCredito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-09-20 12:20:36,749 [11] INFO  ESIDIFCredito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1QzVDMTlGRDYwRThGMzc4IiBnZW5fdGltZT0iMTU0OTUzOTgzNyIgZXhwX3RpbWU9IjE1NDk1Mzk4MzciIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41NSIgLz4NCiAgICAgIDxpbmZvIG5hbWU9InNuIiB2YWx1ZT0iMDQ0MCIgLz4NCiAgICAgIDxpbmZvIG5hbWU9ImVtYWlsIiB2YWx1ZT0iIiAvPg0KICAgICAgPGdyb3Vwcz4NCiAgICAgICAgPGdyb3VwIG5hbWU9Ik1pbmlzdGVyaW9kZUVjb25vbWlhIiAvPg0KICAgICAgPC9ncm91cHM+DQogICAgPC9sb2dpbj4NCiAgPC9vcGVyYXRpb24+DQo8L3Nzbz4=
+        </token>
+    <sign xmlns="http://director.anses.gov.ar">XeuRpKBqqoT7YMg3D5eQjBYmr8cKOkwLKQ153O9NJePHwC5CYwoAVG3qSL4qi4ia2XSyCE0lWItgJISpTUrRhhddgdOLBAfrslSr1LdyfCI6h/R7BrTv4Xq0AFcYKNnjicWa9fG10emtVyEbbWE3iFkKN1TQDDXaMDoNHyhV7bU=
+        </sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <ICabecera>
+          <Fechaenvio>19-09-2019 14:56:19.019</Fechaenvio>
+          <Tipocomprobante>SMP</Tipocomprobante>
+          <Ejercicio>2019</Ejercicio>
+          <Numerocomprobante>1</Numerocomprobante>
+          <Entidademisora>850</Entidademisora>
+          <Entidadproceso>850</Entidadproceso>
+          <Estado>ingresado</Estado>
+          <Fechaaplicacion></Fechaaplicacion>
+          <Codigoconcepto>3</Codigoconcepto>
+          <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+        </ICabecera>
+        <ItEntradaCredito>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>1</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>2</Ubicaciongeografica>
+            <Inciso>1</Inciso>
+            <Principal>1</Principal>
+            <Parcial>6</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21212000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>0</Creditoinicial>
+            <Creditovigente>0</Creditovigente>
+            <Creditorestringido>0</Creditorestringido>
+            <Importecomprobantecredito>365</Importecomprobantecredito>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>1</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>2</Ubicaciongeografica>
+            <Inciso>2</Inciso>
+            <Principal>1</Principal>
+            <Parcial>1</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21221000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>0</Creditoinicial>
+            <Creditovigente>100200100199997</Creditovigente>
+            <Creditorestringido>-66681</Creditorestringido>
+            <Importecomprobantecredito>-15</Importecomprobantecredito>
+          </item>
+        </ItEntradaCredito>
+        <ItEntradaRecurso></ItEntradaRecurso>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-09-20 12:20:58,313 [11] DEBUG ESIDIFCredito [(null)] - Entra ESIDIFCredito
+2019-09-20 12:20:59,380 [11] INFO  ESIDIFCredito [(null)] - ESIDIFCredito - Usuario CUIT: 30546676117 IP: 168.101.48.55
+2019-09-20 12:20:59,381 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-09-20 12:20:59,381 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-09-20 12:20:59,382 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-09-20 12:20:59,387 [11] INFO  ESIDIFCredito [(null)] - Consulta Servicio - SAP : 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CREDITO:ZfmWsCreditoRequest</a:Action>
+    <a:MessageID>urn:uuid:6a5ac83a-87a4-4ca4-ae8c-8bb541af80c4</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo4GJyioGQitIlGzWc1XbWCwAAAAA0Lk4sZNuh0mleQPXeDkGan3bSwrAqeBKq1Mt7GcwAfEACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ZfmWsCredito xmlns="urn:sap-com:document:sap:soap:functions:mc-style">
+      <ICabecera xmlns="">
+        <Fechaenvio>19-09-2019 14:56:19.019</Fechaenvio>
+        <Tipocomprobante>SMP</Tipocomprobante>
+        <Ejercicio>2019</Ejercicio>
+        <Numerocomprobante>1</Numerocomprobante>
+        <Entidademisora>850</Entidademisora>
+        <Entidadproceso>850</Entidadproceso>
+        <Estado>ingresado</Estado>
+        <Fechaaplicacion />
+        <Codigoconcepto>3</Codigoconcepto>
+        <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+      </ICabecera>
+      <ICuilUser xmlns="">30546676117</ICuilUser>
+      <IIpUser xmlns="">168.101.48.55</IIpUser>
+      <ItEntradaCredito xmlns="">
+        <item>
+          <Sector>1</Sector>
+          <Subsector>1</Subsector>
+          <Caracter>3</Caracter>
+          <Jurisdiccion>85</Jurisdiccion>
+          <Subjurisdiccion>0</Subjurisdiccion>
+          <Entidad>850</Entidad>
+          <Saf>850</Saf>
+          <Programa>1</Programa>
+          <Subprograma>0</Subprograma>
+          <Proyecto>0</Proyecto>
+          <Actividad>1</Actividad>
+          <Obra>0</Obra>
+          <Ubicaciongeografica>2</Ubicaciongeografica>
+          <Inciso>1</Inciso>
+          <Principal>1</Principal>
+          <Parcial>6</Parcial>
+          <Subparcial>0</Subparcial>
+          <Procedencia>1</Procedencia>
+          <Fuente>2</Fuente>
+          <Moneda>1</Moneda>
+          <Clasificadoreconomicocredito>21212000</Clasificadoreconomicocredito>
+          <Finalidad>3</Finalidad>
+          <Funcion>3</Funcion>
+          <Creditoinicial>0</Creditoinicial>
+          <Creditovigente>0</Creditovigente>
+          <Creditorestringido>0</Creditorestringido>
+          <Importecomprobantecredito>365</Importecomprobantecredito>
+        </item>
+        <item>
+          <Sector>1</Sector>
+          <Subsector>1</Subsector>
+          <Caracter>3</Caracter>
+          <Jurisdiccion>85</Jurisdiccion>
+          <Subjurisdiccion>0</Subjurisdiccion>
+          <Entidad>850</Entidad>
+          <Saf>850</Saf>
+          <Programa>1</Programa>
+          <Subprograma>0</Subprograma>
+          <Proyecto>0</Proyecto>
+          <Actividad>1</Actividad>
+          <Obra>0</Obra>
+          <Ubicaciongeografica>2</Ubicaciongeografica>
+          <Inciso>2</Inciso>
+          <Principal>1</Principal>
+          <Parcial>1</Parcial>
+          <Subparcial>0</Subparcial>
+          <Procedencia>1</Procedencia>
+          <Fuente>1</Fuente>
+          <Moneda>1</Moneda>
+          <Clasificadoreconomicocredito>21221000</Clasificadoreconomicocredito>
+          <Finalidad>3</Finalidad>
+          <Funcion>3</Funcion>
+          <Creditoinicial>0</Creditoinicial>
+          <Creditovigente>100200100199997</Creditovigente>
+          <Creditorestringido>-66681</Creditorestringido>
+          <Importecomprobantecredito>-15</Importecomprobantecredito>
+        </item>
+      </ItEntradaCredito>
+    </ZfmWsCredito>
+  </s:Body>
+</s:Envelope>
+2019-09-20 12:20:59,737 [11] INFO  ESIDIFCredito [(null)] - Respuesta SAP - Servicio : 
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap-env:Header>
+    <wsa:To soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:From xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:Address>http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito</wsa:Address>
+    </wsa:From>
+    <wsa:Action soap-env:mustUnderstand="1" xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:sap-com:document:sap:soap:functions:mc-style/ZWS_CREDITO/ZfmWsCreditoResponse</wsa:Action>
+    <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:005056b8-a331-1ed9-b6f7-47df10e2a0d2</wsa:MessageID>
+    <wsa:RelatesTo xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:6a5ac83a-87a4-4ca4-ae8c-8bb541af80c4</wsa:RelatesTo>
+  </soap-env:Header>
+  <soap-env:Body>
+    <n0:ZfmWsCreditoResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+      <EOutput>
+        <Type>S</Type>
+        <Message>OK</Message>
+      </EOutput>
+      <ItEntradaCredito>
+        <item>
+          <Sector>1</Sector>
+          <Subsector>1</Subsector>
+          <Caracter>3</Caracter>
+          <Jurisdiccion>85</Jurisdiccion>
+          <Subjurisdiccion>0</Subjurisdiccion>
+          <Entidad>850</Entidad>
+          <Saf>850</Saf>
+          <Programa>1</Programa>
+          <Subprograma>0</Subprograma>
+          <Proyecto>0</Proyecto>
+          <Actividad>1</Actividad>
+          <Obra>0</Obra>
+          <Ubicaciongeografica>2</Ubicaciongeografica>
+          <Inciso>1</Inciso>
+          <Principal>1</Principal>
+          <Parcial>6</Parcial>
+          <Subparcial>0</Subparcial>
+          <Procedencia>1</Procedencia>
+          <Fuente>2</Fuente>
+          <Moneda>1</Moneda>
+          <Entidadorigendestino />
+          <Prestamoexterno />
+          <Clasificadoreconomicocredito>21212000</Clasificadoreconomicocredito>
+          <Finalidad>3</Finalidad>
+          <Funcion>3</Funcion>
+          <Bapin />
+          <Creditoinicial>0</Creditoinicial>
+          <Creditovigente>0</Creditovigente>
+          <Creditorestringido>0</Creditorestringido>
+          <Importecomprobantecredito>365</Importecomprobantecredito>
+        </item>
+        <item>
+          <Sector>1</Sector>
+          <Subsector>1</Subsector>
+          <Caracter>3</Caracter>
+          <Jurisdiccion>85</Jurisdiccion>
+          <Subjurisdiccion>0</Subjurisdiccion>
+          <Entidad>850</Entidad>
+          <Saf>850</Saf>
+          <Programa>1</Programa>
+          <Subprograma>0</Subprograma>
+          <Proyecto>0</Proyecto>
+          <Actividad>1</Actividad>
+          <Obra>0</Obra>
+          <Ubicaciongeografica>2</Ubicaciongeografica>
+          <Inciso>2</Inciso>
+          <Principal>1</Principal>
+          <Parcial>1</Parcial>
+          <Subparcial>0</Subparcial>
+          <Procedencia>1</Procedencia>
+          <Fuente>1</Fuente>
+          <Moneda>1</Moneda>
+          <Entidadorigendestino />
+          <Prestamoexterno />
+          <Clasificadoreconomicocredito>21221000</Clasificadoreconomicocredito>
+          <Finalidad>3</Finalidad>
+          <Funcion>3</Funcion>
+          <Bapin />
+          <Creditoinicial>0</Creditoinicial>
+          <Creditovigente>100200100199997</Creditovigente>
+          <Creditorestringido>-66681</Creditorestringido>
+          <Importecomprobantecredito>-15</Importecomprobantecredito>
+        </item>
+      </ItEntradaCredito>
+      <ItEntradaRecurso />
+    </n0:ZfmWsCreditoResponse>
+  </soap-env:Body>
+</soap-env:Envelope>
+2019-09-20 12:20:59,739 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-09-20 12:20:59,739 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsEntradasCredito[]
+2019-09-20 12:20:59,739 [11] DEBUG ESIDIFCredito [(null)] - Invoco --> Prueba: No enviado
+2019-09-20 12:20:59,739 [11] DEBUG ESIDIFCredito [(null)] - Request  :<?xml version="1.0" encoding="utf-8"?><ZfmWsCredito xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ICabecera><Fechaenvio>19-09-2019 14:56:19.019</Fechaenvio><Tipocomprobante>SMP</Tipocomprobante><Ejercicio>2019</Ejercicio><Numerocomprobante>1</Numerocomprobante><Entidademisora>850</Entidademisora><Entidadproceso>850</Entidadproceso><Estado>ingresado</Estado><Fechaaplicacion /><Codigoconcepto>3</Codigoconcepto><Descripcionconcepto>Requerimiento</Descripcionconcepto></ICabecera><ICuilUser>30546676117</ICuilUser><IIpUser>168.101.48.55</IIpUser><ItEntradaCredito><item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>1</Inciso><Principal>1</Principal><Parcial>6</Parcial><Subparcial>0</Subparcial><Procedencia>1</Procedencia><Fuente>2</Fuente><Moneda>1</Moneda><Clasificadoreconomicocredito>21212000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Creditoinicial>0</Creditoinicial><Creditovigente>0</Creditovigente><Creditorestringido>0</Creditorestringido><Importecomprobantecredito>365</Importecomprobantecredito></item><item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>2</Inciso><Principal>1</Principal><Parcial>1</Parcial><Subparcial>0</Subparcial><Procedencia>1</Procedencia><Fuente>1</Fuente><Moneda>1</Moneda><Clasificadoreconomicocredito>21221000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Creditoinicial>0</Creditoinicial><Creditovigente>100200100199997</Creditovigente><Creditorestringido>-66681</Creditorestringido><Importecomprobantecredito>-15</Importecomprobantecredito></item></ItEntradaCredito></ZfmWsCredito>
+2019-09-20 12:20:59,740 [11] DEBUG ESIDIFCredito [(null)] - Response :<?xml version="1.0" encoding="utf-8"?><ZfmWsCreditoResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><EOutput><Type>S</Type><Message>OK</Message></EOutput><ItEntradaCredito><item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>1</Inciso><Principal>1</Principal><Parcial>6</Parcial><Subparcial>0</Subparcial><Procedencia>1</Procedencia><Fuente>2</Fuente><Moneda>1</Moneda><Entidadorigendestino /><Prestamoexterno /><Clasificadoreconomicocredito>21212000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Bapin /><Creditoinicial>0</Creditoinicial><Creditovigente>0</Creditovigente><Creditorestringido>0</Creditorestringido><Importecomprobantecredito>365</Importecomprobantecredito></item><item><Sector>1</Sector><Subsector>1</Subsector><Caracter>3</Caracter><Jurisdiccion>85</Jurisdiccion><Subjurisdiccion>0</Subjurisdiccion><Entidad>850</Entidad><Saf>850</Saf><Programa>1</Programa><Subprograma>0</Subprograma><Proyecto>0</Proyecto><Actividad>1</Actividad><Obra>0</Obra><Ubicaciongeografica>2</Ubicaciongeografica><Inciso>2</Inciso><Principal>1</Principal><Parcial>1</Parcial><Subparcial>0</Subparcial><Procedencia>1</Procedencia><Fuente>1</Fuente><Moneda>1</Moneda><Entidadorigendestino /><Prestamoexterno /><Clasificadoreconomicocredito>21221000</Clasificadoreconomicocredito><Finalidad>3</Finalidad><Funcion>3</Funcion><Bapin /><Creditoinicial>0</Creditoinicial><Creditovigente>100200100199997</Creditovigente><Creditorestringido>-66681</Creditorestringido><Importecomprobantecredito>-15</Importecomprobantecredito></item></ItEntradaCredito><ItEntradaRecurso /></ZfmWsCreditoResponse>
+2019-09-20 12:20:59,740 [11] DEBUG ESIDIFCredito [(null)] - PresupuestoCredito ok
+2019-09-20 12:20:59,744 [11] INFO  ESIDIFCredito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>

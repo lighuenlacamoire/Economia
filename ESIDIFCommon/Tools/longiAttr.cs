@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ESIDIFCredito.Models
+namespace ESIDIFCommon.Tools
 {
     public class longiAttr : Attribute
     {

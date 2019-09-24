@@ -1,4 +1,6 @@
-﻿using ESIDIF.Tools;
+﻿
+using ESIDIF.Models.Xml;
+using ESIDIFCommon.Tools;
 using ESIDIFCRGOV.Extensions;
 using log4net;
 using System;
@@ -16,15 +18,17 @@ namespace ESIDIFCRGOV.Business
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(CRGOVService));
 
+        private static string ServiceLogName = "GenerarCrgOv";
+
         public Sources()
         {
 
         }
         public Models.crgOvResponse generarCrgOvWeb(Models.crgOvRequest data)
         {
-            log.Info("GenerarCrgOv - Ingreso");
+            log.Info(ServiceLogName + " - Ingreso");
 
-            log.Debug("GenerarCrgOv - Seteando variables de contexto.");
+            log.Debug(ServiceLogName + " - Seteando variables de contexto.");
 
             string usuarioProxy = Settings.GetAppSettings("Settings:Proxy:User");
             string passwdProxy = Settings.GetAppSettings("Settings:Proxy:Password");
@@ -34,26 +38,28 @@ namespace ESIDIFCRGOV.Business
             string usuarioWS = Settings.GetAppSettings("Settings:Service:User");
             string passwdWS = Settings.GetAppSettings("Settings:Service:Password");
 
+            string digitalMark = Settings.GetAppSettings("Settings:Credential:DigitalMark");
+
             string WSAction = Settings.GetAppSettings("Settings:Service:Action");
             string WSEndpoint = Settings.GetAppSettings("Settings:Service:Endpoint");
 
-            log.Debug("GenerarCrgOv - Seteando PROXY.");
+            log.Debug(ServiceLogName + " - Seteando PROXY.");
             WebProxy proxy = Functions.CrearProxy();
 
-            log.Debug("GenerarCrgOv - Cargando certificado X509.");
+            log.Debug(ServiceLogName + " - Cargando certificado X509.");
             NetworkCredential credential = new NetworkCredential(usuarioWS, passwdWS);
             CredentialCache credentialCache = new CredentialCache();
             credentialCache.Add(new Uri(WSEndpoint), "NTLM", credential);
 
-            log.Debug("GenerarCrgOv - IGNORA_ERROR_CERTI = true.");
+            log.Debug(ServiceLogName + " - IGNORA_ERROR_CERTI = true.");
             ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
 
-            log.Debug("GenerarCrgOv - Certificado X509 cargado exitosamente.");
+            log.Debug(ServiceLogName + " - Certificado X509 cargado exitosamente.");
 
-            log.Debug("GenerarCrgOv - Creando Bean");
-            var envelope = new Soap.Envelope();
-            envelope.Header = new Soap.Header("UsernameToken-1", usuarioWS, passwdWS, WSEndpoint, WSAction);
-            envelope.Body = new Soap.Body(data);
+            log.Debug(ServiceLogName + " - Creando Bean");
+            var envelope = new Envelope();
+            envelope.Header = new Header("UsernameToken-1", usuarioWS, passwdWS, WSEndpoint, WSAction);
+            envelope.Body = new XmlAnything<IBody>(data);
 
             System.Xml.Serialization.XmlSerializerNamespaces xmlnsSoap = new System.Xml.Serialization.XmlSerializerNamespaces();
             xmlnsSoap.Add("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
@@ -64,10 +70,10 @@ namespace ESIDIFCRGOV.Business
             xmlnsSoap.Add("wsu", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd");
             xmlnsSoap.Add("wsa", "http://www.w3.org/2005/08/addressing");
 
-            log.Debug("GenerarCrgOv - Mapeando a objeto XML.");
+            log.Debug(ServiceLogName + " - Mapeando a objeto XML.");
             string result = Functions.SerializeObjectToString(envelope, xmlnsSoap);
 
-            log.Debug("GenerarCrgOv - Armando header de autenticacion");
+            log.Debug(ServiceLogName + " - Armando header de autenticacion");
             HttpWebRequest request = WebRequest.Create(WSEndpoint) as HttpWebRequest;
             request.Headers.Add("SOAPAction", WSAction);
             request.ContentType = "text/xml;charset=\"utf-8\"";
@@ -78,7 +84,7 @@ namespace ESIDIFCRGOV.Business
             request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
             request.Proxy = proxy;
             request.Credentials = credentialCache;
-            request.ClientCertificates.Add(Functions.GetClientCertificate());
+            request.ClientCertificates.Add(Functions.GetClientCertificate(digitalMark));
 
             try
             {
@@ -105,7 +111,7 @@ namespace ESIDIFCRGOV.Business
             }
             catch (WebException exp)
             {
-                log.Error("GenerarCrgOv - Error en la ejecucion : " + exp.Message);
+                log.Error(ServiceLogName + " - Error en la ejecucion : " + exp.Message);
 
                 using (StreamReader sr = new StreamReader(exp.Response.GetResponseStream()))
                 {

@@ -144,13 +144,11 @@
       <DependentUpon>CreditoService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Extensions\SoapMiddleware.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities.cs" />
-    <Compile Include="Models\ErrorLonguitud.cs" />
-    <Compile Include="Models\longiAttr.cs" />
-    <Compile Include="Models\ValidadorLonguitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +190,10 @@
     <WCFMetadataStorage Include="Connected Services\service\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ESIDIFCommon\ESIDIFCommon.csproj">
+      <Project>{9d195b79-b596-4a4a-be0e-2bfe6ef10246}</Project>
+      <Name>ESIDIFCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ESIDIFLegacy\ESIDIFLegacy.csproj">
       <Project>{6a6cf5dc-cad0-4856-9229-9410f47c13f0}</Project>
       <Name>ESIDIFLegacy</Name>
