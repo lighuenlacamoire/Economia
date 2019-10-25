@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Web.Services.Protocols;
 using System.Xml;
+using ESIDIFCommon.Models.Xml;
 using ESIDIFCommon.Tools;
 using ESIDIFCredito.Models;
 using ESIDIFLegacy.Models.Director;
@@ -15,9 +16,9 @@ namespace ESIDIFCredito.Business
 {
     public class Sources
     {
-        private static string ServiceNameLog = "ESIDIFCredito";
+        private static string ServiceLogName = "Credito";
 
-        private static readonly ILog log = LogManager.GetLogger(ServiceNameLog);
+        private static readonly ILog log = LogManager.GetLogger(ServiceLogName);
 
         service.ZWS_CREDITOClient _service = new service.ZWS_CREDITOClient();
 
@@ -40,7 +41,7 @@ namespace ESIDIFCredito.Business
             string request = string.Empty;
             string requestXml = string.Empty;
 
-            log.Debug("Entra "+ ServiceNameLog);
+            log.Debug("Entra " + ServiceLogName);
 
             try
             {
@@ -50,7 +51,7 @@ namespace ESIDIFCredito.Business
                     try
                     {
                         request = ((XmlDocument)Functions.GenericToXmlDocument(consulta)).InnerXml;
-                        requestXml = Functions.TransformarXml(request);
+                        requestXml = Functions.TransforXml(request);
 
                     }
                     catch (Exception ex)
@@ -75,14 +76,14 @@ namespace ESIDIFCredito.Business
                 {
                     if (!UsuarioSession.HasToken)
                     {
-                        UsuarioSession = new UserLogged().ObtenerDatosToken(unknownHeaders, "token");
+                        UsuarioSession = new UserLogged().GetTokenFromHeader(unknownHeaders, "token");
                     }
 
                     if (UsuarioSession != null &&
                         !string.IsNullOrEmpty(UsuarioSession.Entity) && UsuarioSession.Entity.Length > 0 &&
                         !string.IsNullOrEmpty(UsuarioSession.IP) && UsuarioSession.IP.Length > 0)
                     {
-                        log.Info(ServiceNameLog+" - Usuario CUIT: " + UsuarioSession.Entity + " IP: " + UsuarioSession.IP);
+                        log.Info(ServiceLogName + " - Usuario CUIT: " + UsuarioSession.Entity + " IP: " + UsuarioSession.IP);
                     }
                     else
                     {
@@ -435,7 +436,7 @@ namespace ESIDIFCredito.Business
                     + "<br/><div style='width:400px'><textarea rows='20' cols='40' style='border:none;'>" + requestXml + "</textarea></div>";
 
 
-                //enviarMail(mailMensaje, mailDestinatarios, "Error Servicio SAP-ESIDIF: Presupuesto Credito");
+                enviarMail(mailMensaje, mailDestinatarios, "Error Servicio SAP-ESIDIF: Presupuesto Credito");
                 #endregion
             }
 
@@ -445,6 +446,13 @@ namespace ESIDIFCredito.Business
             }
 
             return respuesta;
+        }
+
+        public SoapException HandleError(Exception ex)
+        {
+            SoapError error = Functions.SoapErrorFromException(ex);
+
+            return new SoapException(error.FaultDetail, SoapException.ServerFaultCode, error.FaultReason, error.FaultNode);
         }
 
         public static void enviarMail(string cuerpo, string destinatario, string asunto)

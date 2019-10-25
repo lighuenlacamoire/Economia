@@ -19,7 +19,7 @@ namespace ESIDIFLegacy.Models.Director
 
         }
 
-        public User ObtenerDatosToken(SoapUnknownHeader[] unknownHeaders, string tag)
+        public User GetTokenFromHeader(SoapUnknownHeader[] unknownHeaders, string tag)
         {
             try
             {

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:es="https://ws-si.mecon.gov.ar/ws/security/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://impl.service.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://impl.service.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <sp:UsernameToken>
+    <wsp:Policy>
+      <sp:WssUsernameToken10 />
+    </wsp:Policy>
+  </sp:UsernameToken>
+  <es:UsuarioFisicoToken />
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="imputacionPresupuestarioCreditoLimitativa" nillable="true" type="tns:imputacionCreditoConsulta" />
+      <xs:element name="imputacionPresupuestariaCreditoIndicativa" nillable="true" type="tns:imputacionCreditoConsulta" />
+      <xs:complexType name="imputacionCreditoConsulta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ejercicio" type="xs:long" />
+          <xs:element minOccurs="0" name="sectorInstitucional" type="xs:long" />
+          <xs:element minOccurs="0" name="subSectorInstitucional" type="xs:long" />
+          <xs:element minOccurs="0" name="caracterInstitucional" type="xs:long" />
+          <xs:element minOccurs="0" name="jurisdiccion" type="xs:long" />
+          <xs:element minOccurs="0" name="subJurisdiccion" type="xs:long" />
+          <xs:element minOccurs="0" name="entidad" type="xs:long" />
+          <xs:element minOccurs="0" name="servicio" type="xs:long" />
+          <xs:element minOccurs="0" name="programa" type="xs:long" />
+          <xs:element minOccurs="0" name="subPrograma" type="xs:long" />
+          <xs:element minOccurs="0" name="proyecto" type="xs:long" />
+          <xs:element minOccurs="0" name="actividad" type="xs:long" />
+          <xs:element minOccurs="0" name="obra" type="xs:long" />
+          <xs:element minOccurs="0" name="inciso" type="xs:long" />
+          <xs:element minOccurs="0" name="principal" type="xs:long" />
+          <xs:element minOccurs="0" name="parcial" type="xs:long" />
+          <xs:element minOccurs="0" name="subParcial" type="xs:long" />
+          <xs:element minOccurs="0" name="procedencia" type="xs:long" />
+          <xs:element minOccurs="0" name="fuente" type="xs:long" />
+          <xs:element minOccurs="0" name="moneda" type="xs:long" />
+          <xs:element minOccurs="0" name="ubicacionGeografica" type="xs:long" />
+          <xs:element minOccurs="0" name="entidadOrigenDestino" type="xs:long" />
+          <xs:element minOccurs="0" name="prestamoExterno" type="xs:long" />
+          <xs:element minOccurs="0" name="bapin" type="xs:long" />
+          <xs:element minOccurs="0" name="clasificadorEconomico" type="xs:long" />
+          <xs:element minOccurs="0" name="finalidad" type="xs:long" />
+          <xs:element minOccurs="0" name="funcion" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarLimitativaCreditoResponse">
+    <wsdl:part name="consultarLimitativaCredito" element="sch:imputacionPresupuestarioCreditoLimitativa" />
+  </wsdl:message>
+  <wsdl:message name="consultarLimitativaCreditoRequest">
+    <wsdl:part name="imputacionPresupuestariaCreditoIndicativa" element="sch:imputacionPresupuestariaCreditoIndicativa" />
+  </wsdl:message>
+  <wsdl:portType name="consultarLimitativaCreditoService">
+    <wsdl:operation name="consultarLimitativaCredito">
+      <wsdl:input name="consultarLimitativaCreditoRequest" message="tns:consultarLimitativaCreditoRequest" />
+      <wsdl:output name="consultarLimitativaCreditoResponse" message="tns:consultarLimitativaCreditoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="consultarLimitativaCreditoServiceSoap11" type="tns:consultarLimitativaCreditoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsaw:UsingAddressing wsdl:required="true" />
+    <wsdl:operation name="consultarLimitativaCredito">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/imputaciones_presupuestarias/consultarLimitativaCreditoService" />
+      <wsdl:input name="consultarLimitativaCreditoRequest">
+        <soap:body use="literal" parts="imputacionPresupuestariaCreditoIndicativa" />
+      </wsdl:input>
+      <wsdl:output name="consultarLimitativaCreditoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="consultarLimitativaCreditoServiceService">
+    <wsdl:port name="consultarLimitativaCreditoServiceSoap11" binding="tns:consultarLimitativaCreditoServiceSoap11">
+      <soap:address location="https://ws-si.mecon.gov.ar/SD_Core/ws/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

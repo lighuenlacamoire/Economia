@@ -14,7 +14,7 @@ namespace ESIDIFCredito
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(GlobalConfiguration).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(GlobalConfiguration).Name);
 
         protected void Application_Start()
         {

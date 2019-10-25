@@ -1,4 +1,5 @@
-﻿using ESIDIFCommon.Tools;
+﻿using ESIDIFCommon.Models.Xml;
+using ESIDIFCommon.Tools;
 using System;
 
 namespace ESIDIFCRGOV.Models
@@ -39,7 +40,7 @@ namespace ESIDIFCRGOV.Models
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
     /*Se agrega herencia a IBody para llenar el Body con un generic*/
     [System.Xml.Serialization.XmlRoot(ElementName = "crgOvRequest", Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public class crgOvRequest : ESIDIF.Models.Xml.IBody, System.ComponentModel.INotifyPropertyChanged
+    public class crgOvRequest : IBody, System.ComponentModel.INotifyPropertyChanged
     {
 
         private CabeceraCRGType cabeceraCrgField;

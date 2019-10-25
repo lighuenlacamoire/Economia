@@ -34,6 +34,8 @@
     <Reference Include="anses.director.session.lib, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\anses.director.session.lib.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -61,7 +63,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Libs\anses.director.session.lib.dll" />
+    <EmbeddedResource Include="Libs\anses.director.session.lib.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Web.Services;
 using System.Web.Services.Protocols;
+using ESIDIFCommon.Tools;
 using ESIDIFCredito.Business;
 using ESIDIFCredito.Models;
 using ESIDIFLegacy.Models.Director;
 
 namespace ESIDIFCredito
 {
-    [WebService(Namespace = "urn:sap-com:document:sap:soap:functions:mc-style", Description = "ESIDIFCreditorecurso", Name = "CreditoService")]
+    [WebService(Namespace = "urn:sap-com:document:sap:soap:functions:mc-style", Description = "ESIDIFCredito", Name = "CreditoService")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
 
@@ -20,8 +21,9 @@ namespace ESIDIFCredito
         {
         }
 
+
         #region Usuario Token
-        public User UsuarioSession
+        private User UsuarioSession
         {
             get
             {
@@ -46,8 +48,7 @@ namespace ESIDIFCredito
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                throw new Exception(ex.Message);
+                throw _sources.HandleError(ex);
             }
         }
     }

@@ -97,7 +97,7 @@ namespace ESIDIFAcumuladores
             app.UseMiddleware<LogResponseMiddleware>(logger);
             app.UseMiddleware<LogRequestMiddleware>(logger);
 
-            app.UseSoapEndpoint<AcumuladoresService>("/generarCrgOvService.asmx", httpBinding, SoapSerializer.DataContractSerializer);
+            app.UseSoapEndpoint<AcumuladoresService>("/estadoAcumuladoresCreditoService.asmx", httpBinding, SoapSerializer.DataContractSerializer);
             app.UseMvc();
         }
     }

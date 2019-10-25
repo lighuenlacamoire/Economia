@@ -1,60 +1,380 @@
 ﻿using log4net;
-using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ESIDIF.Tools;
 using System.IO;
-using System.Xml;
-using Microsoft.AspNetCore.Http.Internal;
+using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Configuration;
+using System.ServiceModel.Description;
+using System.ServiceModel.Dispatcher;
+using System.Web;
+using System.Web.Services.Protocols;
+using System.Xml.Linq;
 
 namespace ESIDIFC75.Extensions
 {
-    public class SoapMiddleware2
+    public class SoapLoggerExtension : SoapExtension
     {
-        private readonly RequestDelegate _next;
-        private readonly ILog _log;
+        private static readonly ILog log = LogManager.GetLogger("C75");
 
-        public SoapMiddleware(RequestDelegate next, Type type)
+        /// <summary>
+        /// The old stream coming into this extension when we make a soap request.  See ChainStream.
+        /// </summary>
+        private Stream oldStream;
+
+        /// <summary>
+        /// The new stream which will hold our copy of the old stream when swapping places.
+        /// </summary>
+        private Stream newStream;
+
+        /// <inheritdoc />
+        /// <summary>
+        /// The chain stream when overridden in a derived class, allows a SOAP extension access to the memory buffer containing the SOAP request or response.
+        /// </summary>
+        /// <param name="stream">
+        /// The stream.
+        /// </param>
+        /// <returns>
+        /// The <see cref="T:System.IO.Stream" />.
+        /// </returns>
+        public override Stream ChainStream(Stream stream)
         {
-            _next = next;
-            _log = LogManager.GetLogger(type);
+            this.oldStream = stream;
+            this.newStream = new MemoryStream();
+            return this.newStream;
         }
 
-        public async Task Invoke(HttpContext httpContext)
+        /// <inheritdoc />
+        /// <summary>
+        /// The get initializer, see documentation reference.
+        /// </summary>
+        /// <param name="methodInfo">
+        /// The method info.
+        /// </param>
+        /// <param name="attribute">
+        /// The attribute.
+        /// </param>
+        /// <returns>
+        /// The <see cref="T:System.Object" />.
+        /// </returns>
+        public override object GetInitializer(LogicalMethodInfo methodInfo, SoapExtensionAttribute attribute)
         {
-            httpContext.Request.EnableRewind();
+            return null;
+        }
 
-            HttpRequest request = httpContext.Request;
+        /// <inheritdoc />
+        /// <summary>
+        /// Another get initializer, see documentation reference.
+        /// </summary>
+        /// <param name="serviceType">
+        /// The service type.
+        /// </param>
+        /// <returns>
+        /// The <see cref="T:System.Object" />.
+        /// </returns>
+        public override object GetInitializer(Type serviceType)
+        {
+            return null;
+        }
 
-            var nose = "";// _extensions.FormatRequest2(request);
+        /// <inheritdoc />
+        /// <summary>
+        /// The initialize, see documentation reference.
+        /// </summary>
+        /// <param name="initializer">
+        /// The initializer.
+        /// </param>
+        public override void Initialize(object initializer)
+        {
+        }
 
-            if(!string.IsNullOrEmpty(nose))
+
+        /// <inheritdoc />
+        /// <summary>
+        /// ProcessMessage processes the soap message.
+        /// </summary>
+        /// <param name="message">
+        /// The incoming soap message.
+        /// </param>
+        public override void ProcessMessage(SoapMessage message)
+        {
+            // Log some informational items for reviewing in this sample application.
+
+            switch (message.Stage)
             {
-                Console.WriteLine("kjsdhfjsdhfdsjk+ no");
+                case SoapMessageStage.BeforeSerialize:
+                    break;
+                case SoapMessageStage.AfterSerialize:
+                    this.WriteOutput(message);
+                    break;
+                case SoapMessageStage.BeforeDeserialize:
+                    this.WriteInput(message);
+                    break;
+                case SoapMessageStage.AfterDeserialize:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
+        }
 
+        /// <summary>
+        /// Write the output of the outgoing soap request.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        public void WriteOutput(SoapMessage message)
+        {
+            this.newStream.Position = 0;
+            var reader = new StreamReader(this.newStream);
+            var requestXml = reader.ReadToEnd();
+            string salida = System.Web.HttpContext.Current.Request.Url.AbsoluteUri == message.Url ? "Respuesta Servicio - SAP : " : "Consulta Servicio - ESIDIF : ";
+
+            // Trimming the end of the string b/c some of my requests and responses had newlines :-(
+            log.Info(salida + Environment.NewLine + this.PrettyXml(requestXml));
+
+            this.newStream.Position = 0;
+            CopyStream(this.newStream, this.oldStream);
+            this.newStream.Position = 0;
+        }
+
+        /// <summary>
+        /// Write the input of the incoming soap response.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        public void WriteInput(SoapMessage message)
+        {
+            CopyStream(this.oldStream, this.newStream);
+            this.newStream.Position = 0;
+            var reader = new StreamReader(this.newStream);
+            var requestXml = reader.ReadToEnd();
+            string entrada = System.Web.HttpContext.Current.Request.Url.AbsoluteUri == message.Url ? "Consulta SAP - Servicio : " : "Respuesta ESIDIF - Servicio : ";
+
+            // Trimming the end of the string b/c some of my requests and responses had newlines :-(
+            log.Info(entrada + Environment.NewLine + this.PrettyXml(requestXml));
+            this.newStream.Position = 0;
+        }
+
+        /// <summary>
+        /// Copy Stream puts the contents of the toStream into the fromStream.
+        /// We are swapping the oldStream and newStream so we can get the request 
+        /// and response from the soap message.
+        /// </summary>
+        /// <param name="fromStream">
+        /// The from stream, the value we want to copy to the toStream.
+        /// </param>
+        /// <param name="toStream">
+        /// The to stream, which is change to the value of the fromStream.
+        /// </param>
+        private static void CopyStream(Stream fromStream, Stream toStream)
+        {
             try
             {
-                var originalResponseBody = httpContext.Response.Body;
-                using (MemoryStream stream = new MemoryStream())
-                {
-
-                     await _next(httpContext);
-
-                    stream.Seek(0, SeekOrigin.Begin);
-                    var responseBody = new StreamReader(stream).ReadToEnd();
-
-                    stream.Seek(0, SeekOrigin.Begin);
-                    await stream.CopyToAsync(originalResponseBody);
-                }
-
+                var sr = new StreamReader(fromStream);
+                var sw = new StreamWriter(toStream);
+                sw.WriteLine(sr.ReadToEnd());
+                sw.Flush();
             }
-            // Never caught, because LogException() returns false.
             catch (Exception ex)
             {
+                var message = "CopyStream failed because: " + ex.Message;
+                log.Error(message, ex);
             }
+        }
+
+        /// <summary>
+        /// Format the Xml to be pretty for humans.
+        /// </summary>
+        /// <param name="requestXml">
+        /// The request Xml.
+        /// </param>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
+        public string PrettyXml(string requestXml)
+        {
+            try
+            {
+                string xml = XDocument.Parse(requestXml).ToString();
+                return xml;
+            }
+            catch (Exception ex)
+            {
+                log.Info("Error al parsear el xml: " + ex.Message);
+                return requestXml;
+            }
+        }
+    }
+
+    public class SoapBehavior : BehaviorExtensionElement
+    {
+        protected override object CreateBehavior()
+        {
+            return new SoapInspectorBehaviour();
+        }
+
+        public override Type BehaviorType
+        {
+            get
+            {
+                return typeof(SoapInspectorBehaviour);
+            }
+        }
+    }
+
+    public class SoapMessageInspector : IClientMessageInspector
+    {
+        private static readonly ILog log = LogManager.GetLogger("C75");
+
+        public SoapLoggerExtension logSoap = new SoapLoggerExtension();
+
+        public string LastRequestXml
+        {
+            get;
+            private set;
+        }
+
+        public string LastResponseXml
+        {
+            get;
+            private set;
+        }
+
+        public void AfterReceiveReply(ref Message reply, object correlationState)
+        {
+            LastResponseXml = reply.ToString();
+            log.Info("Respuesta ESIDIF - Servicio : " + Environment.NewLine + logSoap.PrettyXml(LastResponseXml));
+        }
+
+        public object BeforeSendRequest(ref Message request, IClientChannel channel)
+        {
+            LastRequestXml = request.ToString();
+            log.Info("Consulta Servicio - ESIDIF : " + Environment.NewLine + logSoap.PrettyXml(LastRequestXml));
+            return request;
+        }
+    }
+
+    public class SoapInspectorBehaviour : IEndpointBehavior
+    {
+        private readonly SoapMessageInspector _soapMessageInspector = new SoapMessageInspector();
+
+        public string LastResponseXml
+        {
+            get
+            {
+                return _soapMessageInspector.LastResponseXml;
+            }
+        }
+        public string LastRequestXml
+        {
+            get
+            {
+                return _soapMessageInspector.LastRequestXml;
+            }
+        }
+        public void AddBindingParameters(ServiceEndpoint endpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
+        {
+        }
+
+        public void ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
+        {
+        }
+
+        public void Validate(ServiceEndpoint endpoint)
+        {
+        }
+
+        public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+        {
+            clientRuntime.MessageInspectors.Add(_soapMessageInspector);
+        }
+    }
+
+
+    public class SoapGestionClavesBehavior : BehaviorExtensionElement
+    {
+        protected override object CreateBehavior()
+        {
+            return new SoapGestionClavesInspectorBehaviour();
+        }
+
+        public override Type BehaviorType
+        {
+            get
+            {
+                return typeof(SoapGestionClavesInspectorBehaviour);
+            }
+        }
+    }
+
+    public class SoapGestionClavesMessageInspector : IClientMessageInspector
+    {
+        private static readonly ILog log = LogManager.GetLogger("GestionClaves");
+
+        public SoapLoggerExtension logSoap = new SoapLoggerExtension();
+
+        public string LastRequestXml
+        {
+            get;
+            private set;
+        }
+
+        public string LastResponseXml
+        {
+            get;
+            private set;
+        }
+
+        public void AfterReceiveReply(ref Message reply, object correlationState)
+        {
+            LastResponseXml = reply.ToString();
+            log.Info("Respuesta GestionClaves - Servicio : " + Environment.NewLine + logSoap.PrettyXml(LastResponseXml));
+        }
+
+        public object BeforeSendRequest(ref Message request, IClientChannel channel)
+        {
+            LastRequestXml = request.ToString();
+            log.Info("Consulta Servicio - GestionClaves : " + Environment.NewLine + logSoap.PrettyXml(LastRequestXml));
+            return request;
+        }
+    }
+
+    public class SoapGestionClavesInspectorBehaviour : IEndpointBehavior
+    {
+        private readonly SoapGestionClavesMessageInspector _soapMessageInspector = new SoapGestionClavesMessageInspector();
+
+        public string LastResponseXml
+        {
+            get
+            {
+                return _soapMessageInspector.LastResponseXml;
+            }
+        }
+        public string LastRequestXml
+        {
+            get
+            {
+                return _soapMessageInspector.LastRequestXml;
+            }
+        }
+        public void AddBindingParameters(ServiceEndpoint endpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
+        {
+        }
+
+        public void ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
+        {
+        }
+
+        public void Validate(ServiceEndpoint endpoint)
+        {
+        }
+
+        public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+        {
+            clientRuntime.MessageInspectors.Add(_soapMessageInspector);
         }
     }
 

@@ -165,7 +165,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="CreditoService.asmx" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Connected Services\service\zws_credito.wsdl" />
     <Content Include="log4net.Config.xml" />

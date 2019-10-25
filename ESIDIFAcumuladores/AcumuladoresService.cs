@@ -2,31 +2,32 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace ESIDIFAcumuladores
 {
-    [System.ServiceModel.ServiceContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg", Name = "AcumuladoresService")]
+    [System.ServiceModel.ServiceContract(Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar", Name = "AcumuladoresService")]
     public class AcumuladoresService
     {
         private Sources _sources = new Sources();
 
-        [System.ServiceModel.OperationContract(Action = "/generarCrgOv")]
-        public Models.acumuladoresCreditoConsulta generarCrgOv([System.Xml.Serialization.XmlElement("crgOvRequest")]Models.imputacionCreditoConsulta data)
+        [System.ServiceModel.OperationContract(Action = "/acumuladoresCreditoIndicativa")]
+        public Models.acumuladoresCreditoConsulta acumuladoresCreditoIndicativa([System.Xml.Serialization.XmlElement("imputacionCreditoConsulta")]Models.imputacionCreditoConsulta data)
         {
             try
             {
-                var request = _sources.generarCrgOvWeb(data);
+                return _sources.acumuladoresCreditoIndicativaWeb(data);
 
-                return request;
+            }
+            catch (WebException exp)
+            {
+                throw _sources.manejoWebError(exp);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                throw new Exception(ex.Message);
+                throw _sources.manejoError(ex);
             }
-
-            return null;
         }
 
     }

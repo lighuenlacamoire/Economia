@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESIDIFCommon.Models.Xml;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +9,12 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Services.Protocols;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -17,8 +22,81 @@ using System.Xml.Xsl;
 
 namespace ESIDIFCommon.Tools
 {
+    public static class Constant
+    {
+        public static string DateShortFormat = "yyyy-MM-dd";
+
+        public static string PrefijoValorDecimal = "ValorDecimal";
+
+        private const string SPECIFIED_SUFFIX = "Specified";
+
+        public static CultureInfo cultura = CultureInfo.InvariantCulture;
+
+        public static NumberFormatInfo numberFormat = new NumberFormatInfo { NumberGroupSeparator = "", NumberDecimalSeparator = ".", NumberDecimalDigits = 2 };
+
+    }
     public static class Functions
     {
+
+        private static System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+
+        private static System.Xml.XmlNode nodeError = doc.CreateNode(XmlNodeType.Element, SoapException.DetailElementName.Name, SoapException.DetailElementName.Namespace);
+
+        private static SoapError soapError = new SoapError();
+        private static string faultFactor = "Economia";
+        private static string faultDetail = "Error inesperado revise el log para mayor detalle";
+
+        public static SoapError SoapErrorFromWebException(WebException exp)
+        {
+            string msgResponse = string.Empty;
+
+            WebResponse response = exp.Response;
+            faultDetail = exp.InnerException != null ? exp.InnerException.Message : exp.Message;
+
+            if (response != null)
+            {
+                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                {
+                    msgResponse = sr.ReadToEnd();
+                }
+            }
+            else
+            {
+                msgResponse = faultDetail;
+            }
+
+            soapError = HandleWebExceptionXml(msgResponse);
+
+            if (soapError != null)
+            {
+                soapError.FaultReason = "Economia";
+                faultDetail = soapError.ErrorCode + " " + soapError.ErrorDescription;
+            }
+            else
+            {
+                soapError = new SoapError();
+            }
+
+            nodeError.InnerText = faultDetail;
+            soapError.FaultResponse = msgResponse;
+            soapError.FaultDetail = faultDetail;
+
+            return soapError;
+        }
+
+        public static SoapError SoapErrorFromException(Exception ex)
+        {
+            faultDetail = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+
+            nodeError.InnerText = faultDetail;
+
+            soapError.FaultDetail = faultDetail;
+            soapError.FaultReason = "Servicio";
+            soapError.FaultNode = nodeError;
+            soapError.FaultResponse = string.Empty;
+
+            return soapError;
+        }
         public static string CheckStringFromEnum<TEnum>(string origen) where TEnum : struct
         {
             TEnum resultInputType = default(TEnum);
@@ -81,20 +159,6 @@ namespace ESIDIFCommon.Tools
             }
         }
 
-        public static string ParseXml(string xml)
-        {
-            try
-            {
-                return Convert.ToString(XDocument.Parse(xml));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return string.Empty;
-            }
-        }
-
-        
         public static string ValidateDecimalFromString(string value)
         {
             decimal result = 0;
@@ -135,7 +199,12 @@ namespace ESIDIFCommon.Tools
                     }
                 }
 
-                value = result.ToString("N2", Constancts.numberFormat);
+                var nfi = new NumberFormatInfo();
+                nfi.NumberGroupSeparator = "";
+                nfi.NumberDecimalSeparator = ".";
+                nfi.NumberDecimalDigits = 2;
+
+                value = result.ToString("N2", nfi);
 
             }
             catch (Exception ex)
@@ -143,6 +212,155 @@ namespace ESIDIFCommon.Tools
                 Console.Write(ex.Message);
             }
             return value;
+        }
+
+       
+
+      
+
+        public static string ParseXml(string xml)
+        {
+            try
+            {
+                string mensaje = System.Xml.Linq.XDocument.Parse(xml).ToString();
+
+                return mensaje;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return xml;
+            }
+        }
+        public static void CheckStringFields<TEntity>(ref TEntity entity) where TEntity : new()
+        {
+            var sourceProps = entity.GetType().GetProperties().ToList();
+
+            foreach (var sourceProp in sourceProps)
+            {
+                if (sourceProp.PropertyType == typeof(string) && sourceProp.GetValue(entity, null) != null)
+                {
+                    object original = sourceProp.GetValue(entity, null);
+
+                    string newValue = original != null ? Convert.ToString(original) : null;
+
+                    if (!string.IsNullOrEmpty(newValue) && newValue.Length > 0)
+                    {
+                        sourceProp.SetValue(entity, newValue.Trim(), null);
+                    }
+                    continue;
+                }
+                else if (sourceProp.PropertyType.IsClass && !sourceProp.PropertyType.IsArray && sourceProp.GetValue(entity, null) != null)
+                {
+                    //Type typeDes = p.PropertyType;
+                    //MethodInfo info = typeDes.GetMethod("Create", BindingFlags.Static | BindingFlags.Public);
+
+                    //var desObj = Activator.CreateInstance(sourceProp.PropertyType);
+                    var souObj = sourceProp.GetValue(entity, null);
+                    CheckStringFields(ref souObj);
+                    //CopyPropertiesTo(souObj, desObj);
+                    sourceProp.SetValue(entity, souObj, null);//agregar en caso de ser un lista de objetos 
+                }
+                else if (sourceProp.PropertyType.IsArray && sourceProp.GetValue(entity, null) != null)
+                {
+                    IList souObj = sourceProp.GetValue(entity, null) as IList;
+                    IList souObj2 = sourceProp.GetValue(entity, null) as IList;
+                    string desName = sourceProp.PropertyType.FullName;
+                    desName = desName.Replace("[]", "");
+                    Type ItypeDes = Type.GetType(desName);
+                    //var desObj = Array.CreateInstance(ItypeDes, souObj.Count);
+
+                    int cont = 0;
+                    foreach (var item in souObj2)
+                    {
+                        var obj = item;
+                        //var idesObj = Activator.CreateInstance(ItypeDes);
+
+                        CheckStringFields(ref obj);
+                        souObj[cont] = obj;
+                        cont = cont + 1;
+                    }
+                    sourceProp.SetValue(entity, souObj, null);//agregar en caso de ser un lista de objetos 
+                }
+            }
+        }
+        public static T DeserializeXMLString<T>(string content) where T : new()
+        {
+            T returnObject = new T();
+            if (string.IsNullOrEmpty(content)) return returnObject;
+
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(content);
+
+                content = doc.GetElementsByTagName("SOAP-ENV:Body")[0]?.InnerXml;
+
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+                StringReader reader = new StringReader(content);
+
+                returnObject = (T)serializer.Deserialize(reader);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Fallo la deserializacion del mensaje: " + ex.Message);
+            }
+            return returnObject;
+        }
+
+        public static SoapError HandleWebExceptionXml(string result)
+        {
+            try
+            {
+                string JavaValFormat = @"\b9999\b";
+                bool hasJavaX = result.Contains("9999");
+                string tagName = "detail";
+
+                if (hasJavaX)
+                {
+                    tagName = "detailJava";
+                    result = Regex.Replace(result, JavaValFormat, tagName);
+                }
+
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.LoadXml(result);
+                if (xmlDocument != null)
+                {
+                    var errorCodeTag = xmlDocument.GetElementsByTagName("ErrorCode");
+                    var errorDescripcionTag = xmlDocument.GetElementsByTagName("ErrorDescription");
+
+                    if (errorCodeTag != null && errorCodeTag.Count > 0 && errorDescripcionTag != null && errorDescripcionTag.Count > 0)
+                    {
+                        return new SoapError
+                        {
+                            Title = "ESIDIF",
+                            ErrorCode = errorCodeTag[0].InnerText,
+                            ErrorDescription = errorDescripcionTag[0].InnerText
+                        };
+                    }
+                    else
+                    {
+                        var detailJava = xmlDocument.GetElementsByTagName(tagName);
+
+                        if (detailJava != null && detailJava.Count > 0)
+                        {
+                            return new SoapError
+                            {
+                                Title = "ESIDIF",
+                                ErrorCode = "",
+                                ErrorDescription = detailJava[0].InnerText,
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
         }
 
         public static bool CopyStringToBool(string origen)
@@ -202,22 +420,6 @@ namespace ESIDIFCommon.Tools
             return valor;
         }
 
-        public static decimal CopyStringToDecimal2(string origen)
-        {
-            origen = origen.Replace(",", ".");
-
-            decimal valor = 0;
-
-            try
-            {
-                valor = decimal.Parse(origen, Constancts.numberFormat);
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-            }
-            return valor;
-        }
 
         public static decimal CopyStringToDecimal(string value)
         {
@@ -316,14 +518,20 @@ namespace ESIDIFCommon.Tools
             }
             return valor;
         }
-
-        public static TEnum CopyStringToEnum<TEnum>(string origen) where TEnum : struct
+        public static TEnum? CopyStringToEnum<TEnum>(string origen) where TEnum : struct
         {
             TEnum resultInputType = default(TEnum);
 
-            Enum.TryParse(origen, true, out resultInputType);
+            bool itsPossible = Enum.TryParse(origen, true, out resultInputType);
 
-            return resultInputType;
+            if (itsPossible)
+            {
+                return resultInputType;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static void CopyPropertiesTo<T, TU>(T source, TU dest)
@@ -513,71 +721,71 @@ namespace ESIDIFCommon.Tools
 
         public static Exception CapturarSoapError(Exception ex)
         {
-            //try
-            //{
-            //    FaultException faultException = ex as FaultException;
-            //    MessageFault msgFault = faultException != null ? faultException.CreateMessageFault() : null;
-            //    XmlElement elm = msgFault != null ? msgFault.GetDetail<XmlElement>() : null;
+            try
+            {
+                FaultException faultException = ex as FaultException;
+                MessageFault msgFault = faultException != null ? faultException.CreateMessageFault() : null;
+                XmlElement elm = msgFault != null ? msgFault.GetDetail<XmlElement>() : null;
 
-            //    if (elm != null)
-            //    {
-            //        var errorCodeTag = elm.GetElementsByTagName("ErrorCode");
-            //        var errorDescripcionTag = elm.GetElementsByTagName("ErrorDescription");
+                if (elm != null)
+                {
+                    var errorCodeTag = elm.GetElementsByTagName("ErrorCode");
+                    var errorDescripcionTag = elm.GetElementsByTagName("ErrorDescription");
 
-            //        if (errorCodeTag != null && errorCodeTag.Count > 0 && errorDescripcionTag != null && errorDescripcionTag.Count > 0)
-            //        {
-            //            ex = new Exception(errorCodeTag[0].InnerText + " " + errorDescripcionTag[0].InnerText);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        XmlDocument document = new XmlDocument();
-            //        document.LoadXml(ex.Message);
+                    if (errorCodeTag != null && errorCodeTag.Count > 0 && errorDescripcionTag != null && errorDescripcionTag.Count > 0)
+                    {
+                        ex = new Exception(errorCodeTag[0].InnerText + " " + errorDescripcionTag[0].InnerText);
+                    }
+                }
+                else
+                {
+                    XmlDocument document = new XmlDocument();
+                    document.LoadXml(ex.Message);
 
-            //        var xmlNodeList = document.GetElementsByTagName("detail");
+                    var xmlNodeList = document.GetElementsByTagName("detail");
 
-            //        if (xmlNodeList != null && xmlNodeList.Count > 0 && xmlNodeList[0].HasChildNodes)
-            //        {
-            //            string mensaje = string.Empty;
-            //            foreach (var element in xmlNodeList[0].ChildNodes)
-            //            {
-            //                elm = element as XmlElement;
+                    if (xmlNodeList != null && xmlNodeList.Count > 0 && xmlNodeList[0].HasChildNodes)
+                    {
+                        string mensaje = string.Empty;
+                        foreach (var element in xmlNodeList[0].ChildNodes)
+                        {
+                            elm = element as XmlElement;
 
-            //                if (elm != null)
-            //                {
-            //                    var errorCodeTag = elm.GetElementsByTagName("ErrorCode");
-            //                    var errorDescripcionTag = elm.GetElementsByTagName("ErrorDescription");
+                            if (elm != null)
+                            {
+                                var errorCodeTag = elm.GetElementsByTagName("ErrorCode");
+                                var errorDescripcionTag = elm.GetElementsByTagName("ErrorDescription");
 
-            //                    if (errorCodeTag != null && errorCodeTag.Count > 0 && errorDescripcionTag != null && errorDescripcionTag.Count > 0)
-            //                    {
-            //                        mensaje += errorCodeTag[0].InnerText + " " + errorDescripcionTag[0].InnerText + Environment.NewLine;
-            //                    }
-            //                }
-            //            }
+                                if (errorCodeTag != null && errorCodeTag.Count > 0 && errorDescripcionTag != null && errorDescripcionTag.Count > 0)
+                                {
+                                    mensaje += errorCodeTag[0].InnerText + " " + errorDescripcionTag[0].InnerText + Environment.NewLine;
+                                }
+                            }
+                        }
 
-            //            if (!string.IsNullOrEmpty(mensaje) && mensaje.Length > 0)
-            //            {
-            //                ex = new Exception(mensaje);
-            //            }
-            //        }
+                        if (!string.IsNullOrEmpty(mensaje) && mensaje.Length > 0)
+                        {
+                            ex = new Exception(mensaje);
+                        }
+                    }
 
-            //    }
-            //}
-            //catch
-            //{
+                }
+            }
+            catch
+            {
 
-            //}
+            }
             return ex;
         }
 
-        public static X509Certificate2 GetClientCertificate(string certificateDigitalMark)
+        public static X509Certificate2 GetClientCertificate(string digitalMark)
         {
             X509Store userCaStore = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
             try
             {
                 userCaStore.Open(OpenFlags.ReadOnly);
                 X509Certificate2Collection certificatesInStore = userCaStore.Certificates;
-                X509Certificate2Collection findResult = certificatesInStore.Find(X509FindType.FindByThumbprint, certificateDigitalMark, true);
+                X509Certificate2Collection findResult = certificatesInStore.Find(X509FindType.FindByThumbprint, digitalMark, true);
                 X509Certificate2 clientCertificate = null;
                 if (findResult.Count == 1)
                 {
@@ -598,18 +806,39 @@ namespace ESIDIFCommon.Tools
                 userCaStore.Close();
             }
         }
-        public static WebProxy CrearProxy()
-        {
-            string usuarioProxy = "E266864";
-            string passwdProxy = "VlaSauco2020";
-            string urlProxy = "http://proxysgha.anses.gov.ar:80";
-            string domainProxy = "ANSES";
 
-            WebProxy Proxy = new WebProxy(new Uri(urlProxy), false);
-            Proxy.Address = new Uri(urlProxy);
+        private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbPrint, StoreLocation certificateStoreLocation)
+        {
+            X509Certificate2 certificate = null;
+
+            X509Store certificateStore = new X509Store(certificateStoreLocation);
+            certificateStore.Open(OpenFlags.ReadOnly);
+
+
+            X509Certificate2Collection certCollection = certificateStore.Certificates;
+            foreach (X509Certificate2 cert in certCollection)
+            {
+                if (cert.Thumbprint != null && cert.Thumbprint.Equals(certificateThumbPrint, StringComparison.OrdinalIgnoreCase))
+                {
+                    certificate = cert;
+                    break;
+                }
+            }
+
+            if (certificate == null)
+            {
+                //log.ErrorFormat(CultureInfo.InvariantCulture, "El certificado con huella digital {0} no fue encontrado.", certificateThumbPrint);
+            }
+
+            return certificate;
+        }
+        public static WebProxy CreateProxy(string PxyUser,string PxyPass, string PxyUrl, string PxyDomain)
+        {
+            WebProxy Proxy = new WebProxy(new Uri(PxyUrl), false);
+            Proxy.Address = new Uri(PxyUrl);
             Proxy.BypassProxyOnLocal = false;
-            Proxy.UseDefaultCredentials = true;
-            Proxy.Credentials = new NetworkCredential(usuarioProxy, passwdProxy, domainProxy);
+            Proxy.UseDefaultCredentials = false;
+            Proxy.Credentials = new NetworkCredential(PxyUser, PxyPass, PxyDomain);
 
             return Proxy;
         }
@@ -777,7 +1006,7 @@ namespace ESIDIFCommon.Tools
             return xml;
         }
 
-        public static string TransformarXml(string request)
+        public static string TransforXml(string request)
         {
             var xslInput = "<xsl:stylesheet version=\"1.0\"" +
                              " xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">" +
@@ -809,6 +1038,8 @@ namespace ESIDIFCommon.Tools
 
             return output;
         }
+
+
     }
 
 }

@@ -1,0 +1,322 @@
+2019-10-25 12:51:02,264 [14] INFO  ESIDIFCredito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1REIxQzE5ODNFQzRFM0M1IiBnZW5fdGltZT0iMTU3MTkzMDUyMCIgZXhwX3RpbWU9IjE1NzE5MzA1MjAiIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41IiAvPg0KICAgICAgPGluZm8gbmFtZT0ic24iIHZhbHVlPSIwNDQwIiAvPg0KICAgICAgPGluZm8gbmFtZT0iZW1haWwiIHZhbHVlPSIiIC8+DQogICAgICA8Z3JvdXBzPg0KICAgICAgICA8Z3JvdXAgbmFtZT0iTWluaXN0ZXJpb2RlRWNvbm9taWEiIC8+DQogICAgICA8L2dyb3Vwcz4NCiAgICA8L2xvZ2luPg0KICA8L29wZXJhdGlvbj4NCjwvc3NvPg==</token>
+    <sign xmlns="http://director.anses.gov.ar">eqQ9HfMJVkIhSL89wPU6fSXUqy2THyUYatPABQrQFhe9Ehs+YFYsivzCNWNv1BlZEPhUv3Q+//CRWkbI3DUZ2kYdyqfWaBQ6sIJMXbhD23dZfbZ4IB7MxmuemjBEzgIriv4ZXIv6fW2khaKHB8TLZokflNG2Yqgx31QsDl8Ikbg=</sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <!--Optional:-->
+        <ICabecera>
+          <Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio>
+          <Tipocomprobante>SCP</Tipocomprobante>
+          <Ejercicio>2019</Ejercicio>
+          <Numerocomprobante>8</Numerocomprobante>
+          <Periodo>TRIMESTRE4</Periodo>
+          <Entidademisora>850</Entidademisora>
+          <Entidadproceso>850</Entidadproceso>
+          <Estado>ingresado</Estado>
+          <Codigoconcepto>3</Codigoconcepto>
+          <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+        </ICabecera>
+        <ItEntradaCuota>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Inciso>1</Inciso>
+            <Principal>0</Principal>
+            <Parcial>0</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Compromisoinicial>0</Compromisoinicial>
+            <Compromisovigente>4300000000</Compromisovigente>
+            <Compromisorestringido>-24</Compromisorestringido>
+            <Devengadoinicial1>0</Devengadoinicial1>
+            <Devengadovigente1>1500000000</Devengadovigente1>
+            <Devengadorestringido1>-26</Devengadorestringido1>
+            <Devengadoinicial2>0</Devengadoinicial2>
+            <Devengadovigente2>1400000000</Devengadovigente2>
+            <Devengadorestringido2>-31</Devengadorestringido2>
+            <Devengadoinicial3>0</Devengadoinicial3>
+            <Devengadovigente3>1400000000</Devengadovigente3>
+            <Devengadorestringido3>-10</Devengadorestringido3>
+            <Compromisocomprobante>-20</Compromisocomprobante>
+            <Devengado1comprobante>-25</Devengado1comprobante>
+            <Devengado2comprobante>-30</Devengado2comprobante>
+            <Devengado3comprobante>-9</Devengado3comprobante>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Inciso>2</Inciso>
+            <Principal>0</Principal>
+            <Parcial>0</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Compromisoinicial>0</Compromisoinicial>
+            <Compromisovigente>0</Compromisovigente>
+            <Compromisorestringido>0</Compromisorestringido>
+            <Devengadoinicial1>0</Devengadoinicial1>
+            <Devengadovigente1>0</Devengadovigente1>
+            <Devengadorestringido1>0</Devengadorestringido1>
+            <Devengadoinicial2>0</Devengadoinicial2>
+            <Devengadovigente2>0</Devengadovigente2>
+            <Devengadorestringido2>0</Devengadorestringido2>
+            <Devengadoinicial3>0</Devengadoinicial3>
+            <Devengadovigente3>0</Devengadovigente3>
+            <Devengadorestringido3>0</Devengadorestringido3>
+            <Compromisocomprobante>415</Compromisocomprobante>
+            <Devengado1comprobante>362</Devengado1comprobante>
+            <Devengado2comprobante>12</Devengado2comprobante>
+            <Devengado3comprobante>41</Devengado3comprobante>
+          </item>
+        </ItEntradaCuota>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 12:51:04,171 [14] DEBUG Credito [(null)] - Entra Credito
+2019-10-25 12:52:13,644 [14] INFO  Credito [(null)] - Credito - Usuario CUIT: 30546676117 IP: 168.101.48.5
+2019-10-25 12:52:16,625 [14] DEBUG Credito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-10-25 12:52:21,468 [14] INFO  ESIDIFCredito [(null)] - Consulta Servicio - SAP : 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CREDITO:ZfmWsCreditoRequest</a:Action>
+    <a:MessageID>urn:uuid:f51f1727-8967-4469-ab2d-ea9403cd744e</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo6Ln8celOfxPvk1UcS2mmT8AAAAAXZI399+QNEiBYpGcSfchKPiLS1G0bONLlq7W9HpAFM0ACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ZfmWsCredito xmlns="urn:sap-com:document:sap:soap:functions:mc-style">
+      <ICabecera xmlns="">
+        <Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio>
+        <Tipocomprobante>SCP</Tipocomprobante>
+        <Ejercicio>2019</Ejercicio>
+        <Numerocomprobante>8</Numerocomprobante>
+        <Entidademisora>850</Entidademisora>
+        <Entidadproceso>850</Entidadproceso>
+        <Estado>ingresado</Estado>
+        <Codigoconcepto>3</Codigoconcepto>
+        <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+      </ICabecera>
+      <ICuilUser xmlns="">30546676117</ICuilUser>
+      <IIpUser xmlns="">168.101.48.5</IIpUser>
+    </ZfmWsCredito>
+  </s:Body>
+</s:Envelope>
+2019-10-25 12:52:22,242 [14] INFO  ESIDIFCredito [(null)] - Respuesta SAP - Servicio : 
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+  <env:Header>
+    <wsa:To env:mustUnderstand="true" xmlns:wsa="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:From xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:Address>http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito</wsa:Address>
+    </wsa:From>
+    <wsa:Action env:mustUnderstand="true" xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:sap-com:document:sap:soap:functions:mc-style/ZWS_CREDITO/ZfmWsCreditoResponse</wsa:Action>
+    <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:005056b8-a331-1ed9-bde7-edd09e383b5b</wsa:MessageID>
+    <wsa:RelatesTo xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:f51f1727-8967-4469-ab2d-ea9403cd744e</wsa:RelatesTo>
+  </env:Header>
+  <env:Body>
+    <n0:ZfmWsCreditoResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+      <EOutput>
+        <Type>S</Type>
+        <Message>OK</Message>
+      </EOutput>
+      <ItEntradaCredito />
+      <ItEntradaRecurso />
+    </n0:ZfmWsCreditoResponse>
+  </env:Body>
+</env:Envelope>
+2019-10-25 12:52:22,253 [14] DEBUG Credito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-10-25 12:52:22,253 [14] DEBUG Credito [(null)] - Invoco --> Prueba: No enviado
+2019-10-25 12:52:22,253 [14] DEBUG Credito [(null)] - Invoco --> Prueba: No enviado
+2019-10-25 12:52:22,368 [14] DEBUG Credito [(null)] - Request  :<?xml version="1.0" encoding="utf-8"?><ZfmWsCredito xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ICabecera><Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio><Tipocomprobante>SCP</Tipocomprobante><Ejercicio>2019</Ejercicio><Numerocomprobante>8</Numerocomprobante><Entidademisora>850</Entidademisora><Entidadproceso>850</Entidadproceso><Estado>ingresado</Estado><Codigoconcepto>3</Codigoconcepto><Descripcionconcepto>Requerimiento</Descripcionconcepto></ICabecera><ICuilUser>30546676117</ICuilUser><IIpUser>168.101.48.5</IIpUser></ZfmWsCredito>
+2019-10-25 12:52:22,483 [14] DEBUG Credito [(null)] - Response :<?xml version="1.0" encoding="utf-8"?><ZfmWsCreditoResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><EOutput><Type>S</Type><Message>OK</Message></EOutput><ItEntradaCredito /><ItEntradaRecurso /></ZfmWsCreditoResponse>
+2019-10-25 12:52:22,483 [14] DEBUG Credito [(null)] - PresupuestoCredito ok
+2019-10-25 12:52:22,485 [14] INFO  ESIDIFCredito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 12:53:14,673 [16] INFO  ESIDIFCredito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1REIxQzE5ODNFQzRFM0M1IiBnZW5fdGltZT0iMTU3MTkzMDUyMCIgZXhwX3RpbWU9IjE1NzE5MzA1MjAiIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41IiAvPg0KICAgICAgPGluZm8gbmFtZT0ic24iIHZhbHVlPSIwNDQwIiAvPg0KICAgICAgPGluZm8gbmFtZT0iZW1haWwiIHZhbHVlPSIiIC8+DQogICAgICA8Z3JvdXBzPg0KICAgICAgICA8Z3JvdXAgbmFtZT0iTWluaXN0ZXJpb2RlRWNvbm9taWEiIC8+DQogICAgICA8L2dyb3Vwcz4NCiAgICA8L2xvZ2luPg0KICA8L29wZXJhdGlvbj4NCjwvc3NvPg==</token>
+    <sign xmlns="http://director.anses.gov.ar">eqQ9HfMJVkIhSL89wPU6fSXUqy2THyUYatPABQrQFhe9Ehs+YFYsivzCNWNv1BlZEPhUv3Q+//CRWkbI3DUZ2kYdyqfWaBQ6sIJMXbhD23dZfbZ4IB7MxmuemjBEzgIriv4ZXIv6fW2khaKHB8TLZokflNG2Yqgx31QsDl8Ikbg=</sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <!--Optional:-->
+        <ICabecera>
+          <Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio>
+          <Tipocomprobante>SCP</Tipocomprobante>
+          <Ejercicio>2019</Ejercicio>
+          <Numerocomprobante>8</Numerocomprobante>
+          <Periodo>TRIMESTRE4</Periodo>
+          <Entidademisora>850</Entidademisora>
+          <Entidadproceso>850</Entidadproceso>
+          <Estado>ingresado</Estado>
+          <Codigoconcepto>3</Codigoconcepto>
+          <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+        </ICabecera>
+        <ItEntradaCuota>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Inciso>1</Inciso>
+            <Principal>0</Principal>
+            <Parcial>0</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Compromisoinicial>0</Compromisoinicial>
+            <Compromisovigente>4300000000</Compromisovigente>
+            <Compromisorestringido>-24</Compromisorestringido>
+            <Devengadoinicial1>0</Devengadoinicial1>
+            <Devengadovigente1>1500000000</Devengadovigente1>
+            <Devengadorestringido1>-26</Devengadorestringido1>
+            <Devengadoinicial2>0</Devengadoinicial2>
+            <Devengadovigente2>1400000000</Devengadovigente2>
+            <Devengadorestringido2>-31</Devengadorestringido2>
+            <Devengadoinicial3>0</Devengadoinicial3>
+            <Devengadovigente3>1400000000</Devengadovigente3>
+            <Devengadorestringido3>-10</Devengadorestringido3>
+            <Compromisocomprobante>-20</Compromisocomprobante>
+            <Devengado1comprobante>-25</Devengado1comprobante>
+            <Devengado2comprobante>-30</Devengado2comprobante>
+            <Devengado3comprobante>-9</Devengado3comprobante>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Inciso>2</Inciso>
+            <Principal>0</Principal>
+            <Parcial>0</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Compromisoinicial>0</Compromisoinicial>
+            <Compromisovigente>0</Compromisovigente>
+            <Compromisorestringido>0</Compromisorestringido>
+            <Devengadoinicial1>0</Devengadoinicial1>
+            <Devengadovigente1>0</Devengadovigente1>
+            <Devengadorestringido1>0</Devengadorestringido1>
+            <Devengadoinicial2>0</Devengadoinicial2>
+            <Devengadovigente2>0</Devengadovigente2>
+            <Devengadorestringido2>0</Devengadorestringido2>
+            <Devengadoinicial3>0</Devengadoinicial3>
+            <Devengadovigente3>0</Devengadovigente3>
+            <Devengadorestringido3>0</Devengadorestringido3>
+            <Compromisocomprobante>415</Compromisocomprobante>
+            <Devengado1comprobante>362</Devengado1comprobante>
+            <Devengado2comprobante>12</Devengado2comprobante>
+            <Devengado3comprobante>41</Devengado3comprobante>
+          </item>
+        </ItEntradaCuota>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 12:53:14,674 [16] DEBUG Credito [(null)] - Entra Credito
+2019-10-25 12:53:14,677 [16] INFO  Credito [(null)] - Credito - Usuario CUIT: 30546676117 IP: 168.101.48.5
+2019-10-25 12:53:14,678 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-10-25 12:53:14,702 [16] INFO  ESIDIFCredito [(null)] - Consulta Servicio - SAP : 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CREDITO:ZfmWsCreditoRequest</a:Action>
+    <a:MessageID>urn:uuid:a91b0b2b-4645-4d4c-a79a-8949a4956a60</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo6Pn8celOfxPvk1UcS2mmT8AAAAAXZI399+QNEiBYpGcSfchKPiLS1G0bONLlq7W9HpAFM0ACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ZfmWsCredito xmlns="urn:sap-com:document:sap:soap:functions:mc-style">
+      <ICabecera xmlns="">
+        <Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio>
+        <Tipocomprobante>SCP</Tipocomprobante>
+        <Ejercicio>2019</Ejercicio>
+        <Numerocomprobante>8</Numerocomprobante>
+        <Entidademisora>850</Entidademisora>
+        <Entidadproceso>850</Entidadproceso>
+        <Estado>ingresado</Estado>
+        <Codigoconcepto>3</Codigoconcepto>
+        <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+      </ICabecera>
+      <ICuilUser xmlns="">30546676117</ICuilUser>
+      <IIpUser xmlns="">168.101.48.5</IIpUser>
+    </ZfmWsCredito>
+  </s:Body>
+</s:Envelope>
+2019-10-25 12:53:15,072 [16] INFO  ESIDIFCredito [(null)] - Respuesta SAP - Servicio : 
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+  <env:Header>
+    <wsa:To env:mustUnderstand="true" xmlns:wsa="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:From xmlns:wsa="http://www.w3.org/2005/08/addressing">
+      <wsa:Address>http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_credito/130/zws_credito/zws_credito</wsa:Address>
+    </wsa:From>
+    <wsa:Action env:mustUnderstand="true" xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:sap-com:document:sap:soap:functions:mc-style/ZWS_CREDITO/ZfmWsCreditoResponse</wsa:Action>
+    <wsa:MessageID xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:005056b8-a331-1ed9-bde7-f1c229b9fb5e</wsa:MessageID>
+    <wsa:RelatesTo xmlns:wsa="http://www.w3.org/2005/08/addressing">urn:uuid:a91b0b2b-4645-4d4c-a79a-8949a4956a60</wsa:RelatesTo>
+  </env:Header>
+  <env:Body>
+    <n0:ZfmWsCreditoResponse xmlns:n0="urn:sap-com:document:sap:soap:functions:mc-style">
+      <EOutput>
+        <Type>S</Type>
+        <Message>OK</Message>
+      </EOutput>
+      <ItEntradaCredito />
+      <ItEntradaRecurso />
+    </n0:ZfmWsCreditoResponse>
+  </env:Body>
+</env:Envelope>
+2019-10-25 12:53:15,073 [16] DEBUG Credito [(null)] - Invoco --> Prueba: ESIDIFCredito.service.ZdsCreditoCabecera
+2019-10-25 12:53:15,073 [16] DEBUG Credito [(null)] - Invoco --> Prueba: No enviado
+2019-10-25 12:53:15,073 [16] DEBUG Credito [(null)] - Invoco --> Prueba: No enviado
+2019-10-25 12:53:15,074 [16] DEBUG Credito [(null)] - Request  :<?xml version="1.0" encoding="utf-8"?><ZfmWsCredito xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ICabecera><Fechaenvio>24-10-2019 12:21:52.052</Fechaenvio><Tipocomprobante>SCP</Tipocomprobante><Ejercicio>2019</Ejercicio><Numerocomprobante>8</Numerocomprobante><Entidademisora>850</Entidademisora><Entidadproceso>850</Entidadproceso><Estado>ingresado</Estado><Codigoconcepto>3</Codigoconcepto><Descripcionconcepto>Requerimiento</Descripcionconcepto></ICabecera><ICuilUser>30546676117</ICuilUser><IIpUser>168.101.48.5</IIpUser></ZfmWsCredito>
+2019-10-25 12:53:15,074 [16] DEBUG Credito [(null)] - Response :<?xml version="1.0" encoding="utf-8"?><ZfmWsCreditoResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><EOutput><Type>S</Type><Message>OK</Message></EOutput><ItEntradaCredito /><ItEntradaRecurso /></ZfmWsCreditoResponse>
+2019-10-25 12:53:15,074 [16] DEBUG Credito [(null)] - PresupuestoCredito ok
+2019-10-25 12:53:15,074 [16] INFO  ESIDIFCredito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>

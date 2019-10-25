@@ -1,0 +1,1005 @@
+2019-10-25 14:31:05,299 [7] ERROR GlobalConfiguration [(null)] - ID Error		 : -1073048042
+Mensaje Error : No se encuentra la vista 'Index' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Home/Index.aspx
+~/Views/Home/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/Home/Index.cshtml
+~/Views/Home/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+Stack		 :    en System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2019-10-25 14:34:10,511 [5] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>10208</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:34:12,027 [5] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 14:34:12,028 [5] DEBUG C75 [(null)] - C75 - Seteando variables de contexto.
+2019-10-25 14:34:12,028 [5] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 14:34:13,004 [5] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 14:34:13,074 [5] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 14:34:13,132 [5] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 14:34:13,133 [5] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 14:34:13,135 [5] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 14:34:15,345 [5] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 14:34:35,151 [5] INFO  C75 [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: El servidor no puede procesar la solicitud. ---&gt; System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en ESIDIFCommon.Tools.Functions.SoapErrorFromWebException(WebException exp) en C:\LIGHUEN\GIT\Economia\ESIDIFCommon\Tools\Functions.cs:línea 77
+   en ESIDIFC75.Business.Sources.HandleError(WebException ex) en C:\LIGHUEN\GIT\Economia\ESIDIFC75\Business\Sources.cs:línea 183
+   en ESIDIFC75.generarInformeDeGastosC75.generarInformeDeGastosPortType(generarInformeDeGastos generarInformeDeGastos) en C:\LIGHUEN\GIT\Economia\ESIDIFC75\generarInformeDeGastosC75.asmx.cs:línea 31
+   --- Fin del seguimiento de la pila de la excepción interna ---</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 14:35:52,786 [9] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>10208</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:35:52,806 [9] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 14:35:52,806 [9] DEBUG C75 [(null)] - C75 - Seteando variables de contexto.
+2019-10-25 14:35:52,806 [9] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 14:35:52,806 [9] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 14:35:52,807 [9] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 14:35:52,827 [9] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 14:35:52,827 [9] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 14:35:52,828 [9] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 14:35:52,829 [9] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 14:36:39,974 [9] INFO  C75 [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: El servidor no puede procesar la solicitud. ---&gt; System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en ESIDIFCommon.Tools.Functions.SoapErrorFromWebException(WebException exp) en C:\LIGHUEN\GIT\Economia\ESIDIFCommon\Tools\Functions.cs:línea 77
+   en ESIDIFC75.Business.Sources.HandleError(WebException ex) en C:\LIGHUEN\GIT\Economia\ESIDIFC75\Business\Sources.cs:línea 183
+   en ESIDIFC75.generarInformeDeGastosC75.generarInformeDeGastosPortType(generarInformeDeGastos generarInformeDeGastos) en C:\LIGHUEN\GIT\Economia\ESIDIFC75\generarInformeDeGastosC75.asmx.cs:línea 31
+   --- Fin del seguimiento de la pila de la excepción interna ---</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 14:37:16,529 [12] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>10208</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:37:16,530 [12] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 14:37:16,530 [12] DEBUG C75 [(null)] - C75 - Seteando variables de contexto.
+2019-10-25 14:37:16,531 [12] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 14:37:16,531 [12] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 14:37:16,531 [12] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 14:37:16,531 [12] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 14:37:16,531 [12] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 14:37:16,532 [12] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 14:37:16,534 [12] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 14:44:50,119 [7] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>10208</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:44:50,346 [7] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 14:44:50,349 [7] DEBUG C75 [(null)] - C75 - Seteando variables de contexto.
+2019-10-25 14:44:50,349 [7] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 14:44:50,390 [7] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 14:44:50,400 [7] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 14:44:50,401 [7] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 14:44:50,401 [7] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 14:44:50,403 [7] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 14:44:51,443 [7] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 14:44:52,215 [7] INFO  C75 [(null)] - Consulta Servicio - ESIDIF : 
+?<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <wsse:Security soapenv:mustUnderstand="1">
+      <wsse:UsernameToken wsu:Id="UsernameToken-1">
+        <wsse:Username>SAP-850</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">AnsesEsidif2019</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <wsa:To soapenv:mustUnderstand="1">https://tws5-si.mecon.gov.ar/SD_Core/ws</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosService</wsa:Action>
+    <wsa:MessageID>urn:uuid:923c2a5d-bfb4-4b13-96c3-9ea0b05991e5</wsa:MessageID>
+  </soapenv:Header>
+  <soapenv:Body>
+    <inf:generarInformeDeGastos xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <inf:datosInicialesInformeDeGastos>
+        <inf1:identificacionComprobante>
+          <com:tipoComprobante>IGS</com:tipoComprobante>
+          <com:numero>10208</com:numero>
+          <com:ejercicio>2019</com:ejercicio>
+          <com:entidadEmisora>850</com:entidadEmisora>
+          <com:tipoRegistro>EJE</com:tipoRegistro>
+        </inf1:identificacionComprobante>
+        <inf1:entidadProceso>850</inf1:entidadProceso>
+        <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+        <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+        <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+        <inf1:pagoDirecto>false</inf1:pagoDirecto>
+        <inf1:medioDePago>CHE</inf1:medioDePago>
+        <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+        <inf1:importeDevengado>0.00</inf1:importeDevengado>
+        <inf1:importePagado>60000100.00</inf1:importePagado>
+        <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+        <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+        <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+        <inf1:itemsNoPresupuestarios>
+          <inf1:axt>252</inf1:axt>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:ejercicio>2019</inf1:ejercicio>
+        </inf1:itemsNoPresupuestarios>
+      </inf:datosInicialesInformeDeGastos>
+      <inf:gestionExterna>ANSES</inf:gestionExterna>
+    </inf:generarInformeDeGastos>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:44:52,322 [7] DEBUG C75 [(null)] - RemoteCertificateValidationCallback - Entro: IssuerE=segredessistabier@anses.gov.ar, CN=CA Servidores Proxy ANSES, OU=Direccion de Seguridad Informatica, O=Administracion Nacional de la Seguridad Social, L=Ciudad Autonoma de Buenos Aires, S=Ciudad Autonoma de Buenos Aires, C=AR
+2019-10-25 14:45:23,225 [7] ERROR C75 [(null)] - Error en la ejecucion : GS.38 Número de comprobante duplicado. El número ingresado ya está cargado para el ejercicio y la Entidad Emisora. ESTADO: Autorizado NRO_SIDIF: 3363
+2019-10-25 14:45:23,235 [7] ERROR C75 [(null)] - Respuesta ESIDIF - Servicio: 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+    <wsa:To SOAP-ENV:mustUnderstand="1">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosServiceResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:3b50b220-220a-42e0-b728-30b80ec4259d</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:923c2a5d-bfb4-4b13-96c3-9ea0b05991e5</wsa:RelatesTo>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <SOAP-ENV:Fault>
+      <faultcode>SOAP-ENV:Client</faultcode>
+      <faultstring xml:lang="en-US">Ha ocurrido un error.</faultstring>
+      <detail>
+        <Error xmlns="https://ws-si.mecon.gov.ar/ws/error/">
+          <ErrorCode>GS.38</ErrorCode>
+          <ErrorDescription>Número de comprobante duplicado. El número ingresado ya está cargado para el ejercicio y la Entidad Emisora. ESTADO: Autorizado NRO_SIDIF: 3363</ErrorDescription>
+        </Error>
+      </detail>
+    </SOAP-ENV:Fault>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+2019-10-25 14:45:23,452 [7] INFO  C75 [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: GS.38 Número de comprobante duplicado. El número ingresado ya está cargado para el ejercicio y la Entidad Emisora. ESTADO: Autorizado NRO_SIDIF: 3363
+   en ESIDIFC75.generarInformeDeGastosC75.generarInformeDeGastosPortType(generarInformeDeGastos generarInformeDeGastos) en C:\LIGHUEN\GIT\Economia\ESIDIFC75\generarInformeDeGastosC75.asmx.cs:línea 31</faultstring>
+      <faultactor>Economia</faultactor>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 14:54:03,188 [8] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>60208</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:54:03,296 [8] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 14:54:03,296 [8] DEBUG C75 [(null)] - C75 - Seteando variables de contexto.
+2019-10-25 14:54:03,297 [8] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 14:54:03,306 [8] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 14:54:03,306 [8] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 14:54:03,306 [8] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 14:54:03,307 [8] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 14:54:03,311 [8] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 14:54:04,268 [8] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 14:54:04,539 [8] INFO  C75 [(null)] - Consulta Servicio - ESIDIF : 
+?<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <wsse:Security soapenv:mustUnderstand="1">
+      <wsse:UsernameToken wsu:Id="UsernameToken-1">
+        <wsse:Username>SAP-850</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">AnsesEsidif2019</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <wsa:To soapenv:mustUnderstand="1">https://tws5-si.mecon.gov.ar/SD_Core/ws</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosService</wsa:Action>
+    <wsa:MessageID>urn:uuid:9d5f7509-69ca-469c-8758-e4215c0e1b73</wsa:MessageID>
+  </soapenv:Header>
+  <soapenv:Body>
+    <inf:generarInformeDeGastos xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <inf:datosInicialesInformeDeGastos>
+        <inf1:identificacionComprobante>
+          <com:tipoComprobante>IGS</com:tipoComprobante>
+          <com:numero>60208</com:numero>
+          <com:ejercicio>2019</com:ejercicio>
+          <com:entidadEmisora>850</com:entidadEmisora>
+          <com:tipoRegistro>EJE</com:tipoRegistro>
+        </inf1:identificacionComprobante>
+        <inf1:entidadProceso>850</inf1:entidadProceso>
+        <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+        <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+        <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+        <inf1:pagoDirecto>false</inf1:pagoDirecto>
+        <inf1:medioDePago>CHE</inf1:medioDePago>
+        <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+        <inf1:importeDevengado>0.00</inf1:importeDevengado>
+        <inf1:importePagado>60000100.00</inf1:importePagado>
+        <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+        <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+        <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+        <inf1:itemsNoPresupuestarios>
+          <inf1:axt>252</inf1:axt>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:ejercicio>2019</inf1:ejercicio>
+        </inf1:itemsNoPresupuestarios>
+      </inf:datosInicialesInformeDeGastos>
+      <inf:gestionExterna>ANSES</inf:gestionExterna>
+    </inf:generarInformeDeGastos>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 14:54:04,614 [8] DEBUG C75 [(null)] - RemoteCertificateValidationCallback - Entro: IssuerE=segredessistabier@anses.gov.ar, CN=CA Servidores Proxy ANSES, OU=Direccion de Seguridad Informatica, O=Administracion Nacional de la Seguridad Social, L=Ciudad Autonoma de Buenos Aires, S=Ciudad Autonoma de Buenos Aires, C=AR
+2019-10-25 14:54:08,698 [8] INFO  C75 [(null)] - Respuesta ESIDIF - Servicio : 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+    <wsa:To SOAP-ENV:mustUnderstand="1">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosServiceResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:9595808c-f282-48e9-9b3b-2c4ae997211f</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:9d5f7509-69ca-469c-8758-e4215c0e1b73</wsa:RelatesTo>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns4:generarInformeDeGastosResponse xmlns:ns4="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:ns2="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ns3="https://ws-si.mecon.gov.ar/ws/informeDeGastos">
+      <ns4:numeroSidif>3364</ns4:numeroSidif>
+    </ns4:generarInformeDeGastosResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+2019-10-25 14:54:31,250 [8] INFO  C75 [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <generarInformeDeGastosPortTypeResponse xmlns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <generarInformeDeGastosResponse>
+        <numeroSidif>3364</numeroSidif>
+      </generarInformeDeGastosResponse>
+    </generarInformeDeGastosPortTypeResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 15:57:30,971 [7] ERROR GlobalConfiguration [(null)] - ID Error		 : 125615711
+Mensaje Error : No se encuentra la vista 'Index' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Home/Index.aspx
+~/Views/Home/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/Home/Index.cshtml
+~/Views/Home/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+Stack		 :    en System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2019-10-25 15:59:03,025 [6] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>60209</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 15:59:04,892 [6] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 15:59:04,918 [6] DEBUG C75 [(null)] - C75 - Seteando variables de entorno.
+2019-10-25 15:59:04,918 [6] INFO  C75 [(null)] - Inicio Servicio Gestion Claves
+2019-10-25 15:59:05,021 [6] INFO  C75 [(null)] - Invocando al metodo ConsultarKey
+2019-10-25 15:59:05,787 [6] INFO  GestionClaves [(null)] - Consulta Servicio - GestionClaves : 
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">/ConsultarKey</Action>
+  </s:Header>
+  <s:Body>
+    <ConsultarKey xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://anses.gov.ar">
+      <User>SAP-850</User>
+      <Mark>c2810107087b25676fbc7885bbeeb63e0fae9085</Mark>
+      <Value>EsidifKey</Value>
+    </ConsultarKey>
+  </s:Body>
+</s:Envelope>
+2019-10-25 15:59:07,506 [6] INFO  GestionClaves [(null)] - Respuesta GestionClaves - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <s:Header xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" />
+  <soap:Body>
+    <ConsultarKeyResponse xmlns="http://anses.gov.ar">
+      <ConsultarKeyResult>AnsesEsidif2019</ConsultarKeyResult>
+    </ConsultarKeyResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 15:59:07,521 [6] INFO  C75 [(null)] - Invocacion a Gestion Claves Correcta
+2019-10-25 15:59:07,522 [6] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 15:59:07,581 [6] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 15:59:07,581 [6] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 15:59:07,582 [6] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 15:59:07,582 [6] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 15:59:07,590 [6] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 15:59:08,871 [6] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 16:02:56,881 [7] ERROR GlobalConfiguration [(null)] - ID Error		 : -1542180604
+Mensaje Error : No se encuentra la vista 'Index' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Home/Index.aspx
+~/Views/Home/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/Home/Index.cshtml
+~/Views/Home/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+Stack		 :    en System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2019-10-25 16:03:22,545 [8] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>60209</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 16:03:23,064 [8] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 16:03:23,065 [8] DEBUG C75 [(null)] - C75 - Seteando variables de entorno.
+2019-10-25 16:03:23,065 [8] INFO  C75 [(null)] - Inicio Servicio Gestion Claves
+2019-10-25 16:03:23,114 [8] INFO  C75 [(null)] - Invocando al metodo ConsultarKey
+2019-10-25 16:03:23,393 [8] INFO  GestionClaves [(null)] - Consulta Servicio - GestionClaves : 
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">/ConsultarKey</Action>
+  </s:Header>
+  <s:Body>
+    <ConsultarKey xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://anses.gov.ar">
+      <User>SAP-850</User>
+      <Mark>c2810107087b25676fbc7885bbeeb63e0fae9085</Mark>
+      <Value>EsidifKey</Value>
+    </ConsultarKey>
+  </s:Body>
+</s:Envelope>
+2019-10-25 16:03:24,236 [8] INFO  GestionClaves [(null)] - Respuesta GestionClaves - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <s:Header xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" />
+  <soap:Body>
+    <ConsultarKeyResponse xmlns="http://anses.gov.ar">
+      <ConsultarKeyResult>AnsesEsidif2019</ConsultarKeyResult>
+    </ConsultarKeyResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 16:03:24,238 [8] INFO  C75 [(null)] - Invocacion a Gestion Claves Correcta
+2019-10-25 16:03:24,239 [8] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 16:03:24,278 [8] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 16:03:24,282 [8] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 16:03:24,283 [8] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 16:03:24,285 [8] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 16:03:25,908 [8] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 16:05:34,754 [6] ERROR GlobalConfiguration [(null)] - ID Error		 : 1104071983
+Mensaje Error : No se encuentra la vista 'Index' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Home/Index.aspx
+~/Views/Home/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/Home/Index.cshtml
+~/Views/Home/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+Stack		 :    en System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2019-10-25 16:05:46,936 [7] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>60209</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 16:05:47,071 [7] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 16:05:47,073 [7] DEBUG C75 [(null)] - C75 - Seteando variables de entorno.
+2019-10-25 16:05:47,073 [7] INFO  C75 [(null)] - Inicio Servicio Gestion Claves
+2019-10-25 16:05:47,073 [7] INFO  C75 [(null)] - Invocando al metodo ConsultarKey
+2019-10-25 16:05:47,227 [7] INFO  GestionClaves [(null)] - Consulta Servicio - GestionClaves : 
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">/ConsultarKey</Action>
+  </s:Header>
+  <s:Body>
+    <ConsultarKey xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://anses.gov.ar">
+      <User>SAP-850</User>
+      <Mark>c2810107087b25676fbc7885bbeeb63e0fae9085</Mark>
+      <Value>EsidifKey</Value>
+    </ConsultarKey>
+  </s:Body>
+</s:Envelope>
+2019-10-25 16:05:47,315 [7] INFO  GestionClaves [(null)] - Respuesta GestionClaves - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <s:Header xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" />
+  <soap:Body>
+    <ConsultarKeyResponse xmlns="http://anses.gov.ar">
+      <ConsultarKeyResult>AnsesEsidif2019</ConsultarKeyResult>
+    </ConsultarKeyResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 16:05:47,318 [7] INFO  C75 [(null)] - Invocacion a Gestion Claves Correcta
+2019-10-25 16:05:47,318 [7] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 16:05:47,319 [7] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 16:05:47,319 [7] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 16:05:47,319 [7] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 16:05:47,321 [7] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 16:05:48,032 [7] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 16:07:59,050 [6] ERROR GlobalConfiguration [(null)] - ID Error		 : -81154852
+Mensaje Error : No se encuentra la vista 'Index' ni su vista maestra o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/Home/Index.aspx
+~/Views/Home/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/Home/Index.cshtml
+~/Views/Home/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+Stack		 :    en System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   en System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   en System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2019-10-25 16:08:14,126 [7] INFO  C75 [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes">
+  <soapenv:Header />
+  <soapenv:Body>
+    <inf:generarInformeDeGastosPortType>
+      <inf:generarInformeDeGastos>
+        <inf:datosInicialesInformeDeGastos>
+          <inf1:identificacionComprobante>
+            <com:tipoComprobante>IGS</com:tipoComprobante>
+            <com:numero>60209</com:numero>
+            <com:ejercicio>2019</com:ejercicio>
+            <com:entidadEmisora>850</com:entidadEmisora>
+            <com:tipoRegistro>EJE</com:tipoRegistro>
+          </inf1:identificacionComprobante>
+          <inf1:entidadProceso>850</inf1:entidadProceso>
+          <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+          <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+          <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+          <inf1:pagoDirecto>false</inf1:pagoDirecto>
+          <inf1:medioDePago>CHE</inf1:medioDePago>
+          <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+          <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+          <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+          <inf1:itemsNoPresupuestarios>
+            <inf1:axt>252</inf1:axt>
+            <inf1:importeDevengado>0.00</inf1:importeDevengado>
+            <inf1:importePagado>60000100.00</inf1:importePagado>
+            <inf1:ejercicio>2019</inf1:ejercicio>
+          </inf1:itemsNoPresupuestarios>
+        </inf:datosInicialesInformeDeGastos>
+        <inf:gestionExterna>ANSES</inf:gestionExterna>
+      </inf:generarInformeDeGastos>
+    </inf:generarInformeDeGastosPortType>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 16:08:14,375 [7] INFO  C75 [(null)] - C75 - Ingreso
+2019-10-25 16:08:14,376 [7] DEBUG C75 [(null)] - C75 - Seteando variables de entorno.
+2019-10-25 16:08:14,376 [7] INFO  C75 [(null)] - Inicio Servicio Gestion Claves
+2019-10-25 16:08:14,376 [7] INFO  C75 [(null)] - Invocando al metodo ConsultarKey
+2019-10-25 16:08:14,591 [7] INFO  GestionClaves [(null)] - Consulta Servicio - GestionClaves : 
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">/ConsultarKey</Action>
+  </s:Header>
+  <s:Body>
+    <ConsultarKey xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://anses.gov.ar">
+      <User>SAP-850</User>
+      <Mark>c2810107087b25676fbc7885bbeeb63e0fae9085</Mark>
+      <Value>EsidifKey</Value>
+    </ConsultarKey>
+  </s:Body>
+</s:Envelope>
+2019-10-25 16:08:14,756 [7] INFO  GestionClaves [(null)] - Respuesta GestionClaves - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <s:Header xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" />
+  <soap:Body>
+    <ConsultarKeyResponse xmlns="http://anses.gov.ar">
+      <ConsultarKeyResult>AnsesEsidif2019</ConsultarKeyResult>
+    </ConsultarKeyResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-25 16:08:14,759 [7] INFO  C75 [(null)] - Invocacion a Gestion Claves Correcta
+2019-10-25 16:08:14,759 [7] DEBUG C75 [(null)] - C75 - Seteando PROXY.
+2019-10-25 16:08:14,761 [7] DEBUG C75 [(null)] - C75 - Cargando certificado X509.
+2019-10-25 16:08:14,761 [7] DEBUG C75 [(null)] - C75 - IGNORA_ERROR_CERTI = true.
+2019-10-25 16:08:14,761 [7] DEBUG C75 [(null)] - C75 - Certificado X509 cargado exitosamente.
+2019-10-25 16:08:14,761 [7] DEBUG C75 [(null)] - C75 - Creando Bean
+2019-10-25 16:08:14,763 [7] DEBUG C75 [(null)] - C75 - Mapeando a objeto XML.
+2019-10-25 16:08:15,858 [7] DEBUG C75 [(null)] - C75 - Armando header de autenticacion
+2019-10-25 16:08:16,716 [7] INFO  C75 [(null)] - Consulta Servicio - ESIDIF : 
+?<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:inf1="https://ws-si.mecon.gov.ar/ws/informeDeGastos" xmlns:com="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:inf="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <wsse:Security soapenv:mustUnderstand="1">
+      <wsse:UsernameToken wsu:Id="UsernameToken-1">
+        <wsse:Username>SAP-850</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">AnsesEsidif2019</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <wsa:To soapenv:mustUnderstand="1">https://tws5-si.mecon.gov.ar/SD_Core/ws</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosService</wsa:Action>
+    <wsa:MessageID>urn:uuid:6e65bd4f-dc5d-4590-8869-f3e5f378c889</wsa:MessageID>
+  </soapenv:Header>
+  <soapenv:Body>
+    <inf:generarInformeDeGastos xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <inf:datosInicialesInformeDeGastos>
+        <inf1:identificacionComprobante>
+          <com:tipoComprobante>IGS</com:tipoComprobante>
+          <com:numero>60209</com:numero>
+          <com:ejercicio>2019</com:ejercicio>
+          <com:entidadEmisora>850</com:entidadEmisora>
+          <com:tipoRegistro>EJE</com:tipoRegistro>
+        </inf1:identificacionComprobante>
+        <inf1:entidadProceso>850</inf1:entidadProceso>
+        <inf1:fechaAutorizacion>2019-10-17</inf1:fechaAutorizacion>
+        <inf1:fechaComprobante>2019-10-17</inf1:fechaComprobante>
+        <inf1:fechaRegistro>2019-10-17</inf1:fechaRegistro>
+        <inf1:pagoDirecto>false</inf1:pagoDirecto>
+        <inf1:medioDePago>CHE</inf1:medioDePago>
+        <inf1:importeCompromiso>0.00</inf1:importeCompromiso>
+        <inf1:importeDevengado>0.00</inf1:importeDevengado>
+        <inf1:importePagado>60000100.00</inf1:importePagado>
+        <inf1:importeDeducciones>0.00</inf1:importeDeducciones>
+        <inf1:importeDeduccionesPagado>0.00</inf1:importeDeduccionesPagado>
+        <inf1:importeNetoPagado>60000100.00</inf1:importeNetoPagado>
+        <inf1:itemsNoPresupuestarios>
+          <inf1:axt>252</inf1:axt>
+          <inf1:importeDevengado>0.00</inf1:importeDevengado>
+          <inf1:importePagado>60000100.00</inf1:importePagado>
+          <inf1:ejercicio>2019</inf1:ejercicio>
+        </inf1:itemsNoPresupuestarios>
+      </inf:datosInicialesInformeDeGastos>
+      <inf:gestionExterna>ANSES</inf:gestionExterna>
+    </inf:generarInformeDeGastos>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-25 16:08:17,020 [7] DEBUG C75 [(null)] - RemoteCertificateValidationCallback - Entro: IssuerE=segredessistabier@anses.gov.ar, CN=CA Servidores Proxy ANSES, OU=Direccion de Seguridad Informatica, O=Administracion Nacional de la Seguridad Social, L=Ciudad Autonoma de Buenos Aires, S=Ciudad Autonoma de Buenos Aires, C=AR
+2019-10-25 16:08:19,763 [7] INFO  C75 [(null)] - Respuesta ESIDIF - Servicio : 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+    <wsa:To SOAP-ENV:mustUnderstand="1">http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+    <wsa:Action>https://ws-si.mecon.gov.ar/ws/gastos/informeDeGastos/generarInformeDeGastosServiceResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:dc41991f-a4d5-41d1-8a0a-4f5143f4cf0f</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:6e65bd4f-dc5d-4590-8869-f3e5f378c889</wsa:RelatesTo>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns4:generarInformeDeGastosResponse xmlns:ns4="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg" xmlns:ns2="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns:ns3="https://ws-si.mecon.gov.ar/ws/informeDeGastos">
+      <ns4:numeroSidif>3365</ns4:numeroSidif>
+    </ns4:generarInformeDeGastosResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+2019-10-25 16:08:20,091 [7] INFO  C75 [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <generarInformeDeGastosPortTypeResponse xmlns="https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg">
+      <generarInformeDeGastosResponse>
+        <numeroSidif>3365</numeroSidif>
+      </generarInformeDeGastosResponse>
+    </generarInformeDeGastosPortTypeResponse>
+  </soap:Body>
+</soap:Envelope>

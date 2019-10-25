@@ -1,4 +1,4 @@
-﻿using ESIDIF.Models.Xml;
+﻿using ESIDIFCommon.Models.Xml;
 
 namespace ESIDIFAcumuladores.Models
 {
@@ -98,6 +98,7 @@ namespace ESIDIFAcumuladores.Models
         private string clasificadorEconomicoField;
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
         public string ejercicio
         {
@@ -113,6 +114,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 1)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
         public string sectorInstitucional
         {
@@ -128,6 +130,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 2)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 2)]
         public string subSectorInstitucional
         {
@@ -144,6 +147,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 3)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 3)]
         public string caracterInstitucional
         {
@@ -160,6 +164,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 4)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 4)]
         public string jurisdiccion
         {
@@ -176,6 +181,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 5)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 5)]
         public string subJurisdiccion
         {
@@ -192,6 +198,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 6)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 6)]
         public string entidad
         {
@@ -208,6 +215,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 7)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 7)]
         public string servicio
         {
@@ -224,6 +232,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 8)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 8)]
         public string programa
         {
@@ -240,6 +249,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 9)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 9)]
         public string subPrograma
         {
@@ -256,6 +266,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 10)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 10)]
         public string proyecto
         {
@@ -272,6 +283,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 11)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 11)]
         public string actividad
         {
@@ -288,6 +300,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 12)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 12)]
         public string obra
         {
@@ -304,6 +317,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 13)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 13)]
         public string inciso
         {
@@ -320,6 +334,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 14)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 14)]
         public string principal
         {
@@ -336,6 +351,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 15)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 15)]
         public string parcial
         {
@@ -352,6 +368,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 16)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 16)]
         public string subParcial
         {
@@ -368,6 +385,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 17)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 17)]
         public string procedencia
         {
@@ -384,6 +402,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 18)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 18)]
         public string fuente
         {
@@ -400,6 +419,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 19)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 19)]
         public string moneda
         {
@@ -416,6 +436,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 20)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 20)]
         public string ubicacionGeografica
         {
@@ -432,6 +453,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 21)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 21)]
         public string entidadOrigenDestino
         {
@@ -448,6 +470,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 22)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 22)]
         public string prestamoExterno
         {
@@ -464,6 +487,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 23)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 23)]
         public string bapin
         {
@@ -479,6 +503,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 24)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 24)]
         public string finalidad
         {
@@ -495,6 +520,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 25)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 25)]
         public string funcion
         {
@@ -511,6 +537,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 26)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 26)]
         public string clasificadorEconomico
         {
@@ -569,6 +596,7 @@ namespace ESIDIFAcumuladores.Models
         private string reservaDevengadoField;
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
         public string compromiso
         {
@@ -584,6 +612,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 1)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
         public string creditoInicialEjercicio
         {
@@ -599,6 +628,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 2)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 2)]
         public string creditoInicialProrroga
         {
@@ -614,6 +644,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 3)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 3)]
         public string creditoPotencial
         {
@@ -630,6 +661,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 4)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 4)]
         public string creditoRestringido
         {
@@ -646,6 +678,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 5)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 5)]
         public string creditoVigente
         {
@@ -662,6 +695,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 6)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 6)]
         public string devengado
         {
@@ -678,6 +712,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 7)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 7)]
         public string gastoPreventivo
         {
@@ -693,6 +728,7 @@ namespace ESIDIFAcumuladores.Models
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 8)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 8)]
         public string pagado
         {
@@ -709,6 +745,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 9)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 9)]
         public string pagadoFinanciero
         {
@@ -725,6 +762,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 10)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 10)]
         public string reservaCompromiso
         {
@@ -741,6 +779,7 @@ namespace ESIDIFAcumuladores.Models
 
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 11)]
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 11)]
         public string reservaDevengado
         {

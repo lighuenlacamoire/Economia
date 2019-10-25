@@ -15,7 +15,7 @@ namespace ESIDIFCredito.Extensions
 {
     public class SoapLoggerExtension : SoapExtension
     {
-        private static readonly ILog log = LogManager.GetLogger("ESIDIFCredito");
+        private static readonly ILog log = LogManager.GetLogger("Credito");
 
         /// <summary>
         /// The old stream coming into this extension when we make a soap request.  See ChainStream.
@@ -39,7 +39,6 @@ namespace ESIDIFCredito.Extensions
         /// </returns>
         public override Stream ChainStream(Stream stream)
         {
-            //Logger.Debug("ChainStream");
             this.oldStream = stream;
             this.newStream = new MemoryStream();
             return this.newStream;
@@ -60,7 +59,6 @@ namespace ESIDIFCredito.Extensions
         /// </returns>
         public override object GetInitializer(LogicalMethodInfo methodInfo, SoapExtensionAttribute attribute)
         {
-            //Logger.Debug("GetInitializer(LogicalMethodInfo methodInfo, SoapExtensionAttribute attribute)");
             return null;
         }
 
@@ -76,7 +74,6 @@ namespace ESIDIFCredito.Extensions
         /// </returns>
         public override object GetInitializer(Type serviceType)
         {
-            //Logger.Debug("GetInitializer(Type serviceType)");
             return null;
         }
 
@@ -89,7 +86,6 @@ namespace ESIDIFCredito.Extensions
         /// </param>
         public override void Initialize(object initializer)
         {
-            //Logger.Debug("Initialize");
         }
 
 
@@ -103,8 +99,7 @@ namespace ESIDIFCredito.Extensions
         public override void ProcessMessage(SoapMessage message)
         {
             // Log some informational items for reviewing in this sample application.
-            //Logger.Debug("Stage : " + message.Stage);
-
+            
             switch (message.Stage)
             {
                 case SoapMessageStage.BeforeSerialize:
@@ -142,16 +137,16 @@ namespace ESIDIFCredito.Extensions
             var requestXml = reader.ReadToEnd();
             string salida = System.Web.HttpContext.Current.Request.Url.AbsoluteUri == message.Url ? "Respuesta Servicio - ESIDIF : " : "Consulta Servicio - SAP : ";
 
-            if (message.Action.Contains("EnvioPruebaMail"))
+            if (message.Url.Contains("enviarmail"))
             {
-                salida = "Mail Servicio - SAP";
+                salida = "Mail Servicio - SAP : Enviado";
+                log.Info(salida);
+            }
+            else
+            {
+                log.Info(salida + Environment.NewLine + this.PrettyXml(requestXml));
             }
 
-            // Trimming the end of the string b/c some of my requests and responses had newlines :-(
-            log.Info(salida + Environment.NewLine + this.PrettyXml(requestXml));
-
-            // Example of the using PrettyXml
-            // Logger.Debug(this.PrettyXml(requestXml));
             this.newStream.Position = 0;
             CopyStream(this.newStream, this.oldStream);
             this.newStream.Position = 0;
@@ -171,22 +166,16 @@ namespace ESIDIFCredito.Extensions
             var requestXml = reader.ReadToEnd();
             string entrada = System.Web.HttpContext.Current.Request.Url.AbsoluteUri == message.Url ? "Consulta ESIDIF - Servicio : " : "Respuesta SAP - Servicio : ";
 
-            //aqui
-            //XmlDocument xd = new XmlDocument();
-            //xd.LoadXml(requestXml);
-            //XmlElement root = xd.DocumentElement;
-            //var nose = root.GetElementsByTagName("token");
+            if (message.Url.Contains("enviarmail"))
+            {
+                entrada = "Mail Servicio - SAP: Ok";
+                log.Info(entrada);
+            }
+            else
+            {
+                log.Info(entrada + Environment.NewLine + this.PrettyXml(requestXml));
+            }
 
-            //string a = nose[0].InnerText;
-
-            //
-
-            // Trimming the end of the string b/c some of my requests and responses had newlines :-(
-            log.Info(entrada + Environment.NewLine + this.PrettyXml(requestXml));
-            //Logger.Debug("Response | " + requestXml.TrimEnd('\r', '\n'));
-
-            // Example of the using PrettyXml
-            // Logger.Debug(this.PrettyXml(requestXml));
             this.newStream.Position = 0;
         }
 
@@ -229,7 +218,16 @@ namespace ESIDIFCredito.Extensions
         /// </returns>
         public string PrettyXml(string requestXml)
         {
-            return XDocument.Parse(requestXml).ToString();
+            try
+            {
+                string xml = XDocument.Parse(requestXml).ToString();
+                return xml;
+            }
+            catch (Exception ex)
+            {
+                log.Info("Error al parsear el xml: " + ex.Message);
+                return requestXml;
+            }
         }
     }
 
@@ -251,7 +249,7 @@ namespace ESIDIFCredito.Extensions
 
     public class SoapMessageInspector : IClientMessageInspector
     {
-        private static readonly ILog log = LogManager.GetLogger("ESIDIFCredito");
+        private static readonly ILog log = LogManager.GetLogger("Credito");
 
         public SoapLoggerExtension logSoap = new SoapLoggerExtension();
 

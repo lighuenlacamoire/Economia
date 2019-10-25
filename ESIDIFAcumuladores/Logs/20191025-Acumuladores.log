@@ -1,0 +1,304 @@
+2019-10-25 10:14:40,671 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx
+2019-10-25 10:14:41,012 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - Consulta SAP - Servicio: 
+
+2019-10-25 10:14:41,432 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" name="AcumuladoresService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar"/><xs:element name="acumuladoresCreditoIndicativa"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta"/></xs:sequence></xs:complexType></xs:element><xs:element name="acumuladoresCreditoIndicativaResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="acumuladoresCreditoIndicativaResult" nillable="true" type="tns:acumuladoresCreditoConsulta"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="imputacionCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="sectorInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subSectorInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="caracterInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="jurisdiccion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subJurisdiccion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="programa" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subPrograma" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="proyecto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="actividad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="obra" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="inciso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="principal" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="parcial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subParcial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="procedencia" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ubicacionGeografica" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadOrigenDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="prestamoExterno" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="finalidad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="funcion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="clasificadorEconomico" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta"/><xs:complexType name="acumuladoresCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="compromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoInicialEjercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoInicialProrroga" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoPotencial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoRestringido" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoVigente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="devengado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="gastoPreventivo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pagadoFinanciero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="reservaCompromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="reservaDevengado" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="acumuladoresCreditoConsulta" nillable="true" type="tns:acumuladoresCreditoConsulta"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage"><wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativa"/></wsdl:message><wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage"><wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativaResponse"/></wsdl:message><wsdl:portType name="AcumuladoresService"><wsdl:operation name="acumuladoresCreditoIndicativa"><wsdl:input wsam:Action="/acumuladoresCreditoIndicativa" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage"/><wsdl:output wsam:Action="/acumuladoresCreditoIndicativaResponse" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_AcumuladoresService" type="tns:AcumuladoresService"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="acumuladoresCreditoIndicativa"><soap:operation soapAction="/acumuladoresCreditoIndicativa" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="AcumuladoresService"><wsdl:port name="BasicHttpBinding_AcumuladoresService" binding="tns:BasicHttpBinding_AcumuladoresService"><soap:address location="http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-10-25 10:14:41,439 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" name="AcumuladoresService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" />
+      <xs:element name="acumuladoresCreditoIndicativa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acumuladoresCreditoIndicativaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="acumuladoresCreditoIndicativaResult" nillable="true" type="tns:acumuladoresCreditoConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="imputacionCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sectorInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subSectorInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="caracterInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="jurisdiccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subJurisdiccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="programa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subPrograma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="proyecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="actividad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="obra" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inciso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="principal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parcial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subParcial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="procedencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ubicacionGeografica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadOrigenDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prestamoExterno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="finalidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="clasificadorEconomico" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta" />
+      <xs:complexType name="acumuladoresCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="compromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoInicialEjercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoInicialProrroga" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoPotencial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoRestringido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoVigente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="devengado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gastoPreventivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pagadoFinanciero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reservaCompromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reservaDevengado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="acumuladoresCreditoConsulta" nillable="true" type="tns:acumuladoresCreditoConsulta" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage">
+    <wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativa" />
+  </wsdl:message>
+  <wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AcumuladoresService">
+    <wsdl:operation name="acumuladoresCreditoIndicativa">
+      <wsdl:input wsam:Action="/acumuladoresCreditoIndicativa" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage" />
+      <wsdl:output wsam:Action="/acumuladoresCreditoIndicativaResponse" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_AcumuladoresService" type="tns:AcumuladoresService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="acumuladoresCreditoIndicativa">
+      <soap:operation soapAction="/acumuladoresCreditoIndicativa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcumuladoresService">
+    <wsdl:port name="BasicHttpBinding_AcumuladoresService" binding="tns:BasicHttpBinding_AcumuladoresService">
+      <soap:address location="http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+2019-10-25 10:15:06,939 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - REQUEST METHOD: GET, REQUEST BODY: , REQUEST URL: http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx
+2019-10-25 10:15:06,965 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - Consulta SAP - Servicio: 
+
+2019-10-25 10:15:06,974 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - RESPONSE LOG: <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" name="AcumuladoresService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar"/><xs:element name="acumuladoresCreditoIndicativa"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta"/></xs:sequence></xs:complexType></xs:element><xs:element name="acumuladoresCreditoIndicativaResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="acumuladoresCreditoIndicativaResult" nillable="true" type="tns:acumuladoresCreditoConsulta"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:import namespace="http://schemas.datacontract.org/2004/07/System"/><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><xs:complexType name="imputacionCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="sectorInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subSectorInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="caracterInstitucional" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="jurisdiccion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subJurisdiccion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="programa" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subPrograma" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="proyecto" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="actividad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="obra" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="inciso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="principal" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="parcial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="subParcial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="procedencia" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="ubicacionGeografica" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="entidadOrigenDestino" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="prestamoExterno" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="finalidad" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="funcion" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="clasificadorEconomico" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta"/><xs:complexType name="acumuladoresCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"><xs:sequence><xs:element minOccurs="0" name="compromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoInicialEjercicio" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoInicialProrroga" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoPotencial" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoRestringido" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="creditoVigente" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="devengado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="gastoPreventivo" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pagado" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="pagadoFinanciero" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="reservaCompromiso" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="reservaDevengado" nillable="true" type="xs:string"/></xs:sequence></xs:complexType><xs:element name="acumuladoresCreditoConsulta" nillable="true" type="tns:acumuladoresCreditoConsulta"/></xs:schema><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/></xs:schema></wsdl:types><wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage"><wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativa"/></wsdl:message><wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage"><wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativaResponse"/></wsdl:message><wsdl:portType name="AcumuladoresService"><wsdl:operation name="acumuladoresCreditoIndicativa"><wsdl:input wsam:Action="/acumuladoresCreditoIndicativa" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage"/><wsdl:output wsam:Action="/acumuladoresCreditoIndicativaResponse" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_AcumuladoresService" type="tns:AcumuladoresService"><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="acumuladoresCreditoIndicativa"><soap:operation soapAction="/acumuladoresCreditoIndicativa" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="AcumuladoresService"><wsdl:port name="BasicHttpBinding_AcumuladoresService" binding="tns:BasicHttpBinding_AcumuladoresService"><soap:address location="http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx"/></wsdl:port></wsdl:service></wsdl:definitions>
+2019-10-25 10:15:06,975 [4] INFO  ESIDIFAcumuladores.AcumuladoresService [(null)] - Respuesta Servicio - SAP: 
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" name="AcumuladoresService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" />
+      <xs:element name="acumuladoresCreditoIndicativa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="acumuladoresCreditoIndicativaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="acumuladoresCreditoIndicativaResult" nillable="true" type="tns:acumuladoresCreditoConsulta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="imputacionCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ejercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sectorInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subSectorInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="caracterInstitucional" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="jurisdiccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subJurisdiccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="servicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="programa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subPrograma" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="proyecto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="actividad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="obra" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="inciso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="principal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parcial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="subParcial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="procedencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fuente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moneda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ubicacionGeografica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="entidadOrigenDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prestamoExterno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bapin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="finalidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="clasificadorEconomico" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="imputacionCreditoConsulta" nillable="true" type="tns:imputacionCreditoConsulta" />
+      <xs:complexType name="acumuladoresCreditoConsulta" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="compromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoInicialEjercicio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoInicialProrroga" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoPotencial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoRestringido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditoVigente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="devengado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gastoPreventivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pagado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pagadoFinanciero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reservaCompromiso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reservaDevengado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="acumuladoresCreditoConsulta" nillable="true" type="tns:acumuladoresCreditoConsulta" />
+    </xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage">
+    <wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativa" />
+  </wsdl:message>
+  <wsdl:message name="AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:acumuladoresCreditoIndicativaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AcumuladoresService">
+    <wsdl:operation name="acumuladoresCreditoIndicativa">
+      <wsdl:input wsam:Action="/acumuladoresCreditoIndicativa" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_InputMessage" />
+      <wsdl:output wsam:Action="/acumuladoresCreditoIndicativaResponse" message="tns:AcumuladoresService_acumuladoresCreditoIndicativa_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_AcumuladoresService" type="tns:AcumuladoresService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="acumuladoresCreditoIndicativa">
+      <soap:operation soapAction="/acumuladoresCreditoIndicativa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcumuladoresService">
+    <wsdl:port name="BasicHttpBinding_AcumuladoresService" binding="tns:BasicHttpBinding_AcumuladoresService">
+      <soap:address location="http://localhost/ESIDIFAcumuladores/estadoAcumuladoresCreditoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

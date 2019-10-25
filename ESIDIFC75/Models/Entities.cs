@@ -1,38 +1,16 @@
-﻿using ESIDIFCommon.Tools;
+﻿using ESIDIFCommon.Models.Xml;
+using ESIDIFCommon.Tools;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+using System.Web;
 
 namespace ESIDIFC75.Models
 {
-    [System.Runtime.Serialization.CollectionDataContract(ItemName ="item2", Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    public class itemsPresupuestariosDetail : List<ItemPresupuestarioInformeDeGastosType>
-    {
-        //[System.Runtime.Serialization.DataMember(Name ="eeee", Order =0)]
-        //public List<ItemPresupuestarioInformeDeGastosType> _list = new List<ItemPresupuestarioInformeDeGastosType>();
-
-        public itemsPresupuestariosDetail() : base() { }
-
-        public itemsPresupuestariosDetail(List<ItemPresupuestarioInformeDeGastosType> items) : base()
-        {
-            foreach (var item in items)
-            {
-                Add(item);
-            }
-        }
-
-
-        //    public itemsPresupuestariosDetail(IEnumerable<ItemPresupuestarioInformeDeGastosType> list) : base(list)
-        //    {
-
-        //    }
-    }
 
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
-    public class generarInformeDeGastosResponse : object, System.ComponentModel.INotifyPropertyChanged
+    [System.Xml.Serialization.XmlRoot(ElementName = "generarInformeDeGastosResponse", Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
+    public class generarInformeDeGastosResponse : IBody, System.ComponentModel.INotifyPropertyChanged
     {
         private long numeroSidifField;
 
@@ -63,22 +41,20 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
-    public class generarInformeDeGastos : object, System.ComponentModel.INotifyPropertyChanged
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
+    [System.Xml.Serialization.XmlRoot(ElementName = "generarInformeDeGastos", Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
+    public class generarInformeDeGastos : IBody, System.ComponentModel.INotifyPropertyChanged
     {
-        [System.Runtime.Serialization.DataMember(Order = 0)]
         public DatosInicialesInformeDeGastosType datosInicialesInformeDeGastos { get; set; }
         //public string gestionExterna { get; set; } // GestionExternaEnum
 
-        private service.GestionExternaEnum gestionExternaField;
+        private service.GestionExternaEnum? gestionExternaField;
 
-        [System.Runtime.Serialization.DataMember(Order = 1)]
         public string gestionExterna
         {
             get
             {
-                return Convert.ToString(this.gestionExternaField);
+                return this.gestionExternaField.HasValue ? Functions.CheckStringFromEnum<service.GestionExternaEnum>(Convert.ToString(this.gestionExternaField.Value)) : null;
             }
             set
             {
@@ -100,11 +76,9 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
     public class DatosInicialesInformeDeGastosType : object, System.ComponentModel.INotifyPropertyChanged
     {
-
         private IdentificacionComprobanteType identificacionComprobanteField;
 
         private string entidadProcesoField;
@@ -115,13 +89,11 @@ namespace ESIDIFC75.Models
 
         private IdentificacionComprobanteType comprobanteOrigenField;
 
-        private System.DateTime fechaAutorizacionField;
+        private string fechaAutorizacionField;
 
-        private System.DateTime fechaComprobanteField;
+        private string fechaComprobanteField;
 
-        private System.DateTime fechaRegistroField;
-
-        private bool fechaRegistroFieldSpecified;
+        private string fechaRegistroField;
 
         private int periodoImpactoField;
 
@@ -129,26 +101,26 @@ namespace ESIDIFC75.Models
 
         private CuentaType cuentaFinanciadoraField;
 
-        private bool pagoDirectoField;
+        private bool? pagoDirectoField;
 
-        private service.MedioDePagoType medioDePagoField; //Enum MedioDePagoType
+        private service.MedioDePagoType? medioDePagoField; //Enum MedioDePagoType
 
-        private decimal importeCompromisoField;
+        private string importeCompromisoField;
 
-        private decimal importeDevengadoField;
+        private string importeDevengadoField;
 
-        private decimal importePagadoField;
+        private string importePagadoField;
 
-        private decimal importeDeduccionesField;
+        private string importeDeduccionesField;
 
-        private decimal importeDeduccionesPagadoField;
+        private string importeDeduccionesPagadoField;
 
-        private decimal importeNetoPagadoField;
+        private string importeNetoPagadoField;
 
         private string uepexField;
 
         private string observacionesField;
-                
+
         private ItemPresupuestarioInformeDeGastosType[] itemsPresupuestariosField;
 
         private ItemNoPresupuestarioInformeDeGastosType[] itemsNoPresupuestariosField;
@@ -158,8 +130,7 @@ namespace ESIDIFC75.Models
 
         //[System.Xml.Serialization.XmlElement("itemsNoPresupuestarios")]
         //public ItemNoPresupuestarioInformeDeGastosType[] itemsNoPresupuestarios { get; set; }
-        
-        [System.Runtime.Serialization.DataMember(Order =0)]
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
         public IdentificacionComprobanteType identificacionComprobante
         {
@@ -174,7 +145,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 1)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
         public string entidadProceso
         {
@@ -189,7 +159,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 2)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
         public IdentificadorDeTramiteType identificadorTramite
         {
@@ -204,7 +173,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 3)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
         public DocumentoRespaldatorioType documentoRespaldatorio
         {
@@ -219,7 +187,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 4)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
         public IdentificacionComprobanteType comprobanteOrigen
         {
@@ -234,75 +201,56 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 5)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
         public string fechaAutorizacion
         {
             get
             {
-                return this.fechaAutorizacionField.ToString("yyyy-MM-ddTHH:mm:ss");
-                //return Convert.ToString(this.fechaAutorizacionField);
+                return this.fechaAutorizacionField;
+                //return Functions.CheckStringFromDateTime(this.fechaAutorizacionField, Constant.DateShortFormat);
             }
             set
             {
-                this.fechaAutorizacionField = Functions.CopyStringToFecha(value, Functions.FechaTipo.MEDIA, "yyyy-MM-ddTHH:mm:ss");
+                this.fechaAutorizacionField = value;
+                //this.fechaAutorizacionField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToFecha(value, Functions.FechaTipo.SIMPLE, Constant.DateShortFormat) : (DateTime?)null;
                 this.RaisePropertyChanged("fechaAutorizacion");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 6)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
         public string fechaComprobante
         {
             get
             {
-                return this.fechaComprobanteField.ToString("yyyy-MM-ddTHH:mm:ss");
+                return this.fechaComprobanteField;
             }
             set
             {
-                this.fechaComprobanteField = Functions.CopyStringToFecha(value, Functions.FechaTipo.MEDIA, "yyyy-MM-ddTHH:mm:ss");
+                this.fechaComprobanteField = value;
                 this.RaisePropertyChanged("fechaComprobante");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 7)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
         public string fechaRegistro
         {
             get
             {
-                return this.fechaRegistroField.ToString("yyyy-MM-ddTHH:mm:ss");
+                return this.fechaRegistroField;
             }
             set
             {
-                this.fechaRegistroField = Functions.CopyStringToFecha(value, Functions.FechaTipo.MEDIA, "yyyy-MM-ddTHH:mm:ss");
+                this.fechaRegistroField = value;
                 this.RaisePropertyChanged("fechaRegistro");
             }
         }
 
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fechaRegistroSpecified
-        {
-            get
-            {
-                return (this.fechaRegistroField != null && this.fechaRegistroField != DateTime.MinValue && !string.IsNullOrEmpty(fechaRegistro));
-            }
-            set
-            {
-                this.fechaRegistroFieldSpecified = value;
-                this.RaisePropertyChanged("fechaRegistroSpecified");
-            }
-        }
-
-        [System.Runtime.Serialization.DataMember(Order = 8)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
         public string periodoImpacto
         {
             get
             {
-                return this.periodoImpactoField.ToString();
+                return Convert.ToString(this.periodoImpactoField);
             }
             set
             {
@@ -311,7 +259,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.IgnoreDataMember()]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool periodoImpactoSpecified
         {
@@ -326,7 +273,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 9)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 9)]
         public CuentaType cuentaFinanciadora
         {
@@ -341,13 +287,12 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 10)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
         public string pagoDirecto
         {
             get
             {
-                return this.pagoDirectoField.ToString()?.ToLower();
+                return Functions.CheckStringFromBool(this.pagoDirectoField);
             }
             set
             {
@@ -356,13 +301,12 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 11)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
         public string medioDePago
         {
             get
             {
-                return Convert.ToString(this.medioDePagoField);
+                return this.medioDePagoField.HasValue ? Functions.CheckStringFromEnum<service.MedioDePagoType>(Convert.ToString(this.medioDePagoField.Value)) : null;
             }
             set
             {
@@ -372,97 +316,92 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 12)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 12)]
         public string importeCompromiso
         {
             get
             {
-                return this.importeCompromisoField.ToString("N2", Functions.numberFormat);
+                return this.importeCompromisoField;
+                //return Functions.CheckStringFromDecimal(this.importeCompromisoField);
             }
             set
             {
-                this.importeCompromisoField = Functions.CopyStringToDecimal(value);
+                this.importeCompromisoField = value;
+                //this.importeCompromisoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeCompromiso");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 13)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 13)]
         public string importeDevengado
         {
             get
             {
-                return this.importeDevengadoField.ToString("N2", Functions.numberFormat);
+                return this.importeDevengadoField;
             }
             set
             {
-                this.importeDevengadoField = Functions.CopyStringToDecimal(value);
+                this.importeDevengadoField = value;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 14)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 14)]
         public string importePagado
         {
             get
             {
-                return this.importePagadoField.ToString("N2", Functions.numberFormat);
+                return this.importePagadoField;
             }
             set
             {
-                this.importePagadoField = Functions.CopyStringToDecimal(value);
+                this.importePagadoField = value;
                 this.RaisePropertyChanged("importePagado");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 15)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 15)]
         public string importeDeducciones
         {
             get
             {
-                return this.importeDeduccionesField.ToString("N2", Functions.numberFormat);
+                return this.importeDeduccionesField;
             }
             set
             {
-                this.importeDeduccionesField = Functions.CopyStringToDecimal(value);
+                this.importeDeduccionesField = value;
                 this.RaisePropertyChanged("importeDeducciones");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 16)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 16)]
         public string importeDeduccionesPagado
         {
             get
             {
-                return this.importeDeduccionesPagadoField.ToString("N2", Functions.numberFormat);
+                return this.importeDeduccionesPagadoField;
             }
             set
             {
-                this.importeDeduccionesPagadoField = Functions.CopyStringToDecimal(value);
+                this.importeDeduccionesPagadoField = value;
                 this.RaisePropertyChanged("importeDeduccionesPagado");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 17)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 17)]
         public string importeNetoPagado
         {
             get
             {
-                return this.importeNetoPagadoField.ToString("N2", Functions.numberFormat);
+                return this.importeNetoPagadoField;
             }
             set
             {
-                this.importeNetoPagadoField = Functions.CopyStringToDecimal(value);
+                this.importeNetoPagadoField = value;
                 this.RaisePropertyChanged("importeNetoPagado");
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 18)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 18)]
         public string uepex
         {
@@ -477,7 +416,6 @@ namespace ESIDIFC75.Models
             }
         }
 
-        [System.Runtime.Serialization.DataMember(Order = 19)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 19)]
         public string observaciones
         {
@@ -493,9 +431,7 @@ namespace ESIDIFC75.Models
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 20)]
-        [System.ComponentModel.DataAnnotations.Display(Name = "itemsPresupuestarios")]
-        [XmlElement("itemsPresupuestarios", ElementName = "itemsPresupuestarios", Order = 20)]
+        [System.Xml.Serialization.XmlElementAttribute("itemsPresupuestarios", Order = 20)]
         public ItemPresupuestarioInformeDeGastosType[] itemsPresupuestarios
         {
             get
@@ -508,15 +444,9 @@ namespace ESIDIFC75.Models
                 this.RaisePropertyChanged("itemsPresupuestarios");
             }
         }
-        //[System.Runtime.Serialization.DataMember(Order = 20)]
-        //[XmlArray(ElementName ="nose")]
-        //[XmlArrayItem(ElementName ="talvez")]
-        //public itemsPresupuestariosDetail itemsPresupuestarios { get; set; }
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 21)]
-        [System.ComponentModel.DataAnnotations.Display(Name = "itemsNoPresupuestarios")]
-        [XmlElement("itemsNoPresupuestarios", ElementName = "itemsNoPresupuestarios", Order = 21)]
+        [System.Xml.Serialization.XmlElementAttribute("itemsNoPresupuestarios", Order = 21)]
         public ItemNoPresupuestarioInformeDeGastosType[] itemsNoPresupuestarios
         {
             get
@@ -542,15 +472,14 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class IdentificacionComprobanteType : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string tipoComprobanteField;
 
-        private long numeroField;
+        private long? numeroField;
 
-        private long ejercicioField;
+        private long? ejercicioField;
 
         private string entidadEmisoraField;
 
@@ -559,7 +488,6 @@ namespace ESIDIFC75.Models
         private string subTipoRegistroField;
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
         public string tipoComprobante
         {
@@ -575,39 +503,36 @@ namespace ESIDIFC75.Models
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
         public string numero
         {
             get
             {
-                return Convert.ToString(this.numeroField);
+                return Functions.CheckStringFromLong(this.numeroField);
             }
             set
             {
-                this.numeroField = Functions.CopyStringToLong(value);
+                this.numeroField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("numero");
             }
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
         public string ejercicio
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return Functions.CheckStringFromLong(this.ejercicioField);
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
+                this.ejercicioField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("ejercicio");
             }
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
         public string entidadEmisora
         {
@@ -664,7 +589,6 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class IdentificadorDeTramiteType : object, System.ComponentModel.INotifyPropertyChanged
     {
@@ -672,7 +596,7 @@ namespace ESIDIFC75.Models
 
         private string identificadorField;
 
-        private long anioField;
+        private long? anioField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -710,11 +634,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.anioField);
+                return Functions.CheckStringFromLong(this.anioField);
             }
             set
             {
-                this.anioField = Functions.CopyStringToLong(value);
+                this.anioField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("anio");
             }
         }
@@ -731,15 +655,14 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class DocumentoRespaldatorioType : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string tipoField;
 
-        private long numeroField;
+        private long? numeroField;
 
-        private long ejercicioField;
+        private long? ejercicioField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -762,11 +685,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.numeroField);
+                return Functions.CheckStringFromLong(this.numeroField);
             }
             set
             {
-                this.numeroField = Functions.CopyStringToLong(value);
+                this.numeroField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("numero");
             }
         }
@@ -777,11 +700,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return Functions.CheckStringFromLong(this.ejercicioField);
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
+                this.ejercicioField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("ejercicio");
             }
         }
@@ -798,12 +721,11 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class CuentaType : object, System.ComponentModel.INotifyPropertyChanged
     {
 
-        private long bancoField;
+        private long? bancoField;
 
         private string sucursalField;
 
@@ -815,11 +737,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.bancoField);
+                return Functions.CheckStringFromLong(this.bancoField);
             }
             set
             {
-                this.bancoField = Functions.CopyStringToLong(value);
+                this.bancoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("banco");
             }
         }
@@ -866,13 +788,12 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class ImputacionPresupuestariaCreditoType : object, System.ComponentModel.INotifyPropertyChanged
     {
         private string institucionField;
 
-        private long ejercicioField;
+        private long? ejercicioField;
 
         private string servicioField;
 
@@ -917,11 +838,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return Functions.CheckStringFromLong(this.ejercicioField);
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
+                this.ejercicioField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("ejercicio");
             }
         }
@@ -1047,7 +968,6 @@ namespace ESIDIFC75.Models
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool bapinSpecified
         {
@@ -1078,7 +998,6 @@ namespace ESIDIFC75.Models
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool pexSpecified
         {
@@ -1105,7 +1024,6 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public class UnidadDescentralizadaType : object, System.ComponentModel.INotifyPropertyChanged
     {
@@ -1150,7 +1068,6 @@ namespace ESIDIFC75.Models
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ejercicioSpecified
         {
@@ -1207,7 +1124,6 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
     public partial class CodigoTramoPartidaType : object, System.ComponentModel.INotifyPropertyChanged
     {
@@ -1291,8 +1207,6 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Name ="Item",Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
     public class ItemPresupuestarioInformeDeGastosType : object, System.ComponentModel.INotifyPropertyChanged
     {
         private ImputacionPresupuestariaCreditoType imputacionField;
@@ -1303,11 +1217,11 @@ namespace ESIDIFC75.Models
 
         private CodigoTramoPartidaType sigadeField;
 
-        private decimal importeCompromisoField;
+        private string importeCompromisoField;
 
-        private decimal importeDevengadoField;
+        private string importeDevengadoField;
 
-        private decimal importePagadoField;
+        private string importePagadoField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -1375,11 +1289,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.importeCompromisoField);
+                return this.importeCompromisoField;
             }
             set
             {
-                this.importeCompromisoField = Functions.CopyStringToDecimal(value);
+                this.importeCompromisoField = value;
                 this.RaisePropertyChanged("importeCompromiso");
             }
         }
@@ -1390,11 +1304,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.importeDevengadoField);
+                return this.importeDevengadoField;
             }
             set
             {
-                this.importeDevengadoField = Functions.CopyStringToDecimal(value);
+                this.importeDevengadoField = value;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
@@ -1405,11 +1319,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.importePagadoField);
+                return this.importePagadoField;
             }
             set
             {
-                this.importePagadoField = Functions.CopyStringToDecimal(value);
+                this.importePagadoField = value;
                 this.RaisePropertyChanged("importePagado");
             }
         }
@@ -1426,17 +1340,15 @@ namespace ESIDIFC75.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
     public class ItemNoPresupuestarioInformeDeGastosType : object, System.ComponentModel.INotifyPropertyChanged
     {
-        private long axtField;
+        private long? axtField;
 
-        private decimal importeDevengadoField;
+        private string importeDevengadoField;
 
-        private decimal importePagadoField;
+        private string importePagadoField;
 
-        private long ejercicioField;
+        private long? ejercicioField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -1444,11 +1356,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.axtField);
+                return Functions.CheckStringFromLong(this.axtField);
             }
             set
             {
-                this.axtField = Functions.CopyStringToLong(value);
+                this.axtField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("axt");
             }
         }
@@ -1459,11 +1371,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.importeDevengadoField);
+                return this.importeDevengadoField;
             }
             set
             {
-                this.importeDevengadoField = Functions.CopyStringToDecimal(value);
+                this.importeDevengadoField = value;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
@@ -1474,11 +1386,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.importePagadoField);
+                return this.importePagadoField;
             }
             set
             {
-                this.importePagadoField = Functions.CopyStringToDecimal(value);
+                this.importePagadoField = value;
                 this.RaisePropertyChanged("importePagado");
             }
         }
@@ -1489,11 +1401,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return Functions.CheckStringFromLong(this.ejercicioField);
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
+                this.ejercicioField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToLong(value) : (long?)null;
                 this.RaisePropertyChanged("ejercicio");
             }
         }
@@ -1508,253 +1420,5 @@ namespace ESIDIFC75.Models
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class IdentificacionComprobanteType
-    //{
-    //    public string tipoComprobante { get; set; }
-    //    public long numero { get; set; }
-    //    public long ejercicio { get; set; } // length 4
-    //    public string entidadEmisora { get; set; } // length 3
-    //    public string tipoRegistro { get; set; }
-    //    public string subTipoRegistro { get; set; }
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class IdentificadorDeTramiteType
-    //{
-    //    public string tipo { get; set; }
-    //    public string identificador { get; set; }
-    //    public long anio { get; set; }
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class DocumentoRespaldatorioType
-    //{
-    //    public string tipo { get; set; }
-    //    public long numero { get; set; }
-    //    public long ejercicio { get; set; }
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class CuentaType
-    //{
-    //    public long banco { get; set; }
-    //    public string sucursal { get; set; }
-    //    public string cuenta { get; set; }
-    //}
-
-    ////[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    //public class ItemPresupuestarioInformeDeGastosType
-    //{
-    //    public ImputacionPresupuestariaCreditoType imputacion { get; set; } // ImputacionPresupuestariaCreditoType
-    //    public UnidadDescentralizadaType ud { get; set; } // UnidadDescentralizadaType
-    //    public CodigoTramoPartidaType recac { get; set; } // CodigoTramoPartidaType
-    //    public CodigoTramoPartidaType sigade { get; set; } // CodigoTramoPartidaType
-
-    //    [System.Xml.Serialization.XmlIgnore]
-    //    public decimal importeCompromisoValorDecimal
-    //    {
-    //        get
-    //        {
-    //            return Functions.CopyStringToDecimal(importeCompromiso);
-    //        }
-    //        set
-    //        {
-    //            this.importeCompromisoValorDecimal = Functions.CopyStringToDecimal(importeCompromiso);
-    //        }
-    //    }
-    //    public string importeCompromiso { get; set; } //decimales 2
-
-    //    [System.Xml.Serialization.XmlIgnore]
-    //    public decimal importeDevengadoValorDecimal
-    //    {
-    //        get
-    //        {
-    //            return Functions.CopyStringToDecimal(importeDevengado);
-    //        }
-    //        set
-    //        {
-    //            this.importeDevengadoValorDecimal = Functions.CopyStringToDecimal(importeDevengado);
-    //        }
-    //    }
-    //    public string importeDevengado { get; set; } //decimales 2
-
-    //    [System.Xml.Serialization.XmlIgnore]
-    //    public decimal importePagadoValorDecimal
-    //    {
-    //        get
-    //        {
-    //            return Functions.CopyStringToDecimal(importePagado);
-    //        }
-    //        set
-    //        {
-    //            this.importePagadoValorDecimal = Functions.CopyStringToDecimal(importePagado);
-    //        }
-    //    }
-    //    public string importePagado { get; set; } //decimales 2
-
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class ImputacionPresupuestariaCreditoType // ImputacionPresupuestariaCreditoType
-    //{
-    //    public string institucion { get; set; }
-    //    public long codigo { get; set; }
-    //    public long ejercicio { get; set; }
-    //    public string servicio { get; set; }
-    //    public string aperturaProg { get; set; }
-    //    public string objetoGasto { get; set; }
-    //    public string fuente { get; set; }
-    //    public string moneda { get; set; }
-    //    public string entidadDestino { get; set; }
-    //    public long bapin { get; set; }
-    //    public long pex { get; set; }
-    //    public string ug { get; set; }
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class UnidadDescentralizadaType // UnidadDescentralizadaType
-    //{
-    //    public string codigo { get; set; }
-    //    public long ejercicio { get; set; } // legth 4
-    //    public string saf { get; set; }
-    //    public string descripcion { get; set; }
-    //}
-
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    //public class CodigoTramoPartidaType // CodigoTramoPartidaType
-    //{
-    //    public string id { get; set; }
-    //    public string tramo { get; set; }
-    //    public string partida { get; set; }
-    //    public string codigo { get; set; }
-    //}
-
-    ////[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastos")]
-    //public class ItemNoPresupuestarioInformeDeGastosType
-    //{
-    //    public long axt { get; set; }
-
-    //    [System.Xml.Serialization.XmlIgnore]
-    //    public decimal importeDevengadoValorDecimal
-    //    {
-    //        get
-    //        {
-    //            return Functions.CopyStringToDecimal(importeDevengado);
-    //        }
-    //        set
-    //        {
-    //            this.importeDevengadoValorDecimal = Functions.CopyStringToDecimal(importeDevengado);
-    //        }
-    //    }
-    //    public string importeDevengado { get; set; } //decimales 2
-
-    //    [System.Xml.Serialization.XmlIgnore]
-    //    public decimal importePagadoValorDecimal
-    //    {
-    //        get
-    //        {
-    //            return Functions.CopyStringToDecimal(importePagado);
-    //        }
-    //        set
-    //        {
-    //            this.importePagadoValorDecimal = Functions.CopyStringToDecimal(importePagado);
-    //        }
-    //    }
-    //    public string importePagado { get; set; } //decimales 2
-
-    //    public long ejercicio { get; set; } // legth 4
-    //}
-}
-
-
-namespace ESIDIFC75.Soap
-{
-    [XmlRoot(ElementName = "Envelope", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Envelope
-    {
-        [XmlElement(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public Header Header { get; set; }
-
-        [XmlElement(ElementName = "Body", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public Body Body { get; set; }
-
-        [XmlAttribute(AttributeName = "soapenv", Namespace = "http://www.w3.org/2000/xmlns/")]
-        public string Soapenv { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Body", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Body
-    {
-        public Body()
-        {
-
-        }
-        public Body(Models.generarInformeDeGastos request)
-        {
-            generarInformeDeGastos = request;
-        }
-
-        [XmlElement(ElementName = "generarInformeDeGastos", Namespace = "https://ws-si.mecon.gov.ar/ws/informeDeGastosMsg")]
-        public Models.generarInformeDeGastos generarInformeDeGastos { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Header", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public class Header
-    {
-        public Header()
-        {
-
-        }
-        public Header(string id, string username, string password, string endpoint, string action)
-        {
-            Security = new Security
-            {
-                MustUnderstand = 1,
-                UsernameToken = new ESIDIF.Models.Xml.UsernameToken(id, username, password)
-            };
-            To = new To
-            {
-                MustUnderstand = 1,
-                Value = endpoint
-            };
-            Action = action;
-            MessageID = "urn:uuid:" + Guid.NewGuid();
-        }
-
-        [XmlElement(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-        public Security Security { get; set; }
-
-        [XmlElement(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public To To { get; set; }
-
-        [XmlElement(ElementName = "Action", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public string Action { get; set; }
-
-        [XmlElement(ElementName = "MessageID", Namespace = "http://www.w3.org/2005/08/addressing")]
-        public string MessageID { get; set; }
-    }
-
-    [XmlRoot(ElementName = "Security", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-    public class Security
-    {
-        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public int MustUnderstand { get; set; }
-
-        [XmlElement(ElementName = "UsernameToken", Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")]
-        public ESIDIF.Models.Xml.UsernameToken UsernameToken { get; set; }
-    }
-
-    [XmlRoot(ElementName = "To", Namespace = "http://www.w3.org/2005/08/addressing")]
-    public class To
-    {
-        [XmlAttribute("mustUnderstand", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-        public int MustUnderstand { get; set; }
-
-        [XmlText]//endpoint
-        public string Value { get; set; }
     }
 }
