@@ -548,7 +548,21 @@ namespace ESIDIFCommon.Tools
                     if ((p.PropertyType.IsPrimitive || p.PropertyType == typeof(DateTime) || p.PropertyType == typeof(decimal) || p.PropertyType == typeof(string) || p.PropertyType.IsEnum || p.PropertyType == typeof(long) || p.PropertyType == typeof(Int64) || p.PropertyType == typeof(int) || p.PropertyType == typeof(Int32) || p.PropertyType == typeof(bool)) && sourceProp.GetValue(source, null) != null)
                     {
                         //validamos los campos de formato definido por SAP, que para lograrlos se han puesto como string pero se envia formato distinto a Economia
+                        if (p.PropertyType == typeof(string) && (sourceProp.PropertyType == typeof(long) || sourceProp.PropertyType == typeof(Int64)))
+                        {
+                            string valor = Convert.ToString(sourceProp.GetValue(source, null));
 
+                            if (!string.IsNullOrEmpty(valor))
+                            {
+                                p.SetValue(dest, valor, null);
+                            }
+                            else
+                            {
+                                p.SetValue(dest, null, null);
+                            }
+                            continue;
+
+                        }
                         //Cuando recibimos un formato especifico de decimal de SAP y debemos enviarlo a Economia ejemplo: SAP 2343.98-(string) Economia -2343.98
                         if (p.PropertyType == typeof(decimal) && sourceProp.PropertyType == typeof(string))
                         {
@@ -719,7 +733,7 @@ namespace ESIDIFCommon.Tools
             return convert;
         }
 
-        public static Exception CapturarSoapError(Exception ex)
+        public static Exception FindXmlErrorDetail(Exception ex)
         {
             try
             {
@@ -773,7 +787,7 @@ namespace ESIDIFCommon.Tools
             }
             catch
             {
-
+                ex = null;
             }
             return ex;
         }

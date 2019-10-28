@@ -1,4 +1,5 @@
-﻿using ESIDIFCommon.Tools;
+﻿using ESIDIFCommon.Models.Xml;
+using ESIDIFCommon.Tools;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -6,10 +7,12 @@ using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Web;
+using System.Web.Services.Protocols;
 
 namespace ESIDIFLimitativa.Business
 {
@@ -121,7 +124,7 @@ namespace ESIDIFLimitativa.Business
             if (ConfigurationManager.AppSettings["CERTI_APLICA"] == "true")
             {
                 log.Debug(ServiceLogName + " - Cargando certificado X509.");
-                _service.ClientCredentials.ClientCertificate.Certificate = GetClientCertificate(digitalMark);
+                _service.ClientCredentials.ClientCertificate.Certificate = Functions.GetClientCertificate(digitalMark);
                 log.Debug(ServiceLogName + " - Certificado X509 cargado exitosamente.");
             }
 
@@ -131,7 +134,7 @@ namespace ESIDIFLimitativa.Business
                 {
 
                     log.Debug(ServiceLogName + " - Creando Bean");
-                    var paramMecom = service.imputacionCreditoConsulta.Create();
+                    var paramMecom = GenericClass<service.imputacionCreditoConsulta>.GenericMethod(); //service.imputacionCreditoConsulta.Create();
 
                     log.Debug(ServiceLogName + " - Mapeando a objeto MECON.");
                     Functions.CopyPropertiesTo(request.imputacionPresupuestariaCreditoIndicativa, paramMecom);
@@ -155,7 +158,24 @@ namespace ESIDIFLimitativa.Business
             };
         }
 
+        public SoapException HandleError(Exception ex)
+        {
+            SoapError error = Functions.SoapErrorFromException(ex);
+            
+            ex = Functions.FindXmlErrorDetail(ex);
 
+            if(ex != null)
+            {
+                log.Error("Error en la ejecucion : " + ex.Message);
+                return new SoapException("Error", SoapException.ClientFaultCode, error.FaultDetail, ex);
+            }
+            else
+            {
+                log.Error("Error en la ejecucion : " + error.FaultDetail);
+                return new SoapException(error.FaultDetail, SoapException.ServerFaultCode, error.FaultReason, error.FaultNode);
+            }
+
+        }
         public bool RemoteCertificateValidationCallback(Object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
             // DANGEROUS!  completely disable SSL validation if the test server has a bad Cert / bad Cert chain
