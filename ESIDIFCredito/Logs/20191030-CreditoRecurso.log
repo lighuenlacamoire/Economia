@@ -1,0 +1,362 @@
+2019-10-30 17:23:40,931 [16] INFO  Credito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1REIxQzE5ODNFQzRFM0M1IiBnZW5fdGltZT0iMTU3MTkzMDUyMCIgZXhwX3RpbWU9IjE1NzE5MzA1MjAiIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41IiAvPg0KICAgICAgPGluZm8gbmFtZT0ic24iIHZhbHVlPSIwNDQwIiAvPg0KICAgICAgPGluZm8gbmFtZT0iZW1haWwiIHZhbHVlPSIiIC8+DQogICAgICA8Z3JvdXBzPg0KICAgICAgICA8Z3JvdXAgbmFtZT0iTWluaXN0ZXJpb2RlRWNvbm9taWEiIC8+DQogICAgICA8L2dyb3Vwcz4NCiAgICA8L2xvZ2luPg0KICA8L29wZXJhdGlvbj4NCjwvc3NvPg==</token>
+    <sign xmlns="http://director.anses.gov.ar">eqQ9HfMJVkIhSL89wPU6fSXUqy2THyUYatPABQrQFhe9Ehs+YFYsivzCNWNv1BlZEPhUv3Q+//CRWkbI3DUZ2kYdyqfWaBQ6sIJMXbhD23dZfbZ4IB7MxmuemjBEzgIriv4ZXIv6fW2khaKHB8TLZokflNG2Yqgx31QsDl8Ikbg=</sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <!--Optional:-->
+        <ICabecera>
+          <Fechaenvio>24-10-2019 12:47:21.021jklsdfhgjsdfhgdfhgjdksfhgjkdghsdfjghsdfjgksdhgjksdhfgjksdhfgjkdshfgkjsdfhgsjkdf</Fechaenvio>
+          <Tipocomprobante>SMP</Tipocomprobante>
+          <Ejercicio>2019</Ejercicio>
+          <Numerocomprobante>3</Numerocomprobante>
+          <Entidademisora>850</Entidademisora>
+          <Entidadproceso>850</Entidadproceso>
+          <Estado>ingresado_borrador</Estado>
+          <Fechaaplicacion></Fechaaplicacion>
+          <Codigoconcepto>3</Codigoconcepto>
+          <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+        </ICabecera>
+        <ItEntradaCredito>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>18</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>2</Ubicaciongeografica>
+            <Inciso>1</Inciso>
+            <Principal>1</Principal>
+            <Parcial>1</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21211000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>0</Creditoinicial>
+            <Creditovigente>0</Creditovigente>
+            <Creditorestringido>0</Creditorestringido>
+            <Importecomprobantecredito>369</Importecomprobantecredito>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>1</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>97</Ubicaciongeografica>
+            <Inciso>1</Inciso>
+            <Principal>1</Principal>
+            <Parcial>1</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21211000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>6693772559</Creditoinicial>
+            <Creditovigente>7893772559</Creditovigente>
+            <Creditorestringido>0</Creditorestringido>
+            <Importecomprobantecredito>-19</Importecomprobantecredito>
+          </item>
+        </ItEntradaCredito>
+        <ItEntradaRecurso>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>13</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>1</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11200000</Clasificadoreconomicorecurso>
+            <Recursoinicial>345764361000</Recursoinicial>
+            <Recursovigente>345764361000</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>-147</Importecomprobanterecurso>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>11</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>1</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11111000</Clasificadoreconomicorecurso>
+            <Recursoinicial>0</Recursoinicial>
+            <Recursovigente>87411465</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>852</Importecomprobanterecurso>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>12</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>0</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11310000</Clasificadoreconomicorecurso>
+            <Recursoinicial>0</Recursoinicial>
+            <Recursovigente>0</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>987</Importecomprobanterecurso>
+          </item>
+        </ItEntradaRecurso>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-30 17:23:44,556 [16] DEBUG Credito [(null)] - Entra Credito
+2019-10-30 17:25:13,831 [16] INFO  Credito [(null)] - Credito - Usuario CUIT: 30546676117 IP: 168.101.48.5
+2019-10-30 17:25:13,834 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-10-30 17:25:13,835 [16] ERROR Credito [(null)] - Errores: 
+ Se produjo un error al recibir información desde Economía:  <br/> 
+ Se ha registrado un error en la longuitud del objeto Cabecera en el campo Fechaenvio donde su longuitud es 102 y tendria que ser: 25
+2019-10-30 17:25:13,838 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-10-30 17:25:13,842 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-10-30 17:25:13,855 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:25:13,857 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:25:13,858 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:25:14,154 [16] ERROR Credito [(null)] - Error al invocar el servicio SAP: Presupuesto Credito 
+
+ Se produjo un error al recibir información desde Economía:  <br/> 
+ Se ha registrado un error en la longuitud del objeto Cabecera en el campo Fechaenvio donde su longuitud es 102 y tendria que ser: 25
+   en ESIDIFCredito.Business.Sources.PresupuestoCredito(ZfmWsCredito consulta, SoapUnknownHeader[] unknownHeaders, User UsuarioSession) en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\Business\Sources.cs:línea 372
+2019-10-30 17:25:14,886 [16] INFO  Credito [(null)] - Mail Servicio - SAP : Enviado
+2019-10-30 17:25:14,995 [16] INFO  Credito [(null)] - Mail Servicio - SAP: Ok
+2019-10-30 17:25:15,015 [16] INFO  Credito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-10-30 17:25:56,762 [16] INFO  Credito [(null)] - Consulta ESIDIF - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+  <soapenv:Header>
+    <token xmlns="http://director.anses.gov.ar">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3NvIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICA8aWQgc3JjPSJDTj1hdXRoc2VydmVyaG9tbywgT1U9REdJSVQsIE89QU5TRVMsIEw9Q0FCQSwgUz1DQUJBLCBDPUFSIiBkc3Q9IlNFUklBTE5VTUJFUj1DVUlUIDMwNTQ2Njc2MTE3LCBDTj1Fc2lkaWYsIE89TWluaXN0ZXJpbyBkZSBIYWNpZW5kYSwgQz1BUiIgdW5pcXVlX2lkPSI1REIxQzE5ODNFQzRFM0M1IiBnZW5fdGltZT0iMTU3MTkzMDUyMCIgZXhwX3RpbWU9IjE1NzE5MzA1MjAiIC8+DQogIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iPg0KICAgIDxsb2dpbiBzeXN0ZW09ImVzaWRpZiIgZW50aXR5PSIzMDU0NjY3NjExNyIgdWlkPSIiIHVzZXJuYW1lPSIiIGF1dGhtZXRob2Q9InRva2VuIj4NCiAgICAgIDxpbmZvIG5hbWU9ImlwIiB2YWx1ZT0iMTY4LjEwMS40OC41IiAvPg0KICAgICAgPGluZm8gbmFtZT0ic24iIHZhbHVlPSIwNDQwIiAvPg0KICAgICAgPGluZm8gbmFtZT0iZW1haWwiIHZhbHVlPSIiIC8+DQogICAgICA8Z3JvdXBzPg0KICAgICAgICA8Z3JvdXAgbmFtZT0iTWluaXN0ZXJpb2RlRWNvbm9taWEiIC8+DQogICAgICA8L2dyb3Vwcz4NCiAgICA8L2xvZ2luPg0KICA8L29wZXJhdGlvbj4NCjwvc3NvPg==</token>
+    <sign xmlns="http://director.anses.gov.ar">eqQ9HfMJVkIhSL89wPU6fSXUqy2THyUYatPABQrQFhe9Ehs+YFYsivzCNWNv1BlZEPhUv3Q+//CRWkbI3DUZ2kYdyqfWaBQ6sIJMXbhD23dZfbZ4IB7MxmuemjBEzgIriv4ZXIv6fW2khaKHB8TLZokflNG2Yqgx31QsDl8Ikbg=</sign>
+  </soapenv:Header>
+  <soapenv:Body>
+    <urn:PresupuestoCredito>
+      <!--Optional:-->
+      <urn:ZfmWsCredito>
+        <!--Optional:-->
+        <ICabecera>
+          <Fechaenvio>24-10-2019 12:47:21.021jklsdfhgjsdfhgdfhgjdksfhgjkdghsdfjghsdfjgksdhgjksdhfgjksdhfgjkdshfgkjsdfhgsjkdf</Fechaenvio>
+          <Tipocomprobante>SMP</Tipocomprobante>
+          <Ejercicio>2019</Ejercicio>
+          <Numerocomprobante>3</Numerocomprobante>
+          <Entidademisora>850</Entidademisora>
+          <Entidadproceso>850</Entidadproceso>
+          <Estado>ingresado_borrador</Estado>
+          <Fechaaplicacion></Fechaaplicacion>
+          <Codigoconcepto>3</Codigoconcepto>
+          <Descripcionconcepto>Requerimiento</Descripcionconcepto>
+        </ICabecera>
+        <ItEntradaCredito>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>18</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>2</Ubicaciongeografica>
+            <Inciso>1</Inciso>
+            <Principal>1</Principal>
+            <Parcial>1</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21211000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>0</Creditoinicial>
+            <Creditovigente>0</Creditovigente>
+            <Creditorestringido>0</Creditorestringido>
+            <Importecomprobantecredito>369</Importecomprobantecredito>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Programa>1</Programa>
+            <Subprograma>0</Subprograma>
+            <Proyecto>0</Proyecto>
+            <Actividad>1</Actividad>
+            <Obra>0</Obra>
+            <Ubicaciongeografica>97</Ubicaciongeografica>
+            <Inciso>1</Inciso>
+            <Principal>1</Principal>
+            <Parcial>1</Parcial>
+            <Subparcial>0</Subparcial>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicocredito>21211000</Clasificadoreconomicocredito>
+            <Finalidad>3</Finalidad>
+            <Funcion>3</Funcion>
+            <Creditoinicial>6693772559</Creditoinicial>
+            <Creditovigente>7893772559</Creditovigente>
+            <Creditorestringido>0</Creditorestringido>
+            <Importecomprobantecredito>-19</Importecomprobantecredito>
+          </item>
+        </ItEntradaCredito>
+        <ItEntradaRecurso>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>13</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>1</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11200000</Clasificadoreconomicorecurso>
+            <Recursoinicial>345764361000</Recursoinicial>
+            <Recursovigente>345764361000</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>-147</Importecomprobanterecurso>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>11</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>1</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>1</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11111000</Clasificadoreconomicorecurso>
+            <Recursoinicial>0</Recursoinicial>
+            <Recursovigente>87411465</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>852</Importecomprobanterecurso>
+          </item>
+          <item>
+            <Sector>1</Sector>
+            <Subsector>1</Subsector>
+            <Caracter>3</Caracter>
+            <Jurisdiccion>85</Jurisdiccion>
+            <Subjurisdiccion>0</Subjurisdiccion>
+            <Entidad>850</Entidad>
+            <Saf>850</Saf>
+            <Tipo>12</Tipo>
+            <Clase>1</Clase>
+            <Concepto>1</Concepto>
+            <Subconcepto>0</Subconcepto>
+            <Procedencia>1</Procedencia>
+            <Fuente>2</Fuente>
+            <Moneda>1</Moneda>
+            <Clasificadoreconomicorecurso>11310000</Clasificadoreconomicorecurso>
+            <Recursoinicial>0</Recursoinicial>
+            <Recursovigente>0</Recursovigente>
+            <Recursorestringido>0</Recursorestringido>
+            <Importecomprobanterecurso>987</Importecomprobanterecurso>
+          </item>
+        </ItEntradaRecurso>
+      </urn:ZfmWsCredito>
+    </urn:PresupuestoCredito>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-10-30 17:25:56,765 [16] DEBUG Credito [(null)] - Entra Credito
+2019-10-30 17:26:19,513 [16] INFO  Credito [(null)] - Credito - Usuario CUIT: 30546676117 IP: 168.101.48.5
+2019-10-30 17:26:19,514 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ICabecera: ESIDIFCredito.Models.CreditoCabecera
+2019-10-30 17:26:19,514 [16] ERROR Credito [(null)] - Errores: 
+ Se produjo un error al recibir información desde Economía:  <br/> 
+ Se ha registrado un error en la longuitud del objeto Cabecera en el campo Fechaenvio donde su longuitud es 102 y tendria que ser: 25
+2019-10-30 17:26:19,515 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-10-30 17:26:19,516 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaCredito: ESIDIFCredito.Models.EntradasCredito[]
+2019-10-30 17:26:19,516 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:26:19,517 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:26:19,517 [16] DEBUG Credito [(null)] - Invoco --> validar longuitud ITEntradaRecurso: ESIDIFCredito.Models.EntradasRecurso[]
+2019-10-30 17:26:19,635 [16] ERROR Credito [(null)] - Error al invocar el servicio SAP: Presupuesto Credito 
+
+ Se produjo un error al recibir información desde Economía:  <br/> 
+ Se ha registrado un error en la longuitud del objeto Cabecera en el campo Fechaenvio donde su longuitud es 102 y tendria que ser: 25
+   en ESIDIFCredito.Business.Sources.PresupuestoCredito(ZfmWsCredito consulta, SoapUnknownHeader[] unknownHeaders, User UsuarioSession) en C:\LIGHUEN\GIT\Economia\ESIDIFCredito\Business\Sources.cs:línea 372
+2019-10-30 17:26:42,255 [16] INFO  Credito [(null)] - Mail Servicio - SAP : Enviado
+2019-10-30 17:26:42,284 [16] INFO  Credito [(null)] - Mail Servicio - SAP: Ok
+2019-10-30 17:26:43,632 [16] INFO  Credito [(null)] - Respuesta Servicio - ESIDIF : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PresupuestoCreditoResponse xmlns="*">
+      <PresupuestoCreditoResult>
+        <Type xmlns="">S</Type>
+        <Message xmlns="">OK</Message>
+      </PresupuestoCreditoResult>
+    </PresupuestoCreditoResponse>
+  </soap:Body>
+</soap:Envelope>

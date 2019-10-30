@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__zws_cuota">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWS_CUOTA">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>005056B8A3311EE891E516BD4BC684A2</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZfmWsCuota">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char128">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="128" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char136">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="136" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char21">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="21" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char22">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="22" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char25">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="25" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:simpleType name="char11">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="11" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZdsEntradasCuota">
+        <xsd:sequence>
+          <xsd:element name="Sector" type="n0:char6" />
+          <xsd:element name="Subsector" type="n0:char6" />
+          <xsd:element name="Caracter" type="n0:char6" />
+          <xsd:element name="Jurisdiccion" type="n0:char10" />
+          <xsd:element name="Subjurisdiccion" type="n0:char10" />
+          <xsd:element name="Entidad" type="n0:char10" />
+          <xsd:element name="Saf" type="n0:char10" />
+          <xsd:element name="Programa" type="n0:char6" />
+          <xsd:element name="Subprograma" type="n0:char6" />
+          <xsd:element name="Proyecto" type="n0:char6" />
+          <xsd:element name="Actividad" type="n0:char6" />
+          <xsd:element name="Obra" type="n0:char6" />
+          <xsd:element name="Inciso" type="n0:char6" />
+          <xsd:element name="Principal" type="n0:char6" />
+          <xsd:element name="Parcial" type="n0:char6" />
+          <xsd:element name="Subparcial" type="n0:char6" />
+          <xsd:element name="Procedencia" type="n0:char10" />
+          <xsd:element name="Fuente" type="n0:char10" />
+          <xsd:element name="Compromisoinicial" type="n0:char22" />
+          <xsd:element name="Compromisovigente" type="n0:char22" />
+          <xsd:element name="Compromisorestringido" type="n0:char22" />
+          <xsd:element name="Devengadoinicial1" type="n0:char22" />
+          <xsd:element name="Devengadovigente1" type="n0:char22" />
+          <xsd:element name="Devengadorestringido1" type="n0:char22" />
+          <xsd:element name="Devengadoinicial2" type="n0:char22" />
+          <xsd:element name="Devengadovigente2" type="n0:char22" />
+          <xsd:element name="Devengadorestringido2" type="n0:char22" />
+          <xsd:element name="Devengadoinicial3" type="n0:char22" />
+          <xsd:element name="Devengadovigente3" type="n0:char22" />
+          <xsd:element name="Devengadorestringido3" type="n0:char22" />
+          <xsd:element name="Compromisocomprobante" type="n0:char22" />
+          <xsd:element name="Devengado1comprobante" type="n0:char22" />
+          <xsd:element name="Devengado2comprobante" type="n0:char22" />
+          <xsd:element name="Devengado3comprobante" type="n0:char22" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZdsCuotaCabecera">
+        <xsd:sequence>
+          <xsd:element name="Fechaenvio" type="n0:char25" />
+          <xsd:element name="Tipocomprobante" type="n0:char128" />
+          <xsd:element name="Ejercicio" type="n0:char4" />
+          <xsd:element name="Numerocomprobante" type="n0:char20" />
+          <xsd:element name="Periodo" type="n0:char10" />
+          <xsd:element name="Entidademisora" type="n0:char10" />
+          <xsd:element name="Entidadproceso" type="n0:char10" />
+          <xsd:element name="Estado" type="n0:char25" />
+          <xsd:element name="Fechaaplicacion" type="n0:char25" />
+          <xsd:element name="Ejercicioactoadm" type="n0:char4" />
+          <xsd:element name="Numeroactoadm" type="n0:char20" />
+          <xsd:element name="Tipoactoadm" type="n0:char128" />
+          <xsd:element name="Fechaactoadm" type="n0:char21" />
+          <xsd:element name="Codigoconcepto" type="n0:char5" />
+          <xsd:element name="Descripcionconcepto" type="n0:char128" />
+          <xsd:element name="Identificaciontramite" type="n0:char136" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZdsWsPresupOutput">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="Message" type="n0:char220" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZdsEntradasCuota">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZdsEntradasCuota" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZfmWsCuota">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ICabecera" type="tns:ZdsCuotaCabecera" />
+            <xsd:element name="ICuilUser" type="tns:char11" />
+            <xsd:element name="IIpUser" type="tns:char15" />
+            <xsd:element minOccurs="0" name="ItEntradaCuota" type="tns:TableOfZdsEntradasCuota" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZfmWsCuotaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EOutput" type="tns:ZdsWsPresupOutput" />
+            <xsd:element minOccurs="0" name="ItEntradaCuota" type="tns:TableOfZdsEntradasCuota" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZfmWsCuota">
+    <wsdl:part name="parameters" element="tns:ZfmWsCuota" />
+  </wsdl:message>
+  <wsdl:message name="ZfmWsCuotaResponse">
+    <wsdl:part name="parameter" element="tns:ZfmWsCuotaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_CUOTA">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWS_CUOTA" />
+    </wsp:Policy>
+    <wsdl:operation name="ZfmWsCuota">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZfmWsCuota" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZfmWsCuota" />
+      <wsdl:output message="tns:ZfmWsCuotaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="zws_cuota" type="tns:ZWS_CUOTA">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__zws_cuota" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZfmWsCuota">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:ZWS_CUOTA:ZfmWsCuotaRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="zws_cuota">
+    <wsdl:port name="zws_cuota" binding="tns:zws_cuota">
+      <soap:address location="http://ansessaped1.anses.gov.ar:8000/sap/bc/srt/rfc/sap/zws_cuota/130/zws_cuota/zws_cuota" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

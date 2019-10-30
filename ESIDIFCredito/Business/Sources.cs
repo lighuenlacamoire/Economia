@@ -8,6 +8,7 @@ using System.Web.Services.Protocols;
 using System.Xml;
 using ESIDIFCommon.Models.Xml;
 using ESIDIFCommon.Tools;
+using ESIDIFCommon.Business.Contract;
 using ESIDIFCredito.Models;
 using ESIDIFLegacy.Models.Director;
 using log4net;
@@ -20,6 +21,7 @@ namespace ESIDIFCredito.Business
 
         private static readonly ILog log = LogManager.GetLogger(ServiceLogName);
 
+        public MailService _mailService;
         service.ZWS_CREDITOClient _service = new service.ZWS_CREDITOClient();
 
         //Siempre debemos devolver "OK" incluzo en caso de error
@@ -455,11 +457,12 @@ namespace ESIDIFCredito.Business
             return new SoapException(error.FaultDetail, SoapException.ServerFaultCode, error.FaultReason, error.FaultNode);
         }
 
-        public static void enviarMail(string cuerpo, string destinatario, string asunto)
+        private void enviarMail(string cuerpo, string destinatario, string asunto)
         {
-            //enMailWS.EnviarMail enMailWS = new enMailWS.EnviarMail();
-            //enMailWS.Credentials = CredentialCache.DefaultCredentials;
-            //enMailWS.EnvioPruebaMail(asunto, destinatario, cuerpo);
+            string endpoint = ConfigurationManager.AppSettings["EmailService_Endpoint"];
+
+            _mailService = new MailService(endpoint);
+            _mailService.sendMail(cuerpo,destinatario,asunto);
         }
     }
 }

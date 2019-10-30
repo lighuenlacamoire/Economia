@@ -133,6 +133,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Sources.cs" />
+    <Compile Include="Connected Services\service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="CuotaService.asmx.cs">
       <DependentUpon>CuotaService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -145,6 +150,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\service\configuration91.svcinfo" />
+    <None Include="Connected Services\service\configuration.svcinfo" />
+    <Content Include="Connected Services\service\ESIDIFCuota.service.ZfmWsCuotaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\service\ESIDIFCuota.service.ZfmWsCuotaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="CuotaService.asmx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -159,6 +176,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\service\zws_cuota.wsdl" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +188,12 @@
       <Project>{6a6cf5dc-cad0-4856-9229-9410f47c13f0}</Project>
       <Name>ESIDIFLegacy</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
