@@ -44,7 +44,7 @@ namespace ESIDIFCRGOV.Business
             string WSEndpoint = Settings.GetAppSettings("Settings:Service:Endpoint");
 
             log.Debug(ServiceLogName + " - Seteando PROXY.");
-            WebProxy proxy = Functions.CrearProxy();
+            WebProxy proxy = Functions.CreateProxy(usuarioProxy,passwdProxy,urlProxy, domainProxy);
 
             log.Debug(ServiceLogName + " - Cargando certificado X509.");
             NetworkCredential credential = new NetworkCredential(usuarioWS, passwdWS);

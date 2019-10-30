@@ -197,7 +197,7 @@ namespace ESIDIFAcumuladores.Business
             }
 
             log.Error("Respuesta ESIDIF - Servicio: " + Environment.NewLine + Functions.ParseXml(msgResponse));
-            soapError = Functions.HandleWebException(msgResponse);
+            soapError = Functions.HandleWebExceptionXml(msgResponse);
 
             if (soapError != null)
             {

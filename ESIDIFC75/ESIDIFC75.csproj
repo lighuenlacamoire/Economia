@@ -204,6 +204,7 @@
     <None Include="Connected Services\service\informeDeGastosMsg.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="ESIDIFC75.ruleset" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
