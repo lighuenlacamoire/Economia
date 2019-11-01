@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Services;
 using System.Web.Services.Protocols;
-using ESIDIFCommon.Tools;
 using ESIDIFCredito.Business;
 using ESIDIFCredito.Models;
 using ESIDIFLegacy.Models.Director;

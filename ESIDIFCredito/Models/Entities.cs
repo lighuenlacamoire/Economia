@@ -418,7 +418,6 @@ namespace ESIDIFCredito.Models
             }
         }
     }
-
     public class EOuput
     {
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]

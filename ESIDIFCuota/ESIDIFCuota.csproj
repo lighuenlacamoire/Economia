@@ -164,6 +164,7 @@
     </None>
     <Content Include="CuotaService.asmx" />
     <Content Include="Global.asax" />
+    <Content Include="log4net.Config.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -407,9 +407,9 @@ namespace ESIDIFCredito.Business
                         log.Debug("Invoco --> Prueba: " + (ocredito.ICabecera != null ? ocredito.ICabecera.ToString() : "No enviado"));
                         log.Debug("Invoco --> Prueba: " + (ocredito.ItEntradaCredito != null && ocredito.ItEntradaCredito.Any() ? ocredito.ItEntradaCredito.ToString() : "No enviado"));
                         log.Debug("Invoco --> Prueba: " + (ocredito.ItEntradaRecurso != null && ocredito.ItEntradaRecurso.Any() ? ocredito.ItEntradaRecurso.ToString() : "No enviado"));
-                        log.Debug("Request  :" + ((XmlDocument)Functions.GenericToXmlDocument(ocredito)).InnerXml);//ASOSA REQUEST OBJECT LOG
+                        //log.Debug("Request  :" + ((XmlDocument)Functions.GenericToXmlDocument(ocredito)).InnerXml);//ASOSA REQUEST OBJECT LOG
 
-                        log.Debug("Response :" + ((XmlDocument)Functions.GenericToXmlDocument(oRespuesta)).InnerXml);//ASOSA RESPONSE OBJECT LOG
+                        //log.Debug("Response :" + ((XmlDocument)Functions.GenericToXmlDocument(oRespuesta)).InnerXml);//ASOSA RESPONSE OBJECT LOG
                         log.Debug("PresupuestoCredito ok");
                     }
                 }
