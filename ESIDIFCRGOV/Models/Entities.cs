@@ -1,136 +1,27 @@
 ﻿using ESIDIFCommon.Models.Xml;
-using ESIDIFCommon.Tools;
-using System;
 
-namespace ESIDIFCRGOV.Models
+namespace ESIDIFAcumuladores.Models
 {
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public class crgOvResponse : object, System.ComponentModel.INotifyPropertyChanged
-    {
-        private long numeroSidifField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string numeroSidif
-        {
-            get
-            {
-                return Convert.ToString(this.numeroSidifField);
-            }
-            set
-            {
-                this.numeroSidifField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("numeroSidif");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
 
     [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    /*Se agrega herencia a IBody para llenar el Body con un generic*/
-    [System.Xml.Serialization.XmlRoot(ElementName = "crgOvRequest", Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public class crgOvRequest : IBody, System.ComponentModel.INotifyPropertyChanged
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    [System.Xml.Serialization.XmlRoot(ElementName = "acumuladoresCreditoIndicativaResponse", Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    public class acumuladoresCreditoIndicativaResponse : IBody, System.ComponentModel.INotifyPropertyChanged
     {
-
-        private CabeceraCRGType cabeceraCrgField;
-
-        private ComprobanteVinculoType comprobanteVinculoField;
-
-        private string observacionesField;
-
-        private ItemPresupuestarioCRGType[] itemsPresupuestariosField;
-
-        private ItemNoPresupuestarioCRGType[] itemsNoPresupuestariosField;
+        private Models.acumuladoresCreditoConsulta acumuladoresCreditoIndicativaField;
 
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public CabeceraCRGType cabeceraCrg
+        public Models.acumuladoresCreditoConsulta acumuladoresCreditoIndicativa
         {
             get
             {
-                return this.cabeceraCrgField;
+                return acumuladoresCreditoIndicativaField;
             }
             set
             {
-                this.cabeceraCrgField = value;
-                this.RaisePropertyChanged("cabeceraCrg");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public ComprobanteVinculoType comprobanteVinculo
-        {
-            get
-            {
-                return this.comprobanteVinculoField;
-            }
-            set
-            {
-                this.comprobanteVinculoField = value;
-                this.RaisePropertyChanged("comprobanteVinculo");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string observaciones
-        {
-            get
-            {
-                return this.observacionesField;
-            }
-            set
-            {
-                this.observacionesField = value;
-                this.RaisePropertyChanged("observaciones");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.ComponentModel.DataAnnotations.Display(Name = "itemsPresupuestarios")]
-        [System.Xml.Serialization.XmlElement("itemsPresupuestarios", ElementName = "itemsPresupuestarios", Order = 3)]
-        public ItemPresupuestarioCRGType[] itemsPresupuestarios
-        {
-            get
-            {
-                return this.itemsPresupuestariosField;
-            }
-            set
-            {
-                this.itemsPresupuestariosField = value;
-                this.RaisePropertyChanged("itemsPresupuestarios");
-            }
-        }
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.ComponentModel.DataAnnotations.Display(Name = "itemsNoPresupuestarios")]
-        [System.Xml.Serialization.XmlElement("itemsNoPresupuestarios", ElementName = "itemsNoPresupuestarios", Order = 4)]
-        public ItemNoPresupuestarioCRGType[] itemsNoPresupuestarios
-        {
-            get
-            {
-                return this.itemsNoPresupuestariosField;
-            }
-            set
-            {
-                this.itemsNoPresupuestariosField = value;
-                this.RaisePropertyChanged("itemsNoPresupuestarios");
+                acumuladoresCreditoIndicativaField = value;
+                RaisePropertyChanged("acumuladoresCreditoIndicativa");
             }
         }
 
@@ -138,7 +29,7 @@ namespace ESIDIFCRGOV.Models
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -146,1215 +37,186 @@ namespace ESIDIFCRGOV.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public class CabeceraCRGType : object, System.ComponentModel.INotifyPropertyChanged
+    /// <remarks/>
+    [System.Runtime.Serialization.DataContract(Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    [System.Xml.Serialization.XmlRoot(ElementName = "imputacionCreditoConsulta", Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    public class imputacionCreditoConsulta : IBody, System.ComponentModel.INotifyPropertyChanged
     {
-        private service.GestionExternaEnum gestionExternaField;
+        private string ejercicioField;
 
-        private IdentificacionCRGType identificacionComprobanteField;
+        private string sectorInstitucionalField;
 
-        private System.DateTime fechaComprobanteField;
+        private string subSectorInstitucionalField;
 
-        private System.DateTime? fechaRegistroField;
+        private string caracterInstitucionalField;
 
-        private bool fechaRegistroFieldSpecified;
+        private string jurisdiccionField;
 
-        private int? periodoImpactoField;
+        private string subJurisdiccionField;
 
-        private bool periodoImpactoFieldSpecified;
-
-        private decimal importeMOField;
-
-        private decimal importeMCLField;
-
-        private CotizacionType cotizacionField;
-
-        private long beneficiarioField;
-
-        private service.MedioDePagoType medioDePagoField;
-
-        private IdentificadorDeTramiteType identificadorTramiteField;
-
-        private DocumentoRespaldatorioType documentoRespaldatorioField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string gestionExterna
-        {
-            get
-            {
-                return Convert.ToString(this.gestionExternaField);
-            }
-            set
-            {
-                //Enum.TryParse(value, out this.gestionExternaField);
-                this.gestionExternaField = Functions.CopyStringToEnum<service.GestionExternaEnum>(value);
-                this.RaisePropertyChanged("gestionExterna");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public IdentificacionCRGType identificacionComprobante
-        {
-            get
-            {
-                return this.identificacionComprobanteField;
-            }
-            set
-            {
-                this.identificacionComprobanteField = value;
-                this.RaisePropertyChanged("identificacionComprobante");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string fechaComprobante
-        {
-            get
-            {
-                return this.fechaComprobanteField != null && this.fechaComprobanteField != DateTime.MinValue ? this.fechaComprobanteField.ToString(Constancts.DateShortFormat) : null;
-            }
-            set
-            {
-                this.fechaComprobanteField = Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat);
-                this.RaisePropertyChanged("fechaComprobante");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string fechaRegistro
-        {
-            get
-            {
-                return this.fechaRegistroField.HasValue ? (this.fechaRegistroField.Value.ToString(Constancts.DateShortFormat)) : null;
-            }
-            set
-            {
-                this.fechaRegistroField = !string.IsNullOrEmpty(value) ? Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat) : (DateTime?)null;
-                this.RaisePropertyChanged("fechaRegistro");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fechaRegistroSpecified
-        {
-            get
-            {
-                return (this.fechaRegistroField != null && this.fechaRegistroField.HasValue && this.fechaRegistroField != DateTime.MinValue && !string.IsNullOrEmpty(fechaRegistro));
-            }
-            set
-            {
-                this.fechaRegistroFieldSpecified = value;
-                this.RaisePropertyChanged("fechaRegistroSpecified");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-        public string periodoImpacto
-        {
-            get
-            {
-                return this.periodoImpactoField.HasValue ? (Convert.ToString(this.periodoImpactoField)) : null;
-            }
-            set
-            {
-                this.periodoImpactoField = !string.IsNullOrEmpty(value) ? Functions.CopyStringToInt(value) : (int?)null;
-                this.RaisePropertyChanged("periodoImpacto");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool periodoImpactoSpecified
-        {
-            get
-            {
-                return (this.periodoImpactoField != null && this.periodoImpactoField.HasValue && !string.IsNullOrEmpty(periodoImpacto));
-                //return this.periodoImpactoFieldSpecified;
-            }
-            set
-            {
-                this.periodoImpactoFieldSpecified = value;
-                this.RaisePropertyChanged("periodoImpactoSpecified");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 5)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-        public string importeMO
-        {
-            get
-            {
-                return Convert.ToString(this.importeMOField);
-            }
-            set
-            {
-                this.importeMOField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMO");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 6)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-        public string importeMCL
-        {
-            get
-            {
-                return Convert.ToString(this.importeMCLField);
-            }
-            set
-            {
-                this.importeMCLField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMCL");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 7)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
-        public CotizacionType cotizacion
-        {
-            get
-            {
-                return this.cotizacionField;
-            }
-            set
-            {
-                this.cotizacionField = value;
-                this.RaisePropertyChanged("cotizacion");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 8)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
-        public string beneficiario
-        {
-            get
-            {
-                return Convert.ToString(this.beneficiarioField);
-            }
-            set
-            {
-                this.beneficiarioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("beneficiario");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 9)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 9)]
-        public string medioDePago
-        {
-            get
-            {
-                return Convert.ToString(this.medioDePagoField);
-            }
-            set
-            {
-                //Enum.TryParse(value, out this.gestionExternaField);
-                this.medioDePagoField = Functions.CopyStringToEnum<service.MedioDePagoType>(value);
-                this.RaisePropertyChanged("medioDePago");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 10)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
-        public IdentificadorDeTramiteType identificadorTramite
-        {
-            get
-            {
-                return this.identificadorTramiteField;
-            }
-            set
-            {
-                this.identificadorTramiteField = value;
-                this.RaisePropertyChanged("identificadorTramite");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 11)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
-        public DocumentoRespaldatorioType documentoRespaldatorio
-        {
-            get
-            {
-                return this.documentoRespaldatorioField;
-            }
-            set
-            {
-                this.documentoRespaldatorioField = value;
-                this.RaisePropertyChanged("documentoRespaldatorio");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public class ComprobanteVinculoType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private bool marcaInicioVinculoField;
-
-        private string tipoOperacionVinculadaField;
-
-        private long ejercicioOperacionVinculadaField;
-
-        private long numeroOperacionVinculadaField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string marcaInicioVinculo
-        {
-            get
-            {
-                return Convert.ToString(this.marcaInicioVinculoField);
-            }
-            set
-            {
-                this.marcaInicioVinculoField = Functions.CopyStringToBool(value);
-                this.RaisePropertyChanged("marcaInicioVinculo");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string tipoOperacionVinculada
-        {
-            get
-            {
-                return this.tipoOperacionVinculadaField;
-            }
-            set
-            {
-                this.tipoOperacionVinculadaField = value;
-                this.RaisePropertyChanged("tipoOperacionVinculada");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string ejercicioOperacionVinculada
-        {
-            get
-            {
-                return Convert.ToString(this.ejercicioOperacionVinculadaField);
-            }
-            set
-            {
-                this.ejercicioOperacionVinculadaField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("ejercicioOperacionVinculada");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string numeroOperacionVinculada
-        {
-            get
-            {
-                return Convert.ToString(this.numeroOperacionVinculadaField);
-            }
-            set
-            {
-                this.numeroOperacionVinculadaField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("numeroOperacionVinculada");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public class IdentificacionCRGType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private string entidadEmisoraField;
-
-        private string entidadProcesoField;
-
-        private long numeroField;
-
-        private long ejercicioField;
-
-        private string tipoComprobanteField;
-
-        private string tipoRegistroField;
-
-        private string subTipoRegistroField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string entidadEmisora
-        {
-            get
-            {
-                return this.entidadEmisoraField;
-            }
-            set
-            {
-                this.entidadEmisoraField = value;
-                this.RaisePropertyChanged("entidadEmisora");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string entidadProceso
-        {
-            get
-            {
-                return this.entidadProcesoField;
-            }
-            set
-            {
-                this.entidadProcesoField = value;
-                this.RaisePropertyChanged("entidadProceso");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string numero
-        {
-            get
-            {
-                return Convert.ToString(this.numeroField);
-            }
-            set
-            {
-                this.numeroField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("numero");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string ejercicio
-        {
-            get
-            {
-                return Convert.ToString(this.ejercicioField);
-            }
-            set
-            {
-                this.ejercicioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("ejercicio");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-        public string tipoComprobante
-        {
-            get
-            {
-                return this.tipoComprobanteField;
-            }
-            set
-            {
-                this.tipoComprobanteField = value;
-                this.RaisePropertyChanged("tipoComprobante");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 5)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-        public string tipoRegistro
-        {
-            get
-            {
-                return this.tipoRegistroField;
-            }
-            set
-            {
-                this.tipoRegistroField = value;
-                this.RaisePropertyChanged("tipoRegistro");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 6)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-        public string subTipoRegistro
-        {
-            get
-            {
-                return this.subTipoRegistroField;
-            }
-            set
-            {
-                this.subTipoRegistroField = value;
-                this.RaisePropertyChanged("subTipoRegistro");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public class CotizacionType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-        private service.TipoCotizacionType tipoCotizacionField;
-
-        private bool tipoCotizacionFieldSpecified;
-
-        private string tipoMonedaField;
-
-        private System.DateTime fechaField;
-
-        private bool fechaFieldSpecified;
-
-        private decimal valorField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string tipoCotizacion
-        {
-            get
-            {
-                return Convert.ToString(this.tipoCotizacionField);
-            }
-            set
-            {
-                //Enum.TryParse(value, out this.gestionExternaField);
-                this.tipoCotizacionField = Functions.CopyStringToEnum<service.TipoCotizacionType>(value);
-                this.RaisePropertyChanged("tipoCotizacion");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool tipoCotizacionSpecified
-        {
-            get
-            {
-                return (this.tipoCotizacionField != null && !string.IsNullOrEmpty(tipoCotizacion));
-            }
-            set
-            {
-                this.tipoCotizacionFieldSpecified = value;
-                this.RaisePropertyChanged("tipoCotizacionSpecified");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string tipoMoneda
-        {
-            get
-            {
-                return this.tipoMonedaField;
-            }
-            set
-            {
-                this.tipoMonedaField = value;
-                this.RaisePropertyChanged("tipoMoneda");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string fecha
-        {
-            get
-            {
-                return this.fechaField.ToString(Constancts.DateShortFormat);
-                //return string.Format("{0:s}", this.fechaField);
-                //return Convert.ToString(this.fechaAutorizacionField);
-            }
-            set
-            {
-                this.fechaField = Functions.CopyStringToFecha(value, Constancts.FechaTipo.SIMPLE, Constancts.DateShortFormat);
-                this.RaisePropertyChanged("fecha");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fechaSpecified
-        {
-            get
-            {
-                return (this.fechaField != null && this.fechaField != DateTime.MinValue && !string.IsNullOrEmpty(fecha));
-            }
-            set
-            {
-                this.fechaFieldSpecified = value;
-                this.RaisePropertyChanged("fechaSpecified");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string valor
-        {
-            get
-            {
-                return Convert.ToString(this.valorField);
-            }
-            set
-            {
-                this.valorField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("valor");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public class IdentificadorDeTramiteType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private string tipoField;
-
-        private string identificadorField;
-
-        private long anioField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string tipo
-        {
-            get
-            {
-                return this.tipoField;
-            }
-            set
-            {
-                this.tipoField = value;
-                this.RaisePropertyChanged("tipo");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string identificador
-        {
-            get
-            {
-                return this.identificadorField;
-            }
-            set
-            {
-                this.identificadorField = value;
-                this.RaisePropertyChanged("identificador");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string anio
-        {
-            get
-            {
-                return Convert.ToString(this.anioField);
-            }
-            set
-            {
-                this.anioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("anio");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public class DocumentoRespaldatorioType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-        private string tipoField;
-
-        private long numeroField;
-
-        private long ejercicioField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string tipo
-        {
-            get
-            {
-                return this.tipoField;
-            }
-            set
-            {
-                this.tipoField = value;
-                this.RaisePropertyChanged("tipo");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string numero
-        {
-            get
-            {
-                return Convert.ToString(this.numeroField);
-            }
-            set
-            {
-                this.numeroField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("numero");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string ejercicio
-        {
-            get
-            {
-                return Convert.ToString(this.ejercicioField);
-            }
-            set
-            {
-                this.ejercicioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("ejercicio");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class ItemNoPresupuestarioCRGType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private long axtField;
-
-        private decimal importeMOField;
-
-        private decimal importeMCLField;
-
-        private string pexField;
-
-        private CodigoTramoPartidaType recacField;
-
-        private CodigoTramoPartidaType sigadeField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string axt
-        {
-            get
-            {
-                return Convert.ToString(this.axtField);
-            }
-            set
-            {
-                this.axtField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("axt");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string importeMO
-        {
-            get
-            {
-                return Convert.ToString(this.importeMOField);
-            }
-            set
-            {
-                this.importeMOField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMO");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string importeMCL
-        {
-            get
-            {
-                return Convert.ToString(this.importeMCLField);
-            }
-            set
-            {
-                this.importeMCLField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMCL");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string pex
-        {
-            get
-            {
-                return this.pexField;
-            }
-            set
-            {
-                this.pexField = value;
-                this.RaisePropertyChanged("pex");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-        public CodigoTramoPartidaType recac
-        {
-            get
-            {
-                return this.recacField;
-            }
-            set
-            {
-                this.recacField = value;
-                this.RaisePropertyChanged("recac");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 5)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-        public CodigoTramoPartidaType sigade
-        {
-            get
-            {
-                return this.sigadeField;
-            }
-            set
-            {
-                this.sigadeField = value;
-                this.RaisePropertyChanged("sigade");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public class ItemPresupuestarioCRGType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private ImputacionPresupuestariaCreditoType imputacionField;
-
-        private long ejercicioField;
-
-        private UnidadDescentralizadaType udField;
-
-        private decimal importeMOField;
-
-        private decimal importeMCLField;
-
-        private string cotenaField;
-
-        private CodigoTramoPartidaType recacField;
-
-        private CodigoTramoPartidaType sigadeField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public ImputacionPresupuestariaCreditoType imputacion
-        {
-            get
-            {
-                return this.imputacionField;
-            }
-            set
-            {
-                this.imputacionField = value;
-                this.RaisePropertyChanged("imputacion");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string ejercicio
-        {
-            get
-            {
-                return Convert.ToString(this.ejercicioField);
-            }
-            set
-            {
-                this.ejercicioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("ejercicio");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public UnidadDescentralizadaType ud
-        {
-            get
-            {
-                return this.udField;
-            }
-            set
-            {
-                this.udField = value;
-                this.RaisePropertyChanged("ud");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string importeMO
-        {
-            get
-            {
-                return Convert.ToString(this.importeMOField);
-            }
-            set
-            {
-                this.importeMOField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMO");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-        public string importeMCL
-        {
-            get
-            {
-                return Convert.ToString(this.importeMCLField);
-            }
-            set
-            {
-                this.importeMCLField = Functions.CopyStringToDecimal(value);
-                this.RaisePropertyChanged("importeMCL");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 5)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-        public string cotena
-        {
-            get
-            {
-                return this.cotenaField;
-            }
-            set
-            {
-                this.cotenaField = value;
-                this.RaisePropertyChanged("cotena");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 6)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-        public CodigoTramoPartidaType recac
-        {
-            get
-            {
-                return this.recacField;
-            }
-            set
-            {
-                this.recacField = value;
-                this.RaisePropertyChanged("recac");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 7)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
-        public CodigoTramoPartidaType sigade
-        {
-            get
-            {
-                return this.sigadeField;
-            }
-            set
-            {
-                this.sigadeField = value;
-                this.RaisePropertyChanged("sigade");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public class CodigoTramoPartidaType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private string idField;
-
-        private string tramoField;
-
-        private string partidaField;
-
-        private string codigoField;
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string tramo
-        {
-            get
-            {
-                return this.tramoField;
-            }
-            set
-            {
-                this.tramoField = value;
-                this.RaisePropertyChanged("tramo");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string partida
-        {
-            get
-            {
-                return this.partidaField;
-            }
-            set
-            {
-                this.partidaField = value;
-                this.RaisePropertyChanged("partida");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string codigo
-        {
-            get
-            {
-                return this.codigoField;
-            }
-            set
-            {
-                this.codigoField = value;
-                this.RaisePropertyChanged("codigo");
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public class ImputacionPresupuestariaCreditoType : object, System.ComponentModel.INotifyPropertyChanged
-    {
-
-        private string institucionField;
-
-        private long ejercicioField;
+        private string entidadField;
 
         private string servicioField;
 
-        private string aperturaProgField;
+        private string programaField;
 
-        private string objetoGastoField;
+        private string subProgramaField;
+
+        private string proyectoField;
+
+        private string actividadField;
+
+        private string obraField;
+
+        private string incisoField;
+
+        private string principalField;
+
+        private string parcialField;
+
+        private string subParcialField;
+
+        private string procedenciaField;
 
         private string fuenteField;
 
         private string monedaField;
 
-        private string ugField;
+        private string ubicacionGeograficaField;
 
-        private string entidadDestinoField;
+        private string entidadOrigenDestinoField;
 
-        private long bapinField;
+        private string prestamoExternoField;
 
-        private bool bapinFieldSpecified;
+        private string bapinField;
 
-        private long pexField;
+        private string finalidadField;
 
-        private bool pexFieldSpecified;
+        private string funcionField;
+
+        private string clasificadorEconomicoField;
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string institucion
-        {
-            get
-            {
-                return this.institucionField;
-            }
-            set
-            {
-                this.institucionField = value;
-                this.RaisePropertyChanged("institucion");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
         public string ejercicio
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return this.ejercicioField;
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
+                this.ejercicioField = value;
                 this.RaisePropertyChanged("ejercicio");
             }
         }
 
         /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
+        public string sectorInstitucional
+        {
+            get
+            {
+                return this.sectorInstitucionalField;
+            }
+            set
+            {
+                this.sectorInstitucionalField = value;
+                this.RaisePropertyChanged("sectorInstitucional");
+            }
+        }
+
+        /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 2)]
+        public string subSectorInstitucional
+        {
+            get
+            {
+                return this.subSectorInstitucionalField;
+            }
+            set
+            {
+                this.subSectorInstitucionalField = value;
+                this.RaisePropertyChanged("subSectorInstitucional");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 3)]
+        public string caracterInstitucional
+        {
+            get
+            {
+                return this.caracterInstitucionalField;
+            }
+            set
+            {
+                this.caracterInstitucionalField = value;
+                this.RaisePropertyChanged("caracterInstitucional");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 4)]
+        public string jurisdiccion
+        {
+            get
+            {
+                return this.jurisdiccionField;
+            }
+            set
+            {
+                this.jurisdiccionField = value;
+                this.RaisePropertyChanged("jurisdiccion");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 5)]
+        public string subJurisdiccion
+        {
+            get
+            {
+                return this.subJurisdiccionField;
+            }
+            set
+            {
+                this.subJurisdiccionField = value;
+                this.RaisePropertyChanged("subJurisdiccion");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 6)]
+        public string entidad
+        {
+            get
+            {
+                return this.entidadField;
+            }
+            set
+            {
+                this.entidadField = value;
+                this.RaisePropertyChanged("entidad");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 7)]
         public string servicio
         {
             get
@@ -1368,41 +230,180 @@ namespace ESIDIFCRGOV.Models
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string aperturaProg
+        [System.Runtime.Serialization.DataMember(Order = 8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 8)]
+        public string programa
         {
             get
             {
-                return this.aperturaProgField;
+                return this.programaField;
             }
             set
             {
-                this.aperturaProgField = value;
-                this.RaisePropertyChanged("aperturaProg");
+                this.programaField = value;
+                this.RaisePropertyChanged("programa");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-        public string objetoGasto
+        [System.Runtime.Serialization.DataMember(Order = 9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 9)]
+        public string subPrograma
         {
             get
             {
-                return this.objetoGastoField;
+                return this.subProgramaField;
             }
             set
             {
-                this.objetoGastoField = value;
-                this.RaisePropertyChanged("objetoGasto");
+                this.subProgramaField = value;
+                this.RaisePropertyChanged("subPrograma");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 5)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        [System.Runtime.Serialization.DataMember(Order = 10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 10)]
+        public string proyecto
+        {
+            get
+            {
+                return this.proyectoField;
+            }
+            set
+            {
+                this.proyectoField = value;
+                this.RaisePropertyChanged("proyecto");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 11)]
+        public string actividad
+        {
+            get
+            {
+                return this.actividadField;
+            }
+            set
+            {
+                this.actividadField = value;
+                this.RaisePropertyChanged("actividad");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 12)]
+        public string obra
+        {
+            get
+            {
+                return this.obraField;
+            }
+            set
+            {
+                this.obraField = value;
+                this.RaisePropertyChanged("obra");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 13)]
+        public string inciso
+        {
+            get
+            {
+                return this.incisoField;
+            }
+            set
+            {
+                this.incisoField = value;
+                this.RaisePropertyChanged("inciso");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 14)]
+        public string principal
+        {
+            get
+            {
+                return this.principalField;
+            }
+            set
+            {
+                this.principalField = value;
+                this.RaisePropertyChanged("principal");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 15)]
+        public string parcial
+        {
+            get
+            {
+                return this.parcialField;
+            }
+            set
+            {
+                this.parcialField = value;
+                this.RaisePropertyChanged("parcial");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 16)]
+        public string subParcial
+        {
+            get
+            {
+                return this.subParcialField;
+            }
+            set
+            {
+                this.subParcialField = value;
+                this.RaisePropertyChanged("subParcial");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 17)]
+        public string procedencia
+        {
+            get
+            {
+                return this.procedenciaField;
+            }
+            set
+            {
+                this.procedenciaField = value;
+                this.RaisePropertyChanged("procedencia");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 18)]
         public string fuente
         {
             get
@@ -1416,9 +417,10 @@ namespace ESIDIFCRGOV.Models
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 6)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
+        [System.Runtime.Serialization.DataMember(Order = 19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 19)]
         public string moneda
         {
             get
@@ -1432,101 +434,124 @@ namespace ESIDIFCRGOV.Models
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 7)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
-        public string ug
+        [System.Runtime.Serialization.DataMember(Order = 20)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 20)]
+        public string ubicacionGeografica
         {
             get
             {
-                return this.ugField;
+                return this.ubicacionGeograficaField;
             }
             set
             {
-                this.ugField = value;
-                this.RaisePropertyChanged("ug");
+                this.ubicacionGeograficaField = value;
+                this.RaisePropertyChanged("ubicacionGeografica");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 8)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 8)]
-        public string entidadDestino
+        [System.Runtime.Serialization.DataMember(Order = 21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 21)]
+        public string entidadOrigenDestino
         {
             get
             {
-                return this.entidadDestinoField;
+                return this.entidadOrigenDestinoField;
             }
             set
             {
-                this.entidadDestinoField = value;
-                this.RaisePropertyChanged("entidadDestino");
+                this.entidadOrigenDestinoField = value;
+                this.RaisePropertyChanged("entidadOrigenDestino");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 9)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 9)]
+        [System.Runtime.Serialization.DataMember(Order = 22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 22)]
+        public string prestamoExterno
+        {
+            get
+            {
+                return this.prestamoExternoField;
+            }
+            set
+            {
+                this.prestamoExternoField = value;
+                this.RaisePropertyChanged("prestamoExterno");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 23)]
         public string bapin
         {
             get
             {
-                return Convert.ToString(this.bapinField);
+                return this.bapinField;
             }
             set
             {
-                this.bapinField = Functions.CopyStringToLong(value);
+                this.bapinField = value;
                 this.RaisePropertyChanged("bapin");
             }
         }
 
         /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bapinSpecified
+        [System.Runtime.Serialization.DataMember(Order = 24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 24)]
+        public string finalidad
         {
             get
             {
-                return (this.bapinField != null && !string.IsNullOrEmpty(bapin));
+                return this.finalidadField;
             }
             set
             {
-                this.bapinFieldSpecified = value;
-                this.RaisePropertyChanged("bapinSpecified");
+                this.finalidadField = value;
+                this.RaisePropertyChanged("finalidad");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.DataMember(Order = 10)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
-        public string pex
+        [System.Runtime.Serialization.DataMember(Order = 25)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 25)]
+        public string funcion
         {
             get
             {
-                return Convert.ToString(this.pexField);
+                return this.funcionField;
             }
             set
             {
-                this.pexField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("pex");
+                this.funcionField = value;
+                this.RaisePropertyChanged("funcion");
             }
         }
 
+
         /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pexSpecified
+        [System.Runtime.Serialization.DataMember(Order = 26)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 26)]
+        public string clasificadorEconomico
         {
             get
             {
-                return (this.pexField != null && !string.IsNullOrEmpty(pex));
+                return this.clasificadorEconomicoField;
             }
             set
             {
-                this.pexFieldSpecified = value;
-                this.RaisePropertyChanged("pexSpecified");
+                this.clasificadorEconomicoField = value;
+                this.RaisePropertyChanged("clasificadorEconomico");
             }
         }
+
 
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -1540,98 +565,232 @@ namespace ESIDIFCRGOV.Models
         }
     }
 
-    [System.Runtime.Serialization.DataContract(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class UnidadDescentralizadaType : object, System.ComponentModel.INotifyPropertyChanged
+    /// <remarks/>
+    [System.Runtime.Serialization.DataContract(Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    [System.Xml.Serialization.XmlRoot(ElementName = "acumuladoresCreditoIndicativa", Namespace = "http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    public class acumuladoresCreditoConsulta : IBody, System.ComponentModel.INotifyPropertyChanged
     {
+        private string compromisoField;
 
-        private string codigoField;
+        private string creditoInicialEjercicioField;
 
-        private long ejercicioField;
+        private string creditoInicialProrrogaField;
 
-        private bool ejercicioFieldSpecified;
+        private string creditoPotencialField;
 
-        private string safField;
+        private string creditoRestringidoField;
 
-        private string descripcionField;
+        private string creditoVigenteField;
+
+        private string devengadoField;
+
+        private string gastoPreventivoField;
+
+        private string pagadoField;
+
+        private string pagadoFinancieroField;
+
+        private string reservaCompromisoField;
+
+        private string reservaDevengadoField;
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        public string codigo
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
+        public string compromiso
         {
             get
             {
-                return this.codigoField;
+                return compromisoField;
             }
             set
             {
-                this.codigoField = value;
-                this.RaisePropertyChanged("codigo");
+                compromisoField = value;
+                RaisePropertyChanged("compromiso");
             }
         }
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 1)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        public string ejercicio
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
+        public string creditoInicialEjercicio
         {
             get
             {
-                return Convert.ToString(this.ejercicioField);
+                return creditoInicialEjercicioField;
             }
             set
             {
-                this.ejercicioField = Functions.CopyStringToLong(value);
-                this.RaisePropertyChanged("ejercicio");
-            }
-        }
-
-        /// <remarks/>
-        [System.Runtime.Serialization.IgnoreDataMember()]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ejercicioSpecified
-        {
-            get
-            {
-                return (this.ejercicioField != null && ejercicioField != 0 && !string.IsNullOrEmpty(ejercicio));
-            }
-            set
-            {
-                this.ejercicioFieldSpecified = value;
-                this.RaisePropertyChanged("ejercicioSpecified");
+                creditoInicialEjercicioField = value;
+                RaisePropertyChanged("creditoInicialEjercicio");
             }
         }
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 2)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        public string saf
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 2)]
+        public string creditoInicialProrroga
         {
             get
             {
-                return this.safField;
+                return creditoInicialProrrogaField;
             }
             set
             {
-                this.safField = value;
-                this.RaisePropertyChanged("saf");
+                creditoInicialProrrogaField = value;
+                RaisePropertyChanged("creditoInicialProrroga");
             }
         }
 
         /// <remarks/>
         [System.Runtime.Serialization.DataMember(Order = 3)]
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        public string descripcion
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 3)]
+        public string creditoPotencial
         {
             get
             {
-                return this.descripcionField;
+                return creditoPotencialField;
             }
             set
             {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("descripcion");
+                creditoPotencialField = value;
+                RaisePropertyChanged("creditoPotencial");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 4)]
+        public string creditoRestringido
+        {
+            get
+            {
+                return creditoRestringidoField;
+            }
+            set
+            {
+                creditoRestringidoField = value;
+                RaisePropertyChanged("creditoRestringido");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 5)]
+        public string creditoVigente
+        {
+            get
+            {
+                return creditoVigenteField;
+            }
+            set
+            {
+                creditoVigenteField = value;
+                RaisePropertyChanged("creditoVigente");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 6)]
+        public string devengado
+        {
+            get
+            {
+                return devengadoField;
+            }
+            set
+            {
+                devengadoField = value;
+                RaisePropertyChanged("devengado");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 7)]
+        public string gastoPreventivo
+        {
+            get
+            {
+                return gastoPreventivoField;
+            }
+            set
+            {
+                gastoPreventivoField = value;
+                RaisePropertyChanged("gastoPreventivo");
+            }
+        }
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 8)]
+        public string pagado
+        {
+            get
+            {
+                return pagadoField;
+            }
+            set
+            {
+                pagadoField = value;
+                RaisePropertyChanged("pagado");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 9)]
+        public string pagadoFinanciero
+        {
+            get
+            {
+                return pagadoFinancieroField;
+            }
+            set
+            {
+                pagadoFinancieroField = value;
+                RaisePropertyChanged("pagadoFinanciero");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 10)]
+        public string reservaCompromiso
+        {
+            get
+            {
+                return reservaCompromisoField;
+            }
+            set
+            {
+                reservaCompromisoField = value;
+                RaisePropertyChanged("reservaCompromiso");
+            }
+        }
+
+
+        /// <remarks/>
+        [System.Runtime.Serialization.DataMember(Order = 11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 11)]
+        public string reservaDevengado
+        {
+            get
+            {
+                return reservaDevengadoField;
+            }
+            set
+            {
+                reservaDevengadoField = value;
+                RaisePropertyChanged("reservaDevengado");
             }
         }
 
@@ -1639,11 +798,12 @@ namespace ESIDIFCRGOV.Models
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
+
 }

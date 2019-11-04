@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using ESIDIF.Extensions;
-using ESIDIFCRGOV.Extensions;
+using ESIDIFAcumuladores.Extensions;
 using log4net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SoapCore;
 
-namespace ESIDIFCRGOV
+namespace ESIDIFAcumuladores
 {
     public class Startup
     {
@@ -37,8 +37,8 @@ namespace ESIDIFCRGOV
             services.AddSingleton(Configuration.GetSection(typeof(Settings).Name).Get<Settings>());
 
             services.AddSoapCore();
-            services.AddSoapServiceOperationTuner(new CRGOVServiceOperationTuner());
-            services.AddSingleton(new CRGOVService());
+            services.AddSoapServiceOperationTuner(new AcumuladoresServiceOperationTuner());
+            services.AddSingleton(new AcumuladoresService());
             services.AddSoapExceptionTransformer((ex) => ex.Message);
 
             services.AddMvc(options =>
@@ -92,12 +92,12 @@ namespace ESIDIFCRGOV
                 .AllowAnyHeader()
                 .AllowCredentials());
 
-            ILog logger = LogManager.GetLogger(typeof(CRGOVService));
+            ILog logger = LogManager.GetLogger(typeof(AcumuladoresService));
 
             app.UseMiddleware<LogResponseMiddleware>(logger);
             app.UseMiddleware<LogRequestMiddleware>(logger);
 
-            app.UseSoapEndpoint<CRGOVService>("/generarCrgOvService.asmx", httpBinding, SoapSerializer.DataContractSerializer);
+            app.UseSoapEndpoint<AcumuladoresService>("/estadoAcumuladoresCreditoService.asmx", httpBinding, SoapSerializer.DataContractSerializer);
             app.UseMvc();
         }
     }

@@ -1,11 +1,8 @@
 ﻿{
   "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
   "Version": "15.0.20628.921",
-  "GettingStartedDocument": {
-    "Uri": "https://go.microsoft.com/fwlink/?linkid=858517"
-  },
   "ExtendedData": {
-    "Uri": "https://tws5-si.mecon.gov.ar/SD_Core/ws/generarCrgOvWsdl.wsdl",
+    "Uri": "https://tws5-si.mecon.gov.ar/SD_Core/ws/imputaciones_presupuestarias/estadoAcumuladoresCreditoWsdl.wsdl",
     "Namespace": "service",
     "SelectedAccessLevelForGeneratedClass": "Public",
     "GenerateMessageContract": false,

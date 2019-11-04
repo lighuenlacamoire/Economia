@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2C8AFA0D-23D2-4E21-A158-A7DF316BDC7F}</ProjectGuid>
+    <ProjectGuid>{E5FD4DDE-8257-45AD-882A-FE1E32FDE01E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -133,16 +133,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Sources.cs" />
-    <Compile Include="Connected Services\GestionService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\service\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Extensions\SoapMiddleware.cs" />
@@ -157,28 +147,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\GestionService\ESIDIFC75.GestionService.ConsultarKeyResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\GestionService\GestionService.wsdl" />
-    <None Include="Connected Services\service\configuration91.svcinfo" />
-    <None Include="Connected Services\service\configuration.svcinfo" />
-    <None Include="Connected Services\GestionService\configuration91.svcinfo" />
-    <None Include="Connected Services\GestionService\configuration.svcinfo" />
-    <None Include="Connected Services\GestionService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Connected Services\service\ESIDIFC75.service.generarInformeDeGastosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\service\ESIDIFC75.service.generarInformeDeGastosResponse1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\service\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="generarInformeDeGastosC75.asmx" />
     <Content Include="Global.asax" />
     <Content Include="log4net.Config.xml" />
@@ -194,31 +162,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\service\comprobantes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service\generarInformeDeGastosWsdl.wsdl" />
-    <None Include="Connected Services\service\informeDeGastos.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\service\informeDeGastosMsg.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="ESIDIFC75.ruleset" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ESIDIFCommon\ESIDIFCommon.csproj">
       <Project>{9d195b79-b596-4a4a-be0e-2bfe6ef10246}</Project>
       <Name>ESIDIFCommon</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\GestionService\" />
-    <WCFMetadataStorage Include="Connected Services\service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -236,7 +186,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64738</DevelopmentServerPort>
+          <DevelopmentServerPort>58920</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:64738/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -12,624 +12,133 @@ namespace service
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/generarCrgOv", ConfigurationName="service.crgOvPortType")]
-    public interface crgOvPortType
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.imputaciones.common.esidif.mecon.gov.ar", ConfigurationName="service.estadoAcumuladoresCreditoService")]
+    public interface estadoAcumuladoresCreditoService
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://ws-si.mecon.gov.ar/ws/gastos/crg/crgOvService", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="https://ws-si.mecon.gov.ar/ws/imputaciones_presupuestarias/acumuladoresCreditoInd" +
+            "icativaService", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<service.crgOvResponse1> generarCrgOvAsync(service.crgOvRequest1 request);
+        System.Threading.Tasks.Task<service.acumuladoresCreditoIndicativaResponse> acumuladoresCreditoIndicativaAsync(service.acumuladoresCreditoIndicativaRequest request);
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public partial class crgOvRequest
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    public partial class imputacionCreditoConsulta
     {
-        
-        private CabeceraCRGType cabeceraCrgField;
-        
-        private ComprobanteVinculoType comprobanteVinculoField;
-        
-        private string observacionesField;
-        
-        private object[] itemsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public CabeceraCRGType cabeceraCrg
-        {
-            get
-            {
-                return this.cabeceraCrgField;
-            }
-            set
-            {
-                this.cabeceraCrgField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public ComprobanteVinculoType comprobanteVinculo
-        {
-            get
-            {
-                return this.comprobanteVinculoField;
-            }
-            set
-            {
-                this.comprobanteVinculoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string observaciones
-        {
-            get
-            {
-                return this.observacionesField;
-            }
-            set
-            {
-                this.observacionesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("itemsNoPresupuestarios", typeof(ItemNoPresupuestarioCRGType), Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute("itemsPresupuestarios", typeof(ItemPresupuestarioCRGType), Order=3)]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class CabeceraCRGType
-    {
-        
-        private GestionExternaEnum gestionExternaField;
-        
-        private IdentificacionCRGType identificacionComprobanteField;
-        
-        private object itemField;
-        
-        private System.DateTime fechaComprobanteField;
-        
-        private decimal importeMOField;
-        
-        private decimal importeMCLField;
-        
-        private CotizacionType cotizacionField;
-        
-        private long beneficiarioField;
-        
-        private MedioDePagoType medioDePagoField;
-        
-        private IdentificadorDeTramiteType identificadorTramiteField;
-        
-        private DocumentoRespaldatorioType documentoRespaldatorioField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public GestionExternaEnum gestionExterna
-        {
-            get
-            {
-                return this.gestionExternaField;
-            }
-            set
-            {
-                this.gestionExternaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public IdentificacionCRGType identificacionComprobante
-        {
-            get
-            {
-                return this.identificacionComprobanteField;
-            }
-            set
-            {
-                this.identificacionComprobanteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("fechaRegistro", typeof(System.DateTime), DataType="date", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute("periodoImpacto", typeof(int), Order=2)]
-        public object Item
-        {
-            get
-            {
-                return this.itemField;
-            }
-            set
-            {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
-        public System.DateTime fechaComprobante
-        {
-            get
-            {
-                return this.fechaComprobanteField;
-            }
-            set
-            {
-                this.fechaComprobanteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public decimal importeMO
-        {
-            get
-            {
-                return this.importeMOField;
-            }
-            set
-            {
-                this.importeMOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public decimal importeMCL
-        {
-            get
-            {
-                return this.importeMCLField;
-            }
-            set
-            {
-                this.importeMCLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public CotizacionType cotizacion
-        {
-            get
-            {
-                return this.cotizacionField;
-            }
-            set
-            {
-                this.cotizacionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public long beneficiario
-        {
-            get
-            {
-                return this.beneficiarioField;
-            }
-            set
-            {
-                this.beneficiarioField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public MedioDePagoType medioDePago
-        {
-            get
-            {
-                return this.medioDePagoField;
-            }
-            set
-            {
-                this.medioDePagoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public IdentificadorDeTramiteType identificadorTramite
-        {
-            get
-            {
-                return this.identificadorTramiteField;
-            }
-            set
-            {
-                this.identificadorTramiteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public DocumentoRespaldatorioType documentoRespaldatorio
-        {
-            get
-            {
-                return this.documentoRespaldatorioField;
-            }
-            set
-            {
-                this.documentoRespaldatorioField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public enum GestionExternaEnum
-    {
-        
-        /// <remarks/>
-        LOYS_2345,
-        
-        /// <remarks/>
-        LOYS_AT,
-        
-        /// <remarks/>
-        GAT,
-        
-        /// <remarks/>
-        UEPEX,
-        
-        /// <remarks/>
-        ANSES,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class IdentificacionCRGType
-    {
-        
-        private string entidadEmisoraField;
-        
-        private string entidadProcesoField;
-        
-        private long numeroField;
-        
-        private long ejercicioField;
-        
-        private string tipoComprobanteField;
-        
-        private string tipoRegistroField;
-        
-        private string subTipoRegistroField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string entidadEmisora
-        {
-            get
-            {
-                return this.entidadEmisoraField;
-            }
-            set
-            {
-                this.entidadEmisoraField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string entidadProceso
-        {
-            get
-            {
-                return this.entidadProcesoField;
-            }
-            set
-            {
-                this.entidadProcesoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public long numero
-        {
-            get
-            {
-                return this.numeroField;
-            }
-            set
-            {
-                this.numeroField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public long ejercicio
-        {
-            get
-            {
-                return this.ejercicioField;
-            }
-            set
-            {
-                this.ejercicioField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string tipoComprobante
-        {
-            get
-            {
-                return this.tipoComprobanteField;
-            }
-            set
-            {
-                this.tipoComprobanteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string tipoRegistro
-        {
-            get
-            {
-                return this.tipoRegistroField;
-            }
-            set
-            {
-                this.tipoRegistroField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string subTipoRegistro
-        {
-            get
-            {
-                return this.subTipoRegistroField;
-            }
-            set
-            {
-                this.subTipoRegistroField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class ItemNoPresupuestarioCRGType
-    {
-        
-        private long axtField;
-        
-        private decimal importeMOField;
-        
-        private decimal importeMCLField;
-        
-        private string pexField;
-        
-        private CodigoTramoPartidaType recacField;
-        
-        private CodigoTramoPartidaType sigadeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public long axt
-        {
-            get
-            {
-                return this.axtField;
-            }
-            set
-            {
-                this.axtField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public decimal importeMO
-        {
-            get
-            {
-                return this.importeMOField;
-            }
-            set
-            {
-                this.importeMOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public decimal importeMCL
-        {
-            get
-            {
-                return this.importeMCLField;
-            }
-            set
-            {
-                this.importeMCLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string pex
-        {
-            get
-            {
-                return this.pexField;
-            }
-            set
-            {
-                this.pexField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public CodigoTramoPartidaType recac
-        {
-            get
-            {
-                return this.recacField;
-            }
-            set
-            {
-                this.recacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public CodigoTramoPartidaType sigade
-        {
-            get
-            {
-                return this.sigadeField;
-            }
-            set
-            {
-                this.sigadeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class CodigoTramoPartidaType
-    {
-        
-        private string idField;
-        
-        private string tramoField;
-        
-        private string partidaField;
-        
-        private string codigoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string tramo
-        {
-            get
-            {
-                return this.tramoField;
-            }
-            set
-            {
-                this.tramoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string partida
-        {
-            get
-            {
-                return this.partidaField;
-            }
-            set
-            {
-                this.partidaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string codigo
-        {
-            get
-            {
-                return this.codigoField;
-            }
-            set
-            {
-                this.codigoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class UnidadDescentralizadaType
-    {
-        
-        private string codigoField;
         
         private long ejercicioField;
         
         private bool ejercicioFieldSpecified;
         
-        private string safField;
+        private long sectorInstitucionalField;
         
-        private string descripcionField;
+        private bool sectorInstitucionalFieldSpecified;
+        
+        private long subSectorInstitucionalField;
+        
+        private bool subSectorInstitucionalFieldSpecified;
+        
+        private long caracterInstitucionalField;
+        
+        private bool caracterInstitucionalFieldSpecified;
+        
+        private long jurisdiccionField;
+        
+        private bool jurisdiccionFieldSpecified;
+        
+        private long subJurisdiccionField;
+        
+        private bool subJurisdiccionFieldSpecified;
+        
+        private long entidadField;
+        
+        private bool entidadFieldSpecified;
+        
+        private long servicioField;
+        
+        private bool servicioFieldSpecified;
+        
+        private long programaField;
+        
+        private bool programaFieldSpecified;
+        
+        private long subProgramaField;
+        
+        private bool subProgramaFieldSpecified;
+        
+        private long proyectoField;
+        
+        private bool proyectoFieldSpecified;
+        
+        private long actividadField;
+        
+        private bool actividadFieldSpecified;
+        
+        private long obraField;
+        
+        private bool obraFieldSpecified;
+        
+        private long incisoField;
+        
+        private bool incisoFieldSpecified;
+        
+        private long principalField;
+        
+        private bool principalFieldSpecified;
+        
+        private long parcialField;
+        
+        private bool parcialFieldSpecified;
+        
+        private long subParcialField;
+        
+        private bool subParcialFieldSpecified;
+        
+        private long procedenciaField;
+        
+        private bool procedenciaFieldSpecified;
+        
+        private long fuenteField;
+        
+        private bool fuenteFieldSpecified;
+        
+        private long monedaField;
+        
+        private bool monedaFieldSpecified;
+        
+        private long ubicacionGeograficaField;
+        
+        private bool ubicacionGeograficaFieldSpecified;
+        
+        private long entidadOrigenDestinoField;
+        
+        private bool entidadOrigenDestinoFieldSpecified;
+        
+        private long prestamoExternoField;
+        
+        private bool prestamoExternoFieldSpecified;
+        
+        private long bapinField;
+        
+        private bool bapinFieldSpecified;
+        
+        private long finalidadField;
+        
+        private bool finalidadFieldSpecified;
+        
+        private long funcionField;
+        
+        private bool funcionFieldSpecified;
+        
+        private long clasificadorEconomicoField;
+        
+        private bool clasificadorEconomicoFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string codigo
-        {
-            get
-            {
-                return this.codigoField;
-            }
-            set
-            {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public long ejercicio
         {
             get
@@ -657,98 +166,176 @@ namespace service
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string saf
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public long sectorInstitucional
         {
             get
             {
-                return this.safField;
+                return this.sectorInstitucionalField;
             }
             set
             {
-                this.safField = value;
+                this.sectorInstitucionalField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string descripcion
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sectorInstitucionalSpecified
         {
             get
             {
-                return this.descripcionField;
+                return this.sectorInstitucionalFieldSpecified;
             }
             set
             {
-                this.descripcionField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class ImputacionPresupuestariaCreditoType
-    {
-        
-        private string institucionField;
-        
-        private long ejercicioField;
-        
-        private string servicioField;
-        
-        private string aperturaProgField;
-        
-        private string objetoGastoField;
-        
-        private string fuenteField;
-        
-        private string monedaField;
-        
-        private string ugField;
-        
-        private string entidadDestinoField;
-        
-        private long bapinField;
-        
-        private bool bapinFieldSpecified;
-        
-        private long pexField;
-        
-        private bool pexFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string institucion
-        {
-            get
-            {
-                return this.institucionField;
-            }
-            set
-            {
-                this.institucionField = value;
+                this.sectorInstitucionalFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public long ejercicio
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public long subSectorInstitucional
         {
             get
             {
-                return this.ejercicioField;
+                return this.subSectorInstitucionalField;
             }
             set
             {
-                this.ejercicioField = value;
+                this.subSectorInstitucionalField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string servicio
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subSectorInstitucionalSpecified
+        {
+            get
+            {
+                return this.subSectorInstitucionalFieldSpecified;
+            }
+            set
+            {
+                this.subSectorInstitucionalFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public long caracterInstitucional
+        {
+            get
+            {
+                return this.caracterInstitucionalField;
+            }
+            set
+            {
+                this.caracterInstitucionalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool caracterInstitucionalSpecified
+        {
+            get
+            {
+                return this.caracterInstitucionalFieldSpecified;
+            }
+            set
+            {
+                this.caracterInstitucionalFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public long jurisdiccion
+        {
+            get
+            {
+                return this.jurisdiccionField;
+            }
+            set
+            {
+                this.jurisdiccionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool jurisdiccionSpecified
+        {
+            get
+            {
+                return this.jurisdiccionFieldSpecified;
+            }
+            set
+            {
+                this.jurisdiccionFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public long subJurisdiccion
+        {
+            get
+            {
+                return this.subJurisdiccionField;
+            }
+            set
+            {
+                this.subJurisdiccionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subJurisdiccionSpecified
+        {
+            get
+            {
+                return this.subJurisdiccionFieldSpecified;
+            }
+            set
+            {
+                this.subJurisdiccionFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public long entidad
+        {
+            get
+            {
+                return this.entidadField;
+            }
+            set
+            {
+                this.entidadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool entidadSpecified
+        {
+            get
+            {
+                return this.entidadFieldSpecified;
+            }
+            set
+            {
+                this.entidadFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public long servicio
         {
             get
             {
@@ -761,36 +348,302 @@ namespace service
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string aperturaProg
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool servicioSpecified
         {
             get
             {
-                return this.aperturaProgField;
+                return this.servicioFieldSpecified;
             }
             set
             {
-                this.aperturaProgField = value;
+                this.servicioFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string objetoGasto
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public long programa
         {
             get
             {
-                return this.objetoGastoField;
+                return this.programaField;
             }
             set
             {
-                this.objetoGastoField = value;
+                this.programaField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string fuente
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool programaSpecified
+        {
+            get
+            {
+                return this.programaFieldSpecified;
+            }
+            set
+            {
+                this.programaFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public long subPrograma
+        {
+            get
+            {
+                return this.subProgramaField;
+            }
+            set
+            {
+                this.subProgramaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subProgramaSpecified
+        {
+            get
+            {
+                return this.subProgramaFieldSpecified;
+            }
+            set
+            {
+                this.subProgramaFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public long proyecto
+        {
+            get
+            {
+                return this.proyectoField;
+            }
+            set
+            {
+                this.proyectoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool proyectoSpecified
+        {
+            get
+            {
+                return this.proyectoFieldSpecified;
+            }
+            set
+            {
+                this.proyectoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public long actividad
+        {
+            get
+            {
+                return this.actividadField;
+            }
+            set
+            {
+                this.actividadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool actividadSpecified
+        {
+            get
+            {
+                return this.actividadFieldSpecified;
+            }
+            set
+            {
+                this.actividadFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public long obra
+        {
+            get
+            {
+                return this.obraField;
+            }
+            set
+            {
+                this.obraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool obraSpecified
+        {
+            get
+            {
+                return this.obraFieldSpecified;
+            }
+            set
+            {
+                this.obraFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public long inciso
+        {
+            get
+            {
+                return this.incisoField;
+            }
+            set
+            {
+                this.incisoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool incisoSpecified
+        {
+            get
+            {
+                return this.incisoFieldSpecified;
+            }
+            set
+            {
+                this.incisoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        public long principal
+        {
+            get
+            {
+                return this.principalField;
+            }
+            set
+            {
+                this.principalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool principalSpecified
+        {
+            get
+            {
+                return this.principalFieldSpecified;
+            }
+            set
+            {
+                this.principalFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        public long parcial
+        {
+            get
+            {
+                return this.parcialField;
+            }
+            set
+            {
+                this.parcialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool parcialSpecified
+        {
+            get
+            {
+                return this.parcialFieldSpecified;
+            }
+            set
+            {
+                this.parcialFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public long subParcial
+        {
+            get
+            {
+                return this.subParcialField;
+            }
+            set
+            {
+                this.subParcialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool subParcialSpecified
+        {
+            get
+            {
+                return this.subParcialFieldSpecified;
+            }
+            set
+            {
+                this.subParcialFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public long procedencia
+        {
+            get
+            {
+                return this.procedenciaField;
+            }
+            set
+            {
+                this.procedenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool procedenciaSpecified
+        {
+            get
+            {
+                return this.procedenciaFieldSpecified;
+            }
+            set
+            {
+                this.procedenciaFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public long fuente
         {
             get
             {
@@ -803,8 +656,22 @@ namespace service
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string moneda
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fuenteSpecified
+        {
+            get
+            {
+                return this.fuenteFieldSpecified;
+            }
+            set
+            {
+                this.fuenteFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public long moneda
         {
             get
             {
@@ -817,35 +684,105 @@ namespace service
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string ug
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool monedaSpecified
         {
             get
             {
-                return this.ugField;
+                return this.monedaFieldSpecified;
             }
             set
             {
-                this.ugField = value;
+                this.monedaFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string entidadDestino
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public long ubicacionGeografica
         {
             get
             {
-                return this.entidadDestinoField;
+                return this.ubicacionGeograficaField;
             }
             set
             {
-                this.entidadDestinoField = value;
+                this.ubicacionGeograficaField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ubicacionGeograficaSpecified
+        {
+            get
+            {
+                return this.ubicacionGeograficaFieldSpecified;
+            }
+            set
+            {
+                this.ubicacionGeograficaFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        public long entidadOrigenDestino
+        {
+            get
+            {
+                return this.entidadOrigenDestinoField;
+            }
+            set
+            {
+                this.entidadOrigenDestinoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool entidadOrigenDestinoSpecified
+        {
+            get
+            {
+                return this.entidadOrigenDestinoFieldSpecified;
+            }
+            set
+            {
+                this.entidadOrigenDestinoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        public long prestamoExterno
+        {
+            get
+            {
+                return this.prestamoExternoField;
+            }
+            set
+            {
+                this.prestamoExternoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool prestamoExternoSpecified
+        {
+            get
+            {
+                return this.prestamoExternoFieldSpecified;
+            }
+            set
+            {
+                this.prestamoExternoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
         public long bapin
         {
             get
@@ -873,548 +810,478 @@ namespace service
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public long pex
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        public long finalidad
         {
             get
             {
-                return this.pexField;
+                return this.finalidadField;
             }
             set
             {
-                this.pexField = value;
+                this.finalidadField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pexSpecified
+        public bool finalidadSpecified
         {
             get
             {
-                return this.pexFieldSpecified;
+                return this.finalidadFieldSpecified;
             }
             set
             {
-                this.pexFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class ItemPresupuestarioCRGType
-    {
-        
-        private ImputacionPresupuestariaCreditoType imputacionField;
-        
-        private long ejercicioField;
-        
-        private UnidadDescentralizadaType udField;
-        
-        private decimal importeMOField;
-        
-        private decimal importeMCLField;
-        
-        private string cotenaField;
-        
-        private CodigoTramoPartidaType recacField;
-        
-        private CodigoTramoPartidaType sigadeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ImputacionPresupuestariaCreditoType imputacion
-        {
-            get
-            {
-                return this.imputacionField;
-            }
-            set
-            {
-                this.imputacionField = value;
+                this.finalidadFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public long ejercicio
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        public long funcion
         {
             get
             {
-                return this.ejercicioField;
+                return this.funcionField;
             }
             set
             {
-                this.ejercicioField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public UnidadDescentralizadaType ud
-        {
-            get
-            {
-                return this.udField;
-            }
-            set
-            {
-                this.udField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public decimal importeMO
-        {
-            get
-            {
-                return this.importeMOField;
-            }
-            set
-            {
-                this.importeMOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public decimal importeMCL
-        {
-            get
-            {
-                return this.importeMCLField;
-            }
-            set
-            {
-                this.importeMCLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string cotena
-        {
-            get
-            {
-                return this.cotenaField;
-            }
-            set
-            {
-                this.cotenaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public CodigoTramoPartidaType recac
-        {
-            get
-            {
-                return this.recacField;
-            }
-            set
-            {
-                this.recacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public CodigoTramoPartidaType sigade
-        {
-            get
-            {
-                return this.sigadeField;
-            }
-            set
-            {
-                this.sigadeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrg")]
-    public partial class ComprobanteVinculoType
-    {
-        
-        private bool marcaInicioVinculoField;
-        
-        private string tipoOperacionVinculadaField;
-        
-        private long ejercicioOperacionVinculadaField;
-        
-        private bool ejercicioOperacionVinculadaFieldSpecified;
-        
-        private long numeroOperacionVinculadaField;
-        
-        private bool numeroOperacionVinculadaFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public bool marcaInicioVinculo
-        {
-            get
-            {
-                return this.marcaInicioVinculoField;
-            }
-            set
-            {
-                this.marcaInicioVinculoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string tipoOperacionVinculada
-        {
-            get
-            {
-                return this.tipoOperacionVinculadaField;
-            }
-            set
-            {
-                this.tipoOperacionVinculadaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public long ejercicioOperacionVinculada
-        {
-            get
-            {
-                return this.ejercicioOperacionVinculadaField;
-            }
-            set
-            {
-                this.ejercicioOperacionVinculadaField = value;
+                this.funcionField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ejercicioOperacionVinculadaSpecified
+        public bool funcionSpecified
         {
             get
             {
-                return this.ejercicioOperacionVinculadaFieldSpecified;
+                return this.funcionFieldSpecified;
             }
             set
             {
-                this.ejercicioOperacionVinculadaFieldSpecified = value;
+                this.funcionFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public long numeroOperacionVinculada
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        public long clasificadorEconomico
         {
             get
             {
-                return this.numeroOperacionVinculadaField;
+                return this.clasificadorEconomicoField;
             }
             set
             {
-                this.numeroOperacionVinculadaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool numeroOperacionVinculadaSpecified
-        {
-            get
-            {
-                return this.numeroOperacionVinculadaFieldSpecified;
-            }
-            set
-            {
-                this.numeroOperacionVinculadaFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class DocumentoRespaldatorioType
-    {
-        
-        private string tipoField;
-        
-        private long numeroField;
-        
-        private long ejercicioField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string tipo
-        {
-            get
-            {
-                return this.tipoField;
-            }
-            set
-            {
-                this.tipoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public long numero
-        {
-            get
-            {
-                return this.numeroField;
-            }
-            set
-            {
-                this.numeroField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public long ejercicio
-        {
-            get
-            {
-                return this.ejercicioField;
-            }
-            set
-            {
-                this.ejercicioField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class IdentificadorDeTramiteType
-    {
-        
-        private string tipoField;
-        
-        private string identificadorField;
-        
-        private long anioField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string tipo
-        {
-            get
-            {
-                return this.tipoField;
-            }
-            set
-            {
-                this.tipoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string identificador
-        {
-            get
-            {
-                return this.identificadorField;
-            }
-            set
-            {
-                this.identificadorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public long anio
-        {
-            get
-            {
-                return this.anioField;
-            }
-            set
-            {
-                this.anioField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public partial class CotizacionType
-    {
-        
-        private TipoCotizacionType tipoCotizacionField;
-        
-        private bool tipoCotizacionFieldSpecified;
-        
-        private string tipoMonedaField;
-        
-        private System.DateTime fechaField;
-        
-        private bool fechaFieldSpecified;
-        
-        private decimal valorField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TipoCotizacionType tipoCotizacion
-        {
-            get
-            {
-                return this.tipoCotizacionField;
-            }
-            set
-            {
-                this.tipoCotizacionField = value;
+                this.clasificadorEconomicoField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool tipoCotizacionSpecified
+        public bool clasificadorEconomicoSpecified
         {
             get
             {
-                return this.tipoCotizacionFieldSpecified;
+                return this.clasificadorEconomicoFieldSpecified;
             }
             set
             {
-                this.tipoCotizacionFieldSpecified = value;
+                this.clasificadorEconomicoFieldSpecified = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string tipoMoneda
-        {
-            get
-            {
-                return this.tipoMonedaField;
-            }
-            set
-            {
-                this.tipoMonedaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
-        public System.DateTime fecha
-        {
-            get
-            {
-                return this.fechaField;
-            }
-            set
-            {
-                this.fechaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fechaSpecified
-        {
-            get
-            {
-                return this.fechaFieldSpecified;
-            }
-            set
-            {
-                this.fechaFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public decimal valor
-        {
-            get
-            {
-                return this.valorField;
-            }
-            set
-            {
-                this.valorField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public enum TipoCotizacionType
-    {
-        
-        /// <remarks/>
-        BNA,
-        
-        /// <remarks/>
-        PACTADA,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantes")]
-    public enum MedioDePagoType
-    {
-        
-        /// <remarks/>
-        CHE,
-        
-        /// <remarks/>
-        EX,
-        
-        /// <remarks/>
-        DB,
-        
-        /// <remarks/>
-        OV,
-        
-        /// <remarks/>
-        OR,
-        
-        /// <remarks/>
-        BC,
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg")]
-    public partial class crgOvResponse
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar")]
+    public partial class acumuladoresCreditoConsulta
     {
         
-        private long numeroSidifField;
+        private decimal compromisoField;
+        
+        private bool compromisoFieldSpecified;
+        
+        private decimal creditoInicialEjercicioField;
+        
+        private bool creditoInicialEjercicioFieldSpecified;
+        
+        private decimal creditoInicialProrrogaField;
+        
+        private bool creditoInicialProrrogaFieldSpecified;
+        
+        private decimal creditoPotencialField;
+        
+        private bool creditoPotencialFieldSpecified;
+        
+        private decimal creditoRestringidoField;
+        
+        private bool creditoRestringidoFieldSpecified;
+        
+        private decimal creditoVigenteField;
+        
+        private bool creditoVigenteFieldSpecified;
+        
+        private decimal devengadoField;
+        
+        private bool devengadoFieldSpecified;
+        
+        private decimal gastoPreventivoField;
+        
+        private bool gastoPreventivoFieldSpecified;
+        
+        private decimal pagadoField;
+        
+        private bool pagadoFieldSpecified;
+        
+        private decimal pagadoFinancieroField;
+        
+        private bool pagadoFinancieroFieldSpecified;
+        
+        private decimal reservaCompromisoField;
+        
+        private bool reservaCompromisoFieldSpecified;
+        
+        private decimal reservaDevengadoField;
+        
+        private bool reservaDevengadoFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public long numeroSidif
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public decimal compromiso
         {
             get
             {
-                return this.numeroSidifField;
+                return this.compromisoField;
             }
             set
             {
-                this.numeroSidifField = value;
+                this.compromisoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool compromisoSpecified
+        {
+            get
+            {
+                return this.compromisoFieldSpecified;
+            }
+            set
+            {
+                this.compromisoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public decimal creditoInicialEjercicio
+        {
+            get
+            {
+                return this.creditoInicialEjercicioField;
+            }
+            set
+            {
+                this.creditoInicialEjercicioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creditoInicialEjercicioSpecified
+        {
+            get
+            {
+                return this.creditoInicialEjercicioFieldSpecified;
+            }
+            set
+            {
+                this.creditoInicialEjercicioFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public decimal creditoInicialProrroga
+        {
+            get
+            {
+                return this.creditoInicialProrrogaField;
+            }
+            set
+            {
+                this.creditoInicialProrrogaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creditoInicialProrrogaSpecified
+        {
+            get
+            {
+                return this.creditoInicialProrrogaFieldSpecified;
+            }
+            set
+            {
+                this.creditoInicialProrrogaFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public decimal creditoPotencial
+        {
+            get
+            {
+                return this.creditoPotencialField;
+            }
+            set
+            {
+                this.creditoPotencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creditoPotencialSpecified
+        {
+            get
+            {
+                return this.creditoPotencialFieldSpecified;
+            }
+            set
+            {
+                this.creditoPotencialFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public decimal creditoRestringido
+        {
+            get
+            {
+                return this.creditoRestringidoField;
+            }
+            set
+            {
+                this.creditoRestringidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creditoRestringidoSpecified
+        {
+            get
+            {
+                return this.creditoRestringidoFieldSpecified;
+            }
+            set
+            {
+                this.creditoRestringidoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public decimal creditoVigente
+        {
+            get
+            {
+                return this.creditoVigenteField;
+            }
+            set
+            {
+                this.creditoVigenteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool creditoVigenteSpecified
+        {
+            get
+            {
+                return this.creditoVigenteFieldSpecified;
+            }
+            set
+            {
+                this.creditoVigenteFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public decimal devengado
+        {
+            get
+            {
+                return this.devengadoField;
+            }
+            set
+            {
+                this.devengadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool devengadoSpecified
+        {
+            get
+            {
+                return this.devengadoFieldSpecified;
+            }
+            set
+            {
+                this.devengadoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public decimal gastoPreventivo
+        {
+            get
+            {
+                return this.gastoPreventivoField;
+            }
+            set
+            {
+                this.gastoPreventivoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool gastoPreventivoSpecified
+        {
+            get
+            {
+                return this.gastoPreventivoFieldSpecified;
+            }
+            set
+            {
+                this.gastoPreventivoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public decimal pagado
+        {
+            get
+            {
+                return this.pagadoField;
+            }
+            set
+            {
+                this.pagadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pagadoSpecified
+        {
+            get
+            {
+                return this.pagadoFieldSpecified;
+            }
+            set
+            {
+                this.pagadoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public decimal pagadoFinanciero
+        {
+            get
+            {
+                return this.pagadoFinancieroField;
+            }
+            set
+            {
+                this.pagadoFinancieroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pagadoFinancieroSpecified
+        {
+            get
+            {
+                return this.pagadoFinancieroFieldSpecified;
+            }
+            set
+            {
+                this.pagadoFinancieroFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public decimal reservaCompromiso
+        {
+            get
+            {
+                return this.reservaCompromisoField;
+            }
+            set
+            {
+                this.reservaCompromisoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reservaCompromisoSpecified
+        {
+            get
+            {
+                return this.reservaCompromisoFieldSpecified;
+            }
+            set
+            {
+                this.reservaCompromisoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public decimal reservaDevengado
+        {
+            get
+            {
+                return this.reservaDevengadoField;
+            }
+            set
+            {
+                this.reservaDevengadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool reservaDevengadoSpecified
+        {
+            get
+            {
+                return this.reservaDevengadoFieldSpecified;
+            }
+            set
+            {
+                this.reservaDevengadoFieldSpecified = value;
             }
         }
     }
@@ -1423,19 +1290,20 @@ namespace service
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class crgOvRequest1
+    public partial class acumuladoresCreditoIndicativaRequest
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg", Order=0)]
-        public service.crgOvRequest crgOvRequest;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public service.imputacionCreditoConsulta imputacionCreditoConsulta;
         
-        public crgOvRequest1()
+        public acumuladoresCreditoIndicativaRequest()
         {
         }
         
-        public crgOvRequest1(service.crgOvRequest crgOvRequest)
+        public acumuladoresCreditoIndicativaRequest(service.imputacionCreditoConsulta imputacionCreditoConsulta)
         {
-            this.crgOvRequest = crgOvRequest;
+            this.imputacionCreditoConsulta = imputacionCreditoConsulta;
         }
     }
     
@@ -1443,48 +1311,49 @@ namespace service
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class crgOvResponse1
+    public partial class acumuladoresCreditoIndicativaResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://ws-si.mecon.gov.ar/ws/comprobantesCrgOvMsg", Order=0)]
-        public service.crgOvResponse crgOvResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webService.imputacionesPresupuestarias.esidif.mecon.gov.ar", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public service.acumuladoresCreditoConsulta acumuladoresCreditoIndicativa;
         
-        public crgOvResponse1()
+        public acumuladoresCreditoIndicativaResponse()
         {
         }
         
-        public crgOvResponse1(service.crgOvResponse crgOvResponse)
+        public acumuladoresCreditoIndicativaResponse(service.acumuladoresCreditoConsulta acumuladoresCreditoIndicativa)
         {
-            this.crgOvResponse = crgOvResponse;
+            this.acumuladoresCreditoIndicativa = acumuladoresCreditoIndicativa;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public interface crgOvPortTypeChannel : service.crgOvPortType, System.ServiceModel.IClientChannel
+    public interface estadoAcumuladoresCreditoServiceChannel : service.estadoAcumuladoresCreditoService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public partial class crgOvPortTypeClient : System.ServiceModel.ClientBase<service.crgOvPortType>, service.crgOvPortType
+    public partial class estadoAcumuladoresCreditoServiceClient : System.ServiceModel.ClientBase<service.estadoAcumuladoresCreditoService>, service.estadoAcumuladoresCreditoService
     {
         
-        public crgOvPortTypeClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public estadoAcumuladoresCreditoServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<service.crgOvResponse1> service.crgOvPortType.generarCrgOvAsync(service.crgOvRequest1 request)
+        System.Threading.Tasks.Task<service.acumuladoresCreditoIndicativaResponse> service.estadoAcumuladoresCreditoService.acumuladoresCreditoIndicativaAsync(service.acumuladoresCreditoIndicativaRequest request)
         {
-            return base.Channel.generarCrgOvAsync(request);
+            return base.Channel.acumuladoresCreditoIndicativaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<service.crgOvResponse1> generarCrgOvAsync(service.crgOvRequest crgOvRequest)
+        public System.Threading.Tasks.Task<service.acumuladoresCreditoIndicativaResponse> acumuladoresCreditoIndicativaAsync(service.imputacionCreditoConsulta imputacionCreditoConsulta)
         {
-            service.crgOvRequest1 inValue = new service.crgOvRequest1();
-            inValue.crgOvRequest = crgOvRequest;
-            return ((service.crgOvPortType)(this)).generarCrgOvAsync(inValue);
+            service.acumuladoresCreditoIndicativaRequest inValue = new service.acumuladoresCreditoIndicativaRequest();
+            inValue.imputacionCreditoConsulta = imputacionCreditoConsulta;
+            return ((service.estadoAcumuladoresCreditoService)(this)).acumuladoresCreditoIndicativaAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ESIDIFCRGOV.Extensions
+namespace ESIDIFAcumuladores.Extensions
 {
     public class Settings
     {
