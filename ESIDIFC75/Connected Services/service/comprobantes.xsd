@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="https://ws-si.mecon.gov.ar/ws/comprobantes" elementFormDefault="qualified" targetNamespace="https://ws-si.mecon.gov.ar/ws/comprobantes" xmlns="http://www.w3.org/2001/XMLSchema">
+  <simpleType name="EjercicioType">
+    <restriction base="long">
+      <totalDigits value="4" />
+      <fractionDigits value="0" />
+    </restriction>
+  </simpleType>
+  <simpleType name="EmisorType">
+    <restriction base="string">
+      <length value="3" />
+    </restriction>
+  </simpleType>
+  <complexType name="IdentificacionComprobanteType">
+    <sequence>
+      <element name="tipoComprobante" type="string" />
+      <element name="numero" type="long" />
+      <element name="ejercicio" type="tns:EjercicioType" />
+      <element name="entidadEmisora" type="tns:EmisorType" />
+      <element minOccurs="0" name="tipoRegistro" type="string" />
+      <element minOccurs="0" name="subTipoRegistro" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="ImporteType">
+    <restriction base="decimal">
+      <fractionDigits value="2" />
+    </restriction>
+  </simpleType>
+  <complexType name="IdentificacionComprobanteRefType">
+    <sequence>
+      <element name="identificacion" type="tns:IdentificacionComprobanteType" />
+    </sequence>
+    <attribute name="ID" type="ID" use="required" />
+  </complexType>
+  <complexType name="ImputacionPresupuestariaIDType">
+    <sequence>
+      <element name="codigo" type="long" />
+      <element name="ejercicio" type="long" />
+    </sequence>
+  </complexType>
+  <complexType name="ImputacionPresupuestariaRefType">
+    <sequence>
+      <element name="imputacion" type="tns:ImputacionPresupuestariaType" />
+    </sequence>
+    <attribute name="ID" type="ID" use="required" />
+  </complexType>
+  <complexType name="ImputacionPresupuestariaType">
+    <sequence>
+      <element name="imputacionID" type="tns:ImputacionPresupuestariaIDType" />
+      <element name="institucion" type="string" />
+      <element name="servicio" type="string" />
+      <element name="aperturaProg" type="string" />
+      <element name="objetoGasto" type="string" />
+      <element name="fuente" type="string" />
+      <element name="moneda" type="string" />
+      <element name="ug" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ImputacionPresupuestariaCreditoType">
+    <sequence>
+      <element minOccurs="0" name="institucion" type="string" />
+      <element name="ejercicio" type="long" />
+      <element name="servicio" type="string" />
+      <element name="aperturaProg" type="string" />
+      <element name="objetoGasto" type="string" />
+      <element name="fuente" type="string" />
+      <element name="moneda" type="string" />
+      <element name="ug" type="string" />
+      <element minOccurs="0" name="entidadDestino" type="string" />
+      <element minOccurs="0" name="bapin" type="long" />
+      <element minOccurs="0" name="pex" type="long" />
+    </sequence>
+  </complexType>
+  <complexType name="UnidadDescentralizadaType">
+    <sequence>
+      <element name="codigo" type="string" />
+      <element minOccurs="0" name="ejercicio" type="tns:EjercicioType" />
+      <element minOccurs="0" name="saf" type="string" />
+      <element minOccurs="0" name="descripcion" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="UnidadDescentralizadaRefType">
+    <sequence>
+      <element name="ud" type="tns:UnidadDescentralizadaType" />
+    </sequence>
+    <attribute name="ID" type="ID" use="required" />
+  </complexType>
+  <complexType name="CodigoTramoPartidaType">
+    <sequence>
+      <element minOccurs="0" name="id" type="string" />
+      <element name="tramo" type="string" />
+      <element name="partida" type="string" />
+      <element name="codigo" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="GestionExternaEnum">
+    <restriction base="string">
+      <enumeration value="LOYS_2345" />
+      <enumeration value="LOYS_AT" />
+      <enumeration value="GAT" />
+      <enumeration value="UEPEX" />
+      <enumeration value="ANSES" />
+    </restriction>
+  </simpleType>
+  <complexType name="IdentificadorDeTramiteType">
+    <sequence>
+      <element name="tipo" type="string" />
+      <element name="identificador" type="string" />
+      <element name="anio" type="long" />
+    </sequence>
+  </complexType>
+  <complexType name="DocumentoRespaldatorioType">
+    <sequence>
+      <element name="tipo" type="string" />
+      <element name="numero" type="long" />
+      <element name="ejercicio" type="long" />
+    </sequence>
+  </complexType>
+  <simpleType name="PeriodoImpactoType">
+    <restriction base="int">
+      <minInclusive value="1" />
+      <maxInclusive value="12" />
+    </restriction>
+  </simpleType>
+  <complexType name="CuentaType">
+    <sequence>
+      <element name="banco" type="long" />
+      <element name="sucursal" type="string" />
+      <element name="cuenta" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="MedioDePagoType">
+    <restriction base="string">
+      <enumeration value="CHE" />
+      <enumeration value="EX" />
+      <enumeration value="DB" />
+      <enumeration value="OV" />
+      <enumeration value="OR" />
+      <enumeration value="BC" />
+    </restriction>
+  </simpleType>
+  <complexType name="EmptyType">
+    <sequence />
+  </complexType>
+  <simpleType name="GestionEnum">
+    <restriction base="string">
+      <enumeration value="AF" />
+      <enumeration value="SD" />
+      <enumeration value="GF" />
+      <enumeration value="BYS" />
+      <enumeration value="TR" />
+      <enumeration value="GP" />
+    </restriction>
+  </simpleType>
+  <simpleType name="ValorCotizacionType">
+    <restriction base="decimal">
+      <fractionDigits value="6" />
+      <minExclusive value="0" />
+    </restriction>
+  </simpleType>
+  <simpleType name="TipoCotizacionType">
+    <restriction base="string">
+      <enumeration value="BNA" />
+      <enumeration value="PACTADA" />
+    </restriction>
+  </simpleType>
+  <complexType name="CotizacionType">
+    <sequence>
+      <element minOccurs="0" name="tipoCotizacion" type="tns:TipoCotizacionType" />
+      <element name="tipoMoneda" type="string" />
+      <element minOccurs="0" name="fecha" type="date" />
+      <element name="valor" type="tns:ValorCotizacionType" />
+    </sequence>
+  </complexType>
+</schema>

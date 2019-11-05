@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:sch0="http://webServices.interfazEntes.esidif.mecon.gov.ar" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://services.en.esidif.mecon.gov.ar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sch1="http://services.en.esidif.mecon.gov.ar" targetNamespace="http://services.en.esidif.mecon.gov.ar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <sp:UsernameToken>
+    <wsp:Policy>
+      <sp:WssUsernameToken10 />
+    </wsp:Policy>
+  </sp:UsernameToken>
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://webServices.interfazEntes.esidif.mecon.gov.ar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webServices.interfazEntes.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getBeneficiario" nillable="true" type="tns:beneficiarioBeanArray" />
+      <xs:complexType name="beneficiarioBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroEnte" type="xs:long" />
+          <xs:element minOccurs="0" name="tipoIdentificador" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoIdentificador" type="xs:string" />
+          <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="beneficiarioBeanArray" final="#all">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="tns:beneficiarioBean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns="http://services.en.esidif.mecon.gov.ar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://services.en.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="codigoIdentificador" nillable="true" type="xs:string" />
+      <xs:element name="tipoIdentificador" nillable="true" type="xs:string" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getBeneficiarioResponse">
+    <wsdl:part name="getBeneficiario" element="sch0:getBeneficiario" />
+  </wsdl:message>
+  <wsdl:message name="getBeneficiarioRequest">
+    <wsdl:part name="tipoIdentificador" element="sch1:tipoIdentificador" />
+    <wsdl:part name="codigoIdentificador" element="sch1:codigoIdentificador" />
+  </wsdl:message>
+  <wsdl:portType name="getBeneficiarioService">
+    <wsdl:operation name="getBeneficiario">
+      <wsdl:input name="getBeneficiarioRequest" message="sch1:getBeneficiarioRequest" />
+      <wsdl:output name="getBeneficiarioResponse" message="sch1:getBeneficiarioResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getBeneficiarioServiceSoap11" type="sch1:getBeneficiarioService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsaw:UsingAddressing wsdl:required="true" />
+    <wsdl:operation name="getBeneficiario">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/entes/getBeneficiarioService" />
+      <wsdl:input name="getBeneficiarioRequest">
+        <soap:body use="literal" parts="tipoIdentificador" />
+        <soap:body use="literal" parts="codigoIdentificador" />
+      </wsdl:input>
+      <wsdl:output name="getBeneficiarioResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getBeneficiarioServiceService">
+    <wsdl:port name="getBeneficiarioServiceSoap11" binding="sch1:getBeneficiarioServiceSoap11">
+      <soap:address location="https://ws-si.mecon.gov.ar/SD_Core/ws/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

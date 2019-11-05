@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:es="https://ws-si.mecon.gov.ar/ws/security/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://services.entidadesBasicas.presupuesto.esidif.mecon.gov.ar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://webServices.entidadesBasicas.esidif.mecon.gov.ar" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://services.entidadesBasicas.presupuesto.esidif.mecon.gov.ar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <sp:UsernameToken>
+    <wsp:Policy>
+      <sp:WssUsernameToken10 />
+    </wsp:Policy>
+  </sp:UsernameToken>
+  <es:UsuarioFisicoToken />
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://webServices.entidadesBasicas.esidif.mecon.gov.ar" xmlns:ns1="http://enums.entidadesBasicas.esidif.mecon.gov.ar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webServices.entidadesBasicas.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="obtenerDescripcionesEntidadesServiceSchema2.xsd" namespace="http://enums.entidadesBasicas.esidif.mecon.gov.ar" />
+      <xs:element name="listaDeCodigos" nillable="true" type="tns:obtenerDescripcionesEntidadesBeanArray" />
+      <xs:element name="obtenerDescripcionesEntidades" nillable="true" type="tns:obtenerDescripcionesEntidadesBeanArray" />
+      <xs:complexType name="obtenerDescripcionesEntidadesBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string" />
+          <xs:element minOccurs="0" name="entidad" type="ns1:entidadEnum" />
+          <xs:element minOccurs="0" name="saf" type="xs:long" />
+          <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerDescripcionesEntidadesBeanArray" final="#all">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="tns:obtenerDescripcionesEntidadesBean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerDescripcionesEntidadesRequest">
+    <wsdl:part name="listaDeCodigos" element="sch:listaDeCodigos" />
+  </wsdl:message>
+  <wsdl:message name="obtenerDescripcionesEntidadesResponse">
+    <wsdl:part name="obtenerDescripcionesEntidades" element="sch:obtenerDescripcionesEntidades" />
+  </wsdl:message>
+  <wsdl:portType name="obtenerDescripcionesEntidadesService">
+    <wsdl:operation name="obtenerDescripcionesEntidades">
+      <wsdl:input name="obtenerDescripcionesEntidadesRequest" message="tns:obtenerDescripcionesEntidadesRequest" />
+      <wsdl:output name="obtenerDescripcionesEntidadesResponse" message="tns:obtenerDescripcionesEntidadesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="obtenerDescripcionesEntidadesServiceSoap11" type="tns:obtenerDescripcionesEntidadesService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsaw:UsingAddressing wsdl:required="true" />
+    <wsdl:operation name="obtenerDescripcionesEntidades">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/entidades_basicas/obtenerDescripcionesEntidadesService" />
+      <wsdl:input name="obtenerDescripcionesEntidadesRequest">
+        <soap:body use="literal" parts="listaDeCodigos" />
+      </wsdl:input>
+      <wsdl:output name="obtenerDescripcionesEntidadesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="obtenerDescripcionesEntidadesServiceService">
+    <wsdl:port name="obtenerDescripcionesEntidadesServiceSoap11" binding="tns:obtenerDescripcionesEntidadesServiceSoap11">
+      <soap:address location="https://ws-si.mecon.gov.ar/SD_Core/ws/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

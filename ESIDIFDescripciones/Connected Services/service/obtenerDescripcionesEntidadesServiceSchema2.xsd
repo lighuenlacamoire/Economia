@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://enums.entidadesBasicas.esidif.mecon.gov.ar" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="entidadEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INST" />
+      <xs:enumeration value="SERV" />
+      <xs:enumeration value="APG" />
+      <xs:enumeration value="OG" />
+      <xs:enumeration value="FF" />
+      <xs:enumeration value="MON" />
+      <xs:enumeration value="UG" />
+      <xs:enumeration value="PEX" />
+      <xs:enumeration value="UD" />
+      <xs:enumeration value="BAPIN" />
+      <xs:enumeration value="EDEST" />
+      <xs:enumeration value="ECONCRED" />
+      <xs:enumeration value="FFUN" />
+      <xs:enumeration value="EORIG" />
+      <xs:enumeration value="RUBRO" />
+      <xs:enumeration value="ECONREC" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

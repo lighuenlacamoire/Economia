@@ -133,6 +133,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Sources.cs" />
+    <Compile Include="Connected Services\service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Extensions\SoapMiddleware.cs" />
@@ -147,6 +152,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\service\configuration91.svcinfo" />
+    <None Include="Connected Services\service\configuration.svcinfo" />
+    <Content Include="Connected Services\service\ESIDIFC75.service.generarInformeDeGastosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\service\ESIDIFC75.service.generarInformeDeGastosResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="generarInformeDeGastosC75.asmx" />
     <Content Include="Global.asax" />
     <Content Include="log4net.Config.xml" />
@@ -162,6 +179,16 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\service\comprobantes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\service\generarInformeDeGastosWsdl.wsdl" />
+    <None Include="Connected Services\service\informeDeGastos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\service\informeDeGastosMsg.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +196,12 @@
       <Project>{9d195b79-b596-4a4a-be0e-2bfe6ef10246}</Project>
       <Name>ESIDIFCommon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
