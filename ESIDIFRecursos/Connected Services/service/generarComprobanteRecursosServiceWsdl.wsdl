@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://service.webService.server.recursos.esidif.mecon.gov.ar" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://bean.webService.common.recursos.esidif.mecon.gov.ar" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" targetNamespace="http://service.webService.server.recursos.esidif.mecon.gov.ar" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <sp:UsernameToken>
+    <wsp:Policy>
+      <sp:WssUsernameToken10 />
+    </wsp:Policy>
+  </sp:UsernameToken>
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://bean.webService.common.recursos.esidif.mecon.gov.ar" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://bean.webService.common.recursos.esidif.mecon.gov.ar" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="comprobanteRecursos" nillable="true" type="tns:comprobanteRecursosBean" />
+      <xs:element name="generarComprobanteRecursos" nillable="true" type="tns:generarComprobanteRecursosResponseBean" />
+      <xs:complexType name="generarComprobanteRecursosResponseBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="ejercicioNovedad" type="xs:long" />
+          <xs:element minOccurs="0" name="numeroNovedad" type="xs:long" />
+          <xs:element minOccurs="0" name="estadoNovedad" type="xs:string" />
+          <xs:element minOccurs="0" name="motivoError" type="xs:string" />
+          <xs:element minOccurs="0" name="comprobanteRegistro" type="tns:comprobanteRegistroBean" />
+          <xs:element minOccurs="0" name="periodoImpacto" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="emisorBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoFuncional" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoEntidadOperativa" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="comprobanteRegistroBean">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:comprobanteEjecucionBean">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="tipoRegistro" type="xs:string" />
+              <xs:element minOccurs="0" name="etapa" type="xs:string" />
+              <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="monedaOrigen" type="xs:string" />
+              <xs:element minOccurs="0" name="esInicioVinculo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="comprobanteVinculo" type="tns:comprobanteOperacionVinculadaBean" />
+              <xs:element minOccurs="0" name="totalMO" type="xs:decimal" />
+              <xs:element minOccurs="0" name="totalMCL" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="comprobanteEjecucionBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="ejercicio" type="xs:long" />
+          <xs:element minOccurs="0" name="tipoComprobante" type="xs:string" />
+          <xs:element minOccurs="0" name="numeroComprobante" type="xs:long" />
+          <xs:element minOccurs="0" name="nroSidif" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="comprobanteOperacionVinculadaBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="tipoComprobante" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicio" type="xs:long" />
+          <xs:element minOccurs="0" name="numeroComprobante" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="comprobanteRecursosBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="numeroComprobante" type="xs:long" />
+          <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ejercicioNovedad" type="xs:long" />
+          <xs:element minOccurs="0" name="numeroNovedad" type="xs:long" />
+          <xs:element minOccurs="0" name="fechaNovedad" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ejercicio" type="xs:long" />
+          <xs:element minOccurs="0" name="tipoComprobante" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoRegistro" type="xs:string" />
+          <xs:element minOccurs="0" name="etapa" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" type="xs:long" />
+          <xs:element minOccurs="0" name="gestion" type="xs:string" />
+          <xs:element minOccurs="0" name="donacion" type="tns:donacionBean" />
+          <xs:element minOccurs="0" name="fechaComprobante" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="cliente" type="xs:long" />
+          <xs:element minOccurs="0" name="medioPercepcion" type="xs:string" />
+          <xs:element minOccurs="0" name="cuentaRecaudadoraBancaria" type="tns:cuentaOperativaBean" />
+          <xs:element minOccurs="0" name="cuentaRecaudadoraEscritural" type="tns:cuentaOperativaBean" />
+          <xs:element minOccurs="0" name="numeroComprobanteBancario" type="xs:long" />
+          <xs:element minOccurs="0" name="cotizacion" type="tns:cotizacionBean" />
+          <xs:element minOccurs="0" name="documentoRespaldatorio" type="tns:documentoRespaldatorioBean" />
+          <xs:element minOccurs="0" name="identificadorTramite" type="tns:identificacionDeTramiteBean" />
+          <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+          <xs:element minOccurs="0" name="esInicioVinculo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="comprobanteVinculo" type="tns:comprobanteOperacionVinculadaBean" />
+          <xs:element minOccurs="0" name="comprobanteOrigen" type="tns:comprobanteEjecucionBean" />
+          <xs:element minOccurs="0" name="totalMO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="totalMCL" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="itemsPresupuestarios" nillable="true" type="tns:itemPresupuestarioRecursosBean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="itemsNoPresupuestarios" nillable="true" type="tns:itemNoPresupuestarioRecursosBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="donacionBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="codigoDonacion" type="xs:string" />
+          <xs:element minOccurs="0" name="numeroDonacion" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cuentaOperativaBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoBanco" type="xs:long" />
+          <xs:element minOccurs="0" name="codigoSucursal" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoCuenta" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cotizacionBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fechaCotizacion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tipoMoneda" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="tipoCotizacion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="documentoRespaldatorioBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="documentoGestion" type="xs:string" />
+          <xs:element minOccurs="0" name="ejercicioDocumento" type="xs:long" />
+          <xs:element minOccurs="0" name="nroDocumento" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="identificacionDeTramiteBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificacionDeTramite" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" type="xs:string" />
+          <xs:element minOccurs="0" name="anio" type="xs:long" />
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemPresupuestarioRecursosBean">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:itemRecursosBean">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="unidadDescentralizada" type="xs:string" />
+              <xs:element minOccurs="0" name="fuenteFinanciamiento" type="tns:fuenteFinanciamientoBean" />
+              <xs:element minOccurs="0" name="rubroRecurso" type="tns:rubroRecursoBean" />
+              <xs:element minOccurs="0" name="entidadOrigen" type="xs:long" />
+              <xs:element minOccurs="0" name="moneda" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="itemRecursosBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comprobanteDevengado" type="tns:comprobanteEjecucionBean" />
+          <xs:element minOccurs="0" name="conceptoIngresos" type="tns:conceptoIngresoBean" />
+          <xs:element minOccurs="0" name="importeMO" type="xs:decimal" />
+          <xs:element minOccurs="0" name="importeMCL" type="xs:decimal" />
+          <xs:element minOccurs="0" name="prestamoExterno" type="xs:long" />
+          <xs:element minOccurs="0" name="recac" type="xs:string" />
+          <xs:element minOccurs="0" name="sigade" type="xs:string" />
+          <xs:element minOccurs="0" name="cotena" type="xs:string" />
+          <xs:element minOccurs="0" name="saf" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fuenteFinanciamientoBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="procedencia" type="xs:long" />
+          <xs:element minOccurs="0" name="fuente" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rubroRecursoBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tipo" type="xs:long" />
+          <xs:element minOccurs="0" name="clase" type="xs:long" />
+          <xs:element minOccurs="0" name="concepto" type="xs:long" />
+          <xs:element minOccurs="0" name="subconcepto" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="conceptoIngresoBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="entidadEmisora" type="tns:emisorBean" />
+          <xs:element minOccurs="0" name="concepto" type="xs:long" />
+          <xs:element minOccurs="0" name="subconcepto" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemNoPresupuestarioRecursosBean">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:itemRecursosBean">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="axt" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="generarComprobanteRecursosResponse">
+    <wsdl:part name="generarComprobanteRecursos" element="sch:generarComprobanteRecursos" />
+  </wsdl:message>
+  <wsdl:message name="generarComprobanteRecursosRequest">
+    <wsdl:part name="comprobanteRecursos" element="sch:comprobanteRecursos" />
+  </wsdl:message>
+  <wsdl:portType name="generarComprobanteRecursosService">
+    <wsdl:operation name="generarComprobanteRecursos">
+      <wsdl:input name="generarComprobanteRecursosRequest" message="tns:generarComprobanteRecursosRequest" />
+      <wsdl:output name="generarComprobanteRecursosResponse" message="tns:generarComprobanteRecursosResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="generarComprobanteRecursosServiceSoap11" type="tns:generarComprobanteRecursosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsaw:UsingAddressing wsdl:required="true" />
+    <wsdl:operation name="generarComprobanteRecursos">
+      <soap:operation soapAction="https://ws-si.mecon.gov.ar/ws/recursos/generarComprobanteRecursosService" />
+      <wsdl:input name="generarComprobanteRecursosRequest">
+        <soap:body use="literal" parts="comprobanteRecursos" />
+      </wsdl:input>
+      <wsdl:output name="generarComprobanteRecursosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="generarComprobanteRecursosServiceService">
+    <wsdl:port name="generarComprobanteRecursosServiceSoap11" binding="tns:generarComprobanteRecursosServiceSoap11">
+      <soap:address location="https://tdes2-si.mecon.ar/SD_Core/ws/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

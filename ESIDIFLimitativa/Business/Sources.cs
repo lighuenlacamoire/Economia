@@ -1,4 +1,5 @@
-﻿using ESIDIFCommon.Models.Xml;
+﻿using ESIDIFCommon.GestionService;
+using ESIDIFCommon.Models.Xml;
 using ESIDIFCommon.Tools;
 using log4net;
 using System;
@@ -19,7 +20,8 @@ namespace ESIDIFLimitativa.Business
     public class Sources
     {
         private service.consultarLimitativaCreditoServiceClient _service = new service.consultarLimitativaCreditoServiceClient();
-        private GestionService.GestionServiceSoapClient _gestionClavesService = new GestionService.GestionServiceSoapClient();
+        //private GestionService.GestionServiceSoapClient _gestionClavesService = new GestionService.GestionServiceSoapClient();
+        private GestionServiceSoapClient _gestionClavesService = new GestionServiceSoapClient();
 
         private static string ServiceLogName = "Limitativa";
 
@@ -27,7 +29,7 @@ namespace ESIDIFLimitativa.Business
 
         public Sources()
         {
-
+            _gestionClavesService.Endpoint.EndpointBehaviors.Add(new Extensions.SoapGestionClavesInspectorBehaviour());
         }
 
         //  public ESIDIFLimitativa.service.imputacionCreditoConsulta consultarLimitativaCredito(ESIDIFLimitativa.service.consultarLimitativaCreditoRequest request)  
@@ -161,10 +163,10 @@ namespace ESIDIFLimitativa.Business
         public SoapException HandleError(Exception ex)
         {
             SoapError error = Functions.SoapErrorFromException(ex);
-            
+
             ex = Functions.FindXmlErrorDetail(ex);
 
-            if(ex != null)
+            if (ex != null)
             {
                 log.Error("Error en la ejecucion : " + ex.Message);
                 return new SoapException("Error", SoapException.ClientFaultCode, error.FaultDetail, ex);
@@ -183,6 +185,6 @@ namespace ESIDIFLimitativa.Business
 
             return true;
         }
-        
+
     }
 }
