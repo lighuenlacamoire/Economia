@@ -421,6 +421,7 @@ namespace ESIDIFCommon.Tools
         }
 
 
+
         public static decimal CopyStringToDecimal(string value)
         {
             decimal result = 0;

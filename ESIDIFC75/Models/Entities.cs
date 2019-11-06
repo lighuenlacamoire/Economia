@@ -105,17 +105,17 @@ namespace ESIDIFC75.Models
 
         private service.MedioDePagoType? medioDePagoField; //Enum MedioDePagoType
 
-        private string importeCompromisoField;
+        private decimal? importeCompromisoField;
 
-        private string importeDevengadoField;
+        private decimal? importeDevengadoField;
 
-        private string importePagadoField;
+        private decimal? importePagadoField;
 
-        private string importeDeduccionesField;
+        private decimal? importeDeduccionesField;
 
-        private string importeDeduccionesPagadoField;
+        private decimal? importeDeduccionesPagadoField;
 
-        private string importeNetoPagadoField;
+        private decimal? importeNetoPagadoField;
 
         private string uepexField;
 
@@ -321,13 +321,13 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeCompromisoField;
-                //return Functions.CheckStringFromDecimal(this.importeCompromisoField);
+                //return this.importeCompromisoField;
+                return Functions.CheckStringFromDecimal(this.importeCompromisoField);
             }
             set
             {
-                this.importeCompromisoField = value;
-                //this.importeCompromisoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
+                //this.importeCompromisoField = value;
+                this.importeCompromisoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeCompromiso");
             }
         }
@@ -337,11 +337,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeDevengadoField;
+                return Functions.CheckStringFromDecimal(this.importeDevengadoField);
             }
             set
             {
-                this.importeDevengadoField = value;
+                //this.importeCompromisoField = value;
+                this.importeDevengadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
@@ -351,11 +352,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importePagadoField;
+                return Functions.CheckStringFromDecimal(this.importePagadoField);
             }
             set
             {
-                this.importePagadoField = value;
+                //this.importeCompromisoField = value;
+                this.importePagadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importePagado");
             }
         }
@@ -365,11 +367,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeDeduccionesField;
+                return Functions.CheckStringFromDecimal(this.importeDeduccionesField);
             }
             set
             {
-                this.importeDeduccionesField = value;
+                //this.importeCompromisoField = value;
+                this.importeDeduccionesField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeDeducciones");
             }
         }
@@ -379,11 +382,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeDeduccionesPagadoField;
+                return Functions.CheckStringFromDecimal(this.importeDeduccionesPagadoField);
             }
             set
             {
-                this.importeDeduccionesPagadoField = value;
+                //this.importeCompromisoField = value;
+                this.importeDeduccionesPagadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeDeduccionesPagado");
             }
         }
@@ -393,11 +397,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeNetoPagadoField;
+                return Functions.CheckStringFromDecimal(this.importeNetoPagadoField);
             }
             set
             {
-                this.importeNetoPagadoField = value;
+                //this.importeCompromisoField = value;
+                this.importeNetoPagadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeNetoPagado");
             }
         }
@@ -1217,11 +1222,11 @@ namespace ESIDIFC75.Models
 
         private CodigoTramoPartidaType sigadeField;
 
-        private string importeCompromisoField;
+        private decimal? importeCompromisoField;
 
-        private string importeDevengadoField;
+        private decimal? importeDevengadoField;
 
-        private string importePagadoField;
+        private decimal? importePagadoField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -1289,11 +1294,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeCompromisoField;
+                return Functions.CheckStringFromDecimal(this.importeCompromisoField);
             }
             set
             {
-                this.importeCompromisoField = value;
+                this.importeCompromisoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeCompromiso");
             }
         }
@@ -1304,11 +1309,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeDevengadoField;
+                return Functions.CheckStringFromDecimal(this.importeDevengadoField);
             }
             set
             {
-                this.importeDevengadoField = value;
+                this.importeDevengadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
@@ -1319,11 +1324,12 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importePagadoField;
+                return Functions.CheckStringFromDecimal(this.importePagadoField);
             }
             set
             {
-                this.importePagadoField = value;
+                //this.importeCompromisoField = value;
+                this.importePagadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importePagado");
             }
         }
@@ -1344,9 +1350,9 @@ namespace ESIDIFC75.Models
     {
         private long? axtField;
 
-        private string importeDevengadoField;
+        private decimal? importeDevengadoField;
 
-        private string importePagadoField;
+        private decimal? importePagadoField;
 
         private long? ejercicioField;
 
@@ -1371,11 +1377,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importeDevengadoField;
+                return Functions.CheckStringFromDecimal(this.importeDevengadoField);
             }
             set
             {
-                this.importeDevengadoField = value;
+                this.importeDevengadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importeDevengado");
             }
         }
@@ -1386,11 +1392,11 @@ namespace ESIDIFC75.Models
         {
             get
             {
-                return this.importePagadoField;
+                return Functions.CheckStringFromDecimal(this.importePagadoField);
             }
             set
             {
-                this.importePagadoField = value;
+                this.importePagadoField = !string.IsNullOrEmpty(value) && value.Length > 0 ? Functions.CopyStringToDecimal(value) : (decimal?)null;
                 this.RaisePropertyChanged("importePagado");
             }
         }
