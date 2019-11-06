@@ -1,4 +1,5 @@
-﻿using ESIDIFCommon.Models.Xml;
+﻿using ESIDIFCommon.GestionService;
+using ESIDIFCommon.Models.Xml;
 using ESIDIFCommon.Tools;
 using log4net;
 using System;
@@ -19,7 +20,7 @@ namespace ESIDIFC75.Business
 {
     public class Sources
     {
-        private GestionService.GestionServiceSoapClient _gestionService = new GestionService.GestionServiceSoapClient();
+        private GestionServiceSoapClient _gestionService = new GestionServiceSoapClient();
 
         public static string ServiceLogName = "C75";
 
