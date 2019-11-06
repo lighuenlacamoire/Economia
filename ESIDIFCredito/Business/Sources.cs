@@ -160,6 +160,7 @@ namespace ESIDIFCredito.Business
 
                 if (consulta != null && consulta.ItEntradaCredito != null && consulta.ItEntradaCredito.Any())
                 {
+                    log.Debug("Invoco --> validar longuitud ITEntradaCredito: " + consulta.ItEntradaCredito.Count() + " Items");
 
                     var validadorEntraCredito = new validadorLongitud<EntradasCredito>();
 
@@ -170,7 +171,7 @@ namespace ESIDIFCredito.Business
 
                         var erroresEntradaCredito = validadorEntraCredito.validarLongitud(item);
 
-                        log.Debug("Invoco --> validar longuitud ITEntradaCredito: " + consulta.ItEntradaCredito.ToString());
+                        //log.Debug("Invoco --> validar longuitud ITEntradaCredito: " + consulta.ItEntradaCredito.ToString());
 
                         if (erroresEntradaCredito.Count > 0)
                         {
@@ -267,6 +268,7 @@ namespace ESIDIFCredito.Business
 
                 if (consulta != null && consulta.ItEntradaRecurso != null && consulta.ItEntradaRecurso.Any())
                 {
+                    log.Debug("Invoco --> validar longuitud ITEntradaRecurso: " + consulta.ItEntradaRecurso.Count() + " Items");
 
                     var validadorEntraRecurso = new validadorLongitud<EntradasRecurso>();
 
@@ -277,7 +279,7 @@ namespace ESIDIFCredito.Business
 
                         var erroresEntradaRecurso = validadorEntraRecurso.validarLongitud(item);
 
-                        log.Debug("Invoco --> validar longuitud ITEntradaRecurso: " + consulta.ItEntradaRecurso.ToString());
+                        //log.Debug("Invoco --> validar longuitud ITEntradaRecurso: " + consulta.ItEntradaRecurso.ToString());
 
                         if (erroresEntradaRecurso.Count > 0)
                         {
@@ -404,9 +406,9 @@ namespace ESIDIFCredito.Business
                             requestError = true;
                         }
 
-                        log.Debug("Invoco --> Prueba: " + (ocredito.ICabecera != null ? ocredito.ICabecera.ToString() : "No enviado"));
-                        log.Debug("Invoco --> Prueba: " + (ocredito.ItEntradaCredito != null && ocredito.ItEntradaCredito.Any() ? ocredito.ItEntradaCredito.ToString() : "No enviado"));
-                        log.Debug("Invoco --> Prueba: " + (ocredito.ItEntradaRecurso != null && ocredito.ItEntradaRecurso.Any() ? ocredito.ItEntradaRecurso.ToString() : "No enviado"));
+                        log.Debug("Invoco --> Envio: ICabecera " + (ocredito.ICabecera != null ? ocredito.ICabecera.ToString() : "No enviado"));
+                        log.Debug("Invoco --> Envio: ItEntradaCredito " + (ocredito.ItEntradaCredito != null && ocredito.ItEntradaCredito.Any() ? (ocredito.ItEntradaCredito.Count() + " Items") : "No enviado"));
+                        log.Debug("Invoco --> Envio: ItEntradaRecurso " + (ocredito.ItEntradaRecurso != null && ocredito.ItEntradaRecurso.Any() ? (ocredito.ItEntradaRecurso.Count() + " Items") : "No enviado"));
                         //log.Debug("Request  :" + ((XmlDocument)Functions.GenericToXmlDocument(ocredito)).InnerXml);//ASOSA REQUEST OBJECT LOG
 
                         //log.Debug("Response :" + ((XmlDocument)Functions.GenericToXmlDocument(oRespuesta)).InnerXml);//ASOSA RESPONSE OBJECT LOG

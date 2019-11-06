@@ -156,6 +156,8 @@ namespace ESIDIFCuota.Business
                 #region Validacion Entradas Cuota
                 if (consulta != null && consulta.ItEntradaCuota != null && consulta.ItEntradaCuota.Any())
                 {
+                    log.Debug("Invoco --> validar longuitud ItEntradaCuota: " + consulta.ItEntradaCuota.Count() + " Items");
+
                     var validadorEntraCredito = new validadorLongitud<IEntradaCuota>();
 
                     List<service.ZdsEntradasCuota> EntradasCuota = new List<service.ZdsEntradasCuota>();
@@ -164,7 +166,7 @@ namespace ESIDIFCuota.Business
                     {
 
                         var erroresEntradaCuota = validadorEntraCredito.validarLongitud(item);
-                        log.Debug("Invoco --> validar longuitud ITEntradaCuota: " + consulta.ItEntradaCuota.ToString());
+                        //log.Debug("Invoco --> validar longuitud ITEntradaCuota: " + consulta.ItEntradaCuota.ToString());
 
                         if (erroresEntradaCuota.Count > 0)
                         {
@@ -389,8 +391,8 @@ namespace ESIDIFCuota.Business
                             requestError = true;
                         }
 
-                        log.Debug("Invoco --> Prueba: " + (ocuota.ICabecera != null ? ocuota.ICabecera.ToString() : "No enviado"));
-                        log.Debug("Invoco --> Prueba: " + (ocuota.ItEntradaCuota != null && ocuota.ItEntradaCuota.Any() ? ocuota.ItEntradaCuota.ToString() : "No enviado"));
+                        log.Debug("Invoco --> Envio: ICabecera " + (ocuota.ICabecera != null ? ocuota.ICabecera.ToString() : "No enviado"));
+                        log.Debug("Invoco --> Envio: ItEntradaCuota " + (ocuota.ItEntradaCuota != null && ocuota.ItEntradaCuota.Any() ? (ocuota.ItEntradaCuota.Count() + " Items") : "No enviado"));
                         //log.Debug("Request  :" + ((XmlDocument)Functions.GenericToXmlDocument(ocuota)).InnerXml);//ASOSA REQUEST OBJECT LOG
 
                         //log.Debug("Response :" + ((XmlDocument)Functions.GenericToXmlDocument(oRespuesta)).InnerXml);//ASOSA RESPONSE OBJECT LOG
