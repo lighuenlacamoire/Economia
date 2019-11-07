@@ -18,9 +18,16 @@ namespace ESIDIFAcumuladores
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public Models.Prueba HelloWorld(Models.Prueba prueba)
         {
-            return "Hola a todos";
+            if(prueba == null)
+            {
+                throw new Exception("aaa");
+            }
+            else
+            {
+                return prueba;
+            }
         }
     }
 }

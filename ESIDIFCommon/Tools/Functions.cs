@@ -113,6 +113,18 @@ namespace ESIDIFCommon.Tools
             }
         }
 
+        public static string CopyDecimalToString(decimal? origen)
+        {
+            if(origen != null && origen.HasValue)
+            {
+                return string.Format("{0:0.00;0.00-;zero}", origen.Value);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static string CheckStringFromDecimal(decimal? origen)
         {
             if (origen != null && origen.HasValue)
