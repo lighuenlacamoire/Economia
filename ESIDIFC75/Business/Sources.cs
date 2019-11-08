@@ -52,52 +52,63 @@ namespace ESIDIFC75.Business
             string digitalMark = ConfigurationManager.AppSettings["CERTI_DIGITAL_MARK"];
 
             string usuarioWS = ConfigurationManager.AppSettings["WS_Usuario"];
+            string passwdWS = string.Empty;
 
             string WSAction = ConfigurationManager.AppSettings["WS_Action"];
             string WSEndpoint = ConfigurationManager.AppSettings["WS_Endpoint"];
             #endregion
 
-            #region Consulta Servicio Gestion Claves
-            //string passwdWS = ConfigurationManager.AppSettings["WS_Passwd"];
-            string passwdWS = string.Empty;
-            bool gestionClavesSuccess = true;
-            string gestionClavesMessage = string.Empty;
+            #region Consulta Servicio Gestion Claves -o- Configuracion
+            bool usarGClaves = false;
+            bool.TryParse(ConfigurationManager.AppSettings["GCLaves_Habilitado"], out usarGClaves);
 
-            try
+            if(usarGClaves)
             {
-                log.Info("Inicio Servicio Gestion Claves");
-                string gestionClavesEndpoint = ConfigurationManager.AppSettings["GClaves_Endpoint"];
-                _gestionService.Endpoint.Address = new EndpointAddress(gestionClavesEndpoint);
+                log.Info("Obteniendo datos desde Gestion Claves");
+                bool gestionClavesSuccess = true;
+                string gestionClavesMessage = string.Empty;
 
-                string gcUser = ConfigurationManager.AppSettings["GCLaves_USU"];
-                string gcPass = ConfigurationManager.AppSettings["GCLaves_PSW"];
-
-                string key = ConfigurationManager.AppSettings["GClaves_EsidifPass"];
-
-                log.Info("Invocando al metodo ConsultarKey");
-                string resultGC = _gestionService.ConsultarKey(gcUser, gcPass, key);
-
-                if (!string.IsNullOrEmpty(resultGC) && resultGC.Length > 0)
+                try
                 {
-                    log.Info("Invocacion a Gestion Claves Correcta");
-                    passwdWS = resultGC;
+                    log.Info("Inicio Servicio Gestion Claves");
+                    string gestionClavesEndpoint = ConfigurationManager.AppSettings["GClaves_Endpoint"];
+                    _gestionService.Endpoint.Address = new EndpointAddress(gestionClavesEndpoint);
+
+                    string gcUser = ConfigurationManager.AppSettings["GCLaves_USU"];
+                    string gcPass = ConfigurationManager.AppSettings["GCLaves_PSW"];
+
+                    string key = ConfigurationManager.AppSettings["GClaves_EsidifPass"];
+
+                    log.Info("Invocando al metodo ConsultarKey");
+                    string resultGC = _gestionService.ConsultarKey(gcUser, gcPass, key);
+
+                    if (!string.IsNullOrEmpty(resultGC) && resultGC.Length > 0)
+                    {
+                        log.Info("Invocacion a Gestion Claves Correcta");
+                        passwdWS = resultGC;
+                    }
+                    else
+                    {
+                        throw new Exception("El valor devuelto esta vacio");
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    throw new Exception("El valor devuelto esta vacio");
+                    gestionClavesSuccess = false;
+                    gestionClavesMessage = ex.Message;
+                    log.Info("Fallo la invocacion a Gestion Claves: " + ex.Message);
                 }
 
+                if (!gestionClavesSuccess)
+                {
+                    throw new Exception(gestionClavesMessage);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                gestionClavesSuccess = false;
-                gestionClavesMessage = ex.Message;
-                log.Info("Fallo la invocacion a Gestion Claves: " + ex.Message);
-            }
-
-            if (!gestionClavesSuccess)
-            {
-                throw new Exception(gestionClavesMessage);
+                log.Info("Obteniendo datos desde la configuracion");
+                passwdWS = ConfigurationManager.AppSettings["WS_Password"];
             }
             #endregion
 

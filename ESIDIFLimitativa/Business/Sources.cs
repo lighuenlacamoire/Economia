@@ -3,16 +3,12 @@ using ESIDIFCommon.Models.Xml;
 using ESIDIFCommon.Tools;
 using log4net;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.Web;
 using System.Web.Services.Protocols;
 
 namespace ESIDIFLimitativa.Business
@@ -32,7 +28,6 @@ namespace ESIDIFLimitativa.Business
             _gestionClavesService.Endpoint.EndpointBehaviors.Add(new Extensions.SoapGestionClavesInspectorBehaviour());
         }
 
-        //  public ESIDIFLimitativa.service.imputacionCreditoConsulta consultarLimitativaCredito(ESIDIFLimitativa.service.consultarLimitativaCreditoRequest request)  
         public Models.imputacionCreditoConsulta consultarLimitativaCredito(Models.consultarLimitativaCreditoRequest request)
         {
             Models.imputacionCreditoConsulta ret = new Models.imputacionCreditoConsulta();
@@ -48,48 +43,61 @@ namespace ESIDIFLimitativa.Business
             string digitalMark = ConfigurationManager.AppSettings["CERTI_DIGITAL_MARK"];
 
             string usuarioWS = ConfigurationManager.AppSettings["WS_Usuario"];
-
-            #region Consulta Servicio Gestion Claves
             string passwdWS = string.Empty;
-            bool gestionClavesSuccess = true;
-            string gestionClavesMessage = string.Empty;
 
-            try
+            #region Consulta Servicio Gestion Claves -o- Configuracion
+            bool usarGClaves = false;
+            bool.TryParse(ConfigurationManager.AppSettings["GCLaves_Habilitado"], out usarGClaves);
+
+            if(usarGClaves)
             {
-                log.Info("Inicio Servicio Gestion Claves");
-                string gestionClavesEndpoint = ConfigurationManager.AppSettings["GClaves_Endpoint"];
-                _gestionClavesService.Endpoint.Address = new EndpointAddress(gestionClavesEndpoint);
+                log.Info("Obteniendo datos desde Gestion Claves");
+                bool gestionClavesSuccess = true;
+                string gestionClavesMessage = string.Empty;
 
-                string gcUser = ConfigurationManager.AppSettings["GCLaves_USU"];
-                string gcPass = ConfigurationManager.AppSettings["GCLaves_PSW"];
-
-                string key = ConfigurationManager.AppSettings["GClaves_EsidifPass"];
-
-                log.Info("Invocando al metodo ConsultarKey");
-                string result = _gestionClavesService.ConsultarKey(gcUser, gcPass, key);
-
-                if (!string.IsNullOrEmpty(result) && result.Length > 0)
+                try
                 {
-                    log.Info("Invocacion a Gestion Claves Correcta");
-                    passwdWS = result;
+                    log.Info("Inicio Servicio Gestion Claves");
+                    string gestionClavesEndpoint = ConfigurationManager.AppSettings["GClaves_Endpoint"];
+                    _gestionClavesService.Endpoint.Address = new EndpointAddress(gestionClavesEndpoint);
+
+                    string gcUser = ConfigurationManager.AppSettings["GCLaves_USU"];
+                    string gcPass = ConfigurationManager.AppSettings["GCLaves_PSW"];
+
+                    string key = ConfigurationManager.AppSettings["GClaves_EsidifPass"];
+
+                    log.Info("Invocando al metodo ConsultarKey");
+                    string result = _gestionClavesService.ConsultarKey(gcUser, gcPass, key);
+
+                    if (!string.IsNullOrEmpty(result) && result.Length > 0)
+                    {
+                        log.Info("Invocacion a Gestion Claves Correcta");
+                        passwdWS = result;
+                    }
+                    else
+                    {
+                        throw new Exception("El valor devuelto esta vacio");
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    throw new Exception("El valor devuelto esta vacio");
+                    gestionClavesSuccess = false;
+                    gestionClavesMessage = ex.Message;
+                    log.Info("Fallo la invocacion a Gestion Claves: " + ex.Message);
                 }
 
+                if (!gestionClavesSuccess)
+                {
+                    throw new Exception(gestionClavesMessage);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                gestionClavesSuccess = false;
-                gestionClavesMessage = ex.Message;
-                log.Info("Fallo la invocacion a Gestion Claves: " + ex.Message);
+                log.Info("Obteniendo datos desde la configuracion");
+                passwdWS = ConfigurationManager.AppSettings["WS_Password"];
             }
 
-            if (!gestionClavesSuccess)
-            {
-                throw new Exception(gestionClavesMessage);
-            }
             #endregion
 
             log.Debug(ServiceLogName + " - Seteando PROXY.");
@@ -98,15 +106,13 @@ namespace ESIDIFLimitativa.Business
             httpsTransport.UseDefaultWebProxy = false;
             httpsTransport.BypassProxyOnLocal = false;
             httpsTransport.MaxReceivedMessageSize = 2147483647;
-
-
+            
             if (ConfigurationManager.AppSettings["CERTI_IGNORA_ERROR"] == "true")
             {
                 log.Debug(ServiceLogName + " - IGNORA_ERROR_CERTI = true.");
                 System.Net.ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
             }
-
-
+            
             if (ConfigurationManager.AppSettings["CPA_Proxy_Credenciales"] == "true")
             {
                 log.Debug(ServiceLogName + " - CPA_Proxy_Credenciales = true.");
@@ -121,8 +127,7 @@ namespace ESIDIFLimitativa.Business
             }
 
             b.Elements.Add(httpsTransport);
-
-
+            
             if (ConfigurationManager.AppSettings["CERTI_APLICA"] == "true")
             {
                 log.Debug(ServiceLogName + " - Cargando certificado X509.");
@@ -134,7 +139,6 @@ namespace ESIDIFLimitativa.Business
             {
                 try
                 {
-
                     log.Debug(ServiceLogName + " - Creando Bean");
                     var paramMecom = GenericClass<service.imputacionCreditoConsulta>.GenericMethod(); //service.imputacionCreditoConsulta.Create();
 
